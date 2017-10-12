@@ -1,0 +1,9 @@
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\bin\Debug\BUS.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\bin\Debug\BUS.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\bin\Debug\DAO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\bin\Debug\DTO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\bin\Debug\DAO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\bin\Debug\DTO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\obj\Debug\BUS.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\BUS\obj\Debug\BUS.pdb

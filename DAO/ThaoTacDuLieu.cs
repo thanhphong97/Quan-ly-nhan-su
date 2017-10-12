@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+namespace DAO
+{
+    public class ThaoTacDuLieu
+    {
+       static string strChuoiKetNoi = @"Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
+       public static SqlConnection TaoVaMoKetNoi()
+       {
+           SqlConnection con = new SqlConnection(strChuoiKetNoi);
+           con.Open();
+           return con;
+       }
+        public static SqlCommand TaoDoiTuongTruyVan(string sql, SqlConnection con)
+       {
+           SqlCommand cmd = new SqlCommand(sql, con);
+           return cmd;
+       }
+        public static void DongKetNoi(SqlConnection con)
+        {
+            con.Close();
+        }
+
+    }
+}

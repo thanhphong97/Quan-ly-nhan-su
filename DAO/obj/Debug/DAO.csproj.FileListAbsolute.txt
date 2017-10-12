@@ -1,0 +1,7 @@
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DAO\bin\Debug\DAO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DAO\bin\Debug\DAO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DAO\bin\Debug\DTO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DAO\bin\Debug\DTO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DAO\obj\Debug\DAO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DAO\obj\Debug\DAO.pdb

@@ -1,0 +1,5 @@
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DTO\bin\Debug\DTO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DTO\bin\Debug\DTO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DTO\obj\Debug\DTO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DTO\obj\Debug\DTO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
