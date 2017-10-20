@@ -12,7 +12,14 @@ namespace DAO
         public bool KiemTraDangNhap(string strTenDN, string strMK)
         {
             //auto thành công;
-            return true;
+            SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
+            string sql = string.Format("SELECT COUNT(*) FROM NGUOIDUNG WHERE TAIKHOAN = '{0}' AND MATKHAU = '{1}'", strTenDN, strMK);
+            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql,conn);
+            int kq = (int)cmd.ExecuteScalar();
+            ThaoTacDuLieu.DongKetNoi(conn);
+
+            return kq>0;
+
         }
 
         public DTO.clsNhanVien_DTO LayThongTinNhanVien(string strTenDN)
@@ -23,7 +30,9 @@ namespace DAO
         public int DemNhanVien()
         {
             throw new NotImplementedException();
+            
         }
+
 
         public bool ThemNhanVien(clsNhanVien_DTO nv)
         {
@@ -37,5 +46,8 @@ namespace DAO
                 return false;// Thêm thất bại
             return true;//thêm thành công
         }
+
+        
+        
     }
 }

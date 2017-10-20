@@ -62,7 +62,7 @@ namespace GUI
             else
             {
                 // Đăng nhập thất bại
-                MessageBox.Show("Tên Đăng nhập không tồn tại HOẶC Mật khẩu không đúng");
+                MessageBox.Show("Tên Đăng nhập không tồn tại HOẶC Mật khẩu không đúng","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -78,9 +78,6 @@ namespace GUI
                 XuLyDangNhap();
         }
 
-        private void ucDangNhap_ControlRemoved(object sender, ControlEventArgs e)
-        {
-          //  _Instances = null;
-        }
+         
     }
 }

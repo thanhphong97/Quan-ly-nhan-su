@@ -115,7 +115,6 @@
             this.Name = "ucDangNhap";
             this.Size = new System.Drawing.Size(1128, 588);
             this.Load += new System.EventHandler(this.ucDangNhap_Load);
-            this.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.ucDangNhap_ControlRemoved);
             this.ResumeLayout(false);
             this.PerformLayout();
 
