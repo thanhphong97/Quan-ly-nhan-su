@@ -33,6 +33,7 @@ namespace GUI
         private void TrangThaiChuaDangNhap()
         {
             mnuMain.Enabled = false;
+            btnDangXuat.Enabled = false;
             MoFormDangNhap();
         }
 
@@ -54,8 +55,7 @@ namespace GUI
 
         private void thêmNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ucThemNhanVien ucTNV = ucThemNhanVien.Instances;
-            this.pnlMain.Controls.Add(ucTNV);
+            
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -79,6 +79,17 @@ namespace GUI
         private void mnuDSNhanVien_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuThemNguoiDung_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ucThemNhanVien ucTNV = ucThemNhanVien.Instances;
+            this.pnlMain.Controls.Add(ucTNV);
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mnuAdmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuThemNV = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuThemNguoiDung = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDSNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -42,6 +42,8 @@
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.lblTenNguoiDung = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.grbThongTinUser.SuspendLayout();
             this.SuspendLayout();
@@ -66,18 +68,18 @@
             // mnuAdmin
             // 
             this.mnuAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuThemNV});
+            this.mnuThemNguoiDung});
             this.mnuAdmin.Image = global::GUI.Properties.Resources.manage;
             this.mnuAdmin.Name = "mnuAdmin";
-            this.mnuAdmin.Size = new System.Drawing.Size(176, 80);
+            this.mnuAdmin.Size = new System.Drawing.Size(178, 80);
             this.mnuAdmin.Text = "ADMINISTRATOR";
             // 
-            // mnuThemNV
+            // mnuThemNguoiDung
             // 
-            this.mnuThemNV.Name = "mnuThemNV";
-            this.mnuThemNV.Size = new System.Drawing.Size(180, 24);
-            this.mnuThemNV.Text = "Thêm Nhân Viên";
-            this.mnuThemNV.Click += new System.EventHandler(this.thêmNhânViênToolStripMenuItem_Click);
+            this.mnuThemNguoiDung.Name = "mnuThemNguoiDung";
+            this.mnuThemNguoiDung.Size = new System.Drawing.Size(191, 24);
+            this.mnuThemNguoiDung.Text = "Thêm Người Dùng";
+            this.mnuThemNguoiDung.Click += new System.EventHandler(this.mnuThemNguoiDung_Click);
             // 
             // mnuNhanVien
             // 
@@ -85,7 +87,9 @@
             this.mnuDSNhanVien,
             this.toolStripSeparator1,
             this.mnuQLNghiPhep,
-            this.mnuDSNghiPhep});
+            this.mnuDSNghiPhep,
+            this.toolStripSeparator2,
+            this.tToolStripMenuItem});
             this.mnuNhanVien.Name = "mnuNhanVien";
             this.mnuNhanVien.Size = new System.Drawing.Size(85, 80);
             this.mnuNhanVien.Text = "Nhân Viên";
@@ -117,8 +121,8 @@
             // mnuTinhLuong
             // 
             this.mnuTinhLuong.Name = "mnuTinhLuong";
-            this.mnuTinhLuong.Size = new System.Drawing.Size(90, 80);
-            this.mnuTinhLuong.Text = "Tính Lương";
+            this.mnuTinhLuong.Size = new System.Drawing.Size(89, 80);
+            this.mnuTinhLuong.Text = "Tiền Lương";
             // 
             // mnuQuyDnhLuong
             // 
@@ -163,6 +167,18 @@
             this.pnlMain.Size = new System.Drawing.Size(1129, 588);
             this.pnlMain.TabIndex = 2;
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(208, 6);
+            // 
+            // tToolStripMenuItem
+            // 
+            this.tToolStripMenuItem.Name = "tToolStripMenuItem";
+            this.tToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.tToolStripMenuItem.Text = "Thêm Nhân Viên";
+            this.tToolStripMenuItem.Click += new System.EventHandler(this.tToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,7 +217,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuQLNghiPhep;
         private System.Windows.Forms.ToolStripMenuItem mnuDSNghiPhep;
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.ToolStripMenuItem mnuThemNV;
+        private System.Windows.Forms.ToolStripMenuItem mnuThemNguoiDung;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem tToolStripMenuItem;
     }
 }
 

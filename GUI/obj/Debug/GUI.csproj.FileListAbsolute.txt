@@ -16,3 +16,21 @@ D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\GUI\bin\De
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\GUI\bin\Debug\DAO.pdb
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\GUI\obj\Debug\GUI.exe
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\GUI\obj\Debug\GUI.pdb
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucDanhSachNhanVien.resources
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.frmMain.resources
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.Properties.Resources.resources
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucDangNhap.resources
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNhanVien.resources
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+G:\Quan-ly-nhan-su\GUI\bin\Debug\GUI.exe.config
+G:\Quan-ly-nhan-su\GUI\bin\Debug\GUI.exe
+G:\Quan-ly-nhan-su\GUI\bin\Debug\GUI.pdb
+G:\Quan-ly-nhan-su\GUI\bin\Debug\BUS.dll
+G:\Quan-ly-nhan-su\GUI\bin\Debug\DTO.dll
+G:\Quan-ly-nhan-su\GUI\bin\Debug\DAO.dll
+G:\Quan-ly-nhan-su\GUI\bin\Debug\BUS.pdb
+G:\Quan-ly-nhan-su\GUI\bin\Debug\DTO.pdb
+G:\Quan-ly-nhan-su\GUI\bin\Debug\DAO.pdb
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.exe
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.pdb
