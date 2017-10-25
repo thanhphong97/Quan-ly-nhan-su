@@ -38,22 +38,43 @@ namespace GUI
         private void LoadCbo()
         {
             //Tỉnh 
-            cboTinh.Items.Add("Tiền Giang");
+            
+            clsTinhQuanHuyen_BUS BUSQH = new clsTinhQuanHuyen_BUS();
+            cboTinh.DataSource = BUSQH.LayDanhSachTinhThanh();
+            cboTinh.DisplayMember = "TENTINH";
+            cboTinh.ValueMember = "MATINH";
             //Quận Huyện
-            cboQuanHuyen.Items.Add("Cái Bè");
-            //quốc tịnh
+            clsTinhQuanHuyen_BUS BUSTT = new clsTinhQuanHuyen_BUS();
+            cboQuanHuyen.DataSource = BUSTT.LayDanhSachQuanHuyen();
+            cboQuanHuyen.DisplayMember = "TENQH";
+            cboQuanHuyen.ValueMember = "MAQH";
+            //quốc tịch
             cboQuocTich.Items.Add("Việt Nam");
+            cboQuocTich.SelectedIndex= 0 ;
             //tôn giáo
             cboTonGiao.Items.Add("Không");
+            clsTonGiao_BUS BUSTG = new clsTonGiao_BUS();
+            cboTonGiao.DataSource = BUSTG.LayDanhSachTonGiao();
+            cboTonGiao.DisplayMember = "TENTG";
+            cboTonGiao.ValueMember = "MATG";
             //Mối quan hệ
-            cboQuanHe.Items.Add("Cha Me");
-            cboQuanHe.Items.Add("Con Cái");
-            cboQuanHe.Items.Add("Anh Chị Em");
-            cboQuanHe.Items.Add("Vợ Chồng");
+            clsMoiQuanHe_BUS BUSMQH = new clsMoiQuanHe_BUS();
+            cboQuanHe.DataSource = BUSMQH.LayDanhSachMoiQuanHe();
+            cboQuanHe.DisplayMember = "TENMQH";
+            cboQuanHe.ValueMember = "MAMQH";
+            
             //Phòng Ban
             cboPhongBan.Items.Add("Bảo Vệ");
+            clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
+            cboPhongBan.DataSource = BUSPB.LayDanhSachPhongBan();
+            cboPhongBan.DisplayMember = "TENPB";
+            cboPhongBan.ValueMember = "MAPB";
             //chức vụ
-            cboChucVu.Items.Add("Chúa Tể Hội Đồng Bảo Vệ");
+            clsChucVu_BUS BUSCV = new clsChucVu_BUS();
+            cboChucVu.DataSource = BUSCV.LayDanhSachChucVu();
+            cboChucVu.DisplayMember = "TENCV";
+            cboChucVu.ValueMember = "MACV";
+           
             //Học Vấn
             cboTrinhDo.Items.Add("Trung Cấp");
             cboTrinhDo.Items.Add("Cao Đẳng");
