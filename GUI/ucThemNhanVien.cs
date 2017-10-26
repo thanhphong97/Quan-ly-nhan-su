@@ -80,9 +80,7 @@ namespace GUI
         {
             string tenTN = txtTenTN.Text;
             string MQH = cboQuanHe.SelectedItem.ToString();
-            ListViewItem lv = new ListViewItem(tenTN);
-            lv.SubItems.Add(MQH);
-            lvwThanNhan.Items.Add(lv);
+            dataGridView1.Rows.Add(tenTN, MQH);
         }
 
         private void ucThemNhanVien_ControlRemoved(object sender, ControlEventArgs e)

@@ -137,6 +137,99 @@
   <ItemGroup>
     <None Include="Resources\manage.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396444119_Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396444461_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396445070_user-group-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396445209_Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396445912_edit_group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396445934_users_business.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396446350_Map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396446386_Map-Marker-Marker-Outside-Pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396446390_Map-Marker-Marker-Outside-Chartreuse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396446628_Map-Marker-Chequered-Flag-Left-Azure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396447029_companies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396447627_statistics_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396447935_system-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396448088_address-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396937759_binoculars_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1396937841_stock_save-as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup_data_database-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\degree-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help_book_support-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information_support-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_box_shipment_product-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_user_male_human_people-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phongban1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore_data_database-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound_speaker_music_volume-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thoát.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xóa.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -12,9 +12,32 @@ namespace GUI
 {
     public partial class frmThemNguoiDung : Form
     {
-        public frmThemNguoiDung()
+        private static frmThemNguoiDung _Instances = null;
+
+        public static frmThemNguoiDung Instances
+        {
+            get
+            {
+                if (_Instances == null)
+                    _Instances = new frmThemNguoiDung();
+                return frmThemNguoiDung._Instances; 
+            }
+            set { frmThemNguoiDung._Instances = value; }
+        }
+
+        private frmThemNguoiDung()
         {
             InitializeComponent();
+        }
+
+        private void frmThemNguoiDung_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmThemNguoiDung_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instances = null;
         }
     }
 }

@@ -83,13 +83,20 @@ namespace GUI
 
         private void mnuThemNguoiDung_Click(object sender, EventArgs e)
         {
-
+            frmThemNguoiDung frm = frmThemNguoiDung.Instances;
+            frm.Show();
+            //this.pnlMain.Controls.Add(frm);
         }
 
         private void tToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ucThemNhanVien ucTNV = ucThemNhanVien.Instances;
             this.pnlMain.Controls.Add(ucTNV);
+        }
+
+        private void mnuDSNghiPhep_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
