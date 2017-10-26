@@ -138,97 +138,97 @@
     <None Include="Resources\manage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396444119_Login.png" />
+    <None Include="Resources\1396444119_Login1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396444461_exit.png" />
+    <None Include="Resources\1396444461_exit1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396445070_user-group-new.png" />
+    <None Include="Resources\1396445070_user-group-new1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396445209_Refresh.png" />
+    <None Include="Resources\1396445209_Refresh1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396445912_edit_group.png" />
+    <None Include="Resources\1396445912_edit_group1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396445934_users_business.png" />
+    <None Include="Resources\1396445934_users_business1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396446350_Map.png" />
+    <None Include="Resources\1396446350_Map1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396446386_Map-Marker-Marker-Outside-Pink.png" />
+    <None Include="Resources\1396446386_Map-Marker-Marker-Outside-Pink1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396446390_Map-Marker-Marker-Outside-Chartreuse.png" />
+    <None Include="Resources\1396446390_Map-Marker-Marker-Outside-Chartreuse1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396446628_Map-Marker-Chequered-Flag-Left-Azure.png" />
+    <None Include="Resources\1396446628_Map-Marker-Chequered-Flag-Left-Azure1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396447029_companies.png" />
+    <None Include="Resources\1396447029_companies1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396447627_statistics_32.png" />
+    <None Include="Resources\1396447627_statistics_321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396447935_system-search.png" />
+    <None Include="Resources\1396447935_system-search1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396448088_address-book.png" />
+    <None Include="Resources\1396448088_address-book1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396937759_binoculars_32.png" />
+    <None Include="Resources\1396937759_binoculars_321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1396937841_stock_save-as.png" />
+    <None Include="Resources\1396937841_stock_save-as1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\backup_data_database-32.png" />
+    <None Include="Resources\backup_data_database-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\degree-32.png" />
+    <None Include="Resources\degree-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\help_book_support-32.png" />
+    <None Include="Resources\help_book_support-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\information_support-32.png" />
+    <None Include="Resources\information_support-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\inventory_box_shipment_product-32.png" />
+    <None Include="Resources\inventory_box_shipment_product-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\key-32.png" />
+    <None Include="Resources\key-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logout.png" />
+    <None Include="Resources\logout1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\man_user_male_human_people-32.png" />
+    <None Include="Resources\man_user_male_human_people-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\phongban1.png" />
+    <None Include="Resources\phongban11.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\restore_data_database-32.png" />
+    <None Include="Resources\restore_data_database-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Save.png" />
+    <None Include="Resources\Save1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sound_speaker_music_volume-32.png" />
+    <None Include="Resources\sound_speaker_music_volume-321.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sua.png" />
+    <None Include="Resources\sua1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\thoát.png" />
+    <None Include="Resources\thoát1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\xóa.png" />
+    <None Include="Resources\xóa1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,6 +16,15 @@ G:\Quan-ly-nhan-su\BUS\bin\Debug\DTO.pdb
 G:\Quan-ly-nhan-su\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 G:\Quan-ly-nhan-su\BUS\obj\Debug\BUS.dll
 G:\Quan-ly-nhan-su\BUS\obj\Debug\BUS.pdb
+G:\github\Quan-ly-nhan-su\BUS\bin\Debug\BUS.dll
+G:\github\Quan-ly-nhan-su\BUS\bin\Debug\BUS.pdb
+G:\github\Quan-ly-nhan-su\BUS\bin\Debug\DAO.dll
+G:\github\Quan-ly-nhan-su\BUS\bin\Debug\DTO.dll
+G:\github\Quan-ly-nhan-su\BUS\bin\Debug\DAO.pdb
+G:\github\Quan-ly-nhan-su\BUS\bin\Debug\DTO.pdb
+G:\github\Quan-ly-nhan-su\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+G:\github\Quan-ly-nhan-su\BUS\obj\Debug\BUS.dll
+G:\github\Quan-ly-nhan-su\BUS\obj\Debug\BUS.pdb
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\BUS\bin\Debug\BUS.dll
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\BUS\bin\Debug\BUS.pdb
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\BUS\bin\Debug\DAO.dll

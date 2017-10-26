@@ -39,15 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsChucVu.cs" />
-    <Compile Include="clsDanToc.cs" />
-    <Compile Include="clsLoaiND.cs" />
-    <Compile Include="clsNguoiDung.cs" />
+    <Compile Include="clsChucVu_DTO.cs" />
+    <Compile Include="clsDanToc_DTO.cs" />
+    <Compile Include="clsLoaiND_DTO.cs" />
+    <Compile Include="clsMoiQuanHe_DTO.cs" />
+    <Compile Include="clsNguoiDung_DTO.cs" />
     <Compile Include="clsNhanVien_DTO.cs" />
-    <Compile Include="clsPhongBan.cs" />
+    <Compile Include="clsPhongBan_DTO.cs" />
     <Compile Include="clsQuocTich_DTO.cs" />
-    <Compile Include="clsTinhQuanHuyen.cs" />
-    <Compile Include="clsTonGiao.cs" />
+    <Compile Include="clsTinhQuanHuyen_DTO.cs" />
+    <Compile Include="clsTonGiao_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
