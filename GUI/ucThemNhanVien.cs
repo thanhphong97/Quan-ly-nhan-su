@@ -13,19 +13,19 @@ namespace GUI
 {
     public partial class ucThemNhanVien : UserControl
     {
-        private static ucThemNhanVien _Instances = null;
+        //private static ucThemNhanVien _Instances = null;
 
-        public static ucThemNhanVien Instances
-        {
-            get
-            {
-                if (_Instances == null)
-                    _Instances = new ucThemNhanVien();
-                return ucThemNhanVien._Instances;
-            }
-            set { ucThemNhanVien._Instances = value; }
-        }
-        private ucThemNhanVien()
+        //public static ucThemNhanVien Instances
+        //{
+        //    get
+        //    {
+        //        if (_Instances == null)
+        //            _Instances = new ucThemNhanVien();
+        //        return ucThemNhanVien._Instances;
+        //    }
+        //    set { ucThemNhanVien._Instances = value; }
+        //}
+        public ucThemNhanVien()
         {
             InitializeComponent();
         }
@@ -86,7 +86,7 @@ namespace GUI
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            _Instances = null;
+            //_Instances = null;
             this.DestroyHandle();
         }
 

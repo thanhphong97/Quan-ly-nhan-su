@@ -20,6 +20,7 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
             RegisterMessageBoxManager();
             Application.Run(new frmMain());
+            
             UnregisterMessageBoxManager();
         }
 

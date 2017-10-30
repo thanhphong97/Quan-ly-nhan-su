@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -64,8 +66,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -84,6 +84,16 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(303, 612);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.HeaderText = "Mã NV";
+            this.colMaNV.Name = "colMaNV";
+            // 
+            // colHoTen
+            // 
+            this.colHoTen.HeaderText = "Họ Tên";
+            this.colHoTen.Name = "colHoTen";
             // 
             // button1
             // 
@@ -421,16 +431,6 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Phòng Ban";
             // 
-            // colMaNV
-            // 
-            this.colMaNV.HeaderText = "Mã NV";
-            this.colMaNV.Name = "colMaNV";
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.HeaderText = "Họ Tên";
-            this.colHoTen.Name = "colHoTen";
-            // 
             // groupBox3
             // 
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -455,6 +455,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ucDanhSachNhanVien";
             this.Size = new System.Drawing.Size(1137, 612);
+            this.Load += new System.EventHandler(this.ucDanhSachNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
