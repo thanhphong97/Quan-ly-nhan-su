@@ -56,6 +56,7 @@ G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\bin\Debug\GUI.exe.config
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.exe
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.pdb
+<<<<<<< HEAD
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\bin\Debug\GUI.exe
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\bin\Debug\GUI.pdb
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\bin\Debug\BUS.dll
@@ -72,3 +73,5 @@ D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nh
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucDanhSachNhanVien.resources
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNhanVien.resources
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+=======
+>>>>>>> pr/2

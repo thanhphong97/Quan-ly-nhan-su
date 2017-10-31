@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.mnuMain = new System.Windows.Forms.MenuStrip();
-            this.mnuAdmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuThemNguoiDung = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDSNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -41,9 +39,14 @@
             this.mnuTinhLuong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuyDnhLuong = new System.Windows.Forms.ToolStripMenuItem();
             this.grbThongTinUser = new System.Windows.Forms.GroupBox();
-            this.btnDangXuat = new System.Windows.Forms.Button();
             this.lblTenNguoiDung = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
+=======
+            this.btnDangXuat = new System.Windows.Forms.Button();
+            this.mnuAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuThemNguoiDung = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> pr/2
             this.mnuMain.SuspendLayout();
             this.grbThongTinUser.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +68,7 @@
             this.mnuMain.TabIndex = 0;
             this.mnuMain.Text = "menuStrip1";
             // 
+<<<<<<< HEAD
             // mnuAdmin
             // 
             this.mnuAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -81,6 +85,8 @@
             this.mnuThemNguoiDung.Text = "Thêm Người Dùng";
             this.mnuThemNguoiDung.Click += new System.EventHandler(this.mnuThemNguoiDung_Click);
             // 
+=======
+>>>>>>> pr/2
             // mnuNhanVien
             // 
             this.mnuNhanVien.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -140,7 +146,11 @@
             // 
             // mnuQuyDnhLuong
             // 
+<<<<<<< HEAD
             this.mnuQuyDnhLuong.Image = global::GUI.Properties.Resources.phongban1;
+=======
+            this.mnuQuyDnhLuong.Image = global::GUI.Properties.Resources.sua;
+>>>>>>> pr/2
             this.mnuQuyDnhLuong.Name = "mnuQuyDnhLuong";
             this.mnuQuyDnhLuong.Size = new System.Drawing.Size(173, 80);
             this.mnuQuyDnhLuong.Text = "Quy Định Lương";
@@ -155,16 +165,6 @@
             this.grbThongTinUser.TabIndex = 1;
             this.grbThongTinUser.TabStop = false;
             this.grbThongTinUser.Text = "User";
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.Image = global::GUI.Properties.Resources.DangXuat;
-            this.btnDangXuat.Location = new System.Drawing.Point(164, 12);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(48, 59);
-            this.btnDangXuat.TabIndex = 1;
-            this.btnDangXuat.UseVisualStyleBackColor = true;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // lblTenNguoiDung
             // 
@@ -182,6 +182,35 @@
             this.pnlMain.Size = new System.Drawing.Size(1129, 588);
             this.pnlMain.TabIndex = 2;
             // 
+<<<<<<< HEAD
+=======
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Image = global::GUI.Properties.Resources.DangXuat;
+            this.btnDangXuat.Location = new System.Drawing.Point(164, 12);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(48, 59);
+            this.btnDangXuat.TabIndex = 1;
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
+            // mnuAdmin
+            // 
+            this.mnuAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuThemNguoiDung});
+            this.mnuAdmin.Image = global::GUI.Properties.Resources._1396445934_users_business;
+            this.mnuAdmin.Name = "mnuAdmin";
+            this.mnuAdmin.Size = new System.Drawing.Size(176, 80);
+            this.mnuAdmin.Text = "ADMINISTRATOR";
+            // 
+            // mnuThemNguoiDung
+            // 
+            this.mnuThemNguoiDung.Name = "mnuThemNguoiDung";
+            this.mnuThemNguoiDung.Size = new System.Drawing.Size(191, 24);
+            this.mnuThemNguoiDung.Text = "Thêm Người Dùng";
+            this.mnuThemNguoiDung.Click += new System.EventHandler(this.mnuThemNguoiDung_Click);
+            // 
+>>>>>>> pr/2
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
