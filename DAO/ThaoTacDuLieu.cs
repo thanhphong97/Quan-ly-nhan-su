@@ -8,12 +8,8 @@ namespace DAO
 {
     public class ThaoTacDuLieu
     {
-<<<<<<< HEAD
-        static string strChuoiKetNoi = @"Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
-=======
        //static string strChuoiKetNoi = @"Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
        static string strChuoiKetNoi = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
->>>>>>> pr/4
        public static SqlConnection TaoVaMoKetNoi()
        {
            SqlConnection con = new SqlConnection(strChuoiKetNoi);
