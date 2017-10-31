@@ -35,18 +35,25 @@
             this.mnuQLNghiPhep = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDSNghiPhep = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+<<<<<<< HEAD
             this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+            this.mnuThemNhanVien = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> pr/4
             this.mnuTinhLuong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuyDnhLuong = new System.Windows.Forms.ToolStripMenuItem();
             this.grbThongTinUser = new System.Windows.Forms.GroupBox();
             this.lblTenNguoiDung = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.mnuAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThemNguoiDung = new System.Windows.Forms.ToolStripMenuItem();
 >>>>>>> pr/2
+=======
+>>>>>>> pr/4
             this.mnuMain.SuspendLayout();
             this.grbThongTinUser.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +71,7 @@
             this.mnuQuyDnhLuong});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(1129, 84);
+            this.mnuMain.Size = new System.Drawing.Size(1129, 88);
             this.mnuMain.TabIndex = 0;
             this.mnuMain.Text = "menuStrip1";
             // 
@@ -75,7 +82,11 @@
             this.mnuThemNguoiDung});
             this.mnuAdmin.Image = global::GUI.Properties.Resources._1396445934_users_business;
             this.mnuAdmin.Name = "mnuAdmin";
+<<<<<<< HEAD
             this.mnuAdmin.Size = new System.Drawing.Size(176, 80);
+=======
+            this.mnuAdmin.Size = new System.Drawing.Size(178, 84);
+>>>>>>> pr/4
             this.mnuAdmin.Text = "ADMINISTRATOR";
             // 
             // mnuThemNguoiDung
@@ -95,10 +106,17 @@
             this.mnuQLNghiPhep,
             this.mnuDSNghiPhep,
             this.toolStripSeparator2,
+<<<<<<< HEAD
             this.tToolStripMenuItem});
             this.mnuNhanVien.Image = global::GUI.Properties.Resources.man_user_male_human_people_32;
             this.mnuNhanVien.Name = "mnuNhanVien";
             this.mnuNhanVien.Size = new System.Drawing.Size(135, 80);
+=======
+            this.mnuThemNhanVien});
+            this.mnuNhanVien.Image = global::GUI.Properties.Resources.man_user_male_human_people_32;
+            this.mnuNhanVien.Name = "mnuNhanVien";
+            this.mnuNhanVien.Size = new System.Drawing.Size(135, 84);
+>>>>>>> pr/4
             this.mnuNhanVien.Text = "Nhân Viên";
             // 
             // mnuDSNhanVien
@@ -130,22 +148,36 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(208, 6);
             // 
+<<<<<<< HEAD
             // tToolStripMenuItem
             // 
             this.tToolStripMenuItem.Name = "tToolStripMenuItem";
             this.tToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
             this.tToolStripMenuItem.Text = "Thêm Nhân Viên";
             this.tToolStripMenuItem.Click += new System.EventHandler(this.tToolStripMenuItem_Click);
+=======
+            // mnuThemNhanVien
+            // 
+            this.mnuThemNhanVien.Name = "mnuThemNhanVien";
+            this.mnuThemNhanVien.Size = new System.Drawing.Size(211, 24);
+            this.mnuThemNhanVien.Text = "Thêm Nhân Viên";
+            this.mnuThemNhanVien.Click += new System.EventHandler(this.mnuThemNhanVien_Click);
+>>>>>>> pr/4
             // 
             // mnuTinhLuong
             // 
             this.mnuTinhLuong.Image = global::GUI.Properties.Resources.inventory_box_shipment_product_32;
             this.mnuTinhLuong.Name = "mnuTinhLuong";
+<<<<<<< HEAD
             this.mnuTinhLuong.Size = new System.Drawing.Size(139, 80);
+=======
+            this.mnuTinhLuong.Size = new System.Drawing.Size(139, 84);
+>>>>>>> pr/4
             this.mnuTinhLuong.Text = "Tiền Lương";
             // 
             // mnuQuyDnhLuong
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.mnuQuyDnhLuong.Image = global::GUI.Properties.Resources.phongban1;
 =======
@@ -153,6 +185,11 @@
 >>>>>>> pr/2
             this.mnuQuyDnhLuong.Name = "mnuQuyDnhLuong";
             this.mnuQuyDnhLuong.Size = new System.Drawing.Size(173, 80);
+=======
+            this.mnuQuyDnhLuong.Image = global::GUI.Properties.Resources.phongban1;
+            this.mnuQuyDnhLuong.Name = "mnuQuyDnhLuong";
+            this.mnuQuyDnhLuong.Size = new System.Drawing.Size(173, 84);
+>>>>>>> pr/4
             this.mnuQuyDnhLuong.Text = "Quy Định Lương";
             // 
             // grbThongTinUser
@@ -161,7 +198,7 @@
             this.grbThongTinUser.Controls.Add(this.lblTenNguoiDung);
             this.grbThongTinUser.Location = new System.Drawing.Point(910, 1);
             this.grbThongTinUser.Name = "grbThongTinUser";
-            this.grbThongTinUser.Size = new System.Drawing.Size(218, 77);
+            this.grbThongTinUser.Size = new System.Drawing.Size(218, 81);
             this.grbThongTinUser.TabIndex = 1;
             this.grbThongTinUser.TabStop = false;
             this.grbThongTinUser.Text = "User";
@@ -176,12 +213,14 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 84);
+            this.pnlMain.Location = new System.Drawing.Point(0, 88);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1129, 588);
+            this.pnlMain.Size = new System.Drawing.Size(1129, 549);
             this.pnlMain.TabIndex = 2;
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
             // btnDangXuat
@@ -211,11 +250,13 @@
             this.mnuThemNguoiDung.Click += new System.EventHandler(this.mnuThemNguoiDung_Click);
             // 
 >>>>>>> pr/2
+=======
+>>>>>>> pr/4
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 672);
+            this.ClientSize = new System.Drawing.Size(1129, 637);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.grbThongTinUser);
             this.Controls.Add(this.mnuMain);
@@ -251,7 +292,7 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.ToolStripMenuItem mnuThemNguoiDung;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem tToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuThemNhanVien;
     }
 }
 

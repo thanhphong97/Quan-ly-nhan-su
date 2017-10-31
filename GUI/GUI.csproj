@@ -85,6 +85,12 @@
     <Compile Include="ucDanhSachNhanVien.Designer.cs">
       <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucThemNguoiDung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThemNguoiDung.Designer.cs">
+      <DependentUpon>ucThemNguoiDung.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucThemNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <EmbeddedResource Include="ucDanhSachNhanVien.resx">
       <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucThemNguoiDung.resx">
+      <DependentUpon>ucThemNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucThemNhanVien.resx">
       <DependentUpon>ucThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,7 +134,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DangXuat.png" />
