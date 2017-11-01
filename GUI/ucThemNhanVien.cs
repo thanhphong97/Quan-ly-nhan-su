@@ -33,6 +33,9 @@ namespace GUI
         private void ucThemNhanVien_Load(object sender, EventArgs e)
         {
             LoadCbo();
+            this.Dock = DockStyle.Fill;
+            this.radNam.Checked = true;
+
         }
 
         private void LoadCbo()
@@ -52,19 +55,17 @@ namespace GUI
             cboQuocTich.Items.Add("Việt Nam");
             cboQuocTich.SelectedIndex= 0 ;
             //tôn giáo
-            cboTonGiao.Items.Add("Không");
+            
             clsTonGiao_BUS BUSTG = new clsTonGiao_BUS();
             cboTonGiao.DataSource = BUSTG.LayDanhSachTonGiao();
             cboTonGiao.DisplayMember = "TENTG";
             cboTonGiao.ValueMember = "MATG";
             //Mối quan hệ
             clsMoiQuanHe_BUS BUSMQH = new clsMoiQuanHe_BUS();
-            cboQuanHe.DataSource = BUSMQH.LayDanhSachMoiQuanHe();
-            cboQuanHe.DisplayMember = "TENMQH";
-            cboQuanHe.ValueMember = "MAMQH";
+            
             
             //Phòng Ban
-            cboPhongBan.Items.Add("Bảo Vệ");
+            
             clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
             cboPhongBan.DataSource = BUSPB.LayDanhSachPhongBan();
             cboPhongBan.DisplayMember = "TENPB";
@@ -99,11 +100,11 @@ namespace GUI
 
         private void btnThemThanNhan_Click(object sender, EventArgs e)
         {
-            string tenTN = txtTenTN.Text;
-            string MQH = cboQuanHe.SelectedItem.ToString();
-            ListViewItem lv = new ListViewItem(tenTN);
-            lv.SubItems.Add(MQH);
-            lvwThanNhan.Items.Add(lv);
+            //string tenTN = txtTenTN.Text;
+            //string MQH = cboQuanHe.SelectedItem.ToString();
+            //ListViewItem lv = new ListViewItem(tenTN);
+            //lv.SubItems.Add(MQH);
+            //lvwThanNhan.Items.Add(lv);
         }
 
         private void ucThemNhanVien_ControlRemoved(object sender, ControlEventArgs e)
@@ -138,7 +139,7 @@ namespace GUI
             //mã bậc cần có trong Database
             //Thông tin cơ bản ở công ty
             // mã phòng, mã chức vụ cần Database
-            nv.NgayBatDauLamViec = dtpNgayVaoLam.Value;
+            
             //Thông tin thân nhân
             //lưu vào bảng thân nhân sau khi đã insert Nhân Viên
             clsNhanVien_BUS bus = new clsNhanVien_BUS();
@@ -153,5 +154,11 @@ namespace GUI
         {
           //chặn nhập chữ
         }
+
+       
+
+        
+
+       
     }
 }
