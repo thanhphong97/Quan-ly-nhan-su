@@ -125,13 +125,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(562, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 31);
+            this.label1.Size = new System.Drawing.Size(350, 31);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Danh Sách Nhân Viên";
+            this.label1.Text = "DANH SÁCH NHÂN VIÊN";
             // 
             // groupBox1
             // 

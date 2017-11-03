@@ -155,6 +155,10 @@ namespace GUI
           //chặn nhập chữ
         }
 
+
+
+        
+
        
 
         

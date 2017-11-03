@@ -33,6 +33,7 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -42,7 +43,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(334, 173);
+            this.label1.Location = new System.Drawing.Point(327, 224);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 0;
@@ -54,10 +55,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenDN.Location = new System.Drawing.Point(492, 167);
+            this.txtTenDN.Location = new System.Drawing.Point(485, 218);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(264, 26);
             this.txtTenDN.TabIndex = 2;
+            this.txtTenDN.Text = "admin";
             // 
             // txtMatKhau
             // 
@@ -65,10 +67,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMatKhau.Location = new System.Drawing.Point(492, 204);
+            this.txtMatKhau.Location = new System.Drawing.Point(485, 255);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(264, 26);
             this.txtMatKhau.TabIndex = 4;
+            this.txtMatKhau.Text = "123";
             this.txtMatKhau.UseSystemPasswordChar = true;
             this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
             // 
@@ -79,7 +82,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(378, 213);
+            this.label2.Location = new System.Drawing.Point(371, 264);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 3;
@@ -93,7 +96,7 @@
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDangNhap.Image = global::GUI.Properties.Resources.DangNhap;
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDangNhap.Location = new System.Drawing.Point(492, 263);
+            this.btnDangNhap.Location = new System.Drawing.Point(485, 314);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(264, 48);
             this.btnDangNhap.TabIndex = 1;
@@ -103,10 +106,22 @@
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.Green;
+            this.label3.Location = new System.Drawing.Point(313, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(523, 39);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "PHẦN MỀM QUẢN LÝ NHÂN SỰ";
+            // 
             // ucDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTenDN);
@@ -127,5 +142,6 @@
         private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

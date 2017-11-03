@@ -50,7 +50,8 @@ namespace GUI
             // Trạng thái đã đăng nhập thành công
             mnuMain.Enabled = true;
             btnDangXuat.Enabled = true;
-
+            ucThemNhanVien ucThemNV = new ucThemNhanVien();
+            this.pnlMain.Controls.Add(ucThemNV);
             // Hiện thị thông tin người đang đăng nhập
             //lblTenNguoiDung.Text = nv.HoTen
         }
@@ -74,6 +75,7 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn muốn thoát chương trình?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
+                this.DestroyHandle();
                 e.Cancel = true;
             }
         }

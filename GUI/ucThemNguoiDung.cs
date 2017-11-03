@@ -31,10 +31,10 @@ namespace GUI
             this.DestroyHandle();
         }
 
-        
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
 
-        
+        }
 
-        
     }
 }

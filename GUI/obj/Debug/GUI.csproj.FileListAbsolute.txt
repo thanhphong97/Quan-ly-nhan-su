@@ -53,8 +53,12 @@ D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nh
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucDanhSachNhanVien.resources
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNhanVien.resources
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
-G:\github\Quan-ly-nhan-su\GUI\bin\Debug\GUI.exe
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.frmThemNguoiDung.resources
+G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNguoiDung.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNguoiDung.resources
 G:\github\Quan-ly-nhan-su\GUI\bin\Debug\GUI.exe.config
+G:\github\Quan-ly-nhan-su\GUI\bin\Debug\GUI.exe
+G:\github\Quan-ly-nhan-su\GUI\bin\Debug\GUI.pdb
 G:\github\Quan-ly-nhan-su\GUI\bin\Debug\BUS.dll
 G:\github\Quan-ly-nhan-su\GUI\bin\Debug\DTO.dll
 G:\github\Quan-ly-nhan-su\GUI\bin\Debug\DAO.dll
@@ -72,7 +76,3 @@ G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNhanVien.resources
 G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.exe
 G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.pdb
-G:\github\Quan-ly-nhan-su\GUI\bin\Debug\GUI.pdb
-G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.frmThemNguoiDung.resources
-G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNguoiDung.resources
-D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNguoiDung.resources
