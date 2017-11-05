@@ -28,23 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDangXuat = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.mnuMain = new System.Windows.Forms.MenuStrip();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.mnuAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThemNguoiDung = new System.Windows.Forms.ToolStripMenuItem();
+            this.saoLưuDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.khôiPhụcDữLieu65ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThemNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuDSNghiPhep = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuTinhLuong = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuQuyDnhLuong = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.chấmCôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saoLưuDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.khôiPhụcDữLieu65ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQuyDnhLuong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 61);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1129, 576);
+            this.pnlMain.TabIndex = 2;
+            // 
+            // mnuMain
+            // 
+            this.mnuMain.AutoSize = false;
+            this.mnuMain.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.mnuMain.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mnuMain.ImageScalingSize = new System.Drawing.Size(55, 55);
+            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAdmin,
+            this.mnuNhanVien,
+            this.mnuTinhLuong,
+            this.mnuQuyDnhLuong});
+            this.mnuMain.Location = new System.Drawing.Point(0, 0);
+            this.mnuMain.Name = "mnuMain";
+            this.mnuMain.Size = new System.Drawing.Size(1129, 61);
+            this.mnuMain.TabIndex = 0;
+            this.mnuMain.Text = "menuStrip1";
             // 
             // btnDangXuat
             // 
@@ -58,15 +84,6 @@
             this.btnDangXuat.UseVisualStyleBackColor = true;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
-            // pnlMain
-            // 
-            this.pnlMain.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 61);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1129, 576);
-            this.pnlMain.TabIndex = 2;
-            // 
             // mnuAdmin
             // 
             this.mnuAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -75,7 +92,7 @@
             this.khôiPhụcDữLieu65ToolStripMenuItem});
             this.mnuAdmin.Image = global::GUI.Properties.Resources._1396445934_users_business;
             this.mnuAdmin.Name = "mnuAdmin";
-            this.mnuAdmin.Size = new System.Drawing.Size(137, 57);
+            this.mnuAdmin.Size = new System.Drawing.Size(136, 57);
             this.mnuAdmin.Text = "Quản Trị";
             // 
             // mnuThemNguoiDung
@@ -84,6 +101,18 @@
             this.mnuThemNguoiDung.Size = new System.Drawing.Size(209, 26);
             this.mnuThemNguoiDung.Text = "Thêm Người Dùng";
             this.mnuThemNguoiDung.Click += new System.EventHandler(this.mnuThemNguoiDung_Click);
+            // 
+            // saoLưuDữLiệuToolStripMenuItem
+            // 
+            this.saoLưuDữLiệuToolStripMenuItem.Name = "saoLưuDữLiệuToolStripMenuItem";
+            this.saoLưuDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.saoLưuDữLiệuToolStripMenuItem.Text = "Sao Lưu Dữ Liệu";
+            // 
+            // khôiPhụcDữLieu65ToolStripMenuItem
+            // 
+            this.khôiPhụcDữLieu65ToolStripMenuItem.Name = "khôiPhụcDữLieu65ToolStripMenuItem";
+            this.khôiPhụcDữLieu65ToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.khôiPhụcDữLieu65ToolStripMenuItem.Text = "Khôi Phục Dữ Liệu";
             // 
             // mnuNhanVien
             // 
@@ -94,7 +123,7 @@
             this.toolStripSeparator2});
             this.mnuNhanVien.Image = global::GUI.Properties.Resources.man_user_male_human_people_32;
             this.mnuNhanVien.Name = "mnuNhanVien";
-            this.mnuNhanVien.Size = new System.Drawing.Size(150, 71);
+            this.mnuNhanVien.Size = new System.Drawing.Size(150, 57);
             this.mnuNhanVien.Text = "Nhân Viên";
             // 
             // mnuThemNhanVien
@@ -126,32 +155,8 @@
             this.chấmCôngToolStripMenuItem});
             this.mnuTinhLuong.Image = global::GUI.Properties.Resources.inventory_box_shipment_product_32;
             this.mnuTinhLuong.Name = "mnuTinhLuong";
-            this.mnuTinhLuong.Size = new System.Drawing.Size(155, 71);
+            this.mnuTinhLuong.Size = new System.Drawing.Size(155, 57);
             this.mnuTinhLuong.Text = "Tiền Lương";
-            // 
-            // mnuQuyDnhLuong
-            // 
-            this.mnuQuyDnhLuong.Image = global::GUI.Properties.Resources.phongban1;
-            this.mnuQuyDnhLuong.Name = "mnuQuyDnhLuong";
-            this.mnuQuyDnhLuong.Size = new System.Drawing.Size(192, 71);
-            this.mnuQuyDnhLuong.Text = "Quy Định Lương";
-            // 
-            // mnuMain
-            // 
-            this.mnuMain.AutoSize = false;
-            this.mnuMain.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.mnuMain.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.mnuMain.ImageScalingSize = new System.Drawing.Size(55, 55);
-            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuAdmin,
-            this.mnuNhanVien,
-            this.mnuTinhLuong,
-            this.mnuQuyDnhLuong});
-            this.mnuMain.Location = new System.Drawing.Point(0, 0);
-            this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(1129, 61);
-            this.mnuMain.TabIndex = 0;
-            this.mnuMain.Text = "menuStrip1";
             // 
             // chấmCôngToolStripMenuItem
             // 
@@ -159,17 +164,13 @@
             this.chấmCôngToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.chấmCôngToolStripMenuItem.Text = "Chấm Công";
             // 
-            // saoLưuDữLiệuToolStripMenuItem
+            // mnuQuyDnhLuong
             // 
-            this.saoLưuDữLiệuToolStripMenuItem.Name = "saoLưuDữLiệuToolStripMenuItem";
-            this.saoLưuDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
-            this.saoLưuDữLiệuToolStripMenuItem.Text = "Sao Lưu Dữ Liệu";
-            // 
-            // khôiPhụcDữLieu65ToolStripMenuItem
-            // 
-            this.khôiPhụcDữLieu65ToolStripMenuItem.Name = "khôiPhụcDữLieu65ToolStripMenuItem";
-            this.khôiPhụcDữLieu65ToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
-            this.khôiPhụcDữLieu65ToolStripMenuItem.Text = "Khôi Phục Dữ Liệu";
+            this.mnuQuyDnhLuong.Image = global::GUI.Properties.Resources.phongban1;
+            this.mnuQuyDnhLuong.Name = "mnuQuyDnhLuong";
+            this.mnuQuyDnhLuong.Size = new System.Drawing.Size(192, 57);
+            this.mnuQuyDnhLuong.Text = "Quy Định Lương";
+            this.mnuQuyDnhLuong.Click += new System.EventHandler(this.mnuQuyDnhLuong_Click);
             // 
             // frmMain
             // 

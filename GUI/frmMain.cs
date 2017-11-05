@@ -137,6 +137,29 @@ namespace GUI
             }
         
             
+        }
+
+        private void mnuQuyDnhLuong_Click(object sender, EventArgs e)
+        {
+            ucQuyDinhLuong ucTNV;
+            ucQuyDinhLuong c = pnlMain.Controls.Find("ucQuyDinhLuong", false).FirstOrDefault() as ucQuyDinhLuong;
+
+            if (c == null)
+            {
+                ucTNV = new ucQuyDinhLuong();
+                pnlMain.Controls.Add(ucTNV);
+            }
+            else
+            {
+                c.Show();
+            }
+            foreach (Control ctrl in pnlMain.Controls)
+            {
+                if (ctrl.Name != "ucQuyDinhLuong")
+                {
+                    ctrl.Hide();
+                }
+            }
         }   
     }
 }
