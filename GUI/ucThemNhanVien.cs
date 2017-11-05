@@ -13,18 +13,6 @@ namespace GUI
 {
     public partial class ucThemNhanVien : UserControl
     {
-        //private static ucThemNhanVien _Instances = null;
-
-        //public static ucThemNhanVien Instances
-        //{
-        //    get
-        //    {
-        //        if (_Instances == null)
-        //            _Instances = new ucThemNhanVien();
-        //        return ucThemNhanVien._Instances;
-        //    }
-        //    set { ucThemNhanVien._Instances = value; }
-        //}
         public ucThemNhanVien()
         {
             InitializeComponent();
@@ -41,7 +29,6 @@ namespace GUI
         private void LoadCbo()
         {
             //Tỉnh 
-            
             clsTinhQuanHuyen_BUS BUSQH = new clsTinhQuanHuyen_BUS();
             cboTinh.DataSource = BUSQH.LayDanhSachTinhThanh();
             cboTinh.DisplayMember = "TENTINH";
@@ -61,11 +48,8 @@ namespace GUI
             cboTonGiao.DisplayMember = "TENTG";
             cboTonGiao.ValueMember = "MATG";
             //Mối quan hệ
-            clsMoiQuanHe_BUS BUSMQH = new clsMoiQuanHe_BUS();
-            
-            
+            clsMoiQuanHe_BUS BUSMQH = new clsMoiQuanHe_BUS();  
             //Phòng Ban
-            
             clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
             cboPhongBan.DataSource = BUSPB.LayDanhSachPhongBan();
             cboPhongBan.DisplayMember = "TENPB";
@@ -77,11 +61,10 @@ namespace GUI
             cboChucVu.ValueMember = "MACV";
            
             //Học Vấn
-            cboTrinhDo.Items.Add("Trung Cấp");
-            cboTrinhDo.Items.Add("Cao Đẳng");
-            cboTrinhDo.Items.Add("Đại Học");
-            cboTrinhDo.Items.Add("Cấp 2");
-            cboTrinhDo.Items.Add("Cấp 3");
+            clsBangCap_BUS BUSBC = new clsBangCap_BUS();
+            cboTrinhDo.DataSource = BUSBC.LayDanhSachBangCap();
+            cboTrinhDo.DisplayMember = "TENBC";
+            cboTrinhDo.ValueMember = "MABC";
 
         }
 

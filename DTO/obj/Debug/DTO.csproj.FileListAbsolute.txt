@@ -17,3 +17,4 @@ G:\github\Quan-ly-nhan-su\DTO\bin\Debug\DTO.dll
 G:\github\Quan-ly-nhan-su\DTO\bin\Debug\DTO.pdb
 G:\github\Quan-ly-nhan-su\DTO\obj\Debug\DTO.dll
 G:\github\Quan-ly-nhan-su\DTO\obj\Debug\DTO.pdb
+G:\github\Quan-ly-nhan-su\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache

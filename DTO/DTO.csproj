@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsBangCap_DTO.cs" />
     <Compile Include="clsChucVu_DTO.cs" />
     <Compile Include="clsDanToc_DTO.cs" />
     <Compile Include="clsLoaiND_DTO.cs" />
