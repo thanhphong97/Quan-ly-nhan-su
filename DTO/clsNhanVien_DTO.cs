@@ -149,6 +149,14 @@ namespace DTO
             set { _QuyDinhLuong = value; }
         }
 
+        private bool _TrangThai;
+
+        public bool TrangThai
+        {
+            get { return _TrangThai; }
+            set { _TrangThai = value; }
+        }
+
 
     }
 }
