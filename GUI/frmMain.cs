@@ -56,10 +56,7 @@ namespace GUI
             //lblTenNguoiDung.Text = nv.HoTen
         }
 
-        private void thêmNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
@@ -75,15 +72,11 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn muốn thoát chương trình?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
-                this.DestroyHandle();
                 e.Cancel = true;
             }
         }
 
-        private void mnuDSNhanVien_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void mnuThemNguoiDung_Click(object sender, EventArgs e)
         {
