@@ -36,7 +36,7 @@ namespace GUI
         #region Kiểm tr các thứ
         private bool KiemTraDayDu()
         {
-           if(cboMaNV.Text == "" || txtTenDN.Text == "" || txtMatKhau.Text == "")
+           if(txtMaNV.Text == "" || txtTenDN.Text == "" || txtMatKhau.Text == "")
            {
                MessageBox.Show("Vui lòng nhập đầy đủ các trường", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                return false;
@@ -76,7 +76,7 @@ namespace GUI
             if(KiemTraDayDu() && KiemTraTrungKhopMatKhau())
             {
                 clsNguoiDung_DTO nd = new clsNguoiDung_DTO();
-                nd.MANV = cboMaNV.SelectedText;
+                nd.MANV = txtMaNV.Text;
                 nd.TAIKHOAN = txtTenDN.Text;
                 nd.MATKHAU = txtMatKhau.Text;
                 nd.TRANGTHAI = true;
@@ -86,6 +86,7 @@ namespace GUI
                 if(kq)
                 {
                     MessageBox.Show("Tao nguời dùng " + nd.TAIKHOAN + " Thành công","THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadDuLieu();
                     return;
                 }
             }

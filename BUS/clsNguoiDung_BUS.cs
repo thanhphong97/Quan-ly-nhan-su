@@ -17,7 +17,8 @@ namespace BUS
 
         public bool TaoTaiKhoan(clsNguoiDung_DTO nd)
         {
-            return true;
+            clsNguoiDung_DAO dao = new clsNguoiDung_DAO();
+            return dao.TaoTaiKhoan(nd);
         }
     }
 }

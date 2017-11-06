@@ -31,26 +31,17 @@ namespace DAO
             ThaoTacDuLieu.DongKetNoi(con);
             return lsNguoiDung;
         }
-        public List<clsNguoiDung_DTO> DanhSachNguoiDung(string a)
+       
+
+        public bool TaoTaiKhoan(clsNguoiDung_DTO nd)
         {
-            List<clsNguoiDung_DTO> lsNguoiDung = new List<clsNguoiDung_DTO>();
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = "SELECT TAIKHOAN, LOAIND, MANV FROM NGUOIDUNG WHERE TRANGTHAI = 1";
+            string sql = string.Format("INSERT INTO NGUOIDUNG(TAIKHOAN, MATKHAU, LOAIND, MANV, TRANGTHAI) VALUES('{0}','{1}','{2}','{3}','{4}')", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                clsNguoiDung_DTO nd = new clsNguoiDung_DTO();
-                if (!dr.IsDBNull(0))
-                    nd.TAIKHOAN = dr.GetString(0);
-                if (!dr.IsDBNull(1))
-                    nd.LOAIND = dr.GetString(1);
-                if (!dr.IsDBNull(2))
-                    nd.MANV = dr.GetString(2);
-                lsNguoiDung.Add(nd);
-            }
-            ThaoTacDuLieu.DongKetNoi(con);
-            return lsNguoiDung;
+            int rowaff = cmd.ExecuteNonQuery();
+            if (rowaff == 0)
+                return false;
+            return true;
         }
     }
 }

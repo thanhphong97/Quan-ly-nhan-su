@@ -39,7 +39,6 @@
             this.grbThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
             this.txtXacNhanMK = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboMaNV = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.colMANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.grbPhanQuyen.SuspendLayout();
             this.grbThongTinTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -132,9 +132,9 @@
             // 
             // grbThongTinTaiKhoan
             // 
+            this.grbThongTinTaiKhoan.Controls.Add(this.txtMaNV);
             this.grbThongTinTaiKhoan.Controls.Add(this.txtXacNhanMK);
             this.grbThongTinTaiKhoan.Controls.Add(this.label4);
-            this.grbThongTinTaiKhoan.Controls.Add(this.cboMaNV);
             this.grbThongTinTaiKhoan.Controls.Add(this.label3);
             this.grbThongTinTaiKhoan.Controls.Add(this.txtMatKhau);
             this.grbThongTinTaiKhoan.Controls.Add(this.label1);
@@ -167,15 +167,6 @@
             this.label4.Size = new System.Drawing.Size(135, 18);
             this.label4.TabIndex = 6;
             this.label4.Text = "Xác nhận mật khẩu";
-            // 
-            // cboMaNV
-            // 
-            this.cboMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cboMaNV.FormattingEnabled = true;
-            this.cboMaNV.Location = new System.Drawing.Point(175, 35);
-            this.cboMaNV.Name = "cboMaNV";
-            this.cboMaNV.Size = new System.Drawing.Size(215, 32);
-            this.cboMaNV.TabIndex = 5;
             // 
             // label3
             // 
@@ -281,7 +272,7 @@
             this.colMANV.HeaderText = "Mã NV";
             this.colMANV.Name = "colMANV";
             this.colMANV.ReadOnly = true;
-            this.colMANV.Width = 75;
+            this.colMANV.Width = 52;
             // 
             // colTenDN
             // 
@@ -298,6 +289,14 @@
             this.colQuyen.HeaderText = "Quyền";
             this.colQuyen.Name = "colQuyen";
             this.colQuyen.ReadOnly = true;
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaNV.Location = new System.Drawing.Point(175, 38);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(215, 29);
+            this.txtMaNV.TabIndex = 8;
             // 
             // ucThemNguoiDung
             // 
@@ -331,7 +330,6 @@
         private System.Windows.Forms.GroupBox grbThongTinTaiKhoan;
         private System.Windows.Forms.TextBox txtXacNhanMK;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboMaNV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label label1;
@@ -346,5 +344,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMANV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuyen;
+        private System.Windows.Forms.TextBox txtMaNV;
     }
 }
