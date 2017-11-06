@@ -30,7 +30,6 @@
         {
             this.pnlMain = new System.Windows.Forms.Panel();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
-            this.btnDangXuat = new System.Windows.Forms.Button();
             this.mnuAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThemNguoiDung = new System.Windows.Forms.ToolStripMenuItem();
             this.saoLưuDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +42,7 @@
             this.mnuTinhLuong = new System.Windows.Forms.ToolStripMenuItem();
             this.chấmCôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuyDnhLuong = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,18 +71,6 @@
             this.mnuMain.Size = new System.Drawing.Size(1129, 61);
             this.mnuMain.TabIndex = 0;
             this.mnuMain.Text = "menuStrip1";
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDangXuat.Image = global::GUI.Properties.Resources.DangXuat;
-            this.btnDangXuat.Location = new System.Drawing.Point(1052, 0);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(74, 61);
-            this.btnDangXuat.TabIndex = 1;
-            this.btnDangXuat.UseVisualStyleBackColor = true;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // mnuAdmin
             // 
@@ -171,6 +159,18 @@
             this.mnuQuyDnhLuong.Size = new System.Drawing.Size(192, 57);
             this.mnuQuyDnhLuong.Text = "Quy Định Lương";
             this.mnuQuyDnhLuong.Click += new System.EventHandler(this.mnuQuyDnhLuong_Click);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangXuat.Image = global::GUI.Properties.Resources.DangXuat;
+            this.btnDangXuat.Location = new System.Drawing.Point(1052, 0);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(74, 61);
+            this.btnDangXuat.TabIndex = 1;
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // frmMain
             // 

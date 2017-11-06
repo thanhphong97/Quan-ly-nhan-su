@@ -31,21 +31,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.grbPhanQuyen = new System.Windows.Forms.GroupBox();
+            this.radAdministrator = new System.Windows.Forms.RadioButton();
+            this.radTraCuu = new System.Windows.Forms.RadioButton();
+            this.radNhanVienKeToan = new System.Windows.Forms.RadioButton();
             this.grbThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtXacNhanMK = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboMaNV = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radNhanVienKeToan = new System.Windows.Forms.RadioButton();
-            this.radTraCuu = new System.Windows.Forms.RadioButton();
-            this.radAdministrator = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtTenDN = new System.Windows.Forms.TextBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.colMANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,16 +67,16 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnCapNhat
+            // btnThem
             // 
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCapNhat.Location = new System.Drawing.Point(744, 375);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(107, 46);
-            this.btnCapNhat.TabIndex = 10;
-            this.btnCapNhat.Text = "Thêm";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.Location = new System.Drawing.Point(744, 375);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(107, 46);
+            this.btnThem.TabIndex = 10;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // grbPhanQuyen
             // 
@@ -92,16 +92,54 @@
             this.grbPhanQuyen.TabStop = false;
             this.grbPhanQuyen.Text = "Phân Quyền";
             // 
+            // radAdministrator
+            // 
+            this.radAdministrator.AutoSize = true;
+            this.radAdministrator.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radAdministrator.ForeColor = System.Drawing.Color.Black;
+            this.radAdministrator.Location = new System.Drawing.Point(12, 33);
+            this.radAdministrator.Name = "radAdministrator";
+            this.radAdministrator.Size = new System.Drawing.Size(113, 22);
+            this.radAdministrator.TabIndex = 6;
+            this.radAdministrator.Text = "Administrator";
+            this.radAdministrator.UseVisualStyleBackColor = true;
+            // 
+            // radTraCuu
+            // 
+            this.radTraCuu.AutoSize = true;
+            this.radTraCuu.Checked = true;
+            this.radTraCuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radTraCuu.ForeColor = System.Drawing.Color.Black;
+            this.radTraCuu.Location = new System.Drawing.Point(12, 124);
+            this.radTraCuu.Name = "radTraCuu";
+            this.radTraCuu.Size = new System.Drawing.Size(76, 22);
+            this.radTraCuu.TabIndex = 5;
+            this.radTraCuu.TabStop = true;
+            this.radTraCuu.Text = "Tra cứu";
+            this.radTraCuu.UseVisualStyleBackColor = true;
+            // 
+            // radNhanVienKeToan
+            // 
+            this.radNhanVienKeToan.AutoSize = true;
+            this.radNhanVienKeToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radNhanVienKeToan.ForeColor = System.Drawing.Color.Black;
+            this.radNhanVienKeToan.Location = new System.Drawing.Point(12, 79);
+            this.radNhanVienKeToan.Name = "radNhanVienKeToan";
+            this.radNhanVienKeToan.Size = new System.Drawing.Size(144, 22);
+            this.radNhanVienKeToan.TabIndex = 4;
+            this.radNhanVienKeToan.Text = "Nhân viên kế toán";
+            this.radNhanVienKeToan.UseVisualStyleBackColor = true;
+            // 
             // grbThongTinTaiKhoan
             // 
-            this.grbThongTinTaiKhoan.Controls.Add(this.textBox3);
+            this.grbThongTinTaiKhoan.Controls.Add(this.txtXacNhanMK);
             this.grbThongTinTaiKhoan.Controls.Add(this.label4);
-            this.grbThongTinTaiKhoan.Controls.Add(this.comboBox1);
+            this.grbThongTinTaiKhoan.Controls.Add(this.cboMaNV);
             this.grbThongTinTaiKhoan.Controls.Add(this.label3);
-            this.grbThongTinTaiKhoan.Controls.Add(this.textBox2);
+            this.grbThongTinTaiKhoan.Controls.Add(this.txtMatKhau);
             this.grbThongTinTaiKhoan.Controls.Add(this.label1);
             this.grbThongTinTaiKhoan.Controls.Add(this.label2);
-            this.grbThongTinTaiKhoan.Controls.Add(this.textBox1);
+            this.grbThongTinTaiKhoan.Controls.Add(this.txtTenDN);
             this.grbThongTinTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grbThongTinTaiKhoan.ForeColor = System.Drawing.Color.Purple;
             this.grbThongTinTaiKhoan.Location = new System.Drawing.Point(682, 90);
@@ -111,13 +149,13 @@
             this.grbThongTinTaiKhoan.TabStop = false;
             this.grbThongTinTaiKhoan.Text = "Thông tin tài khoản";
             // 
-            // textBox3
+            // txtXacNhanMK
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox3.Location = new System.Drawing.Point(175, 168);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(215, 29);
-            this.textBox3.TabIndex = 7;
+            this.txtXacNhanMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtXacNhanMK.Location = new System.Drawing.Point(175, 168);
+            this.txtXacNhanMK.Name = "txtXacNhanMK";
+            this.txtXacNhanMK.Size = new System.Drawing.Size(215, 29);
+            this.txtXacNhanMK.TabIndex = 7;
             // 
             // label4
             // 
@@ -130,14 +168,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Xác nhận mật khẩu";
             // 
-            // comboBox1
+            // cboMaNV
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(175, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 32);
-            this.comboBox1.TabIndex = 5;
+            this.cboMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboMaNV.FormattingEnabled = true;
+            this.cboMaNV.Location = new System.Drawing.Point(175, 35);
+            this.cboMaNV.Name = "cboMaNV";
+            this.cboMaNV.Size = new System.Drawing.Size(215, 32);
+            this.cboMaNV.TabIndex = 5;
             // 
             // label3
             // 
@@ -150,13 +188,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Cấp cho nhân viên";
             // 
-            // textBox2
+            // txtMatKhau
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.Location = new System.Drawing.Point(175, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 29);
-            this.textBox2.TabIndex = 3;
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMatKhau.Location = new System.Drawing.Point(175, 124);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(215, 29);
+            this.txtMatKhau.TabIndex = 3;
             // 
             // label1
             // 
@@ -180,62 +218,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật khẩu";
             // 
-            // textBox1
+            // txtTenDN
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(175, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 29);
-            this.textBox1.TabIndex = 1;
+            this.txtTenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenDN.Location = new System.Drawing.Point(175, 81);
+            this.txtTenDN.Name = "txtTenDN";
+            this.txtTenDN.Size = new System.Drawing.Size(215, 29);
+            this.txtTenDN.TabIndex = 1;
             // 
-            // radNhanVienKeToan
+            // btnCapNhat
             // 
-            this.radNhanVienKeToan.AutoSize = true;
-            this.radNhanVienKeToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radNhanVienKeToan.ForeColor = System.Drawing.Color.Black;
-            this.radNhanVienKeToan.Location = new System.Drawing.Point(12, 79);
-            this.radNhanVienKeToan.Name = "radNhanVienKeToan";
-            this.radNhanVienKeToan.Size = new System.Drawing.Size(144, 22);
-            this.radNhanVienKeToan.TabIndex = 4;
-            this.radNhanVienKeToan.TabStop = true;
-            this.radNhanVienKeToan.Text = "Nhân viên kế toán";
-            this.radNhanVienKeToan.UseVisualStyleBackColor = true;
-            // 
-            // radTraCuu
-            // 
-            this.radTraCuu.AutoSize = true;
-            this.radTraCuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radTraCuu.ForeColor = System.Drawing.Color.Black;
-            this.radTraCuu.Location = new System.Drawing.Point(12, 124);
-            this.radTraCuu.Name = "radTraCuu";
-            this.radTraCuu.Size = new System.Drawing.Size(76, 22);
-            this.radTraCuu.TabIndex = 5;
-            this.radTraCuu.TabStop = true;
-            this.radTraCuu.Text = "Tra cứu";
-            this.radTraCuu.UseVisualStyleBackColor = true;
-            // 
-            // radAdministrator
-            // 
-            this.radAdministrator.AutoSize = true;
-            this.radAdministrator.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radAdministrator.ForeColor = System.Drawing.Color.Black;
-            this.radAdministrator.Location = new System.Drawing.Point(12, 33);
-            this.radAdministrator.Name = "radAdministrator";
-            this.radAdministrator.Size = new System.Drawing.Size(113, 22);
-            this.radAdministrator.TabIndex = 6;
-            this.radAdministrator.TabStop = true;
-            this.radAdministrator.Text = "Administrator";
-            this.radAdministrator.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(857, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 46);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Lưu lại";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCapNhat.Location = new System.Drawing.Point(857, 375);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(107, 46);
+            this.btnCapNhat.TabIndex = 12;
+            this.btnCapNhat.Text = "Lưu lại";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -276,6 +275,7 @@
             // colMANV
             // 
             this.colMANV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colMANV.DataPropertyName = "MANV";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.colMANV.DefaultCellStyle = dataGridViewCellStyle2;
             this.colMANV.HeaderText = "Mã NV";
@@ -286,6 +286,7 @@
             // colTenDN
             // 
             this.colTenDN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenDN.DataPropertyName = "TAIKHOAN";
             this.colTenDN.HeaderText = "Tên đăng nhập";
             this.colTenDN.Name = "colTenDN";
             this.colTenDN.ReadOnly = true;
@@ -293,6 +294,7 @@
             // colQuyen
             // 
             this.colQuyen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colQuyen.DataPropertyName = "LOAIND";
             this.colQuyen.HeaderText = "Quyền";
             this.colQuyen.Name = "colQuyen";
             this.colQuyen.ReadOnly = true;
@@ -303,9 +305,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.grbPhanQuyen);
             this.Controls.Add(this.grbThongTinTaiKhoan);
             this.Name = "ucThemNguoiDung";
@@ -324,21 +326,21 @@
         #endregion
 
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grbPhanQuyen;
         private System.Windows.Forms.GroupBox grbThongTinTaiKhoan;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtXacNhanMK;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboMaNV;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.RadioButton radAdministrator;
         private System.Windows.Forms.RadioButton radTraCuu;
         private System.Windows.Forms.RadioButton radNhanVienKeToan;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMANV;
