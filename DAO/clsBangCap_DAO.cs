@@ -27,9 +27,6 @@ namespace DAO
             }
             ThaoTacDuLieu.DongKetNoi(conn);
             return lsBangCap;
-
         }
-        
-
     }
 }

@@ -47,17 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBangChamCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBangChamCong.Designer.cs">
+      <DependentUpon>frmBangChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmThemNguoiDung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThemNguoiDung.Designer.cs">
-      <DependentUpon>frmThemNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageBoxManager.cs" />
     <Compile Include="Program.cs" />
@@ -79,6 +85,12 @@
     <Compile Include="ucDanhSachNhanVien.Designer.cs">
       <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucQuyDinhLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQuyDinhLuong.Designer.cs">
+      <DependentUpon>ucQuyDinhLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucThemNguoiDung.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,11 +103,20 @@
     <Compile Include="ucThemNhanVien.Designer.cs">
       <DependentUpon>ucThemNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucTienLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTienLuong.Designer.cs">
+      <DependentUpon>ucTienLuong.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmBangChamCong.resx">
+      <DependentUpon>frmBangChamCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThemNguoiDung.resx">
-      <DependentUpon>frmThemNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,11 +129,17 @@
     <EmbeddedResource Include="ucDanhSachNhanVien.resx">
       <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucQuyDinhLuong.resx">
+      <DependentUpon>ucQuyDinhLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucThemNguoiDung.resx">
       <DependentUpon>ucThemNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucThemNhanVien.resx">
       <DependentUpon>ucThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTienLuong.resx">
+      <DependentUpon>ucTienLuong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -134,16 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DangNhap.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BUS\BUS.csproj">
-      <Project>{6f5aabe9-a93d-4b6f-8914-65afeb3e1dd6}</Project>
-      <Name>BUS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{8559a31c-9adf-456b-9961-217ca77dd152}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\manage.jpg" />
@@ -240,6 +257,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\xóa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{6f5aabe9-a93d-4b6f-8914-65afeb3e1dd6}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{8559a31c-9adf-456b-9961-217ca77dd152}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -75,7 +75,6 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn muốn thoát chương trình?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
-                this.DestroyHandle();
                 e.Cancel = true;
             }
         }
@@ -137,6 +136,54 @@ namespace GUI
             }
         
             
-        }   
+        }
+
+        private void mnuQuyDnhLuong_Click(object sender, EventArgs e)
+        {
+            ucQuyDinhLuong ucTNV;
+            ucQuyDinhLuong c = pnlMain.Controls.Find("ucQuyDinhLuong", false).FirstOrDefault() as ucQuyDinhLuong;
+
+            if (c == null)
+            {
+                ucTNV = new ucQuyDinhLuong();
+                pnlMain.Controls.Add(ucTNV);
+            }
+            else
+            {
+                c.Show();
+            }
+            foreach (Control ctrl in pnlMain.Controls)
+            {
+                if (ctrl.Name != "ucQuyDinhLuong")
+                {
+                    ctrl.Hide();
+                }
+            }
+        }
+
+
+
+        private void mnuTienLuong_Click_1(object sender, EventArgs e)
+        {
+            ucTienLuong ucTL;
+            ucTienLuong c = pnlMain.Controls.Find("ucTienLuong", false).FirstOrDefault() as ucTienLuong;
+
+            if (c == null)
+            {
+                ucTL = new ucTienLuong();
+                pnlMain.Controls.Add(ucTL);
+            }
+            else
+            {
+                c.Show();
+            }
+            foreach (Control ctrl in pnlMain.Controls)
+            {
+                if (ctrl.Name != "ucTienLuong")
+                {
+                    ctrl.Hide();
+                }
+            }
+        }
     }
 }
