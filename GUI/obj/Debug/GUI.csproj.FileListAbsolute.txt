@@ -47,7 +47,6 @@ D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nh
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\bin\Debug\DAO.pdb
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.frmMain.resources
-D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.frmThemNguoiDung.resources
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.Properties.Resources.resources
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucDangNhap.resources
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucDanhSachNhanVien.resources
@@ -76,3 +75,7 @@ G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNhanVien.resources
 G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.exe
 G:\github\Quan-ly-nhan-su\GUI\obj\Debug\GUI.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.frmBangChamCong.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.frmPhongBan.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucQuyDinhLuong.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucTienLuong.resources
