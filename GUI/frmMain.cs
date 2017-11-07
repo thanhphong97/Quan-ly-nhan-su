@@ -20,9 +20,6 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-           
-           
-           
             this.pnlMain.Dock = DockStyle.Bottom;
             TrangThaiChuaDangNhap();
         }
