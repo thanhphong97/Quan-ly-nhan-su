@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="clsBangCap_DAO.cs" />
     <Compile Include="clsChucVu_DAO.cs" />
+    <Compile Include="clsKyHieuChamCong_DAO.cs" />
     <Compile Include="clsMoiQuanHe_DAO.cs" />
     <Compile Include="clsNguoiDung_DAO.cs" />
     <Compile Include="clsNhanVien_DAO.cs" />

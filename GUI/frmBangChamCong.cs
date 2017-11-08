@@ -94,7 +94,7 @@ namespace GUI
         private frmPhongBan frm_PhongBan;
         private ucTienLuong ucTL;
         private bool _btnLuu = false;
-
+       
         public bool BtnLuu
         {
           get { return _btnLuu; }
@@ -122,61 +122,19 @@ namespace GUI
             this.lsPhongBan = lsPhongBan;
             frm_PhongBan = sender as frmPhongBan;
             this.ucTL = ucTL;
-            if(ucTL.Thang == 1 || ucTL.Thang == 3 || ucTL.Thang == 5 || ucTL.Thang == 7 || ucTL.Thang == 8 || ucTL.Thang == 10 || ucTL.Thang == 12)
+
+
+            int DayInMonth = DateTime.DaysInMonth(ucTL.Nam, ucTL.Thang); // Trả về tháng đó có bao nhiêu ngày
+            for(var i = 1 ; i <= DayInMonth; i++)
             {
-                for(var i = 1; i < 32; i++)
-                {
-                    var col = "col" + i;
-                    dgvBangChamCong.Columns[col].Visible = true;
-                    DataGridViewComboBoxColumn cbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
-                    cbo.DataSource = BUSKH.LayDanhSachKyHieu();
-                    cbo.DisplayMember = "KYHIEU";
-                    cbo.ValueMember = "KYHIEU";
-                }
-                
+                var col = "col" + i; 
+                dgvBangChamCong.Columns[col].Visible = true;
+                DataGridViewComboBoxColumn dgvcbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
+                dgvcbo.DataSource = BUSKH.LayDanhSachKyHieu();
+                dgvcbo.DisplayMember = "KYHIEU";
+                dgvcbo.ValueMember = "KYHIEU";
             }
-            else if(ucTL.Thang == 4 || ucTL.Thang == 6 || ucTL.Thang == 9 || ucTL.Thang == 11 )
-            {
-                for (var i = 1; i < 31; i++)
-                {
-                    var col = "col" + i;
-                    dgvBangChamCong.Columns[col].Visible = true;
-                    DataGridViewComboBoxColumn cbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
-                    cbo.DataSource = BUSKH.LayDanhSachKyHieu();
-                    cbo.DisplayMember = "KYHIEU";
-                    cbo.ValueMember = "KYHIEU";
-                   
-                }
-            }
-            else // Nếu là năm nhuận
-            { 
-                if(KiemTraNamNhuan(ucTL.Nam))
-                {
-                    for (var i = 1; i < 30; i++)
-                    {
-                        var col = "col" + i;
-                        dgvBangChamCong.Columns[col].Visible = true;
-                        DataGridViewComboBoxColumn cbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
-                        cbo.DataSource = BUSKH.LayDanhSachKyHieu();
-                        cbo.DisplayMember = "KYHIEU";
-                        cbo.ValueMember = "KYHIEU";
-                        
-                    }
-                }
-                else
-                {
-                    for (var i = 1; i < 29; i++)
-                    {
-                        var col = "col" + i;
-                        dgvBangChamCong.Columns[col].Visible = true;
-                        DataGridViewComboBoxColumn cbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
-                        cbo.DataSource = BUSKH.LayDanhSachKyHieu();
-                        cbo.DisplayMember = "KYHIEU";
-                        cbo.ValueMember = "KYHIEU";
-                        
-                    }
-                }
-            }
+            
         }
 
         private void frmBangChamCong_Load(object sender, EventArgs e)
@@ -187,18 +145,6 @@ namespace GUI
             dgvBangChamCong.DataSource = BUSNV.LayDanhSachNhanVien(lsPhongBan);
             lblBangChamCong.Text = string.Format("Bảng chấm công tháng {0} năm {1}", ucTL.Thang, ucTL.Nam);
             
-        }
-
-        private bool KiemTraNamNhuan(int Nam)
-        {
-            if ((Nam % 400) == 0)
-                return true;
-            else if ((Nam % 100) == 0)
-                return false;
-            else if ((Nam % 4) == 0)
-                return true;
-            else
-                return false; ;
         }
 
         private void dgvBangChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -219,10 +165,22 @@ namespace GUI
             if (MessageBox.Show("Dữ liệu sẽ bị hủy. Bản có muốn đóng không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
         }
-
+        private clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
+        
         private void dgvBangChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
+           ;
+            if(dgvBangChamCong.Columns[e.ColumnIndex].Name == "colMaPB")
+            {
+                foreach (clsPhongBan_DTO pb in BUSPB.LayDanhSachPhongBan())
+                {
+                    if(dgvBangChamCong.Rows[e.RowIndex].Cells[3].Value.ToString() == pb.MAPB)
+                    {
+                        e.Value = pb.TENPB;
+                        break;
+                    }
+                }
+            }
         }
 
     }

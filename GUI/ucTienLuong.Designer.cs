@@ -36,12 +36,8 @@
             this.dgvChiTietChamCong = new System.Windows.Forms.DataGridView();
             this.grbTaoBangChamCong = new System.Windows.Forms.GroupBox();
             this.btnTaoBangChamCong = new System.Windows.Forms.Button();
-            this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.nudNam = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.cboThang = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -111,12 +107,8 @@
             this.grbTaoBangChamCong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbTaoBangChamCong.Controls.Add(this.btnTaoBangChamCong);
-            this.grbTaoBangChamCong.Controls.Add(this.dtpNgayKetThuc);
-            this.grbTaoBangChamCong.Controls.Add(this.label4);
-            this.grbTaoBangChamCong.Controls.Add(this.dtpNgayBatDau);
             this.grbTaoBangChamCong.Controls.Add(this.label3);
             this.grbTaoBangChamCong.Controls.Add(this.nudNam);
-            this.grbTaoBangChamCong.Controls.Add(this.label2);
             this.grbTaoBangChamCong.Controls.Add(this.cboThang);
             this.grbTaoBangChamCong.Controls.Add(this.label1);
             this.grbTaoBangChamCong.Location = new System.Drawing.Point(6, 39);
@@ -128,8 +120,8 @@
             // 
             // btnTaoBangChamCong
             // 
-            this.btnTaoBangChamCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnTaoBangChamCong.Location = new System.Drawing.Point(858, 30);
+            this.btnTaoBangChamCong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTaoBangChamCong.Location = new System.Drawing.Point(634, 23);
             this.btnTaoBangChamCong.Name = "btnTaoBangChamCong";
             this.btnTaoBangChamCong.Size = new System.Drawing.Size(107, 46);
             this.btnTaoBangChamCong.TabIndex = 8;
@@ -137,39 +129,11 @@
             this.btnTaoBangChamCong.UseVisualStyleBackColor = true;
             this.btnTaoBangChamCong.Click += new System.EventHandler(this.btnTaoBangChamCong_Click);
             // 
-            // dtpNgayKetThuc
-            // 
-            this.dtpNgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKetThuc.Location = new System.Drawing.Point(707, 41);
-            this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            this.dtpNgayKetThuc.Size = new System.Drawing.Size(110, 24);
-            this.dtpNgayKetThuc.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(634, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "đến ngày";
-            // 
-            // dtpNgayBatDau
-            // 
-            this.dtpNgayBatDau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBatDau.Location = new System.Drawing.Point(477, 41);
-            this.dtpNgayBatDau.Name = "dtpNgayBatDau";
-            this.dtpNgayBatDau.Size = new System.Drawing.Size(110, 24);
-            this.dtpNgayBatDau.TabIndex = 5;
-            // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 44);
+            this.label3.Location = new System.Drawing.Point(457, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 18);
             this.label3.TabIndex = 4;
@@ -177,26 +141,16 @@
             // 
             // nudNam
             // 
-            this.nudNam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.nudNam.Location = new System.Drawing.Point(275, 41);
+            this.nudNam.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nudNam.Location = new System.Drawing.Point(503, 34);
             this.nudNam.Name = "nudNam";
             this.nudNam.Size = new System.Drawing.Size(85, 24);
             this.nudNam.TabIndex = 3;
             this.nudNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(411, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Từ ngày";
-            // 
             // cboThang
             // 
-            this.cboThang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cboThang.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboThang.FormattingEnabled = true;
             this.cboThang.Items.AddRange(new object[] {
@@ -212,16 +166,16 @@
             "10",
             "11",
             "12"});
-            this.cboThang.Location = new System.Drawing.Point(94, 41);
+            this.cboThang.Location = new System.Drawing.Point(328, 34);
             this.cboThang.Name = "cboThang";
             this.cboThang.Size = new System.Drawing.Size(85, 26);
             this.cboThang.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 44);
+            this.label1.Location = new System.Drawing.Point(273, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 18);
             this.label1.TabIndex = 0;
@@ -274,6 +228,7 @@
             this.dgvChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChamCong.Size = new System.Drawing.Size(998, 182);
             this.dgvChamCong.TabIndex = 0;
+            this.dgvChamCong.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChamCong_CellDoubleClick);
             // 
             // tPTinhLuong
             // 
@@ -289,18 +244,21 @@
             // 
             this.colMaChamCong.HeaderText = "Mã chấm công";
             this.colMaChamCong.Name = "colMaChamCong";
+            this.colMaChamCong.ReadOnly = true;
             this.colMaChamCong.Width = 200;
             // 
             // colThang
             // 
             this.colThang.HeaderText = "Tháng";
             this.colThang.Name = "colThang";
+            this.colThang.ReadOnly = true;
             this.colThang.Width = 200;
             // 
             // colNam
             // 
             this.colNam.HeaderText = "Năm";
             this.colNam.Name = "colNam";
+            this.colNam.ReadOnly = true;
             this.colNam.Width = 200;
             // 
             // colTenBangChamCong
@@ -308,6 +266,7 @@
             this.colTenBangChamCong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colTenBangChamCong.HeaderText = "Tên bảng chấm công";
             this.colTenBangChamCong.Name = "colTenBangChamCong";
+            this.colTenBangChamCong.ReadOnly = true;
             // 
             // ucTienLuong
             // 
@@ -338,15 +297,11 @@
         private System.Windows.Forms.DataGridView dgvChamCong;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox grbTaoBangChamCong;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboThang;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown nudNam;
-        private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
         private System.Windows.Forms.Button btnTaoBangChamCong;
-        private System.Windows.Forms.DateTimePicker dtpNgayKetThuc;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox grbChiTietChamCong;
         private System.Windows.Forms.DataGridView dgvChiTietChamCong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaChamCong;

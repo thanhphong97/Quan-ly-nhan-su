@@ -26,20 +26,7 @@ namespace GUI
             get { return _Nam; }
             set { _Nam = value; }
         }
-        private DateTime _NgayBatDau;
-
-        public DateTime NgayBatDau
-        {
-            get { return _NgayBatDau; }
-            set { _NgayBatDau = value; }
-        }
-        private DateTime _NgayKetThuc;
-
-        public DateTime NgayKetThuc
-        {
-            get { return _NgayKetThuc; }
-            set { _NgayKetThuc = value; }
-        }
+       
         public ucTienLuong()
         {
             InitializeComponent();
@@ -58,11 +45,15 @@ namespace GUI
         {
             _Thang = Convert.ToInt32(cboThang.SelectedIndex) + 1;
             _Nam = Convert.ToInt32(nudNam.Value);
-            _NgayBatDau = dtpNgayBatDau.Value;
-            _NgayKetThuc = dtpNgayKetThuc.Value;
             frmPhongBan frm_PhongBan = new frmPhongBan(this);
             frm_PhongBan.ShowDialog();
             
+        }
+
+        private void dgvChamCong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int day = DateTime.DaysInMonth(2017, 2);
+            MessageBox.Show(day.ToString());
         }
 
     }

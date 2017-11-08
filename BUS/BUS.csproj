@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="clsBangCap_BUS.cs" />
     <Compile Include="clsChucVu_BUS.cs" />
+    <Compile Include="clsKyHieuChamCong_BUS.cs" />
     <Compile Include="clsMoiQuanHe_BUS.cs" />
     <Compile Include="clsNguoiDung_BUS.cs" />
     <Compile Include="clsNhanVien_BUS.cs" />

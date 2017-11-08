@@ -201,6 +201,7 @@
             this.colMaNV.DataPropertyName = "MANV";
             this.colMaNV.HeaderText = "Mã nhân viên";
             this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
             this.colMaNV.Width = 150;
             // 
             // ColHo
@@ -210,6 +211,7 @@
             this.ColHo.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColHo.HeaderText = "Họ";
             this.ColHo.Name = "ColHo";
+            this.ColHo.ReadOnly = true;
             this.ColHo.Width = 150;
             // 
             // colTen
@@ -219,12 +221,14 @@
             this.colTen.DefaultCellStyle = dataGridViewCellStyle3;
             this.colTen.HeaderText = "Tên";
             this.colTen.Name = "colTen";
+            this.colTen.ReadOnly = true;
             // 
             // colMaPB
             // 
             this.colMaPB.DataPropertyName = "PHONGBAN";
-            this.colMaPB.HeaderText = "Mã phòng ban";
+            this.colMaPB.HeaderText = "Tên phòng ban";
             this.colMaPB.Name = "colMaPB";
+            this.colMaPB.ReadOnly = true;
             this.colMaPB.Width = 150;
             // 
             // col1
