@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsBangCap_DTO.cs" />
+    <Compile Include="clsChamCong_DTO.cs" />
     <Compile Include="clsChucVu_DTO.cs" />
     <Compile Include="clsDanToc_DTO.cs" />
+    <Compile Include="clsKyHieuChamCong_DTO.cs" />
     <Compile Include="clsLoaiND_DTO.cs" />
     <Compile Include="clsMoiQuanHe_DTO.cs" />
     <Compile Include="clsNguoiDung_DTO.cs" />

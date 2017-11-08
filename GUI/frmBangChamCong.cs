@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
+using DTO;
+using System.Collections;
 namespace GUI
 {
     public partial class frmBangChamCong : Form
     {
+        
         // Thiết lập Tên cột và chỉ số cho dgvBangChamCong
         struct Column
         {
@@ -86,21 +89,141 @@ namespace GUI
                 public static int col31 = 32;
             }
         }
+
+        private List<clsPhongBan_DTO> lsPhongBan;
+        private frmPhongBan frm_PhongBan;
+        private ucTienLuong ucTL;
+        private bool _btnLuu = false;
+
+        public bool BtnLuu
+        {
+          get { return _btnLuu; }
+          set { _btnLuu = value; }
+        }
+
+        private bool _btnDong = false;
+
+        public bool BtnDong
+        {
+            get { return _btnDong; }
+            set { _btnDong = value; }
+        }
         public frmBangChamCong()
         {
+            InitializeComponent();    
+        }
+        
+        public frmBangChamCong(Control sender ,List<clsPhongBan_DTO> lsPhongBan,ucTienLuong ucTL)
+        {
             InitializeComponent();
+            clsKyHieuChamCong_BUS BUSKH = new clsKyHieuChamCong_BUS();
+            clsKyHieuChamCong_BUS BUKH = new clsKyHieuChamCong_BUS();
+            
+            this.lsPhongBan = lsPhongBan;
+            frm_PhongBan = sender as frmPhongBan;
+            this.ucTL = ucTL;
+            if(ucTL.Thang == 1 || ucTL.Thang == 3 || ucTL.Thang == 5 || ucTL.Thang == 7 || ucTL.Thang == 8 || ucTL.Thang == 10 || ucTL.Thang == 12)
+            {
+                for(var i = 1; i < 32; i++)
+                {
+                    var col = "col" + i;
+                    dgvBangChamCong.Columns[col].Visible = true;
+                    DataGridViewComboBoxColumn cbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
+                    cbo.DataSource = BUSKH.LayDanhSachKyHieu();
+                    cbo.DisplayMember = "KYHIEU";
+                    cbo.ValueMember = "KYHIEU";
+                }
+                
+            }
+            else if(ucTL.Thang == 4 || ucTL.Thang == 6 || ucTL.Thang == 9 || ucTL.Thang == 11 )
+            {
+                for (var i = 1; i < 31; i++)
+                {
+                    var col = "col" + i;
+                    dgvBangChamCong.Columns[col].Visible = true;
+                    DataGridViewComboBoxColumn cbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
+                    cbo.DataSource = BUSKH.LayDanhSachKyHieu();
+                    cbo.DisplayMember = "KYHIEU";
+                    cbo.ValueMember = "KYHIEU";
+                   
+                }
+            }
+            else // Nếu là năm nhuận
+            { 
+                if(KiemTraNamNhuan(ucTL.Nam))
+                {
+                    for (var i = 1; i < 30; i++)
+                    {
+                        var col = "col" + i;
+                        dgvBangChamCong.Columns[col].Visible = true;
+                        DataGridViewComboBoxColumn cbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
+                        cbo.DataSource = BUSKH.LayDanhSachKyHieu();
+                        cbo.DisplayMember = "KYHIEU";
+                        cbo.ValueMember = "KYHIEU";
+                        
+                    }
+                }
+                else
+                {
+                    for (var i = 1; i < 29; i++)
+                    {
+                        var col = "col" + i;
+                        dgvBangChamCong.Columns[col].Visible = true;
+                        DataGridViewComboBoxColumn cbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
+                        cbo.DataSource = BUSKH.LayDanhSachKyHieu();
+                        cbo.DisplayMember = "KYHIEU";
+                        cbo.ValueMember = "KYHIEU";
+                        
+                    }
+                }
+            }
         }
 
         private void frmBangChamCong_Load(object sender, EventArgs e)
         {
             
+            dgvBangChamCong.AutoGenerateColumns = false;
+            clsNhanVien_BUS BUSNV = new clsNhanVien_BUS();
+            dgvBangChamCong.DataSource = BUSNV.LayDanhSachNhanVien(lsPhongBan);
+            lblBangChamCong.Text = string.Format("Bảng chấm công tháng {0} năm {1}", ucTL.Thang, ucTL.Nam);
+            
+        }
+
+        private bool KiemTraNamNhuan(int Nam)
+        {
+            if ((Nam % 400) == 0)
+                return true;
+            else if ((Nam % 100) == 0)
+                return false;
+            else if ((Nam % 4) == 0)
+                return true;
+            else
+                return false; ;
         }
 
         private void dgvBangChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
-        
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Đã lưu dữ liệu chấm công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _btnLuu = true;
+            this.Close();
+            frm_PhongBan.Close();
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Dữ liệu sẽ bị hủy. Bản có muốn đóng không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void dgvBangChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+        }
+
     }
 }

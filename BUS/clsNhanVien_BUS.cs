@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAO;
+using DTO;
 using System.IO;
 using System.Security.Cryptography;
+
 namespace BUS
 {
     public class clsNhanVien_BUS
@@ -37,7 +39,12 @@ namespace BUS
             return soLuongNhanVien;
         }
 
-        
+        // Lấy danh sách nhân viên theo phòng
+        public List<clsNhanVien_DTO> LayDanhSachNhanVien(List<clsPhongBan_DTO> lsPhongBan)
+        {
+            clsNhanVien_DAO DAO = new clsNhanVien_DAO();
+            return DAO.LayDanhSachNhanVien(lsPhongBan);
+        }
         
         // Mã hóa mật khẩu
         private string MaHoaMD5(string MatKhau)
