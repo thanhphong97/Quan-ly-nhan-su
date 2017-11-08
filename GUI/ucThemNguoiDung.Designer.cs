@@ -47,10 +47,12 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.chkTrangThai = new System.Windows.Forms.CheckBox();
             this.colMANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbPhanQuyen.SuspendLayout();
             this.grbThongTinTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -87,7 +89,7 @@
             this.grbPhanQuyen.ForeColor = System.Drawing.Color.Purple;
             this.grbPhanQuyen.Location = new System.Drawing.Point(443, 90);
             this.grbPhanQuyen.Name = "grbPhanQuyen";
-            this.grbPhanQuyen.Size = new System.Drawing.Size(219, 222);
+            this.grbPhanQuyen.Size = new System.Drawing.Size(219, 153);
             this.grbPhanQuyen.TabIndex = 9;
             this.grbPhanQuyen.TabStop = false;
             this.grbPhanQuyen.Text = "Phân Quyền";
@@ -253,7 +255,8 @@
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMANV,
             this.colTenDN,
-            this.colQuyen});
+            this.colQuyen,
+            this.colTrangThai});
             this.dgvNhanVien.Location = new System.Drawing.Point(10, 90);
             this.dgvNhanVien.MultiSelect = false;
             this.dgvNhanVien.Name = "dgvNhanVien";
@@ -262,6 +265,26 @@
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNhanVien.Size = new System.Drawing.Size(398, 331);
             this.dgvNhanVien.TabIndex = 14;
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaNV.Location = new System.Drawing.Point(175, 38);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(215, 29);
+            this.txtMaNV.TabIndex = 8;
+            // 
+            // chkTrangThai
+            // 
+            this.chkTrangThai.AutoSize = true;
+            this.chkTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.chkTrangThai.ForeColor = System.Drawing.Color.Red;
+            this.chkTrangThai.Location = new System.Drawing.Point(455, 270);
+            this.chkTrangThai.Name = "chkTrangThai";
+            this.chkTrangThai.Size = new System.Drawing.Size(190, 22);
+            this.chkTrangThai.TabIndex = 15;
+            this.chkTrangThai.Text = "Vô hiệu hóa tài khoản";
+            this.chkTrangThai.UseVisualStyleBackColor = true;
             // 
             // colMANV
             // 
@@ -272,7 +295,7 @@
             this.colMANV.HeaderText = "Mã NV";
             this.colMANV.Name = "colMANV";
             this.colMANV.ReadOnly = true;
-            this.colMANV.Width = 52;
+            this.colMANV.Width = 75;
             // 
             // colTenDN
             // 
@@ -290,18 +313,18 @@
             this.colQuyen.Name = "colQuyen";
             this.colQuyen.ReadOnly = true;
             // 
-            // txtMaNV
+            // colTrangThai
             // 
-            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaNV.Location = new System.Drawing.Point(175, 38);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(215, 29);
-            this.txtMaNV.TabIndex = 8;
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
             // 
             // ucThemNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chkTrangThai);
             this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCapNhat);
@@ -341,9 +364,11 @@
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvNhanVien;
+        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.CheckBox chkTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMANV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuyen;
-        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }

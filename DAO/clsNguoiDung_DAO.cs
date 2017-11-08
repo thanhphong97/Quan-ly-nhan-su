@@ -14,7 +14,7 @@ namespace DAO
         {
             List<clsNguoiDung_DTO> lsNguoiDung = new List<clsNguoiDung_DTO>();
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = "SELECT TAIKHOAN, LOAIND, MANV FROM NGUOIDUNG WHERE TRANGTHAI = 1";
+            string sql = "SELECT TAIKHOAN, LOAIND, MANV, TRANGTHAI FROM NGUOIDUNG WHERE TRANGTHAI = 1";
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -26,6 +26,8 @@ namespace DAO
                     nd.LOAIND = dr.GetString(1);
                 if (!dr.IsDBNull(2))
                     nd.MANV = dr.GetString(2);
+                if (!dr.IsDBNull(3))
+                    nd.TRANGTHAI = dr.GetBoolean(3);
                 lsNguoiDung.Add(nd);
             }
             ThaoTacDuLieu.DongKetNoi(con);
