@@ -14,7 +14,7 @@ namespace DAO
         {
             List<clsNguoiDung_DTO> lsNguoiDung = new List<clsNguoiDung_DTO>();
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = "SELECT TAIKHOAN, LOAIND, MANV, TRANGTHAI FROM NGUOIDUNG WHERE TRANGTHAI = 1";
+            string sql = "SELECT TAIKHOAN, LOAIND, MANV, TRANGTHAI, MATKHAU FROM NGUOIDUNG";
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -28,6 +28,8 @@ namespace DAO
                     nd.MANV = dr.GetString(2);
                 if (!dr.IsDBNull(3))
                     nd.TRANGTHAI = dr.GetBoolean(3);
+                if (!dr.IsDBNull(4))
+                    nd.MATKHAU = dr.GetString(4);
                 lsNguoiDung.Add(nd);
             }
             ThaoTacDuLieu.DongKetNoi(con);
@@ -42,6 +44,28 @@ namespace DAO
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             int rowaff = cmd.ExecuteNonQuery();
             if (rowaff == 0)
+                return false;
+            return true;
+        }
+
+        public bool CapNhatNguoiDung(clsNguoiDung_DTO nd)
+        {
+            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            string sql = string.Format("UPDATE NGUOIDUNG SET TAIKHOAN = '{0}', MATKHAU = '{1}', LOAIND = '{2}',TRANGTHAI = '{4}' WHERE MANV = '{3}'", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
+            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
+            int rowaff = cmd.ExecuteNonQuery();
+            if (rowaff == 0)
+                return false;
+            return true;
+        }
+
+        public bool KiemTraTonTai(string MaNV)
+        {
+            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            string sql = string.Format("SELECT COUNT(*) FROM NGUOIDUNG WHERE MANV = '{0}'",MaNV);
+            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
+            int SoLuongTaiKhoan = (int)cmd.ExecuteScalar();
+            if (SoLuongTaiKhoan > 0)
                 return false;
             return true;
         }

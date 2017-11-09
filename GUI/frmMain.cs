@@ -75,56 +75,11 @@ namespace GUI
 
       
 
-        private void mnuThemNguoiDung_Click(object sender, EventArgs e)
-        {
-            ucThemNguoiDung ucTND;
-            //Tìm ucThemNguoiDung trong Pnl hay không nếu có thì gán cho c nếu không thì giá trị trả về là null c
-            ucThemNguoiDung c = pnlMain.Controls.Find("ucThemNguoiDung", false).FirstOrDefault() as ucThemNguoiDung;
-            
-            if(c == null)
-            {
-                // Tạo mới ucThemNguoiDung
-                ucTND = new ucThemNguoiDung();
-                pnlMain.Controls.Add(ucTND);
-            }
-            else
-            {
-                // Nếu đã tồn tại ucThemNguoiDung thì hiển thị 
-                c.Show();
-            }
-            // Ẩn các ucControl khác ucThemNguoiDung
-            foreach(Control ctrl in pnlMain.Controls)
-            {
-                if (ctrl.Name != "ucThemNguoiDung") 
-                {
-                    ctrl.Hide(); 
-                }   
-            }
-        }
+      
 
         private void mnuThemNhanVien_Click(object sender, EventArgs e)
         {
-            //ucThemNhanVien ucTNV = ucThemNhanVien.Instances;
-            //this.pnlMain.Controls.Add(ucTNV);
-            ucThemNhanVien ucTNV;
-            ucThemNhanVien c = pnlMain.Controls.Find("ucThemNhanVien",false).FirstOrDefault() as ucThemNhanVien;
             
-            if(c == null)
-            {
-                ucTNV = new ucThemNhanVien();
-                pnlMain.Controls.Add(ucTNV);
-            }
-            else
-            {
-                c.Show();
-            }
-            foreach(Control ctrl in pnlMain.Controls)
-            {
-                if (ctrl.Name != "ucThemNhanVien") 
-                {
-                    ctrl.Hide(); 
-                }   
-            }
         
             
         }
@@ -171,6 +126,57 @@ namespace GUI
             foreach (Control ctrl in pnlMain.Controls)
             {
                 if (ctrl.Name != "ucTienLuong")
+                {
+                    ctrl.Hide();
+                }
+            }
+        }
+
+        private void mnuAdmin_Click(object sender, EventArgs e)
+        {
+            ucThemNguoiDung ucTND;
+            //Tìm ucThemNguoiDung trong Pnl hay không nếu có thì gán cho c nếu không thì giá trị trả về là null c
+            ucThemNguoiDung c = pnlMain.Controls.Find("ucThemNguoiDung", false).FirstOrDefault() as ucThemNguoiDung;
+
+            if (c == null)
+            {
+                // Tạo mới ucThemNguoiDung
+                ucTND = new ucThemNguoiDung();
+                pnlMain.Controls.Add(ucTND);
+            }
+            else
+            {
+                // Nếu đã tồn tại ucThemNguoiDung thì hiển thị 
+                c.Show();
+            }
+            // Ẩn các ucControl khác ucThemNguoiDung
+            foreach (Control ctrl in pnlMain.Controls)
+            {
+                if (ctrl.Name != "ucThemNguoiDung")
+                {
+                    ctrl.Hide();
+                }
+            }
+        }
+
+        private void mnuNhanVien_Click(object sender, EventArgs e)
+        {
+          
+            ucThemNhanVien ucTNV;
+            ucThemNhanVien c = pnlMain.Controls.Find("ucThemNhanVien", false).FirstOrDefault() as ucThemNhanVien;
+
+            if (c == null)
+            {
+                ucTNV = new ucThemNhanVien();
+                pnlMain.Controls.Add(ucTNV);
+            }
+            else
+            {
+                c.Show();
+            }
+            foreach (Control ctrl in pnlMain.Controls)
+            {
+                if (ctrl.Name != "ucThemNhanVien")
                 {
                     ctrl.Hide();
                 }

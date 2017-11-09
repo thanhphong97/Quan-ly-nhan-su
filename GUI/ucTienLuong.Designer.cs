@@ -42,11 +42,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.dgvChamCong = new System.Windows.Forms.DataGridView();
-            this.tPTinhLuong = new System.Windows.Forms.TabPage();
             this.colMaChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenBangChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tPTinhLuong = new System.Windows.Forms.TabPage();
             this.tCtrl.SuspendLayout();
             this.tPChamCong.SuspendLayout();
             this.grbChiTietChamCong.SuspendLayout();
@@ -70,6 +70,7 @@
             // 
             // tPChamCong
             // 
+            this.tPChamCong.BackColor = System.Drawing.SystemColors.Control;
             this.tPChamCong.Controls.Add(this.grbChiTietChamCong);
             this.tPChamCong.Controls.Add(this.grbTaoBangChamCong);
             this.tPChamCong.Controls.Add(this.label14);
@@ -80,12 +81,12 @@
             this.tPChamCong.Size = new System.Drawing.Size(1007, 514);
             this.tPChamCong.TabIndex = 0;
             this.tPChamCong.Text = "Chấm công";
-            this.tPChamCong.UseVisualStyleBackColor = true;
             // 
             // grbChiTietChamCong
             // 
             this.grbChiTietChamCong.Controls.Add(this.dgvChiTietChamCong);
             this.grbChiTietChamCong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grbChiTietChamCong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.grbChiTietChamCong.Location = new System.Drawing.Point(3, 317);
             this.grbChiTietChamCong.Name = "grbChiTietChamCong";
             this.grbChiTietChamCong.Size = new System.Drawing.Size(1001, 194);
@@ -111,6 +112,7 @@
             this.grbTaoBangChamCong.Controls.Add(this.nudNam);
             this.grbTaoBangChamCong.Controls.Add(this.cboThang);
             this.grbTaoBangChamCong.Controls.Add(this.label1);
+            this.grbTaoBangChamCong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.grbTaoBangChamCong.Location = new System.Drawing.Point(6, 39);
             this.grbTaoBangChamCong.Name = "grbTaoBangChamCong";
             this.grbTaoBangChamCong.Size = new System.Drawing.Size(995, 103);
@@ -121,6 +123,7 @@
             // btnTaoBangChamCong
             // 
             this.btnTaoBangChamCong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTaoBangChamCong.ForeColor = System.Drawing.Color.Black;
             this.btnTaoBangChamCong.Location = new System.Drawing.Point(634, 23);
             this.btnTaoBangChamCong.Name = "btnTaoBangChamCong";
             this.btnTaoBangChamCong.Size = new System.Drawing.Size(107, 46);
@@ -133,6 +136,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(457, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 18);
@@ -142,6 +146,7 @@
             // nudNam
             // 
             this.nudNam.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nudNam.ForeColor = System.Drawing.Color.Black;
             this.nudNam.Location = new System.Drawing.Point(503, 34);
             this.nudNam.Name = "nudNam";
             this.nudNam.Size = new System.Drawing.Size(85, 24);
@@ -152,6 +157,7 @@
             // 
             this.cboThang.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboThang.ForeColor = System.Drawing.Color.Black;
             this.cboThang.FormattingEnabled = true;
             this.cboThang.Items.AddRange(new object[] {
             "1",
@@ -175,6 +181,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(273, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 18);
@@ -230,16 +237,6 @@
             this.dgvChamCong.TabIndex = 0;
             this.dgvChamCong.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChamCong_CellDoubleClick);
             // 
-            // tPTinhLuong
-            // 
-            this.tPTinhLuong.Location = new System.Drawing.Point(4, 27);
-            this.tPTinhLuong.Name = "tPTinhLuong";
-            this.tPTinhLuong.Padding = new System.Windows.Forms.Padding(3);
-            this.tPTinhLuong.Size = new System.Drawing.Size(1007, 514);
-            this.tPTinhLuong.TabIndex = 1;
-            this.tPTinhLuong.Text = "Tính lương";
-            this.tPTinhLuong.UseVisualStyleBackColor = true;
-            // 
             // colMaChamCong
             // 
             this.colMaChamCong.HeaderText = "Mã chấm công";
@@ -267,6 +264,16 @@
             this.colTenBangChamCong.HeaderText = "Tên bảng chấm công";
             this.colTenBangChamCong.Name = "colTenBangChamCong";
             this.colTenBangChamCong.ReadOnly = true;
+            // 
+            // tPTinhLuong
+            // 
+            this.tPTinhLuong.Location = new System.Drawing.Point(4, 27);
+            this.tPTinhLuong.Name = "tPTinhLuong";
+            this.tPTinhLuong.Padding = new System.Windows.Forms.Padding(3);
+            this.tPTinhLuong.Size = new System.Drawing.Size(1007, 514);
+            this.tPTinhLuong.TabIndex = 1;
+            this.tPTinhLuong.Text = "Tính lương";
+            this.tPTinhLuong.UseVisualStyleBackColor = true;
             // 
             // ucTienLuong
             // 

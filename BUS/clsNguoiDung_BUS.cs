@@ -20,5 +20,17 @@ namespace BUS
             clsNguoiDung_DAO dao = new clsNguoiDung_DAO();
             return dao.TaoTaiKhoan(nd);
         }
+
+        public bool CapNhatTaiKhoan(clsNguoiDung_DTO nd)
+        {
+            clsNguoiDung_DAO dao = new clsNguoiDung_DAO();
+            return dao.CapNhatNguoiDung(nd);
+        }
+
+        public bool KiemTraTonTai(string MaNV)
+        {
+            clsNguoiDung_DAO dao = new clsNguoiDung_DAO();
+            return dao.KiemTraTonTai(MaNV);
+        }
     }
 }

@@ -27,11 +27,8 @@ namespace GUI
             nudcongthang.Value = 24;
             nudCongNgay.Value = 8;
             nudBHYT_NV.Value = 2;
-            nudBHYT_CT.Value = 3;
             nudBHXH_NV.Value = 4;
-            nudBHXH_CT.Value = 5;
             nudBHTT_NV.Value = 6;
-            nudBHTT_CT.Value = 7;
             
         }
         public void formatPhanTram()
@@ -45,20 +42,13 @@ namespace GUI
             nudBHYT_NV.DecimalPlaces = 2;
             nudBHYT_NV.ThousandsSeparator = true;
 
-            nudBHYT_CT.DecimalPlaces = 2;
-            nudBHYT_CT.ThousandsSeparator = true;
 
             nudBHXH_NV.DecimalPlaces = 2;
             nudBHXH_NV.ThousandsSeparator = true;
 
-            nudBHXH_CT.DecimalPlaces = 2;
-            nudBHXH_CT.ThousandsSeparator = true;
-
+            
             nudBHTT_NV.DecimalPlaces = 2;
             nudBHTT_NV.ThousandsSeparator = true;
-
-            nudBHTT_CT.DecimalPlaces = 2;
-            nudBHTT_CT.ThousandsSeparator = true;
         }
     }
 }
