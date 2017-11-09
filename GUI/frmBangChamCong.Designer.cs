@@ -29,10 +29,41 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBangChamCong = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDong = new System.Windows.Forms.Button();
@@ -124,27 +155,27 @@
             this.col29,
             this.col30,
             this.col31});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBangChamCong.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBangChamCong.DefaultCellStyle = dataGridViewCellStyle35;
             this.dgvBangChamCong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBangChamCong.EnableHeadersVisualStyles = false;
             this.dgvBangChamCong.Location = new System.Drawing.Point(0, 0);
             this.dgvBangChamCong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBangChamCong.Name = "dgvBangChamCong";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBangChamCong.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBangChamCong.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.dgvBangChamCong.RowHeadersVisible = false;
             this.dgvBangChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBangChamCong.Size = new System.Drawing.Size(1129, 502);
@@ -233,6 +264,8 @@
             // 
             // col1
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col1.DefaultCellStyle = dataGridViewCellStyle4;
             this.col1.HeaderText = "1";
             this.col1.Name = "col1";
             this.col1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -241,6 +274,8 @@
             // 
             // col2
             // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col2.DefaultCellStyle = dataGridViewCellStyle5;
             this.col2.HeaderText = "2";
             this.col2.Name = "col2";
             this.col2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -249,6 +284,8 @@
             // 
             // col3
             // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col3.DefaultCellStyle = dataGridViewCellStyle6;
             this.col3.HeaderText = "3";
             this.col3.Name = "col3";
             this.col3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -257,6 +294,8 @@
             // 
             // col4
             // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col4.DefaultCellStyle = dataGridViewCellStyle7;
             this.col4.HeaderText = "4";
             this.col4.Name = "col4";
             this.col4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -265,6 +304,8 @@
             // 
             // col5
             // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col5.DefaultCellStyle = dataGridViewCellStyle8;
             this.col5.HeaderText = "5";
             this.col5.Name = "col5";
             this.col5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -273,6 +314,8 @@
             // 
             // col6
             // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col6.DefaultCellStyle = dataGridViewCellStyle9;
             this.col6.HeaderText = "6";
             this.col6.Name = "col6";
             this.col6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -281,6 +324,8 @@
             // 
             // col7
             // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col7.DefaultCellStyle = dataGridViewCellStyle10;
             this.col7.HeaderText = "7";
             this.col7.Name = "col7";
             this.col7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -289,6 +334,8 @@
             // 
             // col8
             // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col8.DefaultCellStyle = dataGridViewCellStyle11;
             this.col8.HeaderText = "8";
             this.col8.Name = "col8";
             this.col8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -297,6 +344,8 @@
             // 
             // col9
             // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col9.DefaultCellStyle = dataGridViewCellStyle12;
             this.col9.HeaderText = "9";
             this.col9.Name = "col9";
             this.col9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -305,6 +354,8 @@
             // 
             // col10
             // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col10.DefaultCellStyle = dataGridViewCellStyle13;
             this.col10.HeaderText = "10";
             this.col10.Name = "col10";
             this.col10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -313,6 +364,8 @@
             // 
             // col11
             // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col11.DefaultCellStyle = dataGridViewCellStyle14;
             this.col11.HeaderText = "11";
             this.col11.Name = "col11";
             this.col11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -321,6 +374,8 @@
             // 
             // col12
             // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col12.DefaultCellStyle = dataGridViewCellStyle15;
             this.col12.HeaderText = "12";
             this.col12.Name = "col12";
             this.col12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -329,6 +384,8 @@
             // 
             // col13
             // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col13.DefaultCellStyle = dataGridViewCellStyle16;
             this.col13.HeaderText = "13";
             this.col13.Name = "col13";
             this.col13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -337,6 +394,8 @@
             // 
             // col14
             // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col14.DefaultCellStyle = dataGridViewCellStyle17;
             this.col14.HeaderText = "14";
             this.col14.Name = "col14";
             this.col14.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -345,6 +404,8 @@
             // 
             // col15
             // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col15.DefaultCellStyle = dataGridViewCellStyle18;
             this.col15.HeaderText = "15";
             this.col15.Name = "col15";
             this.col15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -353,6 +414,8 @@
             // 
             // col16
             // 
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col16.DefaultCellStyle = dataGridViewCellStyle19;
             this.col16.HeaderText = "16";
             this.col16.Name = "col16";
             this.col16.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -361,6 +424,8 @@
             // 
             // col17
             // 
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col17.DefaultCellStyle = dataGridViewCellStyle20;
             this.col17.HeaderText = "17";
             this.col17.Name = "col17";
             this.col17.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -369,6 +434,8 @@
             // 
             // col18
             // 
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col18.DefaultCellStyle = dataGridViewCellStyle21;
             this.col18.HeaderText = "18";
             this.col18.Name = "col18";
             this.col18.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -377,6 +444,8 @@
             // 
             // col19
             // 
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col19.DefaultCellStyle = dataGridViewCellStyle22;
             this.col19.HeaderText = "19";
             this.col19.Name = "col19";
             this.col19.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -385,6 +454,8 @@
             // 
             // col20
             // 
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col20.DefaultCellStyle = dataGridViewCellStyle23;
             this.col20.HeaderText = "20";
             this.col20.Name = "col20";
             this.col20.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -393,6 +464,8 @@
             // 
             // col21
             // 
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col21.DefaultCellStyle = dataGridViewCellStyle24;
             this.col21.HeaderText = "21";
             this.col21.Name = "col21";
             this.col21.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -401,6 +474,8 @@
             // 
             // col22
             // 
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col22.DefaultCellStyle = dataGridViewCellStyle25;
             this.col22.HeaderText = "22";
             this.col22.Name = "col22";
             this.col22.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -409,6 +484,8 @@
             // 
             // col23
             // 
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col23.DefaultCellStyle = dataGridViewCellStyle26;
             this.col23.HeaderText = "23";
             this.col23.Name = "col23";
             this.col23.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -417,6 +494,8 @@
             // 
             // col24
             // 
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col24.DefaultCellStyle = dataGridViewCellStyle27;
             this.col24.HeaderText = "24";
             this.col24.Name = "col24";
             this.col24.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -425,6 +504,8 @@
             // 
             // col25
             // 
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col25.DefaultCellStyle = dataGridViewCellStyle28;
             this.col25.HeaderText = "25";
             this.col25.Name = "col25";
             this.col25.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -433,6 +514,8 @@
             // 
             // col26
             // 
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col26.DefaultCellStyle = dataGridViewCellStyle29;
             this.col26.HeaderText = "26";
             this.col26.Name = "col26";
             this.col26.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -441,6 +524,8 @@
             // 
             // col27
             // 
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col27.DefaultCellStyle = dataGridViewCellStyle30;
             this.col27.HeaderText = "27";
             this.col27.Name = "col27";
             this.col27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -449,6 +534,8 @@
             // 
             // col28
             // 
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col28.DefaultCellStyle = dataGridViewCellStyle31;
             this.col28.HeaderText = "28";
             this.col28.Name = "col28";
             this.col28.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -457,6 +544,8 @@
             // 
             // col29
             // 
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col29.DefaultCellStyle = dataGridViewCellStyle32;
             this.col29.HeaderText = "29";
             this.col29.Name = "col29";
             this.col29.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -465,6 +554,8 @@
             // 
             // col30
             // 
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col30.DefaultCellStyle = dataGridViewCellStyle33;
             this.col30.HeaderText = "30";
             this.col30.Name = "col30";
             this.col30.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -473,6 +564,8 @@
             // 
             // col31
             // 
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col31.DefaultCellStyle = dataGridViewCellStyle34;
             this.col31.HeaderText = "31";
             this.col31.Name = "col31";
             this.col31.Resizable = System.Windows.Forms.DataGridViewTriState.True;
