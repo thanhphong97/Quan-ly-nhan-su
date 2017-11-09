@@ -16,85 +16,12 @@ namespace GUI
     {
         
         // Thiết lập Tên cột và chỉ số cho dgvBangChamCong
-        struct Column
-        {
-            public static string MaNV = "Mã nhân viên";
-            public static string HoTen = "Họ tên";
-            public static string col1 = "1";
-            public static string col2 = "2";
-            public static string col3 = "3";
-            public static string col4 = "4";
-            public static string col5 = "5";
-            public static string col6 = "6";
-            public static string col7 = "7";
-            public static string col8 = "8";
-            public static string col9 = "9";
-            public static string col10 = "10";
-            public static string col11 = "11";
-            public static string col12 = "12";
-            public static string col13 = "13";
-            public static string col14 = "14";
-            public static string col15 = "15";
-            public static string col16 = "16";
-            public static string col17 = "17";
-            public static string col18 = "18";
-            public static string col19 = "19";
-            public static string col20 = "20";
-            public static string col21 = "21";
-            public static string col22 = "22";
-            public static string col23 = "23";
-            public static string col24 = "24";
-            public static string col25 = "25";
-            public static string col26 = "26";
-            public static string col27 = "27";
-            public static string col28 = "28";
-            public static string col29 = "29";
-            public static string col30 = "30";
-            public static string col31 = "31";
-
-            public struct Key
-            {
-                public static int MaNV = 0;
-                public static int HoTen = 1;
-                public static int col1 = 2;
-                public static int col2 = 3;
-                public static int col3 = 4;
-                public static int col4 = 5;
-                public static int col5 = 6;
-                public static int col6 = 7;
-                public static int col7 = 8;
-                public static int col8 = 9;
-                public static int col9 = 10;
-                public static int col10 = 11;
-                public static int col11 = 12;
-                public static int col12 = 13;
-                public static int col13 = 14;
-                public static int col14 = 15;
-                public static int col15 = 16;
-                public static int col16 = 17;
-                public static int col17 = 18;
-                public static int col18 = 19;
-                public static int col19 = 20;
-                public static int col20 = 21;
-                public static int col21 = 22;
-                public static int col22 = 23;
-                public static int col23 = 24;
-                public static int col24 = 25;
-                public static int col25 = 26;
-                public static int col26 = 27;
-                public static int col27 = 28;
-                public static int col28 = 29;
-                public static int col29 = 30;
-                public static int col30 = 31;
-                public static int col31 = 32;
-            }
-        }
-
         private List<clsPhongBan_DTO> lsPhongBan;
         private frmPhongBan frm_PhongBan;
         private ucTienLuong ucTL;
+        private clsPhongBan_BUS BUSPB;
         private bool _btnLuu = false;
-       
+        private List<clsPhongBan_DTO> lsPhongBan2; 
         public bool BtnLuu
         {
           get { return _btnLuu; }
@@ -118,7 +45,9 @@ namespace GUI
             InitializeComponent();
             clsKyHieuChamCong_BUS BUSKH = new clsKyHieuChamCong_BUS();
             clsKyHieuChamCong_BUS BUKH = new clsKyHieuChamCong_BUS();
-            
+            BUSPB = new clsPhongBan_BUS(); // Lấy tất cả các phòng ban để hiển thị tên phòng bang ở sự kiện dgvBangChamCong_CellFormatting
+            lsPhongBan2 = BUSPB.LayDanhSachPhongBan();
+
             this.lsPhongBan = lsPhongBan;
             frm_PhongBan = sender as frmPhongBan;
             this.ucTL = ucTL;
@@ -128,7 +57,7 @@ namespace GUI
             for(var i = 1 ; i <= DayInMonth; i++)
             {
                 var col = "col" + i; 
-                dgvBangChamCong.Columns[col].Visible = true;
+                dgvBangChamCong.Columns[col].Visible = true; 
                 DataGridViewComboBoxColumn dgvcbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
                 dgvcbo.DataSource = BUSKH.LayDanhSachKyHieu();
                 dgvcbo.DisplayMember = "KYHIEU";
@@ -144,7 +73,8 @@ namespace GUI
             clsNhanVien_BUS BUSNV = new clsNhanVien_BUS();
             dgvBangChamCong.DataSource = BUSNV.LayDanhSachNhanVien(lsPhongBan);
             lblBangChamCong.Text = string.Format("Bảng chấm công tháng {0} năm {1}", ucTL.Thang, ucTL.Nam);
-            
+
+            ChamCongTuDong();
         }
 
         private void dgvBangChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -165,19 +95,37 @@ namespace GUI
             if (MessageBox.Show("Dữ liệu sẽ bị hủy. Bản có muốn đóng không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
         }
-        private clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
+        
         
         private void dgvBangChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-           ;
             if(dgvBangChamCong.Columns[e.ColumnIndex].Name == "colMaPB")
             {
-                foreach (clsPhongBan_DTO pb in BUSPB.LayDanhSachPhongBan())
+                foreach (clsPhongBan_DTO pb in lsPhongBan2)
                 {
                     if(dgvBangChamCong.Rows[e.RowIndex].Cells[3].Value.ToString() == pb.MAPB)
                     {
                         e.Value = pb.TENPB;
                         break;
+                    }
+                }
+            }
+        }
+
+        private void ChamCongTuDong()
+        {
+            for(int indexcolumn = 0 ; indexcolumn < dgvBangChamCong.Columns.Count; indexcolumn++)
+            {
+                if(dgvBangChamCong.Columns[indexcolumn].Name != "colMaNV" && dgvBangChamCong.Columns[indexcolumn].Name != "ColHo" && dgvBangChamCong.Columns[indexcolumn].Name != "colTen" && dgvBangChamCong.Columns[indexcolumn].Name != "colMaPB")
+                {
+                    int Ngay = Convert.ToInt32((dgvBangChamCong.Columns[indexcolumn].Name).Replace("col", "")); // Lấy ra ngày trong tháng
+                    DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, Ngay);
+                    for( int indexrow = 0;  indexrow < dgvBangChamCong.Rows.Count; indexrow++)
+                    {
+                        if(dt.DayOfWeek== 0) // Nếu là ngày chủ nhật
+                            (dgvBangChamCong.Rows[indexrow].Cells[indexcolumn] as DataGridViewComboBoxCell).Value = "CN";
+                        else
+                            (dgvBangChamCong.Rows[indexrow].Cells[indexcolumn] as DataGridViewComboBoxCell).Value = "8";
                     }
                 }
             }
