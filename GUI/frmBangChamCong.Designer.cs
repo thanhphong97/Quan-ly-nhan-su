@@ -65,10 +65,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBangChamCong = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.lblBangChamCong = new System.Windows.Forms.Label();
             this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,6 +100,10 @@
             this.col29 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.col30 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.col31 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDong = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.lblBangChamCong = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangChamCong)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -182,50 +182,6 @@
             this.dgvBangChamCong.TabIndex = 0;
             this.dgvBangChamCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangChamCong_CellContentClick);
             this.dgvBangChamCong.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBangChamCong_CellFormatting);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dgvBangChamCong);
-            this.panel1.Location = new System.Drawing.Point(0, 43);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 502);
-            this.panel1.TabIndex = 10;
-            // 
-            // btnDong
-            // 
-            this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDong.Location = new System.Drawing.Point(1010, 554);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(107, 46);
-            this.btnDong.TabIndex = 14;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLuu.Location = new System.Drawing.Point(897, 554);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(107, 46);
-            this.btnLuu.TabIndex = 15;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // lblBangChamCong
-            // 
-            this.lblBangChamCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBangChamCong.AutoSize = true;
-            this.lblBangChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblBangChamCong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblBangChamCong.Location = new System.Drawing.Point(319, 10);
-            this.lblBangChamCong.Name = "lblBangChamCong";
-            this.lblBangChamCong.Size = new System.Drawing.Size(358, 31);
-            this.lblBangChamCong.TabIndex = 16;
-            this.lblBangChamCong.Text = "CHẤM CÔNG NHÂN VIÊN";
             // 
             // colMaNV
             // 
@@ -571,6 +527,50 @@
             this.col31.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.col31.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.col31.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvBangChamCong);
+            this.panel1.Location = new System.Drawing.Point(0, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1129, 502);
+            this.panel1.TabIndex = 10;
+            // 
+            // btnDong
+            // 
+            this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDong.Location = new System.Drawing.Point(1010, 554);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(107, 46);
+            this.btnDong.TabIndex = 14;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLuu.Location = new System.Drawing.Point(897, 554);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(107, 46);
+            this.btnLuu.TabIndex = 15;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // lblBangChamCong
+            // 
+            this.lblBangChamCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBangChamCong.AutoSize = true;
+            this.lblBangChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblBangChamCong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblBangChamCong.Location = new System.Drawing.Point(319, 10);
+            this.lblBangChamCong.Name = "lblBangChamCong";
+            this.lblBangChamCong.Size = new System.Drawing.Size(358, 31);
+            this.lblBangChamCong.TabIndex = 16;
+            this.lblBangChamCong.Text = "CHẤM CÔNG NHÂN VIÊN";
             // 
             // frmBangChamCong
             // 
