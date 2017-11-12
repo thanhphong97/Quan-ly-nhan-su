@@ -38,7 +38,7 @@ namespace DAO
         {
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
             //thêm theo thứ tự cột trong của bảng NHANVIEN trong Database
-            string sql = string.Format("INSERT INTO NHANVIEN VALUE('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}')", nv.MaNV, nv.Ho, nv.Ten, nv.NgaySinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, nv.NgayBatDauLamViec, nv.PhongBan, nv.MaBacND, nv.MaBacHSL, nv.MaCV, nv.MaBC, nv.QuyDinhLuong);
+            string sql = string.Format("INSERT INTO NHANVIEN VALUE('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}')", nv.MaNV, nv.Ho, nv.Ten, nv.NgaySinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, nv.NgayBatDauLamViec, nv.PhongBan, nv.MaBacND, nv.MaBacHSL, nv.MaCV, nv.MaBC);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             int rowAffected = cmd.ExecuteNonQuery();
             ThaoTacDuLieu.DongKetNoi(con);
