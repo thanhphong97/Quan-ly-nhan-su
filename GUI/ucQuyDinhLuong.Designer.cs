@@ -31,7 +31,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLuongCoBan = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.nudcongthang = new System.Windows.Forms.NumericUpDown();
             this.nudCongNgay = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,6 +47,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nudcongthang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCongNgay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -86,20 +89,39 @@
             this.txtLuongCoBan.TabIndex = 8;
             this.txtLuongCoBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(417, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 18);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Số ngày công trong tháng";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(417, 132);
+            this.label3.Location = new System.Drawing.Point(417, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 18);
             this.label3.TabIndex = 10;
             this.label3.Text = "Số giờ công trong ngày";
             // 
+            // nudcongthang
+            // 
+            this.nudcongthang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.nudcongthang.Location = new System.Drawing.Point(600, 139);
+            this.nudcongthang.Name = "nudcongthang";
+            this.nudcongthang.Size = new System.Drawing.Size(138, 24);
+            this.nudcongthang.TabIndex = 11;
+            this.nudcongthang.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // nudCongNgay
             // 
             this.nudCongNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.nudCongNgay.Location = new System.Drawing.Point(600, 130);
+            this.nudCongNgay.Location = new System.Drawing.Point(600, 179);
             this.nudCongNgay.Name = "nudCongNgay";
             this.nudCongNgay.Size = new System.Drawing.Size(138, 24);
             this.nudCongNgay.TabIndex = 12;
@@ -110,7 +132,7 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox1.Location = new System.Drawing.Point(400, 171);
+            this.groupBox1.Location = new System.Drawing.Point(400, 214);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(379, 233);
             this.groupBox1.TabIndex = 13;
@@ -139,11 +161,11 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.Controls.Add(this.nudBHTT_NV, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.nudBHYT_NV, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.nudBHXH_NV, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label9, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label10, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.nudBHYT_NV, 1, 1);
             this.tableLayoutPanel4.ForeColor = System.Drawing.Color.Black;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -252,13 +274,16 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.nudCongNgay);
+            this.Controls.Add(this.nudcongthang);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLuongCoBan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label14);
             this.Name = "ucQuyDinhLuong";
             this.Size = new System.Drawing.Size(1135, 559);
             this.Load += new System.EventHandler(this.ucQuyDinhLuong_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudcongthang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCongNgay)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -278,7 +303,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLuongCoBan;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nudcongthang;
         private System.Windows.Forms.NumericUpDown nudCongNgay;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
