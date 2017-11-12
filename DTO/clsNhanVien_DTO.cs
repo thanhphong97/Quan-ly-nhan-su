@@ -141,13 +141,6 @@ namespace DTO
             get { return _MaBC; }
             set { _MaBC = value; }
         }
-        string _QuyDinhLuong;
-
-        public string QuyDinhLuong
-        {
-            get { return _QuyDinhLuong; }
-            set { _QuyDinhLuong = value; }
-        }
 
         private bool _TrangThai;
 
