@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 namespace DAO
 {
     public class ThaoTacDuLieu
@@ -33,6 +34,23 @@ namespace DAO
             int kq = (int)cmd.ExecuteScalar();
             return kq;
         }
-
+        // Để sử dụng cho ReportViewer
+        public static DataTable LayBang(string strSql)
+        {
+            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            da.Fill(dt);
+            ThaoTacDuLieu.DongKetNoi(con);
+            return dt;
+        }
+        public static int ThucThiCauLenh(string sql)
+        {
+            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            int kq = cmd.ExecuteNonQuery();
+            ThaoTacDuLieu.DongKetNoi(con);
+            return kq;
+        }
     }
 }

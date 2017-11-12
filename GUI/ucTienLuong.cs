@@ -27,7 +27,13 @@ namespace GUI
             get { return _Nam; }
             set { _Nam = value; }
         }
-       
+        private string _MaCC;
+
+        public string MaCC
+        {
+            get { return _MaCC; }
+            set { _MaCC = value; }
+        }
         public ucTienLuong()
         {
             InitializeComponent();
@@ -60,15 +66,14 @@ namespace GUI
             
         }
 
-        private void dgvChamCong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnInChamCong_Click(object sender, EventArgs e)
         {
-            
+            DataGridViewRow r = dgvChamCong.CurrentRow;
+            MaCC = r.Cells[0].Value.ToString();
+            Thang = Convert.ToInt32(r.Cells[1].Value.ToString());
+            Nam = Convert.ToInt32(r.Cells[2].Value.ToString());
+            frmInChamCong frm_InChamCong = new frmInChamCong(this);
+            frm_InChamCong.ShowDialog();
         }
-
-        private void dgvChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            dgvChamCong.Columns[e.ColumnIndex].SortMode = DataGridViewColumnSortMode.NotSortable;
-        }
-
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAO;
+using System.Data;
 namespace BUS
 {
     public class clsChamCong_BUS
@@ -19,5 +20,16 @@ namespace BUS
             clsChamCong_DAO DAO = new clsChamCong_DAO();
             return DAO.LayTenBangChamCong();
         }
+        //public List<clsChamCong_DTO> LayDanhSachChamCong(string MaCC)
+        //{
+        //    clsChamCong_DAO DAO = new clsChamCong_DAO();
+        //    return DAO.LayDanhSachChamCong(MaCC);
+        //}
+        public DataTable LayBangChamCongNV(string strTK)
+        {
+            clsChamCong_DAO DAO = new clsChamCong_DAO();
+            return DAO.LayBangChamCongNV(strTK);
+        }
+        
     }
 }

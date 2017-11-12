@@ -31,9 +31,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLuongCoBan = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nudcongthang = new System.Windows.Forms.NumericUpDown();
             this.nudCongNgay = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,9 +43,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nudcongthang)).BeginInit();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCongNgay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -89,39 +85,20 @@
             this.txtLuongCoBan.TabIndex = 8;
             this.txtLuongCoBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(417, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 18);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Số ngày công trong tháng";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(417, 185);
+            this.label3.Location = new System.Drawing.Point(417, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 18);
             this.label3.TabIndex = 10;
             this.label3.Text = "Số giờ công trong ngày";
             // 
-            // nudcongthang
-            // 
-            this.nudcongthang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.nudcongthang.Location = new System.Drawing.Point(600, 139);
-            this.nudcongthang.Name = "nudcongthang";
-            this.nudcongthang.Size = new System.Drawing.Size(138, 24);
-            this.nudcongthang.TabIndex = 11;
-            this.nudcongthang.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // nudCongNgay
             // 
             this.nudCongNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.nudCongNgay.Location = new System.Drawing.Point(600, 179);
+            this.nudCongNgay.Location = new System.Drawing.Point(600, 130);
             this.nudCongNgay.Name = "nudCongNgay";
             this.nudCongNgay.Size = new System.Drawing.Size(138, 24);
             this.nudCongNgay.TabIndex = 12;
@@ -132,7 +109,7 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox1.Location = new System.Drawing.Point(400, 214);
+            this.groupBox1.Location = new System.Drawing.Point(400, 165);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(379, 233);
             this.groupBox1.TabIndex = 13;
@@ -198,6 +175,11 @@
             // 
             this.nudBHXH_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.nudBHXH_NV.Location = new System.Drawing.Point(182, 3);
+            this.nudBHXH_NV.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
             this.nudBHXH_NV.Name = "nudBHXH_NV";
             this.nudBHXH_NV.Size = new System.Drawing.Size(138, 24);
             this.nudBHXH_NV.TabIndex = 17;
@@ -244,46 +226,32 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "Tỷ lệ nhân viên phải đóng";
             // 
-            // button1
+            // btnCapNhat
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(774, 492);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 43);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Cập nhật";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.Location = new System.Drawing.Point(923, 492);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(144, 43);
-            this.btnThoat.TabIndex = 14;
-            this.btnThoat.Text = "Đóng";
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCapNhat.Location = new System.Drawing.Point(530, 404);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(130, 43);
+            this.btnCapNhat.TabIndex = 15;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // ucQuyDinhLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.nudCongNgay);
-            this.Controls.Add(this.nudcongthang);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLuongCoBan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label14);
             this.Name = "ucQuyDinhLuong";
             this.Size = new System.Drawing.Size(1135, 559);
             this.Load += new System.EventHandler(this.ucQuyDinhLuong_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudcongthang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCongNgay)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -303,9 +271,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLuongCoBan;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown nudcongthang;
         private System.Windows.Forms.NumericUpDown nudCongNgay;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -317,7 +283,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnCapNhat;
     }
 }
