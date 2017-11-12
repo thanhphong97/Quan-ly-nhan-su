@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using System.Data.SqlClient;
+using System.Data;
 namespace DAO
 {
     public class clsChamCong_DAO
@@ -22,7 +23,7 @@ namespace DAO
         public bool ThemBangChamCong(int SoNgay, List<clsChamCong_DTO> lsChamCong)
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string MaCC = "CC" + LaySoLuong().ToString();
+            string MaCC = "CC" + (LaySoLuong() + 1).ToString();
             if (lsChamCong.Count > 0)
             {
                 for (int i = 0; i < lsChamCong.Count; i++)
@@ -90,6 +91,14 @@ namespace DAO
             }
             ThaoTacDuLieu.DongKetNoi(conn);
             return lsChamCong;
+        }
+
+        public DataTable LayBangChamCongNV(string strTK)
+        {
+            SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
+            string sql = string.Format("SELECT * FROM CHAMCONG JOIN NHANVIEN ON NHANVIEN.MANV = CHAMCONG.MANV JOIN PHONGBAN ON PHONGBAN.MAPB = PHONG WHERE MACC = '{0}'",strTK);
+            return ThaoTacDuLieu.LayBang(sql);
+            
         }
     }
 }

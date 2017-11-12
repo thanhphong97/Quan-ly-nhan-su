@@ -78,8 +78,6 @@ namespace GUI
             this.DestroyHandle();
         }
 
-        
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             if(KiemTraDayDu() && KiemTraTrungKhopMatKhau())

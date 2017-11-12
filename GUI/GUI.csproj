@@ -48,11 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsChamCong.cs">
+      <DependentUpon>dsChamCong.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsChamCong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsChamCong.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmBangChamCong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBangChamCong.Designer.cs">
       <DependentUpon>frmBangChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInChamCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInChamCong.Designer.cs">
+      <DependentUpon>frmInChamCong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhongBan.cs">
       <SubType>Form</SubType>
@@ -107,6 +122,9 @@
     <EmbeddedResource Include="frmBangChamCong.resx">
       <DependentUpon>frmBangChamCong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInChamCong.resx">
+      <DependentUpon>frmInChamCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhongBan.resx">
       <DependentUpon>frmPhongBan.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +136,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptInChamCong.rdlc" />
     <EmbeddedResource Include="ucDangNhap.resx">
       <DependentUpon>ucDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +152,19 @@
     <EmbeddedResource Include="ucTienLuong.resx">
       <DependentUpon>ucTienLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dsChamCong.xsc">
+      <DependentUpon>dsChamCong.xsd</DependentUpon>
+    </None>
+    <None Include="dsChamCong.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsChamCong.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsChamCong.xss">
+      <DependentUpon>dsChamCong.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\DTO.clsChamCong_DTO.datasource" />
+    <None Include="Properties\DataSources\DTO.clsNhanVien_DTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
