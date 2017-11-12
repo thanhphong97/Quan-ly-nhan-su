@@ -23,6 +23,7 @@ namespace GUI
         private void ucThemNguoiDung_Load(object sender, EventArgs e)
         {
             dgvNhanVien.AutoGenerateColumns = false;
+            clearThongBao();
             loadDuLieu();
             
         }
@@ -37,7 +38,6 @@ namespace GUI
         {
            if(txtMaNV.Text == "" || txtTenDN.Text == "" || txtMatKhau.Text == "")
            {
-               MessageBox.Show("Vui lòng nhập đầy đủ các trường", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                return false;
            }
             return true;
@@ -48,18 +48,36 @@ namespace GUI
             string strXacNhanMatKhau = txtXacNhanMK.Text;
             return (strMatKhau == strXacNhanMatKhau);
         }
-        private void KiemTraTrungLap()
+        private void KiemTraMaNV()
         {
             string MaNV = txtMaNV.Text;
             clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
-            bool kq = bus.KiemTraTonTai(MaNV);
+            bool kq = bus.KiemTraTonTai(MaNV,1);
             if (kq)//MaNV này chưa được cấp tài khoản
             {
                 btnThem.Enabled = true;
+                lblThongBao_MaNV.Visible = false;
             }
             else//MaNV này đã được cấp tài khoản
             {
                 btnThem.Enabled = false;
+                lblThongBao_MaNV.Visible = true;
+            }
+        }
+        private void KiemTraTenDN()
+        {
+            string TenDN = txtTenDN.Text;
+            clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
+            bool kq = bus.KiemTraTonTai(TenDN, 2);
+            if (kq)//MaNV này chưa được cấp tài khoản
+            {
+                btnThem.Enabled = true;
+                lblThongBao_TK.Visible = false;
+            }
+            else//MaNV này đã được cấp tài khoản
+            {
+                btnThem.Enabled = false;
+                lblThongBao_TK.Visible = true;
             }
         }
         #endregion
@@ -73,44 +91,60 @@ namespace GUI
             return Quyen;
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.DestroyHandle();
-        }
+       
 
         
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(KiemTraDayDu() && KiemTraTrungKhopMatKhau())
+            if(KiemTraDayDu())
             {
-                clsNguoiDung_DTO nd = new clsNguoiDung_DTO();
-                nd.MANV = txtMaNV.Text.ToUpper();
-                nd.TAIKHOAN = txtTenDN.Text;
-                nd.MATKHAU = txtMatKhau.Text;
-                if (!chkTrangThai.Checked)
-                    nd.TRANGTHAI = true;
-                else
-                    nd.TRANGTHAI = false;
-                nd.LOAIND = LayQuyenTruyCap();
-                clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
-                bool kq = bus.TaoTaiKhoan(nd);
-                if(kq)
+                if(KiemTraTrungKhopMatKhau())
                 {
-                    MessageBox.Show("Tao nguời dùng " + nd.TAIKHOAN + " Thành công","THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadDuLieu();
-                    return;
+                    clsNguoiDung_DTO nd = new clsNguoiDung_DTO();
+                    nd.MANV = txtMaNV.Text.ToUpper();
+                    nd.TAIKHOAN = txtTenDN.Text;
+                    nd.MATKHAU = txtMatKhau.Text;
+                    if (!chkTrangThai.Checked)
+                        nd.TRANGTHAI = true;
+                    else
+                        nd.TRANGTHAI = false;
+                    nd.LOAIND = LayQuyenTruyCap();
+                    clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
+                    bool kq = bus.TaoTaiKhoan(nd);
+                    if (kq)
+                    {
+                        MessageBox.Show("Tao nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadDuLieu();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("THẤT BẠI", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("THẤT BẠI", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Mật khẩu không trùng khớp");
                 }
+               
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ các trường");
             }
         }
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             LoadDuLieuNguoiDung();
+            clearThongBao();
+        }
+
+        private void clearThongBao()
+        {
+            lblThongBao_MaNV.Visible = false;
+            lblThongBao_TK.Visible = false;
         }
 
         private void LoadDuLieuNguoiDung()
@@ -172,36 +206,60 @@ namespace GUI
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (KiemTraDayDu() && KiemTraTrungKhopMatKhau())
+            if (KiemTraDayDu())
             {
-                clsNguoiDung_DTO nd = new clsNguoiDung_DTO();
-                nd.MANV = txtMaNV.Text;
-                nd.TAIKHOAN = txtTenDN.Text;
-                nd.MATKHAU = txtMatKhau.Text;
-                if (!chkTrangThai.Checked)
-                    nd.TRANGTHAI = true;
-                else
-                    nd.TRANGTHAI = false;
-                nd.LOAIND = LayQuyenTruyCap();
-                clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
-                bool kq = bus.CapNhatTaiKhoan(nd);
-                if (kq)
+                if(KiemTraTrungKhopMatKhau())
                 {
-                    MessageBox.Show("Cập nhật nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadDuLieu();
-                    return;
+                    clsNguoiDung_DTO nd = new clsNguoiDung_DTO();
+                    nd.MANV = txtMaNV.Text;
+                    nd.TAIKHOAN = txtTenDN.Text;
+                    nd.MATKHAU = txtMatKhau.Text;
+                    if (!chkTrangThai.Checked)
+                        nd.TRANGTHAI = true;
+                    else
+                        nd.TRANGTHAI = false;
+                    nd.LOAIND = LayQuyenTruyCap();
+                    clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
+                    bool kq = bus.CapNhatTaiKhoan(nd);
+                    if (kq)
+                    {
+                        MessageBox.Show("Cập nhật nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadDuLieu();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("THẤT BẠI", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                 else
                 {
-                    MessageBox.Show("THẤT BẠI", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Mật khẩu không trùng khớp");
                 }
+               
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ các trường");
             }
         }
 
         private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
-            KiemTraTrungLap();
+            KiemTraMaNV();
         }
+
+        private void txtTenDN_TextChanged(object sender, EventArgs e)
+        {
+            KiemTraTenDN();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtMaNV.Text = txtTenDN.Text = txtMatKhau.Text = txtXacNhanMK.Text = "";
+        }
+
+       
 
        
 
