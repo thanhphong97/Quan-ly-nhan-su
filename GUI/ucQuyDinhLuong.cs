@@ -24,7 +24,6 @@ namespace GUI
             formatPhanTram();
 
             //giá trị mặc định
-            nudcongthang.Value = 24;
             nudCongNgay.Value = 8;
             nudBHYT_NV.Value = 2;
             nudBHXH_NV.Value = 4;
@@ -33,8 +32,6 @@ namespace GUI
         }
         public void formatPhanTram()
         {
-            nudcongthang.DecimalPlaces = 2;
-            nudcongthang.ThousandsSeparator = true;
 
             nudCongNgay.DecimalPlaces = 2;
             nudCongNgay.ThousandsSeparator = true;
