@@ -113,7 +113,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
-            this.ucHopDong1 = new GUI.ucHopDong();
             this.tabControl1.SuspendLayout();
             this.tpNhanVien.SuspendLayout();
             this.grbThôngTinNV.SuspendLayout();
@@ -718,19 +717,7 @@
             this.tabPage2.Text = "Danh sách thân nhân";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tpHopDong
-            // 
-            this.tpHopDong.Controls.Add(this.btnThem);
-            this.tpHopDong.Controls.Add(this.grbHopDong);
-            this.tpHopDong.Controls.Add(this.dataGridView2);
-            this.tpHopDong.Controls.Add(this.label21);
-            this.tpHopDong.Controls.Add(this.ucHopDong1);
-            this.tpHopDong.Location = new System.Drawing.Point(4, 27);
-            this.tpHopDong.Name = "tpHopDong";
-            this.tpHopDong.Size = new System.Drawing.Size(1127, 528);
-            this.tpHopDong.TabIndex = 2;
-            this.tpHopDong.Text = "Hợp đồng";
-            this.tpHopDong.UseVisualStyleBackColor = true;
+            
             // 
             // btnThem
             // 
@@ -1036,13 +1023,7 @@
             // 
             // ucHopDong1
             // 
-            this.ucHopDong1.BackColor = System.Drawing.SystemColors.Control;
-            this.ucHopDong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHopDong1.Location = new System.Drawing.Point(0, 0);
-            this.ucHopDong1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucHopDong1.Name = "ucHopDong1";
-            this.ucHopDong1.Size = new System.Drawing.Size(1127, 528);
-            this.ucHopDong1.TabIndex = 0;
+           
             // 
             // ucThemNhanVien
             // 
@@ -1132,7 +1113,6 @@
         private System.Windows.Forms.Button btnThemNV;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tpHopDong;
-        private ucHopDong ucHopDong1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox grbHopDong;
         private System.Windows.Forms.DataGridView dataGridView2;
