@@ -27,10 +27,10 @@ namespace BUS
             return dao.CapNhatNguoiDung(nd);
         }
 
-        public bool KiemTraTonTai(string MaNV)
+        public bool KiemTraTonTai(string str, int loaiKT)
         {
             clsNguoiDung_DAO dao = new clsNguoiDung_DAO();
-            return dao.KiemTraTonTai(MaNV);
+            return dao.KiemTraTonTai(str, loaiKT);
         }
     }
 }

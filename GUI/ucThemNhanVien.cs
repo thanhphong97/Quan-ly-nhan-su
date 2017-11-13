@@ -97,14 +97,14 @@ namespace GUI
 
         private void btnThemNV_Click(object sender, EventArgs e)
         {
-            ThemNhanVien();   
+            //ThemNhanVien();   
         }
 
-        private void ThemNhanVien()
+        private void ThemNhanVien(clsNhanVien_DTO nv)
         {
-            clsNhanVien_DTO nv = new clsNhanVien_DTO();
+            
             //Thông tin cá nhân
-            nv.Ho = txtHoLot.Text;
+            nv.Ho = txtHo.Text;
             nv.Ten = txtTen.Text;
             nv.NgaySinh = dtpNgaySinh.Value;
             nv.CMND = txtCMND.Text;
@@ -138,14 +138,34 @@ namespace GUI
           //chặn nhập chữ
         }
 
+        private void grbHopDong_Enter(object sender, EventArgs e)
+        {
 
+        }
 
-        
+        private void btnThemNV_Click_1(object sender, EventArgs e)
+        {
+            //clsNhanVien_DTO NhanVien = new clsNhanVien_DTO();
+            //NhanVien.Ho = txtHo.Text.Trim();
+            //NhanVien.Ten = txtTen.Text.Trim();
+            //NhanVien.NgaySinh = dtpNgaySinh.Value;
+            //NhanVien.CMND = txtCMND.Text.Trim();
+            //NhanVien.GioiTinh = (radNam.Checked == true) ? true : false;
+            //NhanVien.ChucVu = cboChucVu.SelectedValue.ToString();
+            //NhanVien.HeSoLuong = Convert.ToDouble(numHeSoLuong.Value);
+            //NhanVien.DiaChiThuongTru = txtDiaChiThuongTru.Text.Trim();
+            //NhanVien.NguyenQuan = txtNguyenQuan.Text.Trim();
+            //NhanVien.QuocTich = cboQuocTich.SelectedValue.ToString();
+            //NhanVien.TinhThanh = cboTinh.SelectedValue.ToString();
+            //NhanVien.TonGiao = cboTonGiao.SelectedValue.ToString();
+            //NhanVien.MaBC = cboTrinhDo.SelectedValue.ToString();
+            //NhanVien.NgayBatDauLamViec = dtpNgaySinh.Value;
+               
+        }
 
-       
+        private void tpNhanVien_Click(object sender, EventArgs e)
+        {
 
-        
-
-       
+        }
     }
 }

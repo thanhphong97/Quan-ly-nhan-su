@@ -13,7 +13,7 @@ namespace DAO
         {
             //auto thành công;
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("SELECT COUNT(*) FROM NGUOIDUNG WHERE TAIKHOAN = '{0}' AND MATKHAU = '{1}'", strTenDN, strMK);
+            string sql = string.Format("SELECT COUNT(*) FROM NGUOIDUNG WHERE TAIKHOAN = '{0}' AND MATKHAU = '{1}' AND TrangThai= 1", strTenDN, strMK);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             int kq = (int)cmd.ExecuteScalar();
             ThaoTacDuLieu.DongKetNoi(conn);
@@ -36,14 +36,14 @@ namespace DAO
 
         public bool ThemNhanVien(clsNhanVien_DTO nv)
         {
-            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            //thêm theo thứ tự cột trong của bảng NHANVIEN trong Database
-            string sql = string.Format("INSERT INTO NHANVIEN VALUE('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}')", nv.MaNV, nv.Ho, nv.Ten, nv.NgaySinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, nv.NgayBatDauLamViec, nv.PhongBan, nv.MaBacND, nv.MaBacHSL, nv.MaCV, nv.MaBC);
-            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
-            int rowAffected = cmd.ExecuteNonQuery();
-            ThaoTacDuLieu.DongKetNoi(con);
-            if (rowAffected == 0)
-                return false;// Thêm thất bại
+            //SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            ////thêm theo thứ tự cột trong của bảng NHANVIEN trong Database
+            //string sql = string.Format("INSERT INTO NHANVIEN(MANV,HO,TEN,NGAYSINH,DIACHI,CMND,GIOITINH,NGUYENQUAN,TINHTHANH,QUANHUYEN,QUOCTICH,NGAYBATDAU,PHONG,MABACHSL,MACV,BANGCAP,TRANGTHAI) VALUES('{0}','{1}','{2}','{3}','{4}','{5}',{6},'{7}','{8}','{9}','{10}','{11}','{12}',{11},'{12}','{13}',{14})",nv.MaNV,nv.Ho,nv.Ten,nv.NgaySinh,nv.DiaChiThuongTru,nv.CMND,nv.GioiTinh,nv.NguyenQuan,nv.TinhThanh,nv.QuanHuyen,nv.QuocTich,nv.NgayBatDauLamViec,nv.PhongBan,nv.MaBacHSL,);
+            //SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
+            //int rowAffected = cmd.ExecuteNonQuery();
+            //ThaoTacDuLieu.DongKetNoi(con);
+            //if (rowAffected == 0)
+            //    return false;// Thêm thất bại
             return true;//thêm thành công
         }
 

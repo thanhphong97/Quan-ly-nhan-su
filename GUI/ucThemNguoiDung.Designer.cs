@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbQuanTri = new System.Windows.Forms.TabControl();
             this.tpThemNguoiDung = new System.Windows.Forms.TabPage();
             this.chkTrangThai = new System.Windows.Forms.CheckBox();
@@ -55,10 +55,12 @@
             this.radAdministrator = new System.Windows.Forms.RadioButton();
             this.radTraCuu = new System.Windows.Forms.RadioButton();
             this.radNhanVienKeToan = new System.Windows.Forms.RadioButton();
-            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.tbBackup = new System.Windows.Forms.TabPage();
             this.tpRestore = new System.Windows.Forms.TabPage();
             this.tpNhatKyTruyCap = new System.Windows.Forms.TabPage();
+            this.lblThongBao_MaNV = new System.Windows.Forms.Label();
+            this.lblThongBao_TK = new System.Windows.Forms.Label();
             this.tbQuanTri.SuspendLayout();
             this.tpThemNguoiDung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -83,6 +85,8 @@
             // tpThemNguoiDung
             // 
             this.tpThemNguoiDung.BackColor = System.Drawing.SystemColors.Control;
+            this.tpThemNguoiDung.Controls.Add(this.lblThongBao_TK);
+            this.tpThemNguoiDung.Controls.Add(this.lblThongBao_MaNV);
             this.tpThemNguoiDung.Controls.Add(this.chkTrangThai);
             this.tpThemNguoiDung.Controls.Add(this.dgvNhanVien);
             this.tpThemNguoiDung.Controls.Add(this.label5);
@@ -90,7 +94,7 @@
             this.tpThemNguoiDung.Controls.Add(this.grbThongTinTaiKhoan);
             this.tpThemNguoiDung.Controls.Add(this.btnThem);
             this.tpThemNguoiDung.Controls.Add(this.grbPhanQuyen);
-            this.tpThemNguoiDung.Controls.Add(this.btnThoat);
+            this.tpThemNguoiDung.Controls.Add(this.btnClear);
             this.tpThemNguoiDung.Location = new System.Drawing.Point(4, 27);
             this.tpThemNguoiDung.Name = "tpThemNguoiDung";
             this.tpThemNguoiDung.Padding = new System.Windows.Forms.Padding(3);
@@ -113,14 +117,14 @@
             // dgvNhanVien
             // 
             this.dgvNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMANV,
@@ -143,8 +147,8 @@
             // 
             this.colMANV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colMANV.DataPropertyName = "MANV";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colMANV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colMANV.DefaultCellStyle = dataGridViewCellStyle6;
             this.colMANV.HeaderText = "Mã NV";
             this.colMANV.Name = "colMANV";
             this.colMANV.ReadOnly = true;
@@ -198,7 +202,7 @@
             this.btnCapNhat.Location = new System.Drawing.Point(873, 424);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(107, 46);
-            this.btnCapNhat.TabIndex = 20;
+            this.btnCapNhat.TabIndex = 9;
             this.btnCapNhat.Text = "Lưu lại";
             this.btnCapNhat.UseVisualStyleBackColor = true;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
@@ -228,7 +232,7 @@
             this.txtMaNV.Location = new System.Drawing.Point(175, 38);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(215, 29);
-            this.txtMaNV.TabIndex = 8;
+            this.txtMaNV.TabIndex = 1;
             this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
             // 
             // txtXacNhanMK
@@ -237,7 +241,7 @@
             this.txtXacNhanMK.Location = new System.Drawing.Point(175, 168);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
             this.txtXacNhanMK.Size = new System.Drawing.Size(215, 29);
-            this.txtXacNhanMK.TabIndex = 7;
+            this.txtXacNhanMK.TabIndex = 4;
             this.txtXacNhanMK.UseSystemPasswordChar = true;
             // 
             // label4
@@ -299,7 +303,8 @@
             this.txtTenDN.Location = new System.Drawing.Point(175, 81);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(215, 29);
-            this.txtTenDN.TabIndex = 1;
+            this.txtTenDN.TabIndex = 2;
+            this.txtTenDN.TextChanged += new System.EventHandler(this.txtTenDN_TextChanged);
             // 
             // btnThem
             // 
@@ -307,7 +312,7 @@
             this.btnThem.Location = new System.Drawing.Point(760, 424);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(107, 46);
-            this.btnThem.TabIndex = 18;
+            this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -334,7 +339,7 @@
             this.radAdministrator.Location = new System.Drawing.Point(12, 33);
             this.radAdministrator.Name = "radAdministrator";
             this.radAdministrator.Size = new System.Drawing.Size(113, 22);
-            this.radAdministrator.TabIndex = 6;
+            this.radAdministrator.TabIndex = 5;
             this.radAdministrator.Text = "Administrator";
             this.radAdministrator.UseVisualStyleBackColor = true;
             // 
@@ -347,7 +352,7 @@
             this.radTraCuu.Location = new System.Drawing.Point(12, 124);
             this.radTraCuu.Name = "radTraCuu";
             this.radTraCuu.Size = new System.Drawing.Size(76, 22);
-            this.radTraCuu.TabIndex = 5;
+            this.radTraCuu.TabIndex = 7;
             this.radTraCuu.TabStop = true;
             this.radTraCuu.Text = "Tra cứu";
             this.radTraCuu.UseVisualStyleBackColor = true;
@@ -360,20 +365,20 @@
             this.radNhanVienKeToan.Location = new System.Drawing.Point(12, 79);
             this.radNhanVienKeToan.Name = "radNhanVienKeToan";
             this.radNhanVienKeToan.Size = new System.Drawing.Size(144, 22);
-            this.radNhanVienKeToan.TabIndex = 4;
+            this.radNhanVienKeToan.TabIndex = 6;
             this.radNhanVienKeToan.Text = "Nhân viên kế toán";
             this.radNhanVienKeToan.UseVisualStyleBackColor = true;
             // 
-            // btnThoat
+            // btnClear
             // 
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.Location = new System.Drawing.Point(986, 424);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(108, 46);
-            this.btnThoat.TabIndex = 19;
-            this.btnThoat.Text = "Đóng";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnClear.Location = new System.Drawing.Point(986, 424);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(108, 46);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // tbBackup
             // 
@@ -404,6 +409,26 @@
             this.tpNhatKyTruyCap.TabIndex = 3;
             this.tpNhatKyTruyCap.Text = "Nhật ký truy cập";
             this.tpNhatKyTruyCap.UseVisualStyleBackColor = true;
+            // 
+            // lblThongBao_MaNV
+            // 
+            this.lblThongBao_MaNV.AutoSize = true;
+            this.lblThongBao_MaNV.ForeColor = System.Drawing.Color.Red;
+            this.lblThongBao_MaNV.Location = new System.Drawing.Point(704, 364);
+            this.lblThongBao_MaNV.Name = "lblThongBao_MaNV";
+            this.lblThongBao_MaNV.Size = new System.Drawing.Size(244, 18);
+            this.lblThongBao_MaNV.TabIndex = 24;
+            this.lblThongBao_MaNV.Text = "Mã nhân viên đã được cấp tài khoản";
+            // 
+            // lblThongBao_TK
+            // 
+            this.lblThongBao_TK.AutoSize = true;
+            this.lblThongBao_TK.ForeColor = System.Drawing.Color.Red;
+            this.lblThongBao_TK.Location = new System.Drawing.Point(704, 396);
+            this.lblThongBao_TK.Name = "lblThongBao_TK";
+            this.lblThongBao_TK.Size = new System.Drawing.Size(218, 18);
+            this.lblThongBao_TK.TabIndex = 25;
+            this.lblThongBao_TK.Text = "Tên đăng nhập đã được sử dụng";
             // 
             // ucThemNguoiDung
             // 
@@ -452,10 +477,12 @@
         private System.Windows.Forms.RadioButton radAdministrator;
         private System.Windows.Forms.RadioButton radTraCuu;
         private System.Windows.Forms.RadioButton radNhanVienKeToan;
-        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TabPage tbBackup;
         private System.Windows.Forms.TabPage tpRestore;
         private System.Windows.Forms.TabPage tpNhatKyTruyCap;
+        private System.Windows.Forms.Label lblThongBao_TK;
+        private System.Windows.Forms.Label lblThongBao_MaNV;
 
     }
 }

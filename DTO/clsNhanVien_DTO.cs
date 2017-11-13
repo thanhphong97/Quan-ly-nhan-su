@@ -150,6 +150,26 @@ namespace DTO
             set { _TrangThai = value; }
         }
 
+        private string _ChucVu;
 
+        public string ChucVu
+        {
+            get { return _ChucVu; }
+            set { _ChucVu = value; }
+        }
+        private double _HeSoLuong;
+
+        public double HeSoLuong
+        {
+            get { return _HeSoLuong; }
+            set { _HeSoLuong = value; }
+        }
+        private string _TrinhDo;
+
+        public string TrinhDo
+        {
+            get { return _TrinhDo; }
+            set { _TrinhDo = value; }
+        }
     }
 }

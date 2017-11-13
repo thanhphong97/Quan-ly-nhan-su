@@ -59,10 +59,14 @@ namespace DAO
             return true;
         }
 
-        public bool KiemTraTonTai(string MaNV)
+        public bool KiemTraTonTai(string str, int loaiKT)
         {
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("SELECT COUNT(*) FROM NGUOIDUNG WHERE MANV = '{0}'",MaNV);
+            string sql = "SELECT COUNT(*) FROM NGUOIDUNG";
+            if (loaiKT == 1)
+                sql += string.Format(" WHERE MaNV = '{0}'", str);
+            if (loaiKT == 2)
+                sql += string.Format(" WHERE TAIKHOAN =  '{0}'", str);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             int SoLuongTaiKhoan = (int)cmd.ExecuteScalar();
             if (SoLuongTaiKhoan > 0)
