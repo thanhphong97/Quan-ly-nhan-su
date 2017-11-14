@@ -108,8 +108,8 @@ namespace GUI
             nv.Ten = txtTen.Text;
             nv.NgaySinh = dtpNgaySinh.Value;
             nv.CMND = txtCMND.Text;
-            nv.DiaChiThuongTru = txtDiaChiThuongTru.Text;
-            nv.NguyenQuan = txtNguyenQuan.Text;
+            //nv.DiaChiThuongTru = txtDiaChiThuongTru.Text;
+            //nv.NguyenQuan = txtNguyenQuan.Text;
             if (radNam.Checked == true)
                 nv.GioiTinh = true; // nam
             else

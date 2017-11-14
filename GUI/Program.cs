@@ -8,7 +8,7 @@ namespace GUI
 {
     static class Program
     {
-        public static clsNhanVien_DTO NhanVien_Login = null;
+        public static clsNhanVienDangNhap NhanVien_Login = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

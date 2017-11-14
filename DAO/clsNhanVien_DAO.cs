@@ -11,7 +11,6 @@ namespace DAO
     {
         public bool KiemTraDangNhap(string strTenDN, string strMK)
         {
-            //auto thành công;
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
             string sql = string.Format("SELECT COUNT(*) FROM NGUOIDUNG WHERE TAIKHOAN = '{0}' AND MATKHAU = '{1}' AND TrangThai= 1", strTenDN, strMK);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
@@ -22,9 +21,25 @@ namespace DAO
 
         }
 
-        public DTO.clsNhanVien_DTO LayThongTinNhanVien(string strTenDN)
+        public clsNhanVienDangNhap LayThongTinNhanVien(string strTenDN)
         {
-            throw new NotImplementedException();
+            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            string sql = string.Format("SELECT HO, TEN, LOAIND FROM NHANVIEN, NGUOIDUNG WHERE NHANVIEN.MANV = NGUOIDUNG.MANV AND TAIKHOAN = '{0}'",strTenDN);
+            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
+            clsNhanVienDangNhap nv = new clsNhanVienDangNhap();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                if (!dr.IsDBNull(0))
+                    nv.Ho = dr.GetString(0);
+                if (!dr.IsDBNull(1))
+                    nv.Ten = dr.GetString(1);
+                if (!dr.IsDBNull(2))
+                    nv.Quyen = dr.GetString(2);
+            }
+            ThaoTacDuLieu.DongKetNoi(con);
+            return nv;
+
         }
 
         public int DemNhanVien()
