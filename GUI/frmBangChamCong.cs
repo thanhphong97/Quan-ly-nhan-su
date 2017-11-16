@@ -58,9 +58,27 @@ namespace GUI
                 var col = "col" + i;
                 dgvBangChamCong.Columns[col].Visible = true;
                 DataGridViewComboBoxColumn dgvcbo = (DataGridViewComboBoxColumn)dgvBangChamCong.Columns[col];
-                dgvcbo.DataSource = BUSKH.LayDanhSachKyHieu();
-                dgvcbo.DisplayMember = "KYHIEU";
-                dgvcbo.ValueMember = "KYHIEU";
+               
+                DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, i);
+                if (dt.DayOfWeek != 0) // Không phải là ngày chủ nhật
+                {
+                    List<clsKyHieuChamCong_DTO> lsKH = BUSKH.LayDanhSachKyHieu();
+                    for(int j = 0 ; j < lsKH.Count; j++)
+                    {
+                        string a = lsKH[j].KyHieu;
+                        if (lsKH[j].KyHieu == "CN")
+                            lsKH.RemoveAt(j); // Xóa bỏ ký hiệu chấm công là CN 
+                    }
+                    dgvcbo.DataSource = lsKH;   
+                    dgvcbo.DisplayMember = "KYHIEU";
+                    dgvcbo.ValueMember = "KYHIEU";
+                }
+                else // Thứ 2 đến thứ 7 
+                {
+                    dgvcbo.DataSource = BUSKH.LayDanhSachKyHieu();
+                    dgvcbo.DisplayMember = "KYHIEU";
+                    dgvcbo.ValueMember = "KYHIEU";
+                }
             }
 
         }
@@ -72,21 +90,17 @@ namespace GUI
             clsNhanVien_BUS BUSNV = new clsNhanVien_BUS();
             dgvBangChamCong.DataSource = BUSNV.LayDanhSachNhanVien(lsPhongBan);
             lblBangChamCong.Text = string.Format("Bảng chấm công tháng {0} năm {1}", ucTL.Thang, ucTL.Nam);
-
             ChamCongTuDong();
 
         }
 
-        private void dgvBangChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+  
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             List<clsChamCong_DTO> lsChamCong = new List<clsChamCong_DTO>();
             
-            for (int i = 0; i < dgvBangChamCong.Rows.Count; i++ ) // Chấm công tự động cho từ ngày 1 -> 27. Chủ nhật mặc định là CN
+            for (int i = 0; i < dgvBangChamCong.Rows.Count; i++ ) // Chấm công cho từ ngày 1 -> 27. Chủ nhật mặc định là CN
             {
                 clsChamCong_DTO ChamCong = new clsChamCong_DTO();
                 ChamCong.MaNV =  dgvBangChamCong.Rows[i].Cells["colMaNV"].Value.ToString();
@@ -119,7 +133,6 @@ namespace GUI
                 ChamCong.D25 = dgvBangChamCong.Rows[i].Cells["col25"].Value.ToString();
                 ChamCong.D26 = dgvBangChamCong.Rows[i].Cells["col26"].Value.ToString();
                 ChamCong.D27 = dgvBangChamCong.Rows[i].Cells["col27"].Value.ToString();
-              
                 if (DateTime.DaysInMonth(ucTL.Nam, ucTL.Thang) == 28)
                 {
                     ChamCong.D28 = dgvBangChamCong.Rows[i].Cells["col28"].Value.ToString();
@@ -154,12 +167,12 @@ namespace GUI
                 _btnLuu = true;
                 this.Hide();
                 frm_PhongBan.Close();
+                
             }
             else
             {
                 MessageBox.Show("Lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -167,7 +180,6 @@ namespace GUI
             if (MessageBox.Show("Dữ liệu sẽ bị hủy. Bản có muốn đóng không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
         }
-
 
         private void dgvBangChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -182,9 +194,9 @@ namespace GUI
                     }
                 }
             }
+            
         }
-
-        private void ChamCongTuDong() // Tự động chấm tất cả ngày công trong tháng. KHông chấm chủ nhật (cách chấm dành cho phòng Nhân Sự). 
+        private void ChamCongTuDong() // Tự động chấm tất cả ngày công trong tháng. Không chấm chủ nhật (cách chấm dành cho phòng Nhân Sự).
         {
             for (int indexcolumn = 0; indexcolumn < dgvBangChamCong.Columns.Count; indexcolumn++)
             {
@@ -197,13 +209,15 @@ namespace GUI
                         if (dt.DayOfWeek == 0) // Nếu là ngày chủ nhật
                             (dgvBangChamCong.Rows[indexrow].Cells[indexcolumn] as DataGridViewComboBoxCell).Value = "CN";
                         else
-                            (dgvBangChamCong.Rows[indexrow].Cells[indexcolumn] as DataGridViewComboBoxCell).Value = "8";
+                        {
+                            (dgvBangChamCong.Rows[indexrow].Cells[indexcolumn] as DataGridViewComboBoxCell).Value = "8";     
+                        }
                     }
                 }
             }
         }
 
-
+       
 
     }
 }
