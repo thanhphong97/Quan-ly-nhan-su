@@ -60,7 +60,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label14.Location = new System.Drawing.Point(449, 18);
+            this.label14.Location = new System.Drawing.Point(503, 18);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(266, 31);
             this.label14.TabIndex = 6;
@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(417, 90);
+            this.label1.Location = new System.Drawing.Point(471, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 18);
             this.label1.TabIndex = 7;
@@ -79,7 +79,7 @@
             // txtLuongCoBan
             // 
             this.txtLuongCoBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtLuongCoBan.Location = new System.Drawing.Point(600, 90);
+            this.txtLuongCoBan.Location = new System.Drawing.Point(654, 90);
             this.txtLuongCoBan.Name = "txtLuongCoBan";
             this.txtLuongCoBan.Size = new System.Drawing.Size(138, 24);
             this.txtLuongCoBan.TabIndex = 8;
@@ -89,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(417, 136);
+            this.label3.Location = new System.Drawing.Point(471, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 18);
             this.label3.TabIndex = 10;
@@ -98,7 +98,7 @@
             // nudCongNgay
             // 
             this.nudCongNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.nudCongNgay.Location = new System.Drawing.Point(600, 130);
+            this.nudCongNgay.Location = new System.Drawing.Point(654, 130);
             this.nudCongNgay.Name = "nudCongNgay";
             this.nudCongNgay.Size = new System.Drawing.Size(138, 24);
             this.nudCongNgay.TabIndex = 12;
@@ -109,7 +109,7 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox1.Location = new System.Drawing.Point(400, 165);
+            this.groupBox1.Location = new System.Drawing.Point(454, 165);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(379, 233);
             this.groupBox1.TabIndex = 13;
@@ -230,9 +230,9 @@
             // 
             this.btnCapNhat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCapNhat.Location = new System.Drawing.Point(530, 404);
+            this.btnCapNhat.Location = new System.Drawing.Point(572, 404);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(130, 43);
+            this.btnCapNhat.Size = new System.Drawing.Size(181, 43);
             this.btnCapNhat.TabIndex = 15;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label14);
             this.Name = "ucQuyDinhLuong";
-            this.Size = new System.Drawing.Size(1135, 559);
+            this.Size = new System.Drawing.Size(1303, 680);
             this.Load += new System.EventHandler(this.ucQuyDinhLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCongNgay)).EndInit();
             this.groupBox1.ResumeLayout(false);

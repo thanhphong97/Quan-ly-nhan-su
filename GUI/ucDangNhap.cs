@@ -11,7 +11,7 @@ using DTO;
 using BUS;
 namespace GUI
 {
-    public delegate void TenDelegate(Control sender, clsNhanVien_DTO nv);
+    public delegate void TenDelegate(Control sender, clsNhanVienDangNhap nv);
     public partial class ucDangNhap : UserControl
     {
         
@@ -54,7 +54,7 @@ namespace GUI
             if (bus.KiemTraDangNhap(strTenDN, strMK))
             {
                 // Xử lý khi đăng nhập thành công
-                //Program.nv = bus.LayThongTinNhanVien(strTenDN);
+                Program.NhanVien_Login = bus.LayThongTinNhanVien(strTenDN);
                 //phát sinh sự kiện khi đăng nhập thành công
                 if (SK_DN_ThanhCong != null)
                     SK_DN_ThanhCong(this, Program.NhanVien_Login);

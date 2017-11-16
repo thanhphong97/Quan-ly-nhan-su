@@ -118,77 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DangNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DangNhap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DangXuat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DangXuat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="manage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\manage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396444119_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396444119_Login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396444461_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396444461_exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396445070_user-group-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396445070_user-group-new1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396445209_Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396445209_Refresh1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396445912_edit_group" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396445912_edit_group1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396445934_users_business" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396445934_users_business1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1396446350_Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1396446350_Map1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396446386_Map-Marker-Marker-Outside-Pink" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396446386_Map-Marker-Marker-Outside-Pink1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396446390_Map-Marker-Marker-Outside-Chartreuse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396446390_Map-Marker-Marker-Outside-Chartreuse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396446628_Map-Marker-Chequered-Flag-Left-Azure" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396446628_Map-Marker-Chequered-Flag-Left-Azure1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396447029_companies" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396447029_companies1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396447627_statistics_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396447627_statistics_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396447935_system-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396447935_system-search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396448088_address-book" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396448088_address-book1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396937759_binoculars_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396937759_binoculars_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1396937841_stock_save-as" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396937841_stock_save-as1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backup_data_database-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backup_data_database-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="degree-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\degree-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="help_book_support-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\help_book_support-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="information_support-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\information_support-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inventory_box_shipment_product-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inventory_box_shipment_product-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="key-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\key-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,28 +127,121 @@
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="man_user_male_human_people-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\man_user_male_human_people-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396937759_binoculars_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396937759_binoculars_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phongban1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phongban11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396446386_Map-Marker-Marker-Outside-Pink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396446386_Map-Marker-Marker-Outside-Pink1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="restore_data_database-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restore_data_database-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396446390_Map-Marker-Marker-Outside-Chartreuse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396446390_Map-Marker-Marker-Outside-Chartreuse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396447627_statistics_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396447627_statistics_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sound_speaker_music_volume-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sound_speaker_music_volume-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396444461_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396444461_exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396444119_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396444119_Login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quy-dinh-luong1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quy-dinh-luong1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sua1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thoát" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thoát1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396937841_stock_save-as" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396937841_stock_save-as1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_book_support-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help_book_support-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_box_shipment_product-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_box_shipment_product-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backup_data_database-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backup_data_database-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="degree-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\degree-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="invention" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invention.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phongban1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phongban11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="school-material" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\school-material.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396445209_Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396445209_Refresh1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396448088_address-book" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396448088_address-book1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="information_support-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\information_support-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DangXuat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DangXuat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396447029_companies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396447029_companies1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396445070_user-group-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396445070_user-group-new1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="man_user_male_human_people-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\man_user_male_human_people-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396446628_Map-Marker-Chequered-Flag-Left-Azure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396446628_Map-Marker-Chequered-Flag-Left-Azure1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quy-dinh-luong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quy-dinh-luong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sound_speaker_music_volume-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_speaker_music_volume-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396447935_system-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396447935_system-search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396445912_edit_group" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396445912_edit_group1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DangNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DangNhap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="xóa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xóa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="invention1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invention1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="restore_data_database-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restore_data_database-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thoát" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thoát1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="salary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1396445934_users_business" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396445934_users_business1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

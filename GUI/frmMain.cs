@@ -35,35 +35,28 @@ namespace GUI
         private void TrangThaiChuaDangNhap()
         {
             mnuMain.Enabled = false;
-            btnDangXuat.Enabled = false;
+            tbtnDangXuat.Enabled = false;
+            Program.NhanVien_Login = null;
+            lblNguoiDung.Text = "";
             MoFormDangNhap();
         }
 
-       
-        public void XuLyKhiDangNhapThanhCong(Control sender, clsNhanVien_DTO nv)
+
+        public void XuLyKhiDangNhapThanhCong(Control sender, clsNhanVienDangNhap nv)
         {
             //ẩn uc Đăng nhập
             this.pnlMain.Controls.Remove(sender);
             // Trạng thái đã đăng nhập thành công
             mnuMain.Enabled = true;
-            btnDangXuat.Enabled = true;
+            tbtnDangXuat.Enabled = true;
             ucThemNhanVien ucThemNV = new ucThemNhanVien();
             this.pnlMain.Controls.Add(ucThemNV);
-            // Hiện thị thông tin người đang đăng nhập
-            //lblTenNguoiDung.Text = nv.HoTen
+            lblNguoiDung.Text = nv.Ho + " " + nv.Ten;
+            LoadPhanQuyen();
+            System.Drawing.Size kichthuoc = this.Size;
+            MessageBox.Show(kichthuoc.ToString());
         }
 
-        
-
-        private void btnDangXuat_Click(object sender, EventArgs e)
-        {
-            //foreach(Control child in this.pnlMain.Controls)
-            //{
-                 //this.pnlMain.Controls.Remove(child);
-            //}
-            this.pnlMain.Controls.Clear();
-            TrangThaiChuaDangNhap();
-        }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -72,67 +65,28 @@ namespace GUI
                 e.Cancel = true;
             }
         }
-
-      
-
-      
-
-        private void mnuThemNhanVien_Click(object sender, EventArgs e)
-        {
-            
         
-            
-        }
-
-        private void mnuQuyDnhLuong_Click(object sender, EventArgs e)
+    
+        private void LoadPhanQuyen()
         {
-            ucQuyDinhLuong ucTNV;
-            ucQuyDinhLuong c = pnlMain.Controls.Find("ucQuyDinhLuong", false).FirstOrDefault() as ucQuyDinhLuong;
-
-            if (c == null)
+            string quyen = Program.NhanVien_Login.Quyen;
+            if(quyen == "L1")
             {
-                ucTNV = new ucQuyDinhLuong();
-                pnlMain.Controls.Add(ucTNV);
+                //toàn bộ chức năng
             }
-            else
+            if(quyen == "L2")
             {
-                c.Show();
+                //chỉ chấm công + tiền lương
+                tbtnQuanTri.Enabled = false;
             }
-            foreach (Control ctrl in pnlMain.Controls)
+            if(quyen == "L3")
             {
-                if (ctrl.Name != "ucQuyDinhLuong")
-                {
-                    ctrl.Hide();
-                }
+                //chỉ tra cứu ds nhân viên
+                tbtnQuanTri.Enabled = tbtLuong.Enabled = tbtnQuyDInhLuong.Enabled = false;
             }
         }
 
-
-
-        private void mnuTienLuong_Click_1(object sender, EventArgs e)
-        {
-            ucTienLuong ucTL;
-            ucTienLuong c = pnlMain.Controls.Find("ucTienLuong", false).FirstOrDefault() as ucTienLuong;
-
-            if (c == null)
-            {
-                ucTL = new ucTienLuong();
-                pnlMain.Controls.Add(ucTL);
-            }
-            else
-            {
-                c.Show();
-            }
-            foreach (Control ctrl in pnlMain.Controls)
-            {
-                if (ctrl.Name != "ucTienLuong")
-                {
-                    ctrl.Hide();
-                }
-            }
-        }
-
-        private void mnuAdmin_Click(object sender, EventArgs e)
+        private void tbtnQuanTri_Click(object sender, EventArgs e)
         {
             ucThemNguoiDung ucTND;
             //Tìm ucThemNguoiDung trong Pnl hay không nếu có thì gán cho c nếu không thì giá trị trả về là null c
@@ -159,9 +113,8 @@ namespace GUI
             }
         }
 
-        private void mnuNhanVien_Click(object sender, EventArgs e)
+        private void tbtnNhanVien_Click(object sender, EventArgs e)
         {
-          
             ucThemNhanVien ucTNV;
             ucThemNhanVien c = pnlMain.Controls.Find("ucThemNhanVien", false).FirstOrDefault() as ucThemNhanVien;
 
@@ -182,5 +135,61 @@ namespace GUI
                 }
             }
         }
+
+        private void tbtLuong_Click(object sender, EventArgs e)
+        {
+            ucTienLuong ucTL;
+            ucTienLuong c = pnlMain.Controls.Find("ucTienLuong", false).FirstOrDefault() as ucTienLuong;
+
+            if (c == null)
+            {
+                ucTL = new ucTienLuong();
+                pnlMain.Controls.Add(ucTL);
+            }
+            else
+            {
+                c.Show();
+            }
+            foreach (Control ctrl in pnlMain.Controls)
+            {
+                if (ctrl.Name != "ucTienLuong")
+                {
+                    ctrl.Hide();
+                }
+            }
+        }
+
+
+        private void tbtnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.pnlMain.Controls.Clear();
+            TrangThaiChuaDangNhap();
+        }
+
+        private void tbtnQuyDInhLuong_Click(object sender, EventArgs e)
+        {
+            ucQuyDinhLuong ucTNV;
+            ucQuyDinhLuong c = pnlMain.Controls.Find("ucQuyDinhLuong", false).FirstOrDefault() as ucQuyDinhLuong;
+
+            if (c == null)
+            {
+                ucTNV = new ucQuyDinhLuong();
+                pnlMain.Controls.Add(ucTNV);
+            }
+            else
+            {
+                c.Show();
+            }
+            foreach (Control ctrl in pnlMain.Controls)
+            {
+                if (ctrl.Name != "ucQuyDinhLuong")
+                {
+                    ctrl.Hide();
+                }
+            }
+        }
+
+
+        ////////////////////////////
     }
 }

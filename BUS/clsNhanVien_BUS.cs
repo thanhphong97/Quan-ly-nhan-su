@@ -12,7 +12,7 @@ namespace BUS
 {
     public class clsNhanVien_BUS
     {
-        public DTO.clsNhanVien_DTO LayThongTinNhanVien(string strTenDN)
+        public clsNhanVienDangNhap LayThongTinNhanVien(string strTenDN)
         {
             clsNhanVien_DAO dao = new clsNhanVien_DAO();
             return dao.LayThongTinNhanVien(strTenDN);
@@ -32,12 +32,12 @@ namespace BUS
         }
 
         //Đã viết 1 hàm đếm trong 1 table với tham số truyền vào là TABLE và SQLconnection. Ở Class ThaoTacDuLieu. Để khỏi mất thời gian khi viết câu truy vấn.
-        public int DemNhanVien()
-        {
-            clsNhanVien_DAO dao = new clsNhanVien_DAO();
-            int soLuongNhanVien = dao.DemNhanVien();
-            return soLuongNhanVien;
-        }
+        //public int DemNhanVien()
+        //{
+        //    clsNhanVien_DAO dao = new clsNhanVien_DAO();
+        //    int soLuongNhanVien = dao.DemNhanVien();
+        //    return soLuongNhanVien;
+        //}
 
         // Lấy danh sách nhân viên theo phòng
         public List<clsNhanVien_DTO> LayDanhSachNhanVien(List<clsPhongBan_DTO> lsPhongBan)

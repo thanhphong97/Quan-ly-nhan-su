@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tCtrl = new System.Windows.Forms.TabControl();
             this.tPChamCong = new System.Windows.Forms.TabPage();
             this.btnInChamCong = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             this.tCtrl.Location = new System.Drawing.Point(0, 0);
             this.tCtrl.Name = "tCtrl";
             this.tCtrl.SelectedIndex = 0;
-            this.tCtrl.Size = new System.Drawing.Size(1015, 545);
+            this.tCtrl.Size = new System.Drawing.Size(1303, 680);
             this.tCtrl.TabIndex = 0;
             // 
             // tPChamCong
@@ -74,7 +74,7 @@
             this.tPChamCong.Location = new System.Drawing.Point(4, 27);
             this.tPChamCong.Name = "tPChamCong";
             this.tPChamCong.Padding = new System.Windows.Forms.Padding(3);
-            this.tPChamCong.Size = new System.Drawing.Size(1007, 514);
+            this.tPChamCong.Size = new System.Drawing.Size(1295, 649);
             this.tPChamCong.TabIndex = 0;
             this.tPChamCong.Text = "Chấm công";
             this.tPChamCong.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             // 
             this.btnInChamCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnInChamCong.Location = new System.Drawing.Point(894, 462);
+            this.btnInChamCong.Location = new System.Drawing.Point(1182, 597);
             this.btnInChamCong.Name = "btnInChamCong";
             this.btnInChamCong.Size = new System.Drawing.Size(107, 46);
             this.btnInChamCong.TabIndex = 17;
@@ -102,7 +102,7 @@
             this.grbTaoBangChamCong.Controls.Add(this.label1);
             this.grbTaoBangChamCong.Location = new System.Drawing.Point(6, 39);
             this.grbTaoBangChamCong.Name = "grbTaoBangChamCong";
-            this.grbTaoBangChamCong.Size = new System.Drawing.Size(995, 103);
+            this.grbTaoBangChamCong.Size = new System.Drawing.Size(1283, 103);
             this.grbTaoBangChamCong.TabIndex = 7;
             this.grbTaoBangChamCong.TabStop = false;
             this.grbTaoBangChamCong.Text = "Tạo bảng chấm công";
@@ -110,7 +110,7 @@
             // btnTaoBangChamCong
             // 
             this.btnTaoBangChamCong.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTaoBangChamCong.Location = new System.Drawing.Point(634, 23);
+            this.btnTaoBangChamCong.Location = new System.Drawing.Point(778, 23);
             this.btnTaoBangChamCong.Name = "btnTaoBangChamCong";
             this.btnTaoBangChamCong.Size = new System.Drawing.Size(107, 46);
             this.btnTaoBangChamCong.TabIndex = 8;
@@ -122,7 +122,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(457, 37);
+            this.label3.Location = new System.Drawing.Point(601, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 18);
             this.label3.TabIndex = 4;
@@ -131,7 +131,7 @@
             // nudNam
             // 
             this.nudNam.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudNam.Location = new System.Drawing.Point(503, 34);
+            this.nudNam.Location = new System.Drawing.Point(647, 34);
             this.nudNam.Name = "nudNam";
             this.nudNam.Size = new System.Drawing.Size(85, 24);
             this.nudNam.TabIndex = 3;
@@ -155,7 +155,7 @@
             "10",
             "11",
             "12"});
-            this.cboThang.Location = new System.Drawing.Point(328, 34);
+            this.cboThang.Location = new System.Drawing.Point(472, 34);
             this.cboThang.Name = "cboThang";
             this.cboThang.Size = new System.Drawing.Size(85, 26);
             this.cboThang.TabIndex = 1;
@@ -164,7 +164,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(273, 37);
+            this.label1.Location = new System.Drawing.Point(417, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 18);
             this.label1.TabIndex = 0;
@@ -188,35 +188,35 @@
             this.dgvChamCong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChamCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChamCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvChamCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChamCong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaChamCong,
             this.colThang,
             this.colNam,
             this.colTenBangChamCong});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChamCong.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChamCong.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChamCong.EnableHeadersVisualStyles = false;
             this.dgvChamCong.Location = new System.Drawing.Point(6, 148);
             this.dgvChamCong.MultiSelect = false;
             this.dgvChamCong.Name = "dgvChamCong";
             this.dgvChamCong.RowHeadersVisible = false;
             this.dgvChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChamCong.Size = new System.Drawing.Size(998, 308);
+            this.dgvChamCong.Size = new System.Drawing.Size(1286, 443);
             this.dgvChamCong.TabIndex = 0;
             // 
             // colMaChamCong
@@ -267,7 +267,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tCtrl);
             this.Name = "ucTienLuong";
-            this.Size = new System.Drawing.Size(1015, 545);
+            this.Size = new System.Drawing.Size(1303, 680);
             this.Load += new System.EventHandler(this.ucTienLuong_Load);
             this.tCtrl.ResumeLayout(false);
             this.tPChamCong.ResumeLayout(false);

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbQuanTri = new System.Windows.Forms.TabControl();
             this.tpThemNguoiDung = new System.Windows.Forms.TabPage();
+            this.lblThongBao_TK = new System.Windows.Forms.Label();
+            this.lblThongBao_MaNV = new System.Windows.Forms.Label();
             this.chkTrangThai = new System.Windows.Forms.CheckBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.colMANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,8 +61,6 @@
             this.tbBackup = new System.Windows.Forms.TabPage();
             this.tpRestore = new System.Windows.Forms.TabPage();
             this.tpNhatKyTruyCap = new System.Windows.Forms.TabPage();
-            this.lblThongBao_MaNV = new System.Windows.Forms.Label();
-            this.lblThongBao_TK = new System.Windows.Forms.Label();
             this.tbQuanTri.SuspendLayout();
             this.tpThemNguoiDung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -79,7 +79,7 @@
             this.tbQuanTri.Location = new System.Drawing.Point(0, 0);
             this.tbQuanTri.Name = "tbQuanTri";
             this.tbQuanTri.SelectedIndex = 0;
-            this.tbQuanTri.Size = new System.Drawing.Size(1129, 562);
+            this.tbQuanTri.Size = new System.Drawing.Size(1303, 680);
             this.tbQuanTri.TabIndex = 0;
             // 
             // tpThemNguoiDung
@@ -98,16 +98,36 @@
             this.tpThemNguoiDung.Location = new System.Drawing.Point(4, 27);
             this.tpThemNguoiDung.Name = "tpThemNguoiDung";
             this.tpThemNguoiDung.Padding = new System.Windows.Forms.Padding(3);
-            this.tpThemNguoiDung.Size = new System.Drawing.Size(1121, 531);
+            this.tpThemNguoiDung.Size = new System.Drawing.Size(1295, 649);
             this.tpThemNguoiDung.TabIndex = 0;
             this.tpThemNguoiDung.Text = "Thêm người dùng";
+            // 
+            // lblThongBao_TK
+            // 
+            this.lblThongBao_TK.AutoSize = true;
+            this.lblThongBao_TK.ForeColor = System.Drawing.Color.Red;
+            this.lblThongBao_TK.Location = new System.Drawing.Point(827, 416);
+            this.lblThongBao_TK.Name = "lblThongBao_TK";
+            this.lblThongBao_TK.Size = new System.Drawing.Size(218, 18);
+            this.lblThongBao_TK.TabIndex = 25;
+            this.lblThongBao_TK.Text = "Tên đăng nhập đã được sử dụng";
+            // 
+            // lblThongBao_MaNV
+            // 
+            this.lblThongBao_MaNV.AutoSize = true;
+            this.lblThongBao_MaNV.ForeColor = System.Drawing.Color.Red;
+            this.lblThongBao_MaNV.Location = new System.Drawing.Point(827, 384);
+            this.lblThongBao_MaNV.Name = "lblThongBao_MaNV";
+            this.lblThongBao_MaNV.Size = new System.Drawing.Size(244, 18);
+            this.lblThongBao_MaNV.TabIndex = 24;
+            this.lblThongBao_MaNV.Text = "Mã nhân viên đã được cấp tài khoản";
             // 
             // chkTrangThai
             // 
             this.chkTrangThai.AutoSize = true;
             this.chkTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.chkTrangThai.ForeColor = System.Drawing.Color.Red;
-            this.chkTrangThai.Location = new System.Drawing.Point(471, 319);
+            this.chkTrangThai.Location = new System.Drawing.Point(594, 339);
             this.chkTrangThai.Name = "chkTrangThai";
             this.chkTrangThai.Size = new System.Drawing.Size(190, 22);
             this.chkTrangThai.TabIndex = 23;
@@ -117,14 +137,14 @@
             // dgvNhanVien
             // 
             this.dgvNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMANV,
@@ -132,7 +152,7 @@
             this.colQuyen,
             this.colTrangThai,
             this.coMatKhau});
-            this.dgvNhanVien.Location = new System.Drawing.Point(26, 136);
+            this.dgvNhanVien.Location = new System.Drawing.Point(117, 159);
             this.dgvNhanVien.MultiSelect = false;
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.ReadOnly = true;
@@ -147,8 +167,8 @@
             // 
             this.colMANV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colMANV.DataPropertyName = "MANV";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colMANV.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colMANV.DefaultCellStyle = dataGridViewCellStyle2;
             this.colMANV.HeaderText = "Mã NV";
             this.colMANV.Name = "colMANV";
             this.colMANV.ReadOnly = true;
@@ -199,7 +219,7 @@
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCapNhat.Location = new System.Drawing.Point(873, 424);
+            this.btnCapNhat.Location = new System.Drawing.Point(996, 444);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(107, 46);
             this.btnCapNhat.TabIndex = 9;
@@ -219,7 +239,7 @@
             this.grbThongTinTaiKhoan.Controls.Add(this.txtTenDN);
             this.grbThongTinTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grbThongTinTaiKhoan.ForeColor = System.Drawing.Color.Purple;
-            this.grbThongTinTaiKhoan.Location = new System.Drawing.Point(698, 139);
+            this.grbThongTinTaiKhoan.Location = new System.Drawing.Point(821, 159);
             this.grbThongTinTaiKhoan.Name = "grbThongTinTaiKhoan";
             this.grbThongTinTaiKhoan.Size = new System.Drawing.Size(396, 222);
             this.grbThongTinTaiKhoan.TabIndex = 16;
@@ -309,7 +329,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThem.Location = new System.Drawing.Point(760, 424);
+            this.btnThem.Location = new System.Drawing.Point(883, 444);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(107, 46);
             this.btnThem.TabIndex = 8;
@@ -324,7 +344,7 @@
             this.grbPhanQuyen.Controls.Add(this.radNhanVienKeToan);
             this.grbPhanQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grbPhanQuyen.ForeColor = System.Drawing.Color.Purple;
-            this.grbPhanQuyen.Location = new System.Drawing.Point(459, 139);
+            this.grbPhanQuyen.Location = new System.Drawing.Point(582, 159);
             this.grbPhanQuyen.Name = "grbPhanQuyen";
             this.grbPhanQuyen.Size = new System.Drawing.Size(219, 153);
             this.grbPhanQuyen.TabIndex = 17;
@@ -372,7 +392,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnClear.Location = new System.Drawing.Point(986, 424);
+            this.btnClear.Location = new System.Drawing.Point(1109, 444);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(108, 46);
             this.btnClear.TabIndex = 10;
@@ -385,7 +405,7 @@
             this.tbBackup.Location = new System.Drawing.Point(4, 27);
             this.tbBackup.Name = "tbBackup";
             this.tbBackup.Padding = new System.Windows.Forms.Padding(3);
-            this.tbBackup.Size = new System.Drawing.Size(1121, 531);
+            this.tbBackup.Size = new System.Drawing.Size(1295, 649);
             this.tbBackup.TabIndex = 1;
             this.tbBackup.Text = "Sao lưu cơ sở dữ liệu";
             this.tbBackup.UseVisualStyleBackColor = true;
@@ -395,7 +415,7 @@
             this.tpRestore.Location = new System.Drawing.Point(4, 27);
             this.tpRestore.Name = "tpRestore";
             this.tpRestore.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRestore.Size = new System.Drawing.Size(1121, 531);
+            this.tpRestore.Size = new System.Drawing.Size(1295, 649);
             this.tpRestore.TabIndex = 2;
             this.tpRestore.Text = "Phục hồi cơ sở dữ liệu";
             this.tpRestore.UseVisualStyleBackColor = true;
@@ -405,30 +425,10 @@
             this.tpNhatKyTruyCap.Location = new System.Drawing.Point(4, 27);
             this.tpNhatKyTruyCap.Name = "tpNhatKyTruyCap";
             this.tpNhatKyTruyCap.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhatKyTruyCap.Size = new System.Drawing.Size(1121, 531);
+            this.tpNhatKyTruyCap.Size = new System.Drawing.Size(1295, 649);
             this.tpNhatKyTruyCap.TabIndex = 3;
             this.tpNhatKyTruyCap.Text = "Nhật ký truy cập";
             this.tpNhatKyTruyCap.UseVisualStyleBackColor = true;
-            // 
-            // lblThongBao_MaNV
-            // 
-            this.lblThongBao_MaNV.AutoSize = true;
-            this.lblThongBao_MaNV.ForeColor = System.Drawing.Color.Red;
-            this.lblThongBao_MaNV.Location = new System.Drawing.Point(704, 364);
-            this.lblThongBao_MaNV.Name = "lblThongBao_MaNV";
-            this.lblThongBao_MaNV.Size = new System.Drawing.Size(244, 18);
-            this.lblThongBao_MaNV.TabIndex = 24;
-            this.lblThongBao_MaNV.Text = "Mã nhân viên đã được cấp tài khoản";
-            // 
-            // lblThongBao_TK
-            // 
-            this.lblThongBao_TK.AutoSize = true;
-            this.lblThongBao_TK.ForeColor = System.Drawing.Color.Red;
-            this.lblThongBao_TK.Location = new System.Drawing.Point(704, 396);
-            this.lblThongBao_TK.Name = "lblThongBao_TK";
-            this.lblThongBao_TK.Size = new System.Drawing.Size(218, 18);
-            this.lblThongBao_TK.TabIndex = 25;
-            this.lblThongBao_TK.Text = "Tên đăng nhập đã được sử dụng";
             // 
             // ucThemNguoiDung
             // 
@@ -436,7 +436,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tbQuanTri);
             this.Name = "ucThemNguoiDung";
-            this.Size = new System.Drawing.Size(1129, 562);
+            this.Size = new System.Drawing.Size(1303, 680);
             this.Load += new System.EventHandler(this.ucThemNguoiDung_Load);
             this.tbQuanTri.ResumeLayout(false);
             this.tpThemNguoiDung.ResumeLayout(false);
