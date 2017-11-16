@@ -43,6 +43,7 @@
     <Compile Include="clsChamCong_DTO.cs" />
     <Compile Include="clsChucVu_DTO.cs" />
     <Compile Include="clsDanToc_DTO.cs" />
+    <Compile Include="clsHopDong_DTO.cs" />
     <Compile Include="clsKyHieuChamCong_DTO.cs" />
     <Compile Include="clsLoaiND_DTO.cs" />
     <Compile Include="clsMoiQuanHe_DTO.cs" />

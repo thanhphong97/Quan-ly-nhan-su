@@ -56,7 +56,6 @@ namespace DAO
                     {
                         ThaoTacDuLieu.DongKetNoi(conn);
                         return false;
-                        break;
                     }
                 }
             }
