@@ -29,6 +29,14 @@ namespace DAO
             return lsPhongBan;
         }
 
-        
+
+        public string LayMaPhong(string MaNV)
+        {
+            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            string sql = string.Format("SELECT MAPB FROM PHONGBAN, NHANVIEN WHERE NHANVIEN.PHONG = PHONGBAN.MAPB AND MANV = '{0}'", MaNV);
+            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
+            string kq = cmd.ExecuteScalar().ToString();
+            return kq; 
+        }
     }
 }

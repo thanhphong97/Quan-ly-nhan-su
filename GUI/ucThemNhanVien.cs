@@ -21,15 +21,12 @@ namespace GUI
         private void ucThemNhanVien_Load(object sender, EventArgs e)
         {
             LoadCbo();
-            //this.Dock = DockStyle.Fill;
+            loadThongTinCuaNhanVien();
             this.radNam.Checked = true;
             cboChucVu.SelectedValue = 0;
 
         }
-        private void loadDSNhanVien()
-        {
-            clsNhanVien_BUS bus = new clsNhanVien_BUS();
-        }
+      
         private void LoadCbo()
         {
             //Tỉnh 
@@ -89,7 +86,35 @@ namespace GUI
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            
+            XoaMangHinh();
+        }
+
+        private void XoaMangHinh()
+        {
+            txtHo.Text = "";
+            txtTen.Text = "";
+            dtpNgaySinh.Value = DateTime.Now.Date;
+            txtCMND.Text = "";
+            string gioitinh = "";
+            if (gioitinh == "true")
+                radNam.Checked = true;
+            if (gioitinh == "false")
+                radNu.Checked = true;
+            cboTrinhDo.SelectedValue = "";
+            cboTonGiao.SelectedValue = "";
+            cboDanToc.SelectedValue = "";
+
+            rtbNguyenQuan.Text = "";
+            cboBacLuong.SelectedValue = "";
+            cboQuocTich.SelectedValue = "";
+            cboTinh.SelectedValue = "";
+            cboQuanHuyen.SelectedValue = "";
+            rtbSoNhaTenDuong.Text = "";
+            dtpNgayVaoLam.Value = DateTime.Now.Date;
+            cboChucVu.SelectedValue = "";
+            txtHeSo.Text = "";
+
+            cboPhongBan.SelectedValue = "";
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
@@ -130,8 +155,7 @@ namespace GUI
             
 
         }
-        //load cbo Tôn giáo
-        //laod cbo QUốc tịch
+        
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
 
@@ -145,12 +169,66 @@ namespace GUI
 
         private void cboBacLuong_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
+            try
+            {
+                LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
+            }
+            catch
+            { }
+           
         }
 
         private void cboChucVu_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
+            try
+            {
+                LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
+            }
+            catch
+            { }
+        }
+
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                XoaMangHinh();
+                txtHo.Text = dgvNhanVien.SelectedRows[0].Cells["colHo"].Value.ToString();
+                txtTen.Text = dgvNhanVien.SelectedRows[0].Cells[2].Value.ToString();
+                dtpNgaySinh.Value = (DateTime)dgvNhanVien.SelectedRows[0].Cells[3].Value;
+                txtCMND.Text = dgvNhanVien.SelectedRows[0].Cells["colCMND"].Value.ToString();
+                string gioitinh = dgvNhanVien.SelectedRows[0].Cells["colGioiTinh"].Value.ToString();
+                if (gioitinh == "true")
+                    radNam.Checked = true;
+                if (gioitinh == "false")
+                    radNu.Checked = true;
+                cboTrinhDo.SelectedValue = int.Parse(dgvNhanVien.SelectedRows[0].Cells["colBangCap"].Value.ToString());
+                cboTonGiao.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colTonGiao"].Value.ToString();
+                cboDanToc.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colDanToc"].Value.ToString();
+
+                rtbNguyenQuan.Text = dgvNhanVien.SelectedRows[0].Cells["colNguyenQuan"].Value.ToString();
+
+                cboQuocTich.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colQuocTich"].Value.ToString();
+                cboTinh.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colTinhThanh"].Value.ToString();
+                cboQuanHuyen.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colQuanHuyen"].Value.ToString();
+                rtbSoNhaTenDuong.Text = dgvNhanVien.SelectedRows[0].Cells["colDiaChi"].Value.ToString();
+                dtpNgayVaoLam.Value = (DateTime)dgvNhanVien.SelectedRows[0].Cells[13].Value;
+                cboChucVu.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colMaCV"].Value.ToString();
+                cboBacLuong.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colMaBac"].Value.ToString();
+                LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
+                cboPhongBan.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colPhong"].Value.ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void loadThongTinCuaNhanVien()
+        {
+            clsNhanVien_BUS bus = new clsNhanVien_BUS();
+            List<clsNhanVien_DTO> lsDanhSachNV = bus.LayDSNhanVien();
+            dgvNhanVien.DataSource = lsDanhSachNV;
         }
 
 

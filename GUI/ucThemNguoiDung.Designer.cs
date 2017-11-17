@@ -44,6 +44,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.grbThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.cboNhanVien = new System.Windows.Forms.ComboBox();
+            this.cboPhongBan = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtXacNhanMK = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,9 +63,6 @@
             this.tbBackup = new System.Windows.Forms.TabPage();
             this.tpRestore = new System.Windows.Forms.TabPage();
             this.tpNhatKyTruyCap = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboPhongBan = new System.Windows.Forms.ComboBox();
-            this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.tbQuanTri.SuspendLayout();
             this.tpThemNguoiDung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -138,6 +138,8 @@
             // 
             // dgvNhanVien
             // 
+            this.dgvNhanVien.AllowUserToResizeColumns = false;
+            this.dgvNhanVien.AllowUserToResizeRows = false;
             this.dgvNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Left;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -251,6 +253,35 @@
             this.grbThongTinTaiKhoan.TabIndex = 16;
             this.grbThongTinTaiKhoan.TabStop = false;
             this.grbThongTinTaiKhoan.Text = "Thông tin tài khoản";
+            // 
+            // cboNhanVien
+            // 
+            this.cboNhanVien.FormattingEnabled = true;
+            this.cboNhanVien.Location = new System.Drawing.Point(180, 86);
+            this.cboNhanVien.Name = "cboNhanVien";
+            this.cboNhanVien.Size = new System.Drawing.Size(215, 28);
+            this.cboNhanVien.TabIndex = 1;
+            this.cboNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboNhanVien_SelectedIndexChanged);
+            // 
+            // cboPhongBan
+            // 
+            this.cboPhongBan.FormattingEnabled = true;
+            this.cboPhongBan.Location = new System.Drawing.Point(180, 42);
+            this.cboPhongBan.Name = "cboPhongBan";
+            this.cboPhongBan.Size = new System.Drawing.Size(215, 28);
+            this.cboPhongBan.TabIndex = 0;
+            this.cboPhongBan.SelectedValueChanged += new System.EventHandler(this.cboPhongBan_SelectedValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(22, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 18);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Phòng ban";
             // 
             // txtXacNhanMK
             // 
@@ -426,35 +457,6 @@
             this.tpNhatKyTruyCap.TabIndex = 3;
             this.tpNhatKyTruyCap.Text = "Nhật ký truy cập";
             this.tpNhatKyTruyCap.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(22, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 18);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Phòng ban";
-            // 
-            // cboPhongBan
-            // 
-            this.cboPhongBan.FormattingEnabled = true;
-            this.cboPhongBan.Location = new System.Drawing.Point(180, 42);
-            this.cboPhongBan.Name = "cboPhongBan";
-            this.cboPhongBan.Size = new System.Drawing.Size(215, 28);
-            this.cboPhongBan.TabIndex = 0;
-            this.cboPhongBan.SelectedValueChanged += new System.EventHandler(this.cboPhongBan_SelectedValueChanged);
-            // 
-            // cboNhanVien
-            // 
-            this.cboNhanVien.FormattingEnabled = true;
-            this.cboNhanVien.Location = new System.Drawing.Point(180, 86);
-            this.cboNhanVien.Name = "cboNhanVien";
-            this.cboNhanVien.Size = new System.Drawing.Size(215, 28);
-            this.cboNhanVien.TabIndex = 1;
-            this.cboNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboNhanVien_SelectedIndexChanged);
             // 
             // ucThemNguoiDung
             // 

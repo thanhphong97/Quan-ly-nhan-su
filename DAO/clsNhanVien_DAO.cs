@@ -59,67 +59,64 @@ namespace DAO
                 return false;// Thêm thất bại
             return true;//thêm thành công
         }
-        
-        //public List<clsNhanVien_DTO> LayDanhSachNhanVien(List<clsPhongBan_DTO> lsPhongBan)
-        //{
-        //    string sql = "";
-        //    SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-        //    #region Dùng cho danh sách nhân viên nhân viên
-       
-        //        sql = string.Format("SELECT MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTINH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, HOPDONGTV, TRANGTHAI FROM NHANVIEN TRANGTHAI = 1");
-        //    #endregion
-        //    SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
-        //    SqlDataReader dr = cmd.ExecuteReader();
-        //    List<clsNhanVien_DTO> lsNhanVien = new List<clsNhanVien_DTO>();
-        //    while (dr.Read())
-        //    {
-        //        clsNhanVien_DTO NhanVien = new clsNhanVien_DTO();
 
-        //        if (!dr.IsDBNull(0))
-        //            NhanVien.MaNV = dr.GetString(0);
-        //        if (!dr.IsDBNull(1))
-        //            NhanVien.Ho = dr.GetString(1);
-        //        if (!dr.IsDBNull(2))
-        //            NhanVien.Ten = dr.GetString(2);
-        //        if (!dr.IsDBNull(3))
-        //            NhanVien.NgaySinh = dr.GetDateTime(3);
-        //        if (!dr.IsDBNull(4))
-        //            NhanVien.DiaChiThuongTru = dr.GetString(4);
-        //        if (!dr.IsDBNull(5))
-        //            NhanVien.CMND = dr.GetString(5);
-        //        if (!dr.IsDBNull(6))
-        //            NhanVien.GioiTinh = dr.GetBoolean(6);
-        //        if (!dr.IsDBNull(7))
-        //            NhanVien.NguyenQuan= dr.GetString(7);
-        //        if (!dr.IsDBNull(8))
-        //            NhanVien.TinhThanh = dr.GetString(8);
-        //        if (!dr.IsDBNull(9))
-        //            NhanVien.QuocTich = dr.GetString(9);
-        //        if (!dr.IsDBNull(10))
-        //            NhanVien.DanToc = dr.GetString(10);
-        //        if (!dr.IsDBNull(11))
-        //            NhanVien.TonGiao = dr.GetString(11);
-        //        if (!dr.IsDBNull(12))
-        //            NhanVien.NgayBatDauLamViec = dr.GetDateTime(12);
-        //        if (!dr.IsDBNull(13))
-        //            NhanVien.PhongBan = dr.GetString(13);
-        //        if (!dr.IsDBNull(14))
-        //            NhanVien.MaBAC = dr.GetString(14);
-        //        if (!dr.IsDBNull(15))
-        //            NhanVien.MaBAC = dr.GetString(15);
-        //        if (!dr.IsDBNull(16))
-        //            NhanVien.MaCV = dr.GetString(16);
-        //        if (!dr.IsDBNull(17))
-        //            NhanVien.BangCap = dr.GetInt32(17);
-        //        if (!dr.IsDBNull(18))
-        //            NhanVien.HopDongTV = dr.GetString(18);
-        //        if (!dr.IsDBNull(19))
-        //            NhanVien.TrangThai = dr.GetBoolean(19);
-        //        lsNhanVien.Add(NhanVien);
-        //    }
-        //    ThaoTacDuLieu.DongKetNoi(conn);
-        //    return lsNhanVien;
-        //}
+        public List<clsNhanVien_DTO> LayDanhSachNhanVien()
+        {
+            SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
+            string sql = string.Format("SELECT MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTICH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, HOPDONGTV, TRANGTHAI FROM NHANVIEN WHERE TRANGTHAI = 1");
+            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            List<clsNhanVien_DTO> lsNhanVien = new List<clsNhanVien_DTO>();
+            while (dr.Read())
+            {
+                clsNhanVien_DTO NhanVien = new clsNhanVien_DTO();
+
+                if (!dr.IsDBNull(0))
+                    NhanVien.MaNV = dr.GetString(0);
+                if (!dr.IsDBNull(1))
+                    NhanVien.Ho = dr.GetString(1);
+                if (!dr.IsDBNull(2))
+                    NhanVien.Ten = dr.GetString(2);
+                if (!dr.IsDBNull(3))
+                    NhanVien.NgaySinh = dr.GetDateTime(3);
+                if (!dr.IsDBNull(4))
+                    NhanVien.DiaChiThuongTru = dr.GetString(4);
+                if (!dr.IsDBNull(5))
+                    NhanVien.CMND = dr.GetString(5);
+                if (!dr.IsDBNull(6))
+                    NhanVien.GioiTinh = dr.GetBoolean(6);
+                if (!dr.IsDBNull(7))
+                    NhanVien.NguyenQuan = dr.GetString(7);
+                if (!dr.IsDBNull(8))
+                    NhanVien.TinhThanh = dr.GetString(8);
+                if (!dr.IsDBNull(9))
+                    NhanVien.QuanHuyen = dr.GetString(9);
+                if(!dr.IsDBNull(10))
+                    NhanVien.QuocTich = dr.GetString(10);
+                if (!dr.IsDBNull(11))
+                    NhanVien.DanToc = dr.GetString(11);
+                if (!dr.IsDBNull(12))
+                    NhanVien.TonGiao = dr.GetString(12);
+                if (!dr.IsDBNull(13))
+                    NhanVien.NgayBatDauLamViec = (DateTime)dr[13];
+                if (!dr.IsDBNull(14))
+                    NhanVien.PhongBan = dr.GetString(14);
+                if (!dr.IsDBNull(15))
+                    NhanVien.MaBAC = dr.GetString(15);
+                if (!dr.IsDBNull(16))
+                    NhanVien.MaCV = dr.GetString(16);
+                if (!dr.IsDBNull(17))
+                    NhanVien.BangCap = dr.GetInt32(17);
+                if (!dr.IsDBNull(18))
+                    NhanVien.HopDongTV = dr.GetString(18);
+                if (!dr.IsDBNull(19))
+                    NhanVien.TrangThai = dr.GetBoolean(19);
+                
+                lsNhanVien.Add(NhanVien);
+            }
+            ThaoTacDuLieu.DongKetNoi(conn);
+            return lsNhanVien;
+        }
 
         public List<clsNhanVien_DTO> LayDanhSachNhanVienCC(List<clsPhongBan_DTO> lsPhongBan)
         {

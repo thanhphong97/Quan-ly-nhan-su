@@ -15,6 +15,12 @@ namespace BUS
             return DAO.LayDanhSachPhongBan();
         }
 
-        
+
+
+        public string LayMaPhong(string MaNV)
+        {
+            clsPhongBan_DAO dao = new clsPhongBan_DAO();
+            return dao.LayMaPhong(MaNV);
+        }
     }
 }

@@ -13,8 +13,8 @@ namespace GUI
 {
     public partial class ucThemNguoiDung : UserControl
     {
-        private List<clsPhongBan_DTO> lsPhongBan;
-        private List<clsNhanVien_DTO> lsNhanVien;
+        private static List<clsPhongBan_DTO> lsPhongBan;
+        private static List<clsNhanVien_DTO> lsNhanVien;
 
         public ucThemNguoiDung()
         {
@@ -164,6 +164,7 @@ namespace GUI
 
         private void LoadDuLieuNguoiDung()
         {
+           // XoaTextBox();
             try
             {
                 string Quyen = dgvNhanVien.SelectedRows[0].Cells[2].Value.ToString();
@@ -187,8 +188,11 @@ namespace GUI
                 //mã
                 //load phòng theo mã nhân viên
                 string MaNV = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString().ToUpper();
-                cboNhanVien.SelectedValue = MaNV;
-                
+                clsPhongBan_BUS bus = new clsPhongBan_BUS();
+
+                cboPhongBan.SelectedValue = bus.LayMaPhong(MaNV);
+                cboNhanVien.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colMaNV"].Value.ToString();
+
                 txtTenDN.Text = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
 
 
@@ -274,6 +278,10 @@ namespace GUI
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            XoaTextBox();
+        }
+        private void XoaTextBox()
+        {
             cboPhongBan.Text = cboNhanVien.Text = txtTenDN.Text = txtMatKhau.Text = txtXacNhanMK.Text = "";
         }
 
@@ -300,7 +308,7 @@ namespace GUI
             
             LoadCBO_NhanVien(cboPhongBan.SelectedValue.ToString());
         }
-
+       
         private void cboNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
             KiemTraMaNV();
