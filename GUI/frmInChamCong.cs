@@ -28,6 +28,7 @@ namespace GUI
 
         private void frmInChamCong_Load(object sender, EventArgs e)
         {
+            string nguoiLapBaoCao = Program.NhanVien_Login.Ho + " " + Program.NhanVien_Login.Ten;
             clsChamCong_BUS BUSCC = new clsChamCong_BUS();
             DataTable dt = BUSCC.LayBangChamCongNV(ucTL.MaCC);
             rptChamCong.ZoomPercent = 100;
@@ -35,6 +36,7 @@ namespace GUI
             rptChamCong.LocalReport.DataSources.Add(new ReportDataSource("dsChamCongNV", dt));
             rptChamCong.LocalReport.SetParameters(new ReportParameter("paraThang", ucTL.Thang.ToString(), false));
             rptChamCong.LocalReport.SetParameters(new ReportParameter("paraNam", ucTL.Nam.ToString(), false));
+            rptChamCong.LocalReport.SetParameters(new ReportParameter("paraNguoiLapBaoCao",nguoiLapBaoCao, false));
             this.rptChamCong.RefreshReport();
         }
     }

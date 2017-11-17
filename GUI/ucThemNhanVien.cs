@@ -21,11 +21,15 @@ namespace GUI
         private void ucThemNhanVien_Load(object sender, EventArgs e)
         {
             LoadCbo();
-            this.Dock = DockStyle.Fill;
+            //this.Dock = DockStyle.Fill;
             this.radNam.Checked = true;
+            cboChucVu.SelectedValue = 0;
 
         }
-
+        private void loadDSNhanVien()
+        {
+            clsNhanVien_BUS bus = new clsNhanVien_BUS();
+        }
         private void LoadCbo()
         {
             //Tỉnh 
@@ -39,8 +43,10 @@ namespace GUI
             cboQuanHuyen.DisplayMember = "TENQH";
             cboQuanHuyen.ValueMember = "MAQH";
             //quốc tịch
-            cboQuocTich.Items.Add("Việt Nam");
-            cboQuocTich.SelectedIndex= 0 ;
+            clsQuocTich_BUS BUSQT = new clsQuocTich_BUS();
+            cboQuocTich.DataSource = BUSQT.LayDSQuocTich();
+            cboQuocTich.DisplayMember = "TENQT";
+            cboQuocTich.ValueMember = "MAQT";
             //tôn giáo
             
             clsTonGiao_BUS BUSTG = new clsTonGiao_BUS();
@@ -59,113 +65,94 @@ namespace GUI
             cboChucVu.DataSource = BUSCV.LayDanhSachChucVu();
             cboChucVu.DisplayMember = "TENCV";
             cboChucVu.ValueMember = "MACV";
-           
             //Học Vấn
             clsBangCap_BUS BUSBC = new clsBangCap_BUS();
             cboTrinhDo.DataSource = BUSBC.LayDanhSachBangCap();
             cboTrinhDo.DisplayMember = "TENBC";
             cboTrinhDo.ValueMember = "MABC";
-
+            //bacluong
+            clsBacLuong_BUS BUSBACLUONG = new clsBacLuong_BUS();
+            cboBacLuong.DataSource = BUSBACLUONG.LayDSBacLuong();
+            cboBacLuong.ValueMember = "BAC";
+            //dân tộc
+            clsDanToc_BUS BUSDT = new clsDanToc_BUS();
+            cboDanToc.DataSource = BUSDT.LayDSDanToc();
+            cboDanToc.ValueMember = "MaDT";
+            cboDanToc.DisplayMember = "TenDT";
+        }
+       
+      private void LayHeSoLuong(string MaCV, string MaBAC)
+        {
+          clsBacLuong_BUS bus = new clsBacLuong_BUS();
+          txtHeSo.Text = bus.LayHeSoLuong(MaCV, MaBAC).ToString();
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            //_Instances = null;
-            this.DestroyHandle();
-        }
-
-
-
-        private void btnLamLai_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThemThanNhan_Click(object sender, EventArgs e)
-        {
-            //string tenTN = txtTenTN.Text;
-            //string MQH = cboQuanHe.SelectedItem.ToString();
-            //ListViewItem lv = new ListViewItem(tenTN);
-            //lv.SubItems.Add(MQH);
-            //lvwThanNhan.Items.Add(lv);
-        }
-
-        private void ucThemNhanVien_ControlRemoved(object sender, ControlEventArgs e)
-        {
-
+            
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
         {
-            //ThemNhanVien();   
-        }
-
-        private void ThemNhanVien(clsNhanVien_DTO nv)
-        {
-            
-            //Thông tin cá nhân
-            nv.Ho = txtHo.Text;
-            nv.Ten = txtTen.Text;
-            nv.NgaySinh = dtpNgaySinh.Value;
-            nv.CMND = txtCMND.Text;
-            //nv.DiaChiThuongTru = txtDiaChiThuongTru.Text;
-            //nv.NguyenQuan = txtNguyenQuan.Text;
-            if (radNam.Checked == true)
-                nv.GioiTinh = true; // nam
-            else
-                nv.GioiTinh = false;// nữ
-            //Chưa có database sẽ chọn từ Items 
-            nv.TinhThanh = cboTinh.SelectedItem.ToString();
-            nv.QuanHuyen = cboQuanHuyen.SelectedItem.ToString();
-            nv.QuocTich = cboQuocTich.SelectedItem.ToString();
-            nv.TonGiao = cboTonGiao.SelectedItem.ToString();
-            //mã bậc cần có trong Database
-            //Thông tin cơ bản ở công ty
-            // mã phòng, mã chức vụ cần Database
-            
-            //Thông tin thân nhân
-            //lưu vào bảng thân nhân sau khi đã insert Nhân Viên
-            clsNhanVien_BUS bus = new clsNhanVien_BUS();
-            if(bus.ThemNhanVien(nv) == true)
             {
-                MessageBox.Show("Thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+                clsNhanVien_DTO nv = new clsNhanVien_DTO();
+                nv.Ho = txtHo.Text;
+                nv.Ten = txtTen.Text;
+                nv.NgaySinh = dtpNgaySinh.Value;
+                nv.CMND = txtCMND.Text;
+                //false nữ, true nam
+                if (radNam.Checked)
+                    nv.GioiTinh = true;
+                else
+                    nv.GioiTinh = false;
+                nv.BangCap = int.Parse(cboTrinhDo.SelectedValue.ToString());
+                nv.TonGiao = cboTonGiao.SelectedValue.ToString();
+                nv.NguyenQuan = rtbNguyenQuan.Text;
+                nv.DanToc = cboDanToc.SelectedValue.ToString();
+                
+                nv.QuocTich = cboQuocTich.SelectedValue.ToString();
+                nv.TinhThanh = cboTinh.SelectedValue.ToString();
+                nv.QuanHuyen = cboQuanHuyen.SelectedValue.ToString();
+                nv.DiaChiThuongTru = rtbSoNhaTenDuong.Text;
 
+                nv.NgayBatDauLamViec = dtpNgayVaoLam.Value;
+                nv.MaCV = cboChucVu.SelectedValue.ToString();
+                nv.MaBAC = cboBacLuong.SelectedValue.ToString();
+                nv.PhongBan = cboPhongBan.SelectedValue.ToString();
+                if (!chkBoViec.Checked)
+                    nv.TrangThai = true;
+                else
+                    nv.TrangThai = false;
+                clsNhanVien_BUS bus = new clsNhanVien_BUS();
+                bool kq = bus.ThemNhanVien(nv);
+                MessageBox.Show(kq.ToString());
+            }
+            
+
+        }
+        //load cbo Tôn giáo
+        //laod cbo QUốc tịch
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
-          //chặn nhập chữ
+            if (!Char.IsControl(e.KeyChar) && !Char.IsNumber(e.KeyChar))
+                e.Handled = true;
         }
 
-        private void grbHopDong_Enter(object sender, EventArgs e)
+        private void cboBacLuong_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
+            LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
         }
 
-        private void btnThemNV_Click_1(object sender, EventArgs e)
+        private void cboChucVu_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //clsNhanVien_DTO NhanVien = new clsNhanVien_DTO();
-            //NhanVien.Ho = txtHo.Text.Trim();
-            //NhanVien.Ten = txtTen.Text.Trim();
-            //NhanVien.NgaySinh = dtpNgaySinh.Value;
-            //NhanVien.CMND = txtCMND.Text.Trim();
-            //NhanVien.GioiTinh = (radNam.Checked == true) ? true : false;
-            //NhanVien.ChucVu = cboChucVu.SelectedValue.ToString();
-            //NhanVien.HeSoLuong = Convert.ToDouble(numHeSoLuong.Value);
-            //NhanVien.DiaChiThuongTru = txtDiaChiThuongTru.Text.Trim();
-            //NhanVien.NguyenQuan = txtNguyenQuan.Text.Trim();
-            //NhanVien.QuocTich = cboQuocTich.SelectedValue.ToString();
-            //NhanVien.TinhThanh = cboTinh.SelectedValue.ToString();
-            //NhanVien.TonGiao = cboTonGiao.SelectedValue.ToString();
-            //NhanVien.MaBC = cboTrinhDo.SelectedValue.ToString();
-            //NhanVien.NgayBatDauLamViec = dtpNgaySinh.Value;
-               
+            LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
         }
 
-        private void tpNhanVien_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

@@ -48,10 +48,11 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 57);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1303, 684);
+            this.pnlMain.Size = new System.Drawing.Size(1264, 673);
             this.pnlMain.TabIndex = 2;
             // 
             // mnuMain
@@ -73,7 +74,7 @@
             this.toolStripLabel1});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(1303, 57);
+            this.mnuMain.Size = new System.Drawing.Size(1264, 57);
             this.mnuMain.TabIndex = 3;
             this.mnuMain.Text = "toolStrip1";
             // 
@@ -137,7 +138,7 @@
             this.tbtnDangXuat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtnDangXuat.Name = "tbtnDangXuat";
             this.tbtnDangXuat.Size = new System.Drawing.Size(54, 54);
-            this.tbtnDangXuat.Text = "toolStripButton2";
+            this.tbtnDangXuat.Text = "Đăng xuất";
             this.tbtnDangXuat.Click += new System.EventHandler(this.tbtnDangXuat_Click);
             // 
             // a
@@ -155,7 +156,7 @@
             // 
             this.lblNguoiDung.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.lblNguoiDung.Name = "lblNguoiDung";
-            this.lblNguoiDung.Size = new System.Drawing.Size(113, 54);
+            this.lblNguoiDung.Size = new System.Drawing.Size(114, 54);
             this.lblNguoiDung.Text = "Tên người dùng";
             // 
             // toolStripLabel1
@@ -170,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1303, 741);
+            this.ClientSize = new System.Drawing.Size(1264, 730);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.mnuMain);
             this.Name = "frmMain";

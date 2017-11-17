@@ -20,7 +20,7 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            this.pnlMain.Dock = DockStyle.Bottom;
+            this.pnlMain.Dock = DockStyle.Fill;
             TrangThaiChuaDangNhap();
         }
 
@@ -36,7 +36,6 @@ namespace GUI
         {
             mnuMain.Enabled = false;
             tbtnDangXuat.Enabled = false;
-            Program.NhanVien_Login = null;
             lblNguoiDung.Text = "";
             MoFormDangNhap();
         }
@@ -53,8 +52,9 @@ namespace GUI
             this.pnlMain.Controls.Add(ucThemNV);
             lblNguoiDung.Text = nv.Ho + " " + nv.Ten;
             LoadPhanQuyen();
-            System.Drawing.Size kichthuoc = this.Size;
-            MessageBox.Show(kichthuoc.ToString());
+
+            //System.Drawing.Size kichthuoc = this.Size;
+            //MessageBox.Show(kichthuoc.ToString());
         }
 
 
@@ -73,6 +73,7 @@ namespace GUI
             if(quyen == "L1")
             {
                 //toàn bộ chức năng
+                tbtnQuanTri.Enabled = tbtLuong.Enabled = tbtnQuyDInhLuong.Enabled = tbtnQuanTri.Enabled = true;
             }
             if(quyen == "L2")
             {
@@ -163,6 +164,7 @@ namespace GUI
         private void tbtnDangXuat_Click(object sender, EventArgs e)
         {
             this.pnlMain.Controls.Clear();
+            Program.NhanVien_Login = null;
             TrangThaiChuaDangNhap();
         }
 

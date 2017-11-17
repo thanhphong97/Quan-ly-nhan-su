@@ -28,24 +28,17 @@ namespace BUS
         public bool ThemNhanVien(DTO.clsNhanVien_DTO nv)
         {
             clsNhanVien_DAO dao = new clsNhanVien_DAO();
+            string MaNV = "NV" + (dao.LaySoLuongNhanVien() + 1);
+            nv.MaNV = MaNV;
             return dao.ThemNhanVien(nv);
         }
-
-        //Đã viết 1 hàm đếm trong 1 table với tham số truyền vào là TABLE và SQLconnection. Ở Class ThaoTacDuLieu. Để khỏi mất thời gian khi viết câu truy vấn.
-        //public int DemNhanVien()
-        //{
-        //    clsNhanVien_DAO dao = new clsNhanVien_DAO();
-        //    int soLuongNhanVien = dao.DemNhanVien();
-        //    return soLuongNhanVien;
-        //}
-
-        // Lấy danh sách nhân viên theo phòng
         public List<clsNhanVien_DTO> LayDanhSachNhanVien(List<clsPhongBan_DTO> lsPhongBan)
         {
             clsNhanVien_DAO DAO = new clsNhanVien_DAO();
-            return DAO.LayDanhSachNhanVien(lsPhongBan);
+            return DAO.LayDanhSachNhanVienCC(lsPhongBan);
         }
-        
+  
+
         // Mã hóa mật khẩu
         private string MaHoaMD5(string MatKhau)
         {
@@ -90,6 +83,12 @@ namespace BUS
                 }
             }
             return MatKhau;
+        }
+
+        public List<clsNhanVien_DTO> LayNhanVienTheoPhong(string MaPB)
+        {
+            clsNhanVien_DAO dao = new clsNhanVien_DAO();
+            return dao.LayNhanVienTheoPhong(MaPB);
         }
     }
 }

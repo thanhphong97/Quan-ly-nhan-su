@@ -36,27 +36,47 @@ namespace DAO
             return lsNguoiDung;
         }
        
-
-        public bool TaoTaiKhoan(clsNguoiDung_DTO nd)
+        private bool KiemTraMaNVHopLe(string MaNV)
         {
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("INSERT INTO NGUOIDUNG(TAIKHOAN, MATKHAU, LOAIND, MANV, TRANGTHAI) VALUES('{0}','{1}','{2}','{3}','{4}')", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
+            string sql = string.Format("SELECT COUNT(*) FROM NHANVIEN WHERE MANV = '{0}'",MaNV);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
-            int rowaff = cmd.ExecuteNonQuery();
-            if (rowaff == 0)
+            int SoLuongTaiKhoan = (int)cmd.ExecuteScalar();
+            if (SoLuongTaiKhoan != 1)
                 return false;
             return true;
+        }
+        public bool TaoTaiKhoan(clsNguoiDung_DTO nd)
+        {
+            if (KiemTraMaNVHopLe(nd.MANV))
+            {
+                SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+                string sql = string.Format("INSERT INTO NGUOIDUNG(TAIKHOAN, MATKHAU, LOAIND, MANV, TRANGTHAI) VALUES('{0}','{1}','{2}','{3}','{4}')", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
+                SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
+                int rowaff = cmd.ExecuteNonQuery();
+                if (rowaff == 0)
+                    return false;
+                return true;
+            }
+            else
+                return false;
+
         }
 
         public bool CapNhatNguoiDung(clsNguoiDung_DTO nd)
         {
-            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("UPDATE NGUOIDUNG SET TAIKHOAN = '{0}', MATKHAU = '{1}', LOAIND = '{2}',TRANGTHAI = '{4}' WHERE MANV = '{3}'", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
-            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
-            int rowaff = cmd.ExecuteNonQuery();
-            if (rowaff == 0)
+            if(KiemTraMaNVHopLe(nd.MANV))
+            {
+                SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+                string sql = string.Format("UPDATE NGUOIDUNG SET TAIKHOAN = '{0}', MATKHAU = '{1}', LOAIND = '{2}',TRANGTHAI = '{4}' WHERE MANV = '{3}'", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
+                SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
+                int rowaff = cmd.ExecuteNonQuery();
+                if (rowaff == 0)
+                    return false;
+                return true;
+            }
+            else
                 return false;
-            return true;
         }
 
         public bool KiemTraTonTai(string str, int loaiKT)

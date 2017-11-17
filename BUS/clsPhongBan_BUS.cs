@@ -14,5 +14,7 @@ namespace BUS
             clsPhongBan_DAO DAO = new clsPhongBan_DAO();
             return DAO.LayDanhSachPhongBan();
         }
+
+        
     }
 }

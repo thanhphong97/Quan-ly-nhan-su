@@ -5,30 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using System.Data.SqlClient;
+
 namespace DAO
 {
-    public class clsPhongBan_DAO
+    public class clsDanToc_DAO
     {
-        public List<clsPhongBan_DTO> LayDanhSachPhongBan()
+        public List<clsDanToc_DTO> LayDSDanToc()
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = "SELECT * FROM PHONGBAN ";
+            string sql = "SELECT * FROM DANTOC";
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             SqlDataReader dr = cmd.ExecuteReader();
-            List<clsPhongBan_DTO> lsPhongBan = new List<clsPhongBan_DTO>();
+            List<clsDanToc_DTO> lsDanToc = new List<clsDanToc_DTO>();
             while (dr.Read())
             {
-                clsPhongBan_DTO PhongBan = new clsPhongBan_DTO();
+                clsDanToc_DTO qt = new clsDanToc_DTO();
                 if (!dr.IsDBNull(0))
-                    PhongBan.MAPB = dr.GetString(0);
+                    qt.MADT = dr.GetString(0);
                 if (!dr.IsDBNull(1))
-                    PhongBan.TENPB = dr.GetString(1);
-                lsPhongBan.Add(PhongBan);
+                    qt.TENDT = dr.GetString(1);
+                lsDanToc.Add(qt);
             }
             ThaoTacDuLieu.DongKetNoi(conn);
-            return lsPhongBan;
+            return lsDanToc;
         }
-
-        
     }
 }

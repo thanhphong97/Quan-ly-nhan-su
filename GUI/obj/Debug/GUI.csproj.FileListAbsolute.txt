@@ -36,3 +36,53 @@ G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.exe
 G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.pdb
 G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.frmThemNguoiDung.resources
 G:\Quan-ly-nhan-su\GUI\obj\Debug\GUI.ucThemNguoiDung.resources
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\GUI.exe.config
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\GUI.exe
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\GUI.pdb
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\BUS.dll
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\DTO.dll
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\DAO.dll
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\BUS.pdb
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\DTO.pdb
+C:\Users\Administrator\Downloads\Backup\GUI\bin\Debug\DAO.pdb
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.frmBangChamCong.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.frmInChamCong.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.frmPhongBan.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.frmMain.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.ucDangNhap.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.ucQuyDinhLuong.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.ucThemNguoiDung.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.ucThemNhanVien.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.ucTienLuong.resources
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\RdlCompile.cache
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\RdlCompile.compiled
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.exe
+C:\Users\Administrator\Downloads\Backup\GUI\obj\Debug\GUI.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\GUI.exe.config
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.exe
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\GUI.exe
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\GUI.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\BUS.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\DTO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\DAO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\BUS.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\DTO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\bin\Debug\DAO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.frmBangChamCong.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.frmInChamCong.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.frmPhongBan.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.frmMain.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.ucDangNhap.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.ucQuyDinhLuong.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.ucThemNguoiDung.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.ucThemNhanVien.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.ucTienLuong.resources
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\RdlCompile.cache
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\GUI\obj\Debug\RdlCompile.compiled

@@ -2752,7 +2752,7 @@ IIf(Fields!D31.Value="CN",0,IIf(Fields!D3.Value="",0,IIf(Fields!D31.Value="P",0,
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.76042in</Height>
+      <Height>1.15625in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -2844,6 +2844,38 @@ IIf(Fields!D31.Value="CN",0,IIf(Fields!D3.Value="",0,IIf(Fields!D31.Value="P",0,
           <Height>0.35417in</Height>
           <Width>1.32292in</Width>
           <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Parameters!paraNguoiLapBaoCao.Value</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.54041in</Top>
+          <Left>1.14583in</Left>
+          <Height>0.25in</Height>
+          <Width>1.98958in</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3063,6 +3095,12 @@ IIf(Fields!D31.Value="CN",0,IIf(Fields!D3.Value="",0,IIf(Fields!D31.Value="P",0,
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="paraNam">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paraNguoiLapBaoCao">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>

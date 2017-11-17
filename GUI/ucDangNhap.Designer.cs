@@ -53,7 +53,7 @@
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(264, 26);
             this.txtTenDN.TabIndex = 2;
-            this.txtTenDN.Text = "admin";
+            this.txtTenDN.Text = "bichmy";
             // 
             // txtMatKhau
             // 

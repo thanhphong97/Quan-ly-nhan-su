@@ -113,20 +113,7 @@ namespace DTO
             get { return _PhongBan; }
             set { _PhongBan = value; }
         }
-        int _MaBacND;
-
-        public int MaBacND
-        {
-            get { return _MaBacND; }
-            set { _MaBacND = value; }
-        }
-        int _MaBacHSL;
-
-        public int MaBacHSL
-        {
-            get { return _MaBacHSL; }
-            set { _MaBacHSL = value; }
-        }
+        
         string _MaCV;
 
         public string MaCV
@@ -134,12 +121,12 @@ namespace DTO
             get { return _MaCV; }
             set { _MaCV = value; }
         }
-        string _MaBC;
+        string _MaBAC;
 
-        public string MaBC
+        public string MaBAC
         {
-            get { return _MaBC; }
-            set { _MaBC = value; }
+            get { return _MaBAC; }
+            set { _MaBAC = value; }
         }
 
         private bool _TrangThai;
@@ -149,27 +136,21 @@ namespace DTO
             get { return _TrangThai; }
             set { _TrangThai = value; }
         }
+        int _BangCap;
 
-        private string _ChucVu;
-
-        public string ChucVu
+        public int BangCap
         {
-            get { return _ChucVu; }
-            set { _ChucVu = value; }
+            get { return _BangCap; }
+            set { _BangCap = value; }
         }
-        private double _HeSoLuong;
+        string _HopDongTV;
 
-        public double HeSoLuong
+        public string HopDongTV
         {
-            get { return _HeSoLuong; }
-            set { _HeSoLuong = value; }
+            get { return _HopDongTV; }
+            set { _HopDongTV = value; }
         }
-        private string _TrinhDo;
-
-        public string TrinhDo
-        {
-            get { return _TrinhDo; }
-            set { _TrinhDo = value; }
-        }
+        
+        
     }
 }

@@ -39,15 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsBacLuong_DAO.cs" />
     <Compile Include="clsBangCap_DAO.cs" />
     <Compile Include="clsChamCong_DAO.cs" />
     <Compile Include="clsChucVu_DAO.cs" />
+    <Compile Include="clsDanToc_DAO.cs" />
     <Compile Include="clsKyHieuChamCong_DAO.cs" />
     <Compile Include="clsLoaiND_DAO.cs" />
     <Compile Include="clsMoiQuanHe_DAO.cs" />
     <Compile Include="clsNguoiDung_DAO.cs" />
     <Compile Include="clsNhanVien_DAO.cs" />
     <Compile Include="clsPhongBan_DAO.cs" />
+    <Compile Include="clsQuocTich_DAO.cs" />
     <Compile Include="clsQuyDinhLuong_DAO.cs" />
     <Compile Include="clsTonGiao_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
