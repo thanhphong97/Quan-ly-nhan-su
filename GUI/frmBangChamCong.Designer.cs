@@ -180,7 +180,6 @@
             this.dgvBangChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBangChamCong.Size = new System.Drawing.Size(1129, 502);
             this.dgvBangChamCong.TabIndex = 0;
-            this.dgvBangChamCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangChamCong_CellContentClick);
             this.dgvBangChamCong.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBangChamCong_CellFormatting);
             // 
             // colMaNV
