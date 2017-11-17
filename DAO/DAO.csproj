@@ -44,6 +44,7 @@
     <Compile Include="clsChamCong_DAO.cs" />
     <Compile Include="clsChucVu_DAO.cs" />
     <Compile Include="clsDanToc_DAO.cs" />
+    <Compile Include="clsHopDong_DAO.cs" />
     <Compile Include="clsKyHieuChamCong_DAO.cs" />
     <Compile Include="clsLoaiND_DAO.cs" />
     <Compile Include="clsMoiQuanHe_DAO.cs" />

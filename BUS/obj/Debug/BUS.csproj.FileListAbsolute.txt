@@ -34,3 +34,4 @@ D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\BUS
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\BUS\obj\Debug\BUS.dll
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\BUS\obj\Debug\BUS.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Quan-ly-nhan-su\BUS\bin\Debug\BUS.pdb
