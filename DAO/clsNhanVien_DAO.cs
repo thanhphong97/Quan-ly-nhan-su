@@ -23,7 +23,7 @@ namespace DAO
         public clsNhanVienDangNhap LayThongTinNhanVien(string strTenDN)
         {
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("SELECT HO, TEN, LOAIND FROM NHANVIEN, NGUOIDUNG WHERE NHANVIEN.MANV = NGUOIDUNG.MANV AND TAIKHOAN = '{0}'",strTenDN);
+            string sql = string.Format("SELECT HO, TEN, LOAIND, TAIKHOAN FROM NHANVIEN, NGUOIDUNG WHERE NHANVIEN.MANV = NGUOIDUNG.MANV AND TAIKHOAN = '{0}'",strTenDN);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             clsNhanVienDangNhap nv = new clsNhanVienDangNhap();
             SqlDataReader dr = cmd.ExecuteReader();
@@ -35,6 +35,8 @@ namespace DAO
                     nv.Ten = dr.GetString(1);
                 if (!dr.IsDBNull(2))
                     nv.Quyen = dr.GetString(2);
+                if (!dr.IsDBNull(3))
+                    nv.TaiKhoan = dr.GetString(3);
             }
             ThaoTacDuLieu.DongKetNoi(con);
             return nv;

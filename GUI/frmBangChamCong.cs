@@ -158,7 +158,8 @@ namespace GUI
                 ChamCong.Thang = ucTL.Thang;
                 ChamCong.Nam= ucTL.Nam;
                 lsChamCong.Add(ChamCong);
-
+                clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Tạo bảng chấm công tháng {0} năm {1}",ucTL.Thang,ucTL.Nam));
             }
             clsChamCong_BUS BUS = new clsChamCong_BUS();
             if (BUS.ThemBangChamCong(DateTime.DaysInMonth(ucTL.Nam,ucTL.Thang) , lsChamCong))
