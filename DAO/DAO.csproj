@@ -50,6 +50,7 @@
     <Compile Include="clsMoiQuanHe_DAO.cs" />
     <Compile Include="clsNguoiDung_DAO.cs" />
     <Compile Include="clsNhanVien_DAO.cs" />
+    <Compile Include="clsNhatKy_DAO.cs" />
     <Compile Include="clsPhongBan_DAO.cs" />
     <Compile Include="clsQuocTich_DAO.cs" />
     <Compile Include="clsQuyDinhLuong_DAO.cs" />

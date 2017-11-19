@@ -23,7 +23,7 @@ namespace GUI
         private void ucThemNguoiDung_Load(object sender, EventArgs e)
         {
             dgvNhanVien.AutoGenerateColumns = false;
-            clearThongBao();
+            XoaThongBao();
             LoadDGV_NguoiDung();
             LoadCBO_PhongBan();
         }
@@ -152,10 +152,10 @@ namespace GUI
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             LoadDuLieuNguoiDung();
-            clearThongBao();
+            XoaThongBao();
         }
 
-        private void clearThongBao()
+        private void XoaThongBao()
         {
             lblThongBao_MaNV.Visible = false;
             lblThongBao_TK.Visible = false;
@@ -278,6 +278,7 @@ namespace GUI
         private void btnClear_Click(object sender, EventArgs e)
         {
             XoaTextBox();
+            XoaThongBao();
         }
         private void XoaTextBox()
         {
