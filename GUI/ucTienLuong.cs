@@ -74,6 +74,8 @@ namespace GUI
             Nam = Convert.ToInt32(r.Cells[2].Value.ToString());
             frmInChamCong frm_InChamCong = new frmInChamCong(this);
             frm_InChamCong.ShowDialog();
+            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("In bảng chấm công {0}", MaCC));
         }
     }
 }

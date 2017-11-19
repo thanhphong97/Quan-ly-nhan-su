@@ -21,7 +21,9 @@ namespace GUI
         private void ucThemNhanVien_Load(object sender, EventArgs e)
         {
             LoadCbo();
-            loadThongTinCuaNhanVien();
+            clsNhanVien_BUS BUSNV = new clsNhanVien_BUS();
+            dgvNhanVien.AutoGenerateColumns = false;
+            dgvNhanVien.DataSource = BUSNV.LayDSNhanVien();
             this.radNam.Checked = true;
             cboChucVu.SelectedValue = 0;
 
@@ -229,6 +231,36 @@ namespace GUI
             clsNhanVien_BUS bus = new clsNhanVien_BUS();
             List<clsNhanVien_DTO> lsDanhSachNV = bus.LayDSNhanVien();
             dgvNhanVien.DataSource = lsDanhSachNV;
+        }
+
+        private void btnHopDongNV_Click(object sender, EventArgs e)
+        {
+           
+            DataGridViewRow r = dgvNhanVien.CurrentRow;
+            clsNhanVien_DTO NhanVien = new clsNhanVien_DTO();
+
+            // Lấy thông tin của nhân viên ở dgvNhanVie
+            NhanVien.MaNV = r.Cells["colMANV"].Value.ToString();
+            NhanVien.Ho = r.Cells["colHo"].Value.ToString();
+            NhanVien.Ten = r.Cells["colTen"].Value.ToString();
+            NhanVien.NgaySinh = Convert.ToDateTime(r.Cells["colNgaySinh"].Value);
+            NhanVien.DiaChiThuongTru = r.Cells["colDiaChi"].Value.ToString();
+            NhanVien.CMND = r.Cells["colCMND"].Value.ToString();
+            NhanVien.GioiTinh = Convert.ToBoolean(r.Cells["colGioiTinh"].Value);
+            NhanVien.NguyenQuan = r.Cells["colNguyenQuan"].Value.ToString();
+            NhanVien.TinhThanh = r.Cells["colTinhThanh"].Value.ToString();
+            NhanVien.QuanHuyen = r.Cells["colQuanHuyen"].Value.ToString();
+            NhanVien.QuocTich = r.Cells["colQuocTich"].Value.ToString();
+            NhanVien.TonGiao = r.Cells["colTonGiao"].Value.ToString();
+            NhanVien.DanToc = r.Cells["colDanToc"].Value.ToString();
+            NhanVien.MaCV = r.Cells["colMaCV"].Value.ToString();
+            NhanVien.NgayBatDauLamViec = Convert.ToDateTime(r.Cells["colNgayBatDau"].Value);
+            NhanVien.PhongBan = r.Cells["colPhong"].Value.ToString();
+            NhanVien.MaBAC = r.Cells["colMaBac"].Value.ToString();
+            NhanVien.TrangThai = Convert.ToBoolean(r.Cells["colHopDong"].Value);
+
+            frmHopDong frmHD = new frmHopDong(NhanVien);
+            frmHD.Show();
         }
 
 

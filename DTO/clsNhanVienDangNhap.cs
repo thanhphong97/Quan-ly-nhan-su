@@ -29,5 +29,16 @@ namespace DTO
             get { return _Quyen; }
             set { _Quyen = value; }
         }
+        private string _MaNV;
+
+        private string _TaiKhoan;
+
+
+        public string TaiKhoan
+        {
+            get { return _TaiKhoan; }
+            set { _TaiKhoan = value; }
+        }
+
     }
 }
