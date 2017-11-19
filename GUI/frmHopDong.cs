@@ -13,9 +13,17 @@ namespace GUI
 {
     public partial class frmHopDong : Form
     {
+        private clsNhanVien_DTO NhanVien;
+
         public frmHopDong()
         {
             InitializeComponent();
+        }
+
+        public frmHopDong(clsNhanVien_DTO NhanVien)
+        {
+            InitializeComponent();
+            this.NhanVien = NhanVien;
         }
 
         private void frmHopDong_Load(object sender, EventArgs e)

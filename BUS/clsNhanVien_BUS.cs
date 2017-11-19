@@ -32,6 +32,11 @@ namespace BUS
             nv.MaNV = MaNV;
             return dao.ThemNhanVien(nv);
         }
+        public bool CapNhatThongTinNhanVien(clsNhanVien_DTO nv)
+        {
+            clsNhanVien_DAO dao = new clsNhanVien_DAO();
+            return dao.CapNhatThongTinNhanVien(nv);
+        }
         public List<clsNhanVien_DTO> LayDanhSachNhanVien(List<clsPhongBan_DTO> lsPhongBan)
         {
             clsNhanVien_DAO DAO = new clsNhanVien_DAO();
@@ -90,10 +95,10 @@ namespace BUS
             return dao.LayNhanVienTheoPhong(MaPB);
         }
 
-        public List<clsNhanVien_DTO> LayDSNhanVien()
+        public List<clsNhanVien_DTO> LayDSNhanVien(int dk,string MaNV)
         {
             clsNhanVien_DAO dao = new clsNhanVien_DAO();
-            return dao.LayDanhSachNhanVien();
+            return dao.LayDanhSachNhanVien(dk,MaNV);
         }
     }
 }

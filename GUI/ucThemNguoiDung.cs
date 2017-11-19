@@ -14,7 +14,6 @@ namespace GUI
     public partial class ucThemNguoiDung : UserControl
     {
         private static List<clsPhongBan_DTO> lsPhongBan;
-        private static List<clsNhanVien_DTO> lsNhanVien;
 
         public ucThemNguoiDung()
         {

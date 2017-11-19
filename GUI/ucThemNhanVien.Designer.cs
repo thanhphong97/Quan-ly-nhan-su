@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabNhanVien = new System.Windows.Forms.TabControl();
             this.tpNhanVien = new System.Windows.Forms.TabPage();
             this.grbThôngTinNV = new System.Windows.Forms.GroupBox();
@@ -105,6 +106,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.colMANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,7 +125,6 @@
             this.colMaCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBangCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHopDongTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHopDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new System.Windows.Forms.Button();
             this.grbHopDong = new System.Windows.Forms.GroupBox();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
@@ -153,12 +154,13 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.toolHeSo = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radTatCa = new System.Windows.Forms.RadioButton();
+            this.radDaNghiViec = new System.Windows.Forms.RadioButton();
+            this.radConLamViec = new System.Windows.Forms.RadioButton();
+            this.txtMaNV_TK = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabNhanVien.SuspendLayout();
             this.tpNhanVien.SuspendLayout();
             this.grbThôngTinNV.SuspendLayout();
@@ -172,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabNhanVien
@@ -188,7 +191,6 @@
             // tpNhanVien
             // 
             this.tpNhanVien.BackColor = System.Drawing.SystemColors.Control;
-            this.tpNhanVien.Controls.Add(this.button1);
             this.tpNhanVien.Controls.Add(this.grbThôngTinNV);
             this.tpNhanVien.Controls.Add(this.btnCapNhat);
             this.tpNhanVien.Controls.Add(this.btnClear);
@@ -383,7 +385,7 @@
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.SystemColors.Control;
             this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(61, 111);
+            this.label35.Location = new System.Drawing.Point(56, 108);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(74, 18);
             this.label35.TabIndex = 49;
@@ -408,7 +410,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.Control;
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(57, 152);
+            this.label13.Location = new System.Drawing.Point(56, 150);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(88, 18);
             this.label13.TabIndex = 45;
@@ -419,7 +421,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(56, 193);
+            this.label11.Location = new System.Drawing.Point(55, 193);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 18);
             this.label11.TabIndex = 41;
@@ -430,7 +432,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(61, 67);
+            this.label5.Location = new System.Drawing.Point(56, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 18);
             this.label5.TabIndex = 42;
@@ -989,6 +991,7 @@
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMANV,
+            this.colTrangThai,
             this.colHo,
             this.colTen,
             this.colNgaySinh,
@@ -1006,139 +1009,180 @@
             this.colMaBac,
             this.colMaCV,
             this.colBangCap,
-            this.colHopDongTV,
-            this.colHopDong});
+            this.colHopDongTV});
             this.dgvNhanVien.EnableHeadersVisualStyles = false;
-            this.dgvNhanVien.Location = new System.Drawing.Point(0, 180);
+            this.dgvNhanVien.Location = new System.Drawing.Point(0, 235);
             this.dgvNhanVien.MultiSelect = false;
             this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.ReadOnly = true;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(345, 496);
+            this.dgvNhanVien.Size = new System.Drawing.Size(345, 441);
             this.dgvNhanVien.TabIndex = 22;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            this.dgvNhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNhanVien_CellFormatting);
             // 
             // colMANV
             // 
             this.colMANV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colMANV.DataPropertyName = "MaNV";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.colMANV.DefaultCellStyle = dataGridViewCellStyle3;
             this.colMANV.HeaderText = "Mã NV";
             this.colMANV.Name = "colMANV";
+            this.colMANV.ReadOnly = true;
             this.colMANV.Width = 54;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Tình trạng lao động";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
             // 
             // colHo
             // 
             this.colHo.DataPropertyName = "Ho";
             this.colHo.HeaderText = "Họ";
             this.colHo.Name = "colHo";
+            this.colHo.ReadOnly = true;
+            this.colHo.Visible = false;
             // 
             // colTen
             // 
             this.colTen.DataPropertyName = "Ten";
             this.colTen.HeaderText = "Tên";
             this.colTen.Name = "colTen";
+            this.colTen.ReadOnly = true;
+            this.colTen.Visible = false;
             // 
             // colNgaySinh
             // 
             this.colNgaySinh.DataPropertyName = "NgaySinh";
             this.colNgaySinh.HeaderText = "Ngày Sinh";
             this.colNgaySinh.Name = "colNgaySinh";
+            this.colNgaySinh.ReadOnly = true;
+            this.colNgaySinh.Visible = false;
             // 
             // colDiaChi
             // 
             this.colDiaChi.DataPropertyName = "DiaChiThuongTru";
             this.colDiaChi.HeaderText = "Địa Chỉ";
             this.colDiaChi.Name = "colDiaChi";
+            this.colDiaChi.ReadOnly = true;
+            this.colDiaChi.Visible = false;
             // 
             // colCMND
             // 
             this.colCMND.DataPropertyName = "CMND";
             this.colCMND.HeaderText = "CMND";
             this.colCMND.Name = "colCMND";
+            this.colCMND.ReadOnly = true;
+            this.colCMND.Visible = false;
             // 
             // colGioiTinh
             // 
             this.colGioiTinh.DataPropertyName = "GioiTinh";
             this.colGioiTinh.HeaderText = "Giới Tính";
             this.colGioiTinh.Name = "colGioiTinh";
+            this.colGioiTinh.ReadOnly = true;
+            this.colGioiTinh.Visible = false;
             // 
             // colNguyenQuan
             // 
             this.colNguyenQuan.DataPropertyName = "NguyenQuan";
             this.colNguyenQuan.HeaderText = "Nguyên Quán";
             this.colNguyenQuan.Name = "colNguyenQuan";
+            this.colNguyenQuan.ReadOnly = true;
+            this.colNguyenQuan.Visible = false;
             // 
             // colTinhThanh
             // 
             this.colTinhThanh.DataPropertyName = "TinhThanh";
             this.colTinhThanh.HeaderText = "Tỉnh Thành";
             this.colTinhThanh.Name = "colTinhThanh";
+            this.colTinhThanh.ReadOnly = true;
+            this.colTinhThanh.Visible = false;
             // 
             // colQuanHuyen
             // 
             this.colQuanHuyen.DataPropertyName = "QuanHuyen";
             this.colQuanHuyen.HeaderText = "Quận Huyện";
             this.colQuanHuyen.Name = "colQuanHuyen";
+            this.colQuanHuyen.ReadOnly = true;
+            this.colQuanHuyen.Visible = false;
             // 
             // colQuocTich
             // 
             this.colQuocTich.DataPropertyName = "QuocTich";
             this.colQuocTich.HeaderText = "Quốc Tịch";
             this.colQuocTich.Name = "colQuocTich";
+            this.colQuocTich.ReadOnly = true;
+            this.colQuocTich.Visible = false;
             // 
             // colDanToc
             // 
             this.colDanToc.DataPropertyName = "DanToc";
             this.colDanToc.HeaderText = "Dân Tộc";
             this.colDanToc.Name = "colDanToc";
+            this.colDanToc.ReadOnly = true;
+            this.colDanToc.Visible = false;
             // 
             // colTonGiao
             // 
             this.colTonGiao.DataPropertyName = "TonGiao";
             this.colTonGiao.HeaderText = "Tôn Giáo";
             this.colTonGiao.Name = "colTonGiao";
+            this.colTonGiao.ReadOnly = true;
+            this.colTonGiao.Visible = false;
             // 
             // colNgayBatDau
             // 
             this.colNgayBatDau.DataPropertyName = "NgayBatDauLamViec";
             this.colNgayBatDau.HeaderText = "Ngày Vào Làm";
             this.colNgayBatDau.Name = "colNgayBatDau";
+            this.colNgayBatDau.ReadOnly = true;
+            this.colNgayBatDau.Visible = false;
             // 
             // colPhong
             // 
             this.colPhong.DataPropertyName = "PhongBan";
             this.colPhong.HeaderText = "Phòng Ban";
             this.colPhong.Name = "colPhong";
+            this.colPhong.ReadOnly = true;
+            this.colPhong.Visible = false;
             // 
             // colMaBac
             // 
             this.colMaBac.DataPropertyName = "MaBac";
             this.colMaBac.HeaderText = "MaBac";
             this.colMaBac.Name = "colMaBac";
+            this.colMaBac.ReadOnly = true;
+            this.colMaBac.Visible = false;
             // 
             // colMaCV
             // 
             this.colMaCV.DataPropertyName = "MaCV";
             this.colMaCV.HeaderText = "Công Việc";
             this.colMaCV.Name = "colMaCV";
+            this.colMaCV.ReadOnly = true;
+            this.colMaCV.Visible = false;
             // 
             // colBangCap
             // 
             this.colBangCap.DataPropertyName = "BangCap";
             this.colBangCap.HeaderText = "Bằng Cấp";
             this.colBangCap.Name = "colBangCap";
+            this.colBangCap.ReadOnly = true;
+            this.colBangCap.Visible = false;
             // 
             // colHopDongTV
             // 
             this.colHopDongTV.DataPropertyName = "HopDongTV";
             this.colHopDongTV.HeaderText = "Hợp đồng thời vụ";
             this.colHopDongTV.Name = "colHopDongTV";
-            // 
-            // colHopDong
-            // 
-            this.colHopDong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colHopDong.DataPropertyName = "TrangThai";
-            this.colHopDong.HeaderText = "Tình trạng lao động";
-            this.colHopDong.Name = "colHopDong";
+            this.colHopDongTV.ReadOnly = true;
+            this.colHopDongTV.Visible = false;
             // 
             // btnThem
             // 
@@ -1414,64 +1458,80 @@
             this.label21.TabIndex = 7;
             this.label21.Text = "HỢP ĐỒNG NHÂN VIÊN";
             // 
-            // comboBox4
+            // groupBox4
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Bậc 1",
-            "Bậc 2",
-            "Bậc 3"});
-            this.comboBox4.Location = new System.Drawing.Point(136, 69);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(209, 21);
-            this.comboBox4.TabIndex = 41;
+            this.groupBox4.Controls.Add(this.radTatCa);
+            this.groupBox4.Controls.Add(this.radDaNghiViec);
+            this.groupBox4.Controls.Add(this.radConLamViec);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox4.Location = new System.Drawing.Point(4, 83);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(160, 124);
+            this.groupBox4.TabIndex = 23;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Điều kiện";
             // 
-            // radioButton1
+            // radTatCa
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radioButton1.Location = new System.Drawing.Point(20, 69);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(109, 22);
-            this.radioButton1.TabIndex = 42;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tìm theo mã";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radTatCa.AutoSize = true;
+            this.radTatCa.BackColor = System.Drawing.SystemColors.Control;
+            this.radTatCa.Checked = true;
+            this.radTatCa.ForeColor = System.Drawing.Color.Black;
+            this.radTatCa.Location = new System.Drawing.Point(15, 28);
+            this.radTatCa.Name = "radTatCa";
+            this.radTatCa.Size = new System.Drawing.Size(67, 22);
+            this.radTatCa.TabIndex = 8;
+            this.radTatCa.TabStop = true;
+            this.radTatCa.Text = "Tất cả";
+            this.radTatCa.UseVisualStyleBackColor = false;
+            this.radTatCa.CheckedChanged += new System.EventHandler(this.radTatCa_CheckedChanged);
             // 
-            // radioButton2
+            // radDaNghiViec
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radioButton2.Location = new System.Drawing.Point(20, 107);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(109, 22);
-            this.radioButton2.TabIndex = 44;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Tìm theo mã";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radDaNghiViec.AutoSize = true;
+            this.radDaNghiViec.BackColor = System.Drawing.SystemColors.Control;
+            this.radDaNghiViec.ForeColor = System.Drawing.Color.Black;
+            this.radDaNghiViec.Location = new System.Drawing.Point(15, 88);
+            this.radDaNghiViec.Name = "radDaNghiViec";
+            this.radDaNghiViec.Size = new System.Drawing.Size(106, 22);
+            this.radDaNghiViec.TabIndex = 7;
+            this.radDaNghiViec.Text = "Đã nghỉ việc";
+            this.radDaNghiViec.UseVisualStyleBackColor = false;
+            this.radDaNghiViec.CheckedChanged += new System.EventHandler(this.radDaNghiViec_CheckedChanged);
             // 
-            // comboBox5
+            // radConLamViec
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Bậc 1",
-            "Bậc 2",
-            "Bậc 3"});
-            this.comboBox5.Location = new System.Drawing.Point(136, 107);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(209, 21);
-            this.comboBox5.TabIndex = 43;
+            this.radConLamViec.AutoSize = true;
+            this.radConLamViec.BackColor = System.Drawing.SystemColors.Control;
+            this.radConLamViec.ForeColor = System.Drawing.Color.Black;
+            this.radConLamViec.Location = new System.Drawing.Point(15, 56);
+            this.radConLamViec.Name = "radConLamViec";
+            this.radConLamViec.Size = new System.Drawing.Size(112, 22);
+            this.radConLamViec.TabIndex = 6;
+            this.radConLamViec.Text = "Còn làm việc";
+            this.radConLamViec.UseVisualStyleBackColor = false;
+            this.radConLamViec.CheckedChanged += new System.EventHandler(this.radConLamViec_CheckedChanged);
             // 
-            // button1
+            // txtMaNV_TK
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(322, 555);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 43);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtMaNV_TK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaNV_TK.Location = new System.Drawing.Point(111, 42);
+            this.txtMaNV_TK.Name = "txtMaNV_TK";
+            this.txtMaNV_TK.Size = new System.Drawing.Size(195, 24);
+            this.txtMaNV_TK.TabIndex = 47;
+            this.txtMaNV_TK.TextChanged += new System.EventHandler(this.txtMaNV_TK_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.SystemColors.Control;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(7, 45);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 18);
+            this.label16.TabIndex = 48;
+            this.label16.Text = "Mã Nhân viên";
             // 
             // ucThemNhanVien
             // 
@@ -1479,10 +1539,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.txtMaNV_TK);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.tabNhanVien);
             this.Controls.Add(this.dgvNhanVien);
             this.ForeColor = System.Drawing.Color.Black;
@@ -1508,6 +1567,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1592,11 +1653,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.DataGridView dgvThanNhan;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
@@ -1622,7 +1679,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgaySinhThanNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgheNghiep;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoiQH;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton radTatCa;
+        private System.Windows.Forms.RadioButton radDaNghiViec;
+        private System.Windows.Forms.RadioButton radConLamViec;
+        private System.Windows.Forms.TextBox txtMaNV_TK;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMANV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgaySinh;
@@ -1641,8 +1705,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaCV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBangCap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHopDongTV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHopDong;
-        private System.Windows.Forms.Button button1;
 
 
 
