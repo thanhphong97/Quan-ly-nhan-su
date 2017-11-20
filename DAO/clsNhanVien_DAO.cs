@@ -67,7 +67,7 @@ namespace DAO
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
             string ngaysinh = string.Format("{0:yyyy}/{0:MM}/{0:dd}", nv.NgaySinh);
             string Ngaybatdaulamviec = string.Format("{0:yyyy}/{0:MM}/{0:dd}", nv.NgayBatDauLamViec);
-            string sql = string.Format("INSERT INTO NHANVIEN (MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTICH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, TRANGTHAI) VALUES ('{0}', N'{1}' ,N'{2}' ,'{3}' ,N'{4}' ,'{5}', '{6}', N'{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}')", nv.MaNV, nv.Ho, nv.Ten, ngaysinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, Ngaybatdaulamviec, nv.PhongBan, nv.MaBAC, nv.MaCV, nv.BangCap,nv.TrangThai);
+            string sql = string.Format("INSERT INTO NHANVIEN (MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTICH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, TRANGTHAI) VALUES ('{0}', N'{1}' ,N'{2}' ,'{3}' ,N'{4}' ,'{5}', '{6}', N'{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', {17}, '{18}')", nv.MaNV, nv.Ho, nv.Ten, nv.NgaySinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, nv.NgayBatDauLamViec, nv.PhongBan, nv.MaBAC, nv.MaCV, nv.BangCap, nv.TrangThai);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             int rowAffected = cmd.ExecuteNonQuery();
             ThaoTacDuLieu.DongKetNoi(con);
@@ -96,14 +96,14 @@ namespace DAO
             {
                 if (dk == 1)
                 {
-                    sql += string.Format(" WHERE TRANGTHAI = 1 AND MANV LIKE '{0}'",MaNV);
+                    sql += string.Format(" WHERE TRANGTHAI = 1 AND MANV LIKE '%{0}%'",MaNV);
                 }
                 if (dk == -1)
                 {
-                    sql += string.Format(" WHERE TRANGTHAI = 0 AND MANV LIKE '{0}'", MaNV);
+                    sql += string.Format(" WHERE TRANGTHAI = 0 AND MANV LIKE '%{0}%'", MaNV);
                 }
                 if(dk == 0)
-                    sql += string.Format(" WHERE MANV = '{0}'", MaNV);
+                    sql += string.Format(" WHERE MANV LIKE '%{0}%'", MaNV);
             }
             
             

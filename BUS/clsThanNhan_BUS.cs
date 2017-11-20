@@ -24,5 +24,10 @@ namespace BUS
             clsThanNhan_DAO DAO = new clsThanNhan_DAO();
             return DAO.CapNhatThanNhan(TN);
         }
+        public int LaySoLuongTN()
+        {
+            clsThanNhan_DAO DAO = new clsThanNhan_DAO();
+            return DAO.LaySoLuongTN();
+        }
     }
 }

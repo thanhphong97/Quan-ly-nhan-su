@@ -51,9 +51,11 @@
     <Compile Include="clsMoiQuanHe_DTO.cs" />
     <Compile Include="clsNguoiDung_DTO.cs" />
     <Compile Include="clsNhanVien_DTO.cs" />
+    <Compile Include="clsNhatKy_DTO.cs" />
     <Compile Include="clsPhongBan_DTO.cs" />
     <Compile Include="clsQuocTich_DTO.cs" />
     <Compile Include="clsQuyDinhLuong_DTO.cs" />
+    <Compile Include="clsThanNhan_DTO.cs" />
     <Compile Include="clsTinhQuanHuyen_DTO.cs" />
     <Compile Include="clsTonGiao_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

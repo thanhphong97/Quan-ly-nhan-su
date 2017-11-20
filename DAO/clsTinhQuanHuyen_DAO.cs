@@ -29,10 +29,10 @@ namespace DAO
             return lsTinhThanh;
         }
 
-        public List<clsTinhQuanHuyen_DTO> LayDanhSachQuanHuyen()
+        public List<clsTinhQuanHuyen_DTO> LayDanhSachQuanHuyen(string MaTinh)
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = "SELECT MAQH,TENQH FROM TINHQUANHUYEN GROUP BY MAQH,TENQH";
+            string sql = string.Format("SELECT MAQH,TENQH FROM TINHQUANHUYEN WHERE MATINH = '{0}' GROUP BY MAQH,TENQH", MaTinh);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             List<clsTinhQuanHuyen_DTO> lsQuanHuyen = new List<clsTinhQuanHuyen_DTO>();

@@ -31,8 +31,13 @@ namespace DTO
         }
         private string _MaNV;
 
-        private string _TaiKhoan;
+        public string MaNV
+        {
+            get { return _MaNV; }
+            set { _MaNV = value; }
+        }
 
+        private string _TaiKhoan;
 
         public string TaiKhoan
         {

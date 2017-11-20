@@ -40,7 +40,13 @@ namespace GUI
             
             clsHopDong_BUS BUSHD = new clsHopDong_BUS();
             dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV);
-            
+            if(Program.NhanVien_Login.Quyen == "L3")
+            {
+                grbThongTin.Enabled = false;
+                btnThemHopDong.Enabled = false;
+                btnCapNhatHopDong.Enabled = false;
+
+            }
        }
 
 
@@ -260,4 +266,3 @@ namespace GUI
         }
     }
 }
-

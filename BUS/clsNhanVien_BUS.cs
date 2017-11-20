@@ -30,6 +30,7 @@ namespace BUS
             clsNhanVien_DAO dao = new clsNhanVien_DAO();
             string MaNV = "NV" + (dao.LaySoLuongNhanVien() + 1);
             nv.MaNV = MaNV;
+            
             return dao.ThemNhanVien(nv);
         }
         public bool CapNhatThongTinNhanVien(clsNhanVien_DTO nv)
@@ -43,7 +44,11 @@ namespace BUS
             return DAO.LayDanhSachNhanVienCC(lsPhongBan);
         }
   
-
+        public int LaySoLuongNhanVien()
+        {
+            clsNhanVien_DAO DAO = new clsNhanVien_DAO();
+            return DAO.LaySoLuongNhanVien();
+        }
         // Mã hóa mật khẩu
         private string MaHoaMD5(string MatKhau)
         {

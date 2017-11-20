@@ -29,5 +29,12 @@ namespace DTO
             get { return _SuKien; }
             set { _SuKien = value; }
         }
+        private Int64 _MaNK;
+
+        public Int64 MaNK
+        {
+            get { return _MaNK; }
+            set { _MaNK = value; }
+        }
     }
 }

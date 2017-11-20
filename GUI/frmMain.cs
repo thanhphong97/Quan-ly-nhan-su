@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using BUS;
 namespace GUI
 {
     public partial class frmMain : Form
@@ -52,7 +53,8 @@ namespace GUI
             this.pnlMain.Controls.Add(ucThemNV);
             lblNguoiDung.Text = nv.Ho + " " + nv.Ten;
             LoadPhanQuyen();
-
+            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, "Đã đăng nhập vào hệ thống");
             //System.Drawing.Size kichthuoc = this.Size;
             //MessageBox.Show(kichthuoc.ToString());
         }
@@ -62,8 +64,11 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn muốn thoát chương trình?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
+                
                 e.Cancel = true;
             }
+            //clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            //BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, "Đã đăng xuất khỏi hệ thống");
         }
         
     
@@ -164,6 +169,8 @@ namespace GUI
         private void tbtnDangXuat_Click(object sender, EventArgs e)
         {
             this.pnlMain.Controls.Clear();
+            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, "Đã đăng xuất khỏi hệ thống");
             Program.NhanVien_Login = null;
             TrangThaiChuaDangNhap();
         }

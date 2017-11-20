@@ -14,10 +14,10 @@ namespace BUS
             clsTinhQuanHuyen_DAO DAO = new clsTinhQuanHuyen_DAO();
             return DAO.LayDanhSachTinhThanh();
         }
-        public List<clsTinhQuanHuyen_DTO> LayDanhSachQuanHuyen()
+        public List<clsTinhQuanHuyen_DTO> LayDanhSachQuanHuyen(string MaTinh)
         {
             clsTinhQuanHuyen_DAO DAO = new clsTinhQuanHuyen_DAO();
-            return DAO.LayDanhSachQuanHuyen();
+            return DAO.LayDanhSachQuanHuyen(MaTinh);
         }
     }
 }

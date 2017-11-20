@@ -42,6 +42,7 @@ namespace DAO
             string sql = string.Format("SELECT COUNT(*) FROM NHANVIEN WHERE MANV = '{0}'",MaNV);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             int SoLuongTaiKhoan = (int)cmd.ExecuteScalar();
+            ThaoTacDuLieu.DongKetNoi(con);
             if (SoLuongTaiKhoan != 1)
                 return false;
             return true;
@@ -54,6 +55,7 @@ namespace DAO
                 string sql = string.Format("INSERT INTO NGUOIDUNG(TAIKHOAN, MATKHAU, LOAIND, MANV, TRANGTHAI) VALUES('{0}','{1}','{2}','{3}','{4}')", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
                 SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
                 int rowaff = cmd.ExecuteNonQuery();
+                ThaoTacDuLieu.DongKetNoi(con);
                 if (rowaff == 0)
                     return false;
                 return true;
@@ -71,6 +73,7 @@ namespace DAO
                 string sql = string.Format("UPDATE NGUOIDUNG SET TAIKHOAN = '{0}', MATKHAU = '{1}', LOAIND = '{2}',TRANGTHAI = '{4}' WHERE MANV = '{3}'", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
                 SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
                 int rowaff = cmd.ExecuteNonQuery();
+                ThaoTacDuLieu.DongKetNoi(con);
                 if (rowaff == 0)
                     return false;
                 return true;
@@ -89,6 +92,7 @@ namespace DAO
                 sql += string.Format(" WHERE TAIKHOAN =  '{0}'", str);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             int SoLuongTaiKhoan = (int)cmd.ExecuteScalar();
+            ThaoTacDuLieu.DongKetNoi(con);
             if (SoLuongTaiKhoan > 0)
                 return false;
             return true;

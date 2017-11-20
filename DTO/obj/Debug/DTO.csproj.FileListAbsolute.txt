@@ -16,3 +16,12 @@ D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\DTO
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\DTO\bin\Debug\DTO.pdb
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\DTO\obj\Debug\DTO.dll
 D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup\DTO\obj\Debug\DTO.pdb
+G:\github\Quan-ly-nhan-su\DTO\bin\Debug\DTO.dll
+G:\github\Quan-ly-nhan-su\DTO\bin\Debug\DTO.pdb
+G:\github\Quan-ly-nhan-su\DTO\obj\Debug\DTO.dll
+G:\github\Quan-ly-nhan-su\DTO\obj\Debug\DTO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup2011\DTO\bin\Debug\DTO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup2011\DTO\bin\Debug\DTO.pdb
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup2011\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup2011\DTO\obj\Debug\DTO.dll
+D:\Project\C Sharp\0306151277_VoHuynhThanhPhong_0306151258_VuTuanKiet\Backup2011\DTO\obj\Debug\DTO.pdb

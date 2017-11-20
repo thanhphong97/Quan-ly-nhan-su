@@ -30,6 +30,11 @@ namespace BUS
             clsChamCong_DAO DAO = new clsChamCong_DAO();
             return DAO.LayBangChamCongNV(strTK);
         }
+        public int LaySoLuong()
+        {
+            clsChamCong_DAO DAO = new clsChamCong_DAO();
+            return DAO.LaySoLuong();
+        }
         
     }
 }

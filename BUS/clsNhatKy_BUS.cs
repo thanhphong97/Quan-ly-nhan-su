@@ -14,5 +14,10 @@ namespace BUS
             clsNhatKy_DAO DAO = new clsNhatKy_DAO();
             DAO.ThemNhatKy(TaiKhoan, ThoiGian, SuKien);
         }
+        public List<clsNhatKy_DTO> LayDanhSachNhatKy()
+        {
+            clsNhatKy_DAO DAO = new clsNhatKy_DAO();
+            return DAO.LayDanhSachNhatKy();
+        }
     }
 }

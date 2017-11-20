@@ -143,14 +143,6 @@ namespace DTO
             get { return _BangCap; }
             set { _BangCap = value; }
         }
-        string _HopDongTV;
-
-        public string HopDongTV
-        {
-            get { return _HopDongTV; }
-            set { _HopDongTV = value; }
-        }
-        
         
     }
 }

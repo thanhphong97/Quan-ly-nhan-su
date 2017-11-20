@@ -23,7 +23,7 @@ namespace GUI
         private void ucThemNguoiDung_Load(object sender, EventArgs e)
         {
             dgvNhanVien.AutoGenerateColumns = false;
-            XoaThongBao();
+            clearThongBao();
             LoadDGV_NguoiDung();
             LoadCBO_PhongBan();
         }
@@ -119,6 +119,8 @@ namespace GUI
                             if (kq)
                             {
                                 MessageBox.Show("Tao nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                                BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Tạo người dùng {0} có mã nhân viên {1}", nd.TAIKHOAN, nd.MANV));
                                 LoadDGV_NguoiDung();
                                 return;
                             }
@@ -149,13 +151,7 @@ namespace GUI
             }
         }
 
-        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LoadDuLieuNguoiDung();
-            XoaThongBao();
-        }
-
-        private void XoaThongBao()
+        private void clearThongBao()
         {
             lblThongBao_MaNV.Visible = false;
             lblThongBao_TK.Visible = false;
@@ -248,6 +244,8 @@ namespace GUI
                     if (kq)
                     {
                         MessageBox.Show("Cập nhật nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                        BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan,DateTime.Now,string.Format("Cập nhật người dùng {0} có mã nhân viên NV{1}",nd.TAIKHOAN,nd.MANV));
                         LoadDGV_NguoiDung();
                         return;
                     }
@@ -278,7 +276,6 @@ namespace GUI
         private void btnClear_Click(object sender, EventArgs e)
         {
             XoaTextBox();
-            XoaThongBao();
         }
         private void XoaTextBox()
         {
@@ -314,7 +311,17 @@ namespace GUI
             KiemTraMaNV();
         }
 
+        private void tbQuanTri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvSuKienNK.AutoGenerateColumns = false;
+            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            dgvSuKienNK.DataSource = BUSNK.LayDanhSachNhatKy();
+        }
 
-
+        private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
+        {
+            LoadDuLieuNguoiDung();
+            clearThongBao();
+        }
     }
 }

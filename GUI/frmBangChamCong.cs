@@ -158,17 +158,19 @@ namespace GUI
                 ChamCong.Thang = ucTL.Thang;
                 ChamCong.Nam= ucTL.Nam;
                 lsChamCong.Add(ChamCong);
-                clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-                BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Tạo bảng chấm công tháng {0} năm {1}",ucTL.Thang,ucTL.Nam));
+                
+                
             }
             clsChamCong_BUS BUS = new clsChamCong_BUS();
             if (BUS.ThemBangChamCong(DateTime.DaysInMonth(ucTL.Nam,ucTL.Thang) , lsChamCong))
             {
                 MessageBox.Show("Đã lưu dữ liệu chấm công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                int SoLuongCC = BUS.LaySoLuong();
+                BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Tạo bảng chấm công có mã CC{0} tháng {1} năm {2}",SoLuongCC,ucTL.Thang,ucTL.Nam));
                 _btnLuu = true;
                 this.Hide();
                 frm_PhongBan.Close();
-                
             }
             else
             {
@@ -184,6 +186,7 @@ namespace GUI
 
         private void dgvBangChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            
             if (dgvBangChamCong.Columns[e.ColumnIndex].Name == "colMaPB")
             {
                 foreach (clsPhongBan_DTO pb in lsPhongBan2)
@@ -195,7 +198,18 @@ namespace GUI
                     }
                 }
             }
-            
+            for(int i = 1; i <= 31; i++)
+
+            {
+                string col = "col"+i;
+                if (dgvBangChamCong.Columns[e.ColumnIndex].Name == col)
+                    if (e.Value.ToString() == "CN")
+                    {
+                        dgvBangChamCong.Columns[e.ColumnIndex].DefaultCellStyle.ForeColor = Color.Red;
+                    }
+
+            }
+            dgvBangChamCong.Columns[e.ColumnIndex].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
         private void ChamCongTuDong() // Tự động chấm tất cả ngày công trong tháng. Không chấm chủ nhật (cách chấm dành cho phòng Nhân Sự).
         {

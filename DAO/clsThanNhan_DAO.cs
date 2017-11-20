@@ -54,5 +54,13 @@ namespace DAO
             int kq = cmd.ExecuteNonQuery();
             return kq > 0;
         }
+        public int LaySoLuongTN()
+        {
+            SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
+            int SL = ThaoTacDuLieu.LaySoLuong("THANNHAN", conn);
+            ThaoTacDuLieu.DongKetNoi(conn);
+            return SL;
+        }
+        
     }
 }
