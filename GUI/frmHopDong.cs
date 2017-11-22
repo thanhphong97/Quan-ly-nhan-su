@@ -45,8 +45,8 @@ namespace GUI
                 grbThongTin.Enabled = false;
                 btnThemHopDong.Enabled = false;
                 btnCapNhatHopDong.Enabled = false;
-
             }
+            
        }
 
 
@@ -146,87 +146,101 @@ namespace GUI
 
         private void btnCapNhatHopDong_Click(object sender, EventArgs e)
         {
-            bool KiemTra = false; // Nhập sai ngày bắt đầu hợp đồng và ngày kết thúc hợp đồng
-            clsHopDong_DTO HopDong = new clsHopDong_DTO();
-            HopDong.MaHDLD = dgvHopDongNV.CurrentRow.Cells["colMaHDLD"].Value.ToString(); // Lấy Mã hợp đồng được chọn ở dgvHopDongNV
-            HopDong.MaNV = NhanVien.MaNV; // Lấy mã nhân viên được chọn ở  DgvNhanVien
-            HopDong.NgayBatDau = dtpNgayBatDau.Value;
-            if (cboLoaiHD.SelectedIndex == 0)
+            try
             {
+                bool KiemTra = false; // Nhập sai ngày bắt đầu hợp đồng và ngày kết thúc hợp đồng
+                clsHopDong_DTO HopDong = new clsHopDong_DTO();
+                HopDong.MaHDLD = dgvHopDongNV.CurrentRow.Cells["colMaHDLD"].Value.ToString(); // Lấy Mã hợp đồng được chọn ở dgvHopDongNV
+                HopDong.MaNV = NhanVien.MaNV; // Lấy mã nhân viên được chọn ở  DgvNhanVien
+                HopDong.NgayBatDau = dtpNgayBatDau.Value;
+                if (cboLoaiHD.SelectedIndex == 0)
+                {
 
-                HopDong.NgayKetThuc = dtpNgayKetThuc.Value;
-                if (HopDong.NgayKetThuc.Date <= HopDong.NgayBatDau.Date)
-                {
-                    MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    HopDong.NgayKetThuc = dtpNgayKetThuc.Value;
+                    if (HopDong.NgayKetThuc.Date <= HopDong.NgayBatDau.Date)
+                    {
+                        MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (HopDong.NgayBatDau.Date.AddMonths(12) != HopDong.NgayKetThuc.Date && HopDong.NgayBatDau.Date.AddMonths(36) != HopDong.NgayKetThuc.Date) // Thời điểm kết chấm dứt hợp đồng xác định thời hạn chưa đủ 12 tháng hoặc chưa đủ 36 tháng
+                    {
+                        MessageBox.Show("Thời điểm chấm dứt hiệu lực của hợp đồng xác định thời hạn trong khoảng thời gian từ đủ 12 tháng đến 36 tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else //Đủ điều kiện của hợp đồng xác định thời hạn
+                    {
+                        HopDong.LoaiHD = "Xác định thời hạn";
+                        KiemTra = true;
+                    }
                 }
-                else if (HopDong.NgayBatDau.Date.AddMonths(12) != HopDong.NgayKetThuc.Date && HopDong.NgayBatDau.Date.AddMonths(36) != HopDong.NgayKetThuc.Date) // Thời điểm kết chấm dứt hợp đồng xác định thời hạn chưa đủ 12 tháng hoặc chưa đủ 36 tháng
+                if (cboLoaiHD.SelectedIndex == 1)
                 {
-                    MessageBox.Show("Thời điểm chấm dứt hiệu lực của hợp đồng xác định thời hạn trong khoảng thời gian từ đủ 12 tháng đến 36 tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else //Đủ điều kiện của hợp đồng xác định thời hạn
-                {
-                    HopDong.LoaiHD = "Xác định thời hạn";
+                    HopDong.LoaiHD = "Không xác định thời hạn";
                     KiemTra = true;
                 }
-            }
-            if (cboLoaiHD.SelectedIndex == 1)
-            {
-                HopDong.LoaiHD = "Không xác định thời hạn";
-                KiemTra = true;
-            }
-            if (cboLoaiHD.SelectedIndex == 2)  // Là hợp đồng thời vụ
-            {
-                HopDong.NgayKetThuc = dtpNgayKetThuc.Value;
-                if (HopDong.NgayKetThuc.Date <= HopDong.NgayBatDau.Date)
+                if (cboLoaiHD.SelectedIndex == 2)  // Là hợp đồng thời vụ
                 {
-                    MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    HopDong.NgayKetThuc = dtpNgayKetThuc.Value;
+                    if (HopDong.NgayKetThuc.Date <= HopDong.NgayBatDau.Date)
+                    {
+                        MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (HopDong.NgayBatDau.Date.AddDays(HopDong.NgayKetThuc.Date.Subtract(HopDong.NgayBatDau.Date).TotalDays) >= HopDong.NgayBatDau.Date.AddMonths(12)) // Hợp đồng thời vụ lớn hoặc bằng 12 
+                    {
+                        MessageBox.Show("Thời điểm chấm dứt hiệu lực của hợp đồng thời vụ phải dưới 12 tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        HopDong.LoaiHD = "Thời vụ";
+                        KiemTra = true;
+                    }
                 }
-                else if (HopDong.NgayBatDau.Date.AddDays(HopDong.NgayKetThuc.Date.Subtract(HopDong.NgayBatDau.Date).TotalDays) >= HopDong.NgayBatDau.Date.AddMonths(12)) // Hợp đồng thời vụ lớn hoặc bằng 12 
-                {
-                    MessageBox.Show("Thời điểm chấm dứt hiệu lực của hợp đồng thời vụ phải dưới 12 tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    HopDong.LoaiHD = "Thời vụ";
-                    KiemTra = true;
-                }
-            }
 
-            HopDong.DiaDiemLam = txtDiaDiem.Text;
-           
-            clsChucVu_BUS BUSCV = new clsChucVu_BUS();
-            foreach (clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
-            {
-                
-                if (cboChucVu.SelectedValue.ToString() == CV.MACV)
-                {
-                    HopDong.ChucVu = CV.TENCV;
-                    break;
-                }
-            }
-            HopDong.HeSoLuong = Convert.ToDouble(nudHeSo.Value);// Chọn sẵn khi chọn Mã nhân viên của datagridview ngoài tabcontrol
-            HopDong.CongViec = txtCongViec.Text;
-            HopDong.ThoiGianLam = Convert.ToDouble(nudThoiGian.Value); // Thời gian làm bao nhiêu giờ 1 ngày
-            HopDong.TrangBi = txtTrangBiLD.Text;
-            HopDong.PhuCap = Convert.ToDouble(nudHeSo.Value);// Thêm phụ cấp cho nhân viên
-            HopDong.NgayKy = dtpNgayKy.Value; // Lấy ngày kí hợp đồng là ngày hệ thống
+                HopDong.DiaDiemLam = txtDiaDiem.Text;
 
-            if (KiemTra)
-            {
-                clsHopDong_BUS BUSHD = new clsHopDong_BUS();
-                if (BUSHD.CapNhatHopDong(HopDong))
+                clsChucVu_BUS BUSCV = new clsChucVu_BUS();
+                foreach (clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
                 {
-                    MessageBox.Show(string.Format("Cập nhật hợp mã hợp đồng {0} thành công", HopDong.MaHDLD), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV); // Lấy mã nhân viên ở dgvNhanVien
-                    clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan,DateTime.Now,string.Format("Cập nhật hợp đồng {0} của nhân viên {1} {2}",HopDong.MaHDLD,NhanVien.Ho,NhanVien.Ten));
+
+                    if (cboChucVu.SelectedValue.ToString() == CV.MACV)
+                    {
+                        HopDong.ChucVu = CV.TENCV;
+                        break;
+                    }
                 }
-                else
-                    MessageBox.Show("Thêm hợp đồng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HopDong.HeSoLuong = Convert.ToDouble(nudHeSo.Value);// Chọn sẵn khi chọn Mã nhân viên của datagridview ngoài tabcontrol
+                HopDong.CongViec = txtCongViec.Text;
+                HopDong.ThoiGianLam = Convert.ToDouble(nudThoiGian.Value); // Thời gian làm bao nhiêu giờ 1 ngày
+                HopDong.TrangBi = txtTrangBiLD.Text;
+                HopDong.PhuCap = Convert.ToDouble(nudHeSo.Value);// Thêm phụ cấp cho nhân viên
+                HopDong.NgayKy = dtpNgayKy.Value; // Lấy ngày kí hợp đồng là ngày hệ thống
+
+                if (KiemTra)
+                {
+                    clsHopDong_BUS BUSHD = new clsHopDong_BUS();
+                    if (BUSHD.CapNhatHopDong(HopDong))
+                    {
+                        MessageBox.Show(string.Format("Cập nhật hợp mã hợp đồng {0} thành công", HopDong.MaHDLD), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV); // Lấy mã nhân viên ở dgvNhanVien
+                        clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                        BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Cập nhật hợp đồng {0} của nhân viên {1} {2}", HopDong.MaHDLD, NhanVien.Ho, NhanVien.Ten));
+                    }
+                    else
+                        MessageBox.Show("Thêm hợp đồng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            catch { }
         }
 
         private void dgvHopDongNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+ 
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvHopDongNV_SelectionChanged(object sender, EventArgs e)
         {
             DataGridViewRow r = dgvHopDongNV.CurrentRow;
             cboLoaiHD.SelectedItem = r.Cells["colLoaiHD"].Value;
@@ -242,10 +256,10 @@ namespace GUI
             }
             txtDiaDiem.Text = r.Cells["colDiaDiem"].Value.ToString();
             clsChucVu_BUS BUSCV = new clsChucVu_BUS();
-            foreach(clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
+            foreach (clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
             {
                 string TenCV = r.Cells["colChucVu"].Value.ToString();
-                if(TenCV == CV.TENCV)
+                if (TenCV == CV.TENCV)
                 {
                     cboChucVu.SelectedValue = CV.MACV;
                     break;
@@ -257,12 +271,6 @@ namespace GUI
             txtTrangBiLD.Text = r.Cells["colTrangBi"].Value.ToString();
             nudPhuCap.Value = 2; // Lấy từ dgvNhanVien
             dtpNgayKy.Value = Convert.ToDateTime(r.Cells["colNgayKy"].Value);
-            
-        }
-
-        private void btnDong_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

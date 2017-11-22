@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label14 = new System.Windows.Forms.Label();
             this.grbThongTin = new System.Windows.Forms.GroupBox();
             this.dtpNgayKy = new System.Windows.Forms.DateTimePicker();
@@ -63,7 +63,6 @@
             this.btnCapNhatHopDong = new System.Windows.Forms.Button();
             this.btnThemHopDong = new System.Windows.Forms.Button();
             this.dgvHopDongNV = new System.Windows.Forms.DataGridView();
-            this.btnDong = new System.Windows.Forms.Button();
             this.colMaHDLD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLoaiHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +76,7 @@
             this.colHeSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhuCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDong = new System.Windows.Forms.Button();
             this.grbThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhuCap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeSo)).BeginInit();
@@ -417,17 +417,7 @@
             this.dgvHopDongNV.Size = new System.Drawing.Size(745, 195);
             this.dgvHopDongNV.TabIndex = 21;
             this.dgvHopDongNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHopDongNV_CellClick);
-            // 
-            // btnDong
-            // 
-            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDong.Location = new System.Drawing.Point(633, 440);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(130, 43);
-            this.btnDong.TabIndex = 104;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            this.dgvHopDongNV.SelectionChanged += new System.EventHandler(this.dgvHopDongNV_SelectionChanged);
             // 
             // colMaHDLD
             // 
@@ -450,13 +440,13 @@
             this.colLoaiHD.HeaderText = "Loại hợp đồng";
             this.colLoaiHD.Name = "colLoaiHD";
             this.colLoaiHD.ReadOnly = true;
-            this.colLoaiHD.Width = 101;
+            this.colLoaiHD.Width = 93;
             // 
             // colNgayBatDau
             // 
             this.colNgayBatDau.DataPropertyName = "NGAYBATDAU";
-            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
-            this.colNgayBatDau.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.colNgayBatDau.DefaultCellStyle = dataGridViewCellStyle1;
             this.colNgayBatDau.HeaderText = "Ngày bắt đầu";
             this.colNgayBatDau.Name = "colNgayBatDau";
             this.colNgayBatDau.ReadOnly = true;
@@ -464,8 +454,8 @@
             // colNgayKetThuc
             // 
             this.colNgayKetThuc.DataPropertyName = "NGAYKETTHUC";
-            dataGridViewCellStyle8.Format = "dd/MM/yyyy";
-            this.colNgayKetThuc.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.colNgayKetThuc.DefaultCellStyle = dataGridViewCellStyle2;
             this.colNgayKetThuc.HeaderText = "Ngày kết thúc";
             this.colNgayKetThuc.Name = "colNgayKetThuc";
             this.colNgayKetThuc.ReadOnly = true;
@@ -477,7 +467,7 @@
             this.colDiaDiem.HeaderText = "Địa điểm làm";
             this.colDiaDiem.Name = "colDiaDiem";
             this.colDiaDiem.ReadOnly = true;
-            this.colDiaDiem.Width = 93;
+            this.colDiaDiem.Width = 86;
             // 
             // colChucVu
             // 
@@ -486,7 +476,7 @@
             this.colChucVu.HeaderText = "Chức vụ";
             this.colChucVu.Name = "colChucVu";
             this.colChucVu.ReadOnly = true;
-            this.colChucVu.Width = 72;
+            this.colChucVu.Width = 67;
             // 
             // colCongViec
             // 
@@ -495,7 +485,7 @@
             this.colCongViec.HeaderText = "Công việc";
             this.colCongViec.Name = "colCongViec";
             this.colCongViec.ReadOnly = true;
-            this.colCongViec.Width = 80;
+            this.colCongViec.Width = 74;
             // 
             // colThoiGian
             // 
@@ -530,11 +520,22 @@
             // colNgayKy
             // 
             this.colNgayKy.DataPropertyName = "NGAYKY";
-            dataGridViewCellStyle9.Format = "dd/MM/yyyy";
-            this.colNgayKy.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.colNgayKy.DefaultCellStyle = dataGridViewCellStyle3;
             this.colNgayKy.HeaderText = "Ngày ký hợp đồng";
             this.colNgayKy.Name = "colNgayKy";
             this.colNgayKy.ReadOnly = true;
+            // 
+            // btnDong
+            // 
+            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDong.Location = new System.Drawing.Point(633, 440);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(130, 43);
+            this.btnDong.TabIndex = 104;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // frmHopDong
             // 

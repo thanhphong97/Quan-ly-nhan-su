@@ -28,96 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBangChamCong = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.lblBangChamCong = new System.Windows.Forms.Label();
             this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col9 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col12 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col13 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col14 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col16 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col17 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col18 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col20 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col21 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col22 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col23 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col24 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col25 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col26 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col27 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col28 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col29 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col30 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.col31 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDong = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.lblBangChamCong = new System.Windows.Forms.Label();
+            this.mnuChamCong = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuChamCongNhanh = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangChamCong)).BeginInit();
             this.panel1.SuspendLayout();
+            this.mnuChamCong.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvBangChamCong
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBangChamCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBangChamCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.dgvBangChamCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBangChamCong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaNV,
@@ -155,32 +159,360 @@
             this.col29,
             this.col30,
             this.col31});
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBangChamCong.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBangChamCong.DefaultCellStyle = dataGridViewCellStyle71;
             this.dgvBangChamCong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBangChamCong.EnableHeadersVisualStyles = false;
             this.dgvBangChamCong.Location = new System.Drawing.Point(0, 0);
             this.dgvBangChamCong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBangChamCong.Name = "dgvBangChamCong";
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBangChamCong.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBangChamCong.RowHeadersDefaultCellStyle = dataGridViewCellStyle72;
             this.dgvBangChamCong.RowHeadersVisible = false;
             this.dgvBangChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBangChamCong.Size = new System.Drawing.Size(1129, 502);
             this.dgvBangChamCong.TabIndex = 0;
+            this.dgvBangChamCong.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvBangChamCong_CellBeginEdit);
+            this.dgvBangChamCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangChamCong_CellContentClick);
+            this.dgvBangChamCong.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangChamCong_CellContentDoubleClick);
+            this.dgvBangChamCong.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangChamCong_CellEndEdit);
             this.dgvBangChamCong.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBangChamCong_CellFormatting);
+            this.dgvBangChamCong.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBangChamCong_CellMouseClick);
+            this.dgvBangChamCong.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBangChamCong_CellMouseDown);
+            this.dgvBangChamCong.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBangChamCong_CellMouseUp);
+            this.dgvBangChamCong.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvBangChamCong_EditingControlShowing);
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "MANV";
+            this.colMaNV.Frozen = true;
+            this.colMaNV.HeaderText = "Mã nhân viên";
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            this.colMaNV.Width = 120;
+            // 
+            // ColHo
+            // 
+            this.ColHo.DataPropertyName = "HO";
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColHo.DefaultCellStyle = dataGridViewCellStyle38;
+            this.ColHo.Frozen = true;
+            this.ColHo.HeaderText = "Họ";
+            this.ColHo.Name = "ColHo";
+            this.ColHo.ReadOnly = true;
+            this.ColHo.Width = 53;
+            // 
+            // colTen
+            // 
+            this.colTen.DataPropertyName = "TEN";
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colTen.DefaultCellStyle = dataGridViewCellStyle39;
+            this.colTen.Frozen = true;
+            this.colTen.HeaderText = "Tên";
+            this.colTen.Name = "colTen";
+            this.colTen.ReadOnly = true;
+            this.colTen.Width = 58;
+            // 
+            // colMaPB
+            // 
+            this.colMaPB.DataPropertyName = "PHONGBAN";
+            this.colMaPB.Frozen = true;
+            this.colMaPB.HeaderText = "Tên phòng ban";
+            this.colMaPB.Name = "colMaPB";
+            this.colMaPB.ReadOnly = true;
+            this.colMaPB.Width = 131;
+            // 
+            // col1
+            // 
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
+            this.col1.DefaultCellStyle = dataGridViewCellStyle40;
+            this.col1.HeaderText = "1";
+            this.col1.Name = "col1";
+            this.col1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col1.Visible = false;
+            // 
+            // col2
+            // 
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col2.DefaultCellStyle = dataGridViewCellStyle41;
+            this.col2.HeaderText = "2";
+            this.col2.Name = "col2";
+            this.col2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col2.Visible = false;
+            // 
+            // col3
+            // 
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col3.DefaultCellStyle = dataGridViewCellStyle42;
+            this.col3.HeaderText = "3";
+            this.col3.Name = "col3";
+            this.col3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col3.Visible = false;
+            // 
+            // col4
+            // 
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col4.DefaultCellStyle = dataGridViewCellStyle43;
+            this.col4.HeaderText = "4";
+            this.col4.Name = "col4";
+            this.col4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col4.Visible = false;
+            // 
+            // col5
+            // 
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col5.DefaultCellStyle = dataGridViewCellStyle44;
+            this.col5.HeaderText = "5";
+            this.col5.Name = "col5";
+            this.col5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col5.Visible = false;
+            // 
+            // col6
+            // 
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col6.DefaultCellStyle = dataGridViewCellStyle45;
+            this.col6.HeaderText = "6";
+            this.col6.Name = "col6";
+            this.col6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col6.Visible = false;
+            // 
+            // col7
+            // 
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col7.DefaultCellStyle = dataGridViewCellStyle46;
+            this.col7.HeaderText = "7";
+            this.col7.Name = "col7";
+            this.col7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col7.Visible = false;
+            // 
+            // col8
+            // 
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col8.DefaultCellStyle = dataGridViewCellStyle47;
+            this.col8.HeaderText = "8";
+            this.col8.Name = "col8";
+            this.col8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col8.Visible = false;
+            // 
+            // col9
+            // 
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col9.DefaultCellStyle = dataGridViewCellStyle48;
+            this.col9.HeaderText = "9";
+            this.col9.Name = "col9";
+            this.col9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col9.Visible = false;
+            // 
+            // col10
+            // 
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col10.DefaultCellStyle = dataGridViewCellStyle49;
+            this.col10.HeaderText = "10";
+            this.col10.Name = "col10";
+            this.col10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col10.Visible = false;
+            // 
+            // col11
+            // 
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col11.DefaultCellStyle = dataGridViewCellStyle50;
+            this.col11.HeaderText = "11";
+            this.col11.Name = "col11";
+            this.col11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col11.Visible = false;
+            // 
+            // col12
+            // 
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col12.DefaultCellStyle = dataGridViewCellStyle51;
+            this.col12.HeaderText = "12";
+            this.col12.Name = "col12";
+            this.col12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col12.Visible = false;
+            // 
+            // col13
+            // 
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col13.DefaultCellStyle = dataGridViewCellStyle52;
+            this.col13.HeaderText = "13";
+            this.col13.Name = "col13";
+            this.col13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col13.Visible = false;
+            // 
+            // col14
+            // 
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col14.DefaultCellStyle = dataGridViewCellStyle53;
+            this.col14.HeaderText = "14";
+            this.col14.Name = "col14";
+            this.col14.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col14.Visible = false;
+            // 
+            // col15
+            // 
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col15.DefaultCellStyle = dataGridViewCellStyle54;
+            this.col15.HeaderText = "15";
+            this.col15.Name = "col15";
+            this.col15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col15.Visible = false;
+            // 
+            // col16
+            // 
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col16.DefaultCellStyle = dataGridViewCellStyle55;
+            this.col16.HeaderText = "16";
+            this.col16.Name = "col16";
+            this.col16.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col16.Visible = false;
+            // 
+            // col17
+            // 
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col17.DefaultCellStyle = dataGridViewCellStyle56;
+            this.col17.HeaderText = "17";
+            this.col17.Name = "col17";
+            this.col17.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col17.Visible = false;
+            // 
+            // col18
+            // 
+            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col18.DefaultCellStyle = dataGridViewCellStyle57;
+            this.col18.HeaderText = "18";
+            this.col18.Name = "col18";
+            this.col18.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col18.Visible = false;
+            // 
+            // col19
+            // 
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col19.DefaultCellStyle = dataGridViewCellStyle58;
+            this.col19.HeaderText = "19";
+            this.col19.Name = "col19";
+            this.col19.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col19.Visible = false;
+            // 
+            // col20
+            // 
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col20.DefaultCellStyle = dataGridViewCellStyle59;
+            this.col20.HeaderText = "20";
+            this.col20.Name = "col20";
+            this.col20.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col20.Visible = false;
+            // 
+            // col21
+            // 
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col21.DefaultCellStyle = dataGridViewCellStyle60;
+            this.col21.HeaderText = "21";
+            this.col21.Name = "col21";
+            this.col21.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col21.Visible = false;
+            // 
+            // col22
+            // 
+            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col22.DefaultCellStyle = dataGridViewCellStyle61;
+            this.col22.HeaderText = "22";
+            this.col22.Name = "col22";
+            this.col22.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col22.Visible = false;
+            // 
+            // col23
+            // 
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col23.DefaultCellStyle = dataGridViewCellStyle62;
+            this.col23.HeaderText = "23";
+            this.col23.Name = "col23";
+            this.col23.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col23.Visible = false;
+            // 
+            // col24
+            // 
+            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col24.DefaultCellStyle = dataGridViewCellStyle63;
+            this.col24.HeaderText = "24";
+            this.col24.Name = "col24";
+            this.col24.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col24.Visible = false;
+            // 
+            // col25
+            // 
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col25.DefaultCellStyle = dataGridViewCellStyle64;
+            this.col25.HeaderText = "25";
+            this.col25.Name = "col25";
+            this.col25.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col25.Visible = false;
+            // 
+            // col26
+            // 
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col26.DefaultCellStyle = dataGridViewCellStyle65;
+            this.col26.HeaderText = "26";
+            this.col26.Name = "col26";
+            this.col26.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col26.Visible = false;
+            // 
+            // col27
+            // 
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col27.DefaultCellStyle = dataGridViewCellStyle66;
+            this.col27.HeaderText = "27";
+            this.col27.Name = "col27";
+            this.col27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col27.Visible = false;
+            // 
+            // col28
+            // 
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col28.DefaultCellStyle = dataGridViewCellStyle67;
+            this.col28.HeaderText = "28";
+            this.col28.Name = "col28";
+            this.col28.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col28.Visible = false;
+            // 
+            // col29
+            // 
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col29.DefaultCellStyle = dataGridViewCellStyle68;
+            this.col29.HeaderText = "29";
+            this.col29.Name = "col29";
+            this.col29.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col29.Visible = false;
+            // 
+            // col30
+            // 
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col30.DefaultCellStyle = dataGridViewCellStyle69;
+            this.col30.HeaderText = "30";
+            this.col30.Name = "col30";
+            this.col30.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col30.Visible = false;
+            // 
+            // col31
+            // 
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col31.DefaultCellStyle = dataGridViewCellStyle70;
+            this.col31.HeaderText = "31";
+            this.col31.Name = "col31";
+            this.col31.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col31.Visible = false;
             // 
             // panel1
             // 
@@ -226,384 +558,19 @@
             this.lblBangChamCong.TabIndex = 16;
             this.lblBangChamCong.Text = "CHẤM CÔNG NHÂN VIÊN";
             // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "MANV";
-            this.colMaNV.HeaderText = "Mã nhân viên";
-            this.colMaNV.Name = "colMaNV";
-            this.colMaNV.ReadOnly = true;
-            this.colMaNV.Width = 120;
-            // 
-            // ColHo
-            // 
-            this.ColHo.DataPropertyName = "HO";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ColHo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColHo.HeaderText = "Họ";
-            this.ColHo.Name = "ColHo";
-            this.ColHo.ReadOnly = true;
-            this.ColHo.Width = 53;
-            // 
-            // colTen
-            // 
-            this.colTen.DataPropertyName = "TEN";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colTen.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colTen.HeaderText = "Tên";
-            this.colTen.Name = "colTen";
-            this.colTen.ReadOnly = true;
-            this.colTen.Width = 58;
-            // 
-            // colMaPB
-            // 
-            this.colMaPB.DataPropertyName = "PHONGBAN";
-            this.colMaPB.HeaderText = "Tên phòng ban";
-            this.colMaPB.Name = "colMaPB";
-            this.colMaPB.ReadOnly = true;
-            this.colMaPB.Width = 131;
-            // 
-            // col1
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.col1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.col1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col1.HeaderText = "1";
-            this.col1.Name = "col1";
-            this.col1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col1.Visible = false;
-            this.col1.Width = 41;
-            // 
-            // col2
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.col2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col2.HeaderText = "2";
-            this.col2.Name = "col2";
-            this.col2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col2.Visible = false;
-            // 
-            // col3
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col3.DefaultCellStyle = dataGridViewCellStyle6;
-            this.col3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col3.HeaderText = "3";
-            this.col3.Name = "col3";
-            this.col3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col3.Visible = false;
-            // 
-            // col4
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col4.DefaultCellStyle = dataGridViewCellStyle7;
-            this.col4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col4.HeaderText = "4";
-            this.col4.Name = "col4";
-            this.col4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col4.Visible = false;
-            // 
-            // col5
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col5.DefaultCellStyle = dataGridViewCellStyle8;
-            this.col5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col5.HeaderText = "5";
-            this.col5.Name = "col5";
-            this.col5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col5.Visible = false;
-            // 
-            // col6
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col6.DefaultCellStyle = dataGridViewCellStyle9;
-            this.col6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col6.HeaderText = "6";
-            this.col6.Name = "col6";
-            this.col6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col6.Visible = false;
-            // 
-            // col7
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col7.DefaultCellStyle = dataGridViewCellStyle10;
-            this.col7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col7.HeaderText = "7";
-            this.col7.Name = "col7";
-            this.col7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col7.Visible = false;
-            // 
-            // col8
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col8.DefaultCellStyle = dataGridViewCellStyle11;
-            this.col8.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col8.HeaderText = "8";
-            this.col8.Name = "col8";
-            this.col8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col8.Visible = false;
-            // 
-            // col9
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col9.DefaultCellStyle = dataGridViewCellStyle12;
-            this.col9.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col9.HeaderText = "9";
-            this.col9.Name = "col9";
-            this.col9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col9.Visible = false;
-            // 
-            // col10
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col10.DefaultCellStyle = dataGridViewCellStyle13;
-            this.col10.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col10.HeaderText = "10";
-            this.col10.Name = "col10";
-            this.col10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col10.Visible = false;
-            // 
-            // col11
-            // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col11.DefaultCellStyle = dataGridViewCellStyle14;
-            this.col11.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col11.HeaderText = "11";
-            this.col11.Name = "col11";
-            this.col11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col11.Visible = false;
-            // 
-            // col12
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col12.DefaultCellStyle = dataGridViewCellStyle15;
-            this.col12.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col12.HeaderText = "12";
-            this.col12.Name = "col12";
-            this.col12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col12.Visible = false;
-            // 
-            // col13
-            // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col13.DefaultCellStyle = dataGridViewCellStyle16;
-            this.col13.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col13.HeaderText = "13";
-            this.col13.Name = "col13";
-            this.col13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col13.Visible = false;
-            // 
-            // col14
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col14.DefaultCellStyle = dataGridViewCellStyle17;
-            this.col14.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col14.HeaderText = "14";
-            this.col14.Name = "col14";
-            this.col14.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col14.Visible = false;
-            // 
-            // col15
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col15.DefaultCellStyle = dataGridViewCellStyle18;
-            this.col15.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col15.HeaderText = "15";
-            this.col15.Name = "col15";
-            this.col15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col15.Visible = false;
-            // 
-            // col16
-            // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col16.DefaultCellStyle = dataGridViewCellStyle19;
-            this.col16.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col16.HeaderText = "16";
-            this.col16.Name = "col16";
-            this.col16.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col16.Visible = false;
-            // 
-            // col17
-            // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col17.DefaultCellStyle = dataGridViewCellStyle20;
-            this.col17.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col17.HeaderText = "17";
-            this.col17.Name = "col17";
-            this.col17.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col17.Visible = false;
-            // 
-            // col18
-            // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col18.DefaultCellStyle = dataGridViewCellStyle21;
-            this.col18.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col18.HeaderText = "18";
-            this.col18.Name = "col18";
-            this.col18.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col18.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col18.Visible = false;
-            // 
-            // col19
-            // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col19.DefaultCellStyle = dataGridViewCellStyle22;
-            this.col19.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col19.HeaderText = "19";
-            this.col19.Name = "col19";
-            this.col19.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col19.Visible = false;
-            // 
-            // col20
-            // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col20.DefaultCellStyle = dataGridViewCellStyle23;
-            this.col20.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col20.HeaderText = "20";
-            this.col20.Name = "col20";
-            this.col20.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col20.Visible = false;
-            // 
-            // col21
-            // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col21.DefaultCellStyle = dataGridViewCellStyle24;
-            this.col21.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col21.HeaderText = "21";
-            this.col21.Name = "col21";
-            this.col21.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col21.Visible = false;
-            // 
-            // col22
-            // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col22.DefaultCellStyle = dataGridViewCellStyle25;
-            this.col22.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col22.HeaderText = "22";
-            this.col22.Name = "col22";
-            this.col22.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col22.Visible = false;
-            // 
-            // col23
-            // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col23.DefaultCellStyle = dataGridViewCellStyle26;
-            this.col23.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col23.HeaderText = "23";
-            this.col23.Name = "col23";
-            this.col23.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col23.Visible = false;
-            // 
-            // col24
-            // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col24.DefaultCellStyle = dataGridViewCellStyle27;
-            this.col24.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col24.HeaderText = "24";
-            this.col24.Name = "col24";
-            this.col24.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col24.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col24.Visible = false;
-            // 
-            // col25
-            // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col25.DefaultCellStyle = dataGridViewCellStyle28;
-            this.col25.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col25.HeaderText = "25";
-            this.col25.Name = "col25";
-            this.col25.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col25.Visible = false;
-            // 
-            // col26
-            // 
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col26.DefaultCellStyle = dataGridViewCellStyle29;
-            this.col26.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col26.HeaderText = "26";
-            this.col26.Name = "col26";
-            this.col26.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col26.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col26.Visible = false;
-            // 
-            // col27
-            // 
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col27.DefaultCellStyle = dataGridViewCellStyle30;
-            this.col27.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col27.HeaderText = "27";
-            this.col27.Name = "col27";
-            this.col27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col27.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col27.Visible = false;
-            // 
-            // col28
-            // 
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col28.DefaultCellStyle = dataGridViewCellStyle31;
-            this.col28.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col28.HeaderText = "28";
-            this.col28.Name = "col28";
-            this.col28.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col28.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col28.Visible = false;
-            // 
-            // col29
-            // 
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col29.DefaultCellStyle = dataGridViewCellStyle32;
-            this.col29.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col29.HeaderText = "29";
-            this.col29.Name = "col29";
-            this.col29.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col29.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col29.Visible = false;
-            // 
-            // col30
-            // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col30.DefaultCellStyle = dataGridViewCellStyle33;
-            this.col30.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col30.HeaderText = "30";
-            this.col30.Name = "col30";
-            this.col30.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col30.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col30.Visible = false;
-            // 
-            // col31
-            // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col31.DefaultCellStyle = dataGridViewCellStyle34;
-            this.col31.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.col31.HeaderText = "31";
-            this.col31.Name = "col31";
-            this.col31.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col31.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col31.Visible = false;
+            // mnuChamCong
+            // 
+            this.mnuChamCong.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuChamCongNhanh});
+            this.mnuChamCong.Name = "mnuChamCong";
+            this.mnuChamCong.Size = new System.Drawing.Size(174, 48);
+            // 
+            // mnuChamCongNhanh
+            // 
+            this.mnuChamCongNhanh.Name = "mnuChamCongNhanh";
+            this.mnuChamCongNhanh.Size = new System.Drawing.Size(173, 22);
+            this.mnuChamCongNhanh.Text = "Chấm công nhanh";
+            this.mnuChamCongNhanh.Click += new System.EventHandler(this.mnuChamCongNhanh_Click);
             // 
             // frmBangChamCong
             // 
@@ -622,6 +589,7 @@
             this.Load += new System.EventHandler(this.frmBangChamCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangChamCong)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.mnuChamCong.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,36 +607,38 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColHo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPB;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col6;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col8;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col9;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col10;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col11;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col12;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col13;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col14;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col15;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col16;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col17;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col18;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col19;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col20;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col21;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col22;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col23;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col24;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col25;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col26;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col27;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col28;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col29;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col30;
-        private System.Windows.Forms.DataGridViewComboBoxColumn col31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col31;
+        private System.Windows.Forms.ContextMenuStrip mnuChamCong;
+        private System.Windows.Forms.ToolStripMenuItem mnuChamCongNhanh;
     }
 }
