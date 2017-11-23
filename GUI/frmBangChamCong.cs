@@ -78,7 +78,7 @@ namespace GUI
             int Days = DateTime.DaysInMonth(ucTL.Nam, ucTL.Thang);
             foreach (DataGridViewRow rw in this.dgvBangChamCong.Rows)
             {
-                
+
                 for (int i = 1; i <= Days; i++)
                 {
                     if (rw.Cells["col" + i].Value == null || rw.Cells["col" + i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells["col" + i].Value.ToString()))
@@ -92,7 +92,7 @@ namespace GUI
                         break;
                     }
                 }
-                if(Flag == false)
+                if (Flag == false)
                     break;
             }
 
@@ -201,8 +201,8 @@ namespace GUI
             if (dgvBangChamCong.Columns[e.ColumnIndex].Name != "colMaNV" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "ColHo" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "colTen" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "colMaPB")
             {
                 int Ngay = Convert.ToInt32(dgvBangChamCong.Columns[e.ColumnIndex].Name.ToString().Replace("col", ""));
-                DateTime dt = new DateTime(ucTL.Nam,ucTL.Thang,Ngay);
-                if(dt.DayOfWeek == 0)
+                DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, Ngay);
+                if (dt.DayOfWeek == 0)
                 {
                     dgvBangChamCong.Columns[e.ColumnIndex].DefaultCellStyle.ForeColor = Color.Red;
                 }
@@ -212,7 +212,7 @@ namespace GUI
 
         private void ChamCongTuDong() // Tự động chấm công CN cho ngày chủ nhật
         {
-           // int col = dgvBangChamCong.Columns.Count;
+            // int col = dgvBangChamCong.Columns.Count;
 
             for (int indexcolumn = 0; indexcolumn < (DayInMonth + 4); indexcolumn++)
             {
@@ -241,7 +241,7 @@ namespace GUI
                 autoText.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 AutoCompleteStringCollection DataCollection = new AutoCompleteStringCollection();
                 addItems(DataCollection);
-                DataCollection.Remove("CN"); 
+                DataCollection.Remove("CN");
                 autoText.AutoCompleteCustomSource = DataCollection;
             }
             else
@@ -261,8 +261,8 @@ namespace GUI
             List<clsKyHieuChamCong_DTO> lsKH = BUSKH.LayDanhSachKyHieu();
             for (int i = 0; i < lsKH.Count; i++)
             {
-                col.Add(lsKH[i].KyHieu); 
-            }  
+                col.Add(lsKH[i].KyHieu);
+            }
         }
 
         private void dgvBangChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -319,7 +319,7 @@ namespace GUI
                 if (Flag == false)
                 {
                     // Cho phép số và dấu chấm (Số lẻ)
-                    Regex invalidCharsRegex = new Regex(@"(?<=^| )\d+(\.\d+)?(?=$| )|(?<=^| )\.\d+(?=$| )"); 
+                    Regex invalidCharsRegex = new Regex(@"(?<=^| )\d+(\.\d+)?(?=$| )|(?<=^| )\.\d+(?=$| )");
                     if (invalidCharsRegex.IsMatch(KyHieu))
                     {
                         foreach (clsPhongBan_DTO PB in lsPhongBan)
@@ -362,20 +362,21 @@ namespace GUI
 
         private void dgvBangChamCong_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
-           
+
         }
 
         private void mnuChamCongNhanh_Click(object sender, EventArgs e)
         {
             DataGridViewRow r = dgvBangChamCong.CurrentRow;
-            int DayInMonth = DateTime.DaysInMonth(ucTL.Nam, ucTL.Thang) ; // Trả về tháng đó có bao nhiêu ngày
+            int DayInMonth = DateTime.DaysInMonth(ucTL.Nam, ucTL.Thang); // Trả về tháng đó có bao nhiêu ngày
             for (int i = 1; i <= DayInMonth; i++)
             {
                 DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, i);
-                    if (dt.DayOfWeek != 0) // Không phải ngày chủ nhật
-                        r.Cells["col"+i].Value = "8";    
+                if (dt.DayOfWeek != 0) // Không phải ngày chủ nhật
+                    r.Cells["col" + i].Value = "8";
+            }
+
+
         }
-
-
     }
 }

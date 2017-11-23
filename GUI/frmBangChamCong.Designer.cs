@@ -66,8 +66,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBangChamCong = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -79,10 +77,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-=======
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
-=======
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
             this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,14 +112,6 @@
             this.col29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD
-<<<<<<< HEAD
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBangChamCong)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.mnuChamCong.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-=======
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -135,31 +121,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangChamCong)).BeginInit();
             this.panel1.SuspendLayout();
             this.mnuChamCong.SuspendLayout();
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
-=======
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.lblBangChamCong = new System.Windows.Forms.Label();
-            this.mnuChamCong = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuChamCongNhanh = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBangChamCong)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.mnuChamCong.SuspendLayout();
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
             this.SuspendLayout();
             // 
             // dgvBangChamCong
             // 
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.dgvBangChamCong.AllowUserToDeleteRows = false;
             this.dgvBangChamCong.AllowUserToResizeColumns = false;
             this.dgvBangChamCong.AllowUserToResizeRows = false;
-=======
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
-=======
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
             dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -239,8 +207,6 @@
             this.dgvBangChamCong.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBangChamCong_CellMouseDown);
             this.dgvBangChamCong.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBangChamCong_CellMouseUp);
             this.dgvBangChamCong.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvBangChamCong_EditingControlShowing);
-<<<<<<< HEAD
-<<<<<<< HEAD
             // 
             // panel1
             // 
@@ -285,8 +251,6 @@
             this.lblBangChamCong.Size = new System.Drawing.Size(358, 31);
             this.lblBangChamCong.TabIndex = 16;
             this.lblBangChamCong.Text = "CHẤM CÔNG NHÂN VIÊN";
-=======
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
             // 
             // mnuChamCong
             // 
@@ -355,8 +319,6 @@
             this.label4.Size = new System.Drawing.Size(128, 18);
             this.label4.TabIndex = 2;
             this.label4.Text = "CP:  Nghỉ có phép";
-=======
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
             // 
             // colMaNV
             // 
@@ -756,15 +718,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangChamCong)).EndInit();
             this.panel1.ResumeLayout(false);
             this.mnuChamCong.ResumeLayout(false);
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-=======
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
-=======
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,15 +776,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col29;
         private System.Windows.Forms.DataGridViewTextBoxColumn col30;
         private System.Windows.Forms.DataGridViewTextBoxColumn col31;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        private System.Windows.Forms.ContextMenuStrip mnuChamCong;
-        private System.Windows.Forms.ToolStripMenuItem mnuChamCongNhanh;
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
-=======
-        private System.Windows.Forms.ContextMenuStrip mnuChamCong;
-        private System.Windows.Forms.ToolStripMenuItem mnuChamCongNhanh;
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
     }
 }
