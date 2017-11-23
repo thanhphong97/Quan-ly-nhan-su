@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.mnuMain = new System.Windows.Forms.ToolStrip();
             this.tbtnQuanTri = new System.Windows.Forms.ToolStripButton();
@@ -112,8 +113,8 @@
             this.tbtLuong.Image = global::GUI.Properties.Resources.salary;
             this.tbtLuong.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtLuong.Name = "tbtLuong";
-            this.tbtLuong.Size = new System.Drawing.Size(134, 54);
-            this.tbtLuong.Text = "Tiền lương";
+            this.tbtLuong.Size = new System.Drawing.Size(138, 54);
+            this.tbtLuong.Text = "Chấm công";
             this.tbtLuong.Click += new System.EventHandler(this.tbtLuong_Click);
             // 
             // toolStripSeparator3
@@ -156,7 +157,7 @@
             // 
             this.lblNguoiDung.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.lblNguoiDung.Name = "lblNguoiDung";
-            this.lblNguoiDung.Size = new System.Drawing.Size(114, 54);
+            this.lblNguoiDung.Size = new System.Drawing.Size(113, 54);
             this.lblNguoiDung.Text = "Tên người dùng";
             // 
             // toolStripLabel1
@@ -174,6 +175,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 730);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.mnuMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phầm mềm quản lý nhân sự";

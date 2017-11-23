@@ -23,7 +23,7 @@ namespace GUI
         private void ucThemNguoiDung_Load(object sender, EventArgs e)
         {
             dgvNhanVien.AutoGenerateColumns = false;
-            clearThongBao();
+            XoaThongBao();
             LoadDGV_NguoiDung();
             LoadCBO_PhongBan();
         }
@@ -32,6 +32,7 @@ namespace GUI
             clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
             List<clsNguoiDung_DTO> lsNguoiDung = bus.DSNguoiDung();
             dgvNhanVien.DataSource = lsNguoiDung;
+            
         }
         #region Kiểm tr các thứ
         private bool KiemTraDayDu()
@@ -86,7 +87,7 @@ namespace GUI
         string LayQuyenTruyCap()
         {
             string Quyen = "L3";
-            if (radAdministrator.Checked)
+            if (radQuanLy.Checked)
                 Quyen = "L1";
             else if (radNhanVienKeToan.Checked)
                 Quyen = "L2";
@@ -117,15 +118,15 @@ namespace GUI
                             clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
                             bool kq = bus.TaoTaiKhoan(nd);
                             if (kq)
-                            {
-                                MessageBox.Show("Tao nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            {//thành công
+                                //MessageBox.Show("Tao nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
                                 BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Tạo người dùng {0} có mã nhân viên {1}", nd.TAIKHOAN, nd.MANV));
                                 LoadDGV_NguoiDung();
                                 return;
                             }
                             else
-                            {
+                            {//thất bại
                                 MessageBox.Show("THẤT BẠI", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
@@ -151,7 +152,7 @@ namespace GUI
             }
         }
 
-        private void clearThongBao()
+        private void XoaThongBao()
         {
             lblThongBao_MaNV.Visible = false;
             lblThongBao_TK.Visible = false;
@@ -160,41 +161,50 @@ namespace GUI
         private void LoadDuLieuNguoiDung()
         {
            // XoaTextBox();
+            //quản trị
+            //radAdministrator.Checked = true;
+            //btnCapNhat.Enabled = false;
+            //cboNhanVien.Text = "Người quản trị hệ thống";
+            //grbPhanQuyen.Enabled = false;
+            //txtTenDN.Text = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
+            //txtMatKhau.Clear();
+            //txtXacNhanMK.Clear();
+            //return;
+            //grbPhanQuyen.Enabled = true;
+            //btnCapNhat.Enabled = true;
             try
             {
                 string Quyen = dgvNhanVien.SelectedRows[0].Cells[2].Value.ToString();
-                if (Quyen == "Quản Trị")
-                {
-                    radAdministrator.Checked = true;
-                    btnCapNhat.Enabled = false;
-                    cboNhanVien.Text = "Người quản trị hệ thống";
-                    grbPhanQuyen.Enabled = false;
-                    txtTenDN.Text = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
-                    txtMatKhau.Clear();
-                    txtXacNhanMK.Clear();
-                    return;
+                if (Quyen == "Quản Lý" || Quyen == "L1")
+                {  
+                    radQuanLy.Checked = true;
+                    chkTrangThai.Enabled = false; // không cho phép 
+                    radNhanVienKeToan.Enabled = false;
+                    radQuanLy.Enabled = false;
+                    radTraCuu.Enabled = false;
+                    goto LoadThongTin;
                 }
-                grbPhanQuyen.Enabled = true;
-                btnCapNhat.Enabled = true;
-                if (Quyen == "Kế Toán")
+                chkTrangThai.Enabled = true;
+                radNhanVienKeToan.Enabled = true;
+                radQuanLy.Enabled = true;
+                radTraCuu.Enabled = true;
+                if (Quyen == "Kế Toán" || Quyen == "L2")
                     radNhanVienKeToan.Checked = true;
-                else if (Quyen == "Tra Cứu")
+                else if (Quyen == "Tra Cứu" || Quyen == "L3")
                     radTraCuu.Checked = true;
-                //mã
+                //loadThongTin
                 //load phòng theo mã nhân viên
+                LoadThongTin: 
                 string MaNV = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString().ToUpper();
                 clsPhongBan_BUS bus = new clsPhongBan_BUS();
-
                 cboPhongBan.SelectedValue = bus.LayMaPhong(MaNV);
                 cboNhanVien.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colMaNV"].Value.ToString();
-
                 txtTenDN.Text = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
-
-
                 bool TrangThai = (bool)dgvNhanVien.SelectedRows[0].Cells[3].Value;
                 if (!TrangThai)
                     chkTrangThai.Checked = true;
                 txtMatKhau.Text = txtXacNhanMK.Text = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();
+
             }
             catch
             {
@@ -276,6 +286,8 @@ namespace GUI
         private void btnClear_Click(object sender, EventArgs e)
         {
             XoaTextBox();
+            XoaThongBao();
+            
         }
         private void XoaTextBox()
         {
@@ -320,8 +332,11 @@ namespace GUI
 
         private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
         {
-            LoadDuLieuNguoiDung();
-            clearThongBao();
+            if(dgvNhanVien.Rows.Count != 0)
+            {
+                LoadDuLieuNguoiDung();
+                XoaThongBao();
+            }
         }
     }
 }

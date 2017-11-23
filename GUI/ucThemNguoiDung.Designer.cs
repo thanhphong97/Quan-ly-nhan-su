@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbQuanTri = new System.Windows.Forms.TabControl();
             this.tpThemNguoiDung = new System.Windows.Forms.TabPage();
             this.lblThongBao_TK = new System.Windows.Forms.Label();
@@ -58,12 +58,10 @@
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.grbPhanQuyen = new System.Windows.Forms.GroupBox();
-            this.radAdministrator = new System.Windows.Forms.RadioButton();
+            this.radQuanLy = new System.Windows.Forms.RadioButton();
             this.radTraCuu = new System.Windows.Forms.RadioButton();
             this.radNhanVienKeToan = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
-            this.tbBackup = new System.Windows.Forms.TabPage();
-            this.tpRestore = new System.Windows.Forms.TabPage();
             this.tpNhatKyTruyCap = new System.Windows.Forms.TabPage();
             this.grbSuKienNK = new System.Windows.Forms.GroupBox();
             this.dgvSuKienNK = new System.Windows.Forms.DataGridView();
@@ -85,8 +83,6 @@
             // tbQuanTri
             // 
             this.tbQuanTri.Controls.Add(this.tpThemNguoiDung);
-            this.tbQuanTri.Controls.Add(this.tbBackup);
-            this.tbQuanTri.Controls.Add(this.tpRestore);
             this.tbQuanTri.Controls.Add(this.tpNhatKyTruyCap);
             this.tbQuanTri.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbQuanTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -154,14 +150,14 @@
             this.dgvNhanVien.AllowUserToResizeColumns = false;
             this.dgvNhanVien.AllowUserToResizeRows = false;
             this.dgvNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMANV,
@@ -184,8 +180,8 @@
             // 
             this.colMANV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colMANV.DataPropertyName = "MANV";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colMANV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colMANV.DefaultCellStyle = dataGridViewCellStyle10;
             this.colMANV.HeaderText = "Mã NV";
             this.colMANV.Name = "colMANV";
             this.colMANV.ReadOnly = true;
@@ -301,7 +297,7 @@
             // txtXacNhanMK
             // 
             this.txtXacNhanMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtXacNhanMK.Location = new System.Drawing.Point(180, 213);
+            this.txtXacNhanMK.Location = new System.Drawing.Point(180, 218);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
             this.txtXacNhanMK.Size = new System.Drawing.Size(215, 29);
             this.txtXacNhanMK.TabIndex = 4;
@@ -312,7 +308,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(22, 220);
+            this.label4.Location = new System.Drawing.Point(22, 222);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 18);
             this.label4.TabIndex = 6;
@@ -332,7 +328,7 @@
             // txtMatKhau
             // 
             this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMatKhau.Location = new System.Drawing.Point(180, 169);
+            this.txtMatKhau.Location = new System.Drawing.Point(180, 174);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(215, 29);
             this.txtMatKhau.TabIndex = 3;
@@ -343,7 +339,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(22, 133);
+            this.label1.Location = new System.Drawing.Point(22, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 18);
             this.label1.TabIndex = 0;
@@ -354,7 +350,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(22, 176);
+            this.label2.Location = new System.Drawing.Point(22, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 2;
@@ -363,7 +359,7 @@
             // txtTenDN
             // 
             this.txtTenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenDN.Location = new System.Drawing.Point(180, 126);
+            this.txtTenDN.Location = new System.Drawing.Point(180, 130);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(215, 29);
             this.txtTenDN.TabIndex = 2;
@@ -382,7 +378,7 @@
             // 
             // grbPhanQuyen
             // 
-            this.grbPhanQuyen.Controls.Add(this.radAdministrator);
+            this.grbPhanQuyen.Controls.Add(this.radQuanLy);
             this.grbPhanQuyen.Controls.Add(this.radTraCuu);
             this.grbPhanQuyen.Controls.Add(this.radNhanVienKeToan);
             this.grbPhanQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -394,17 +390,17 @@
             this.grbPhanQuyen.TabStop = false;
             this.grbPhanQuyen.Text = "Phân Quyền";
             // 
-            // radAdministrator
+            // radQuanLy
             // 
-            this.radAdministrator.AutoSize = true;
-            this.radAdministrator.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radAdministrator.ForeColor = System.Drawing.Color.Black;
-            this.radAdministrator.Location = new System.Drawing.Point(12, 33);
-            this.radAdministrator.Name = "radAdministrator";
-            this.radAdministrator.Size = new System.Drawing.Size(78, 22);
-            this.radAdministrator.TabIndex = 5;
-            this.radAdministrator.Text = "Quản trị";
-            this.radAdministrator.UseVisualStyleBackColor = true;
+            this.radQuanLy.AutoSize = true;
+            this.radQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radQuanLy.ForeColor = System.Drawing.Color.Black;
+            this.radQuanLy.Location = new System.Drawing.Point(12, 33);
+            this.radQuanLy.Name = "radQuanLy";
+            this.radQuanLy.Size = new System.Drawing.Size(76, 22);
+            this.radQuanLy.TabIndex = 5;
+            this.radQuanLy.Text = "Quản lý";
+            this.radQuanLy.UseVisualStyleBackColor = true;
             // 
             // radTraCuu
             // 
@@ -443,26 +439,6 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // tbBackup
-            // 
-            this.tbBackup.Location = new System.Drawing.Point(4, 27);
-            this.tbBackup.Name = "tbBackup";
-            this.tbBackup.Padding = new System.Windows.Forms.Padding(3);
-            this.tbBackup.Size = new System.Drawing.Size(1295, 649);
-            this.tbBackup.TabIndex = 1;
-            this.tbBackup.Text = "Sao lưu cơ sở dữ liệu";
-            this.tbBackup.UseVisualStyleBackColor = true;
-            // 
-            // tpRestore
-            // 
-            this.tpRestore.Location = new System.Drawing.Point(4, 27);
-            this.tpRestore.Name = "tpRestore";
-            this.tpRestore.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRestore.Size = new System.Drawing.Size(1295, 649);
-            this.tpRestore.TabIndex = 2;
-            this.tpRestore.Text = "Phục hồi cơ sở dữ liệu";
-            this.tpRestore.UseVisualStyleBackColor = true;
-            // 
             // tpNhatKyTruyCap
             // 
             this.tpNhatKyTruyCap.Controls.Add(this.grbSuKienNK);
@@ -487,16 +463,18 @@
             // 
             // dgvSuKienNK
             // 
+            this.dgvSuKienNK.AllowUserToResizeColumns = false;
+            this.dgvSuKienNK.AllowUserToResizeRows = false;
             this.dgvSuKienNK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSuKienNK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSuKienNK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvSuKienNK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuKienNK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaNK,
@@ -534,9 +512,9 @@
             // 
             this.colThoiGian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colThoiGian.DataPropertyName = "ThoiGian";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy HH:mm:ss";
-            this.colThoiGian.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "dd/MM/yyyy HH:mm:ss";
+            this.colThoiGian.DefaultCellStyle = dataGridViewCellStyle12;
             this.colThoiGian.HeaderText = "Thời gian";
             this.colThoiGian.Name = "colThoiGian";
             this.colThoiGian.ReadOnly = true;
@@ -610,12 +588,10 @@
         private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grbPhanQuyen;
-        private System.Windows.Forms.RadioButton radAdministrator;
+        private System.Windows.Forms.RadioButton radQuanLy;
         private System.Windows.Forms.RadioButton radTraCuu;
         private System.Windows.Forms.RadioButton radNhanVienKeToan;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.TabPage tbBackup;
-        private System.Windows.Forms.TabPage tpRestore;
         private System.Windows.Forms.TabPage tpNhatKyTruyCap;
         private System.Windows.Forms.Label lblThongBao_TK;
         private System.Windows.Forms.Label lblThongBao_MaNV;

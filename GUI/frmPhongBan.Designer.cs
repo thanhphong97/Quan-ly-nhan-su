@@ -41,6 +41,8 @@
             // dgvPhongBan
             // 
             this.dgvPhongBan.AllowUserToAddRows = false;
+            this.dgvPhongBan.AllowUserToResizeColumns = false;
+            this.dgvPhongBan.AllowUserToResizeRows = false;
             this.dgvPhongBan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;

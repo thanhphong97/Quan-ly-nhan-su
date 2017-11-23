@@ -45,7 +45,6 @@
             this.colThang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenBangChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tPTinhLuong = new System.Windows.Forms.TabPage();
             this.tCtrl.SuspendLayout();
             this.tPChamCong.SuspendLayout();
             this.grbTaoBangChamCong.SuspendLayout();
@@ -56,7 +55,6 @@
             // tCtrl
             // 
             this.tCtrl.Controls.Add(this.tPChamCong);
-            this.tCtrl.Controls.Add(this.tPTinhLuong);
             this.tCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tCtrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tCtrl.Location = new System.Drawing.Point(0, 0);
@@ -67,6 +65,7 @@
             // 
             // tPChamCong
             // 
+            this.tPChamCong.BackColor = System.Drawing.SystemColors.Control;
             this.tPChamCong.Controls.Add(this.btnInChamCong);
             this.tPChamCong.Controls.Add(this.grbTaoBangChamCong);
             this.tPChamCong.Controls.Add(this.label14);
@@ -77,7 +76,6 @@
             this.tPChamCong.Size = new System.Drawing.Size(1295, 649);
             this.tPChamCong.TabIndex = 0;
             this.tPChamCong.Text = "Chấm công";
-            this.tPChamCong.UseVisualStyleBackColor = true;
             // 
             // btnInChamCong
             // 
@@ -185,6 +183,8 @@
             // 
             // dgvChamCong
             // 
+            this.dgvChamCong.AllowUserToResizeColumns = false;
+            this.dgvChamCong.AllowUserToResizeRows = false;
             this.dgvChamCong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -251,16 +251,6 @@
             this.colTenBangChamCong.Name = "colTenBangChamCong";
             this.colTenBangChamCong.ReadOnly = true;
             // 
-            // tPTinhLuong
-            // 
-            this.tPTinhLuong.Location = new System.Drawing.Point(4, 27);
-            this.tPTinhLuong.Name = "tPTinhLuong";
-            this.tPTinhLuong.Padding = new System.Windows.Forms.Padding(3);
-            this.tPTinhLuong.Size = new System.Drawing.Size(1007, 514);
-            this.tPTinhLuong.TabIndex = 1;
-            this.tPTinhLuong.Text = "Tính lương";
-            this.tPTinhLuong.UseVisualStyleBackColor = true;
-            // 
             // ucTienLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,7 +274,6 @@
 
         private System.Windows.Forms.TabControl tCtrl;
         private System.Windows.Forms.TabPage tPChamCong;
-        private System.Windows.Forms.TabPage tPTinhLuong;
         private System.Windows.Forms.DataGridView dgvChamCong;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox grbTaoBangChamCong;

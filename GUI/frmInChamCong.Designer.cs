@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(1129, 608);
             this.Controls.Add(this.rptChamCong);
             this.Name = "frmInChamCong";
-            this.Text = "frmInChamCong";
+            this.Text = "In bảng chấm công";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmInChamCong_Load);
             this.ResumeLayout(false);

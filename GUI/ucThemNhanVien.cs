@@ -22,7 +22,7 @@ namespace GUI
         {
             LoadCbo();
             //TimKiemNhanVien();
-            loadThongTinCuaNhanVien();
+            LoadDGV_NhanVien();
             this.radNam.Checked = true;
             cboChucVu.SelectedValue = 0;
             clsMoiQuanHe_BUS BUSMQH = new clsMoiQuanHe_BUS();
@@ -110,6 +110,7 @@ namespace GUI
         {
             XoaMangHinh();
             btnThemNV.Enabled = true;
+            btnCapNhat.Enabled = false;
         }
 
         private void XoaMangHinh()
@@ -179,6 +180,8 @@ namespace GUI
                     MessageBox.Show("Thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
                     int SoLuongNV = bus.LaySoLuongNhanVien();
+                    //load Lại DGV
+                    TimKiemNhanVien();
                     BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Thêm nhân viên {0} {1} có mã NV{2}", nv.Ho, nv.Ten, SoLuongNV));
                 }
                 else
@@ -332,7 +335,7 @@ namespace GUI
             }
         }
 
-        private void loadThongTinCuaNhanVien()
+        private void LoadDGV_NhanVien()
         {
             clsNhanVien_BUS bus = new clsNhanVien_BUS();
             List<clsNhanVien_DTO> lsDanhSachNV = bus.LayDSNhanVien(0,"");
@@ -557,6 +560,15 @@ namespace GUI
         {
             if (dgvNhanVien.RowCount != 0)
                 DocThongTinTuDGV();
+        }
+
+        private void cboChucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //load cbo Phòng ban theo chức vụ
+            clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
+            cboPhongBan.DataSource = BUSPB.LayDanhSachPhongBan();
+            cboPhongBan.DisplayMember = "TENPB";
+            cboPhongBan.ValueMember = "MAPB";
         }
 
 
