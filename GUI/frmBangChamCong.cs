@@ -50,11 +50,9 @@ namespace GUI
             clsKyHieuChamCong_BUS BUKH = new clsKyHieuChamCong_BUS();
             BUSPB = new clsPhongBan_BUS();
             lsPhongBan2 = BUSPB.LayDanhSachPhongBan(); // Lấy tất cả các phòng ban để hiển thị tên phòng bang ở sự kiện dgvBangChamCong_CellFormatting
-
             this.lsPhongBan = lsPhongBan;
             frm_PhongBan = sender as frmPhongBan;
             this.ucTL = ucTL;
-
             DayInMonth = DateTime.DaysInMonth(ucTL.Nam, ucTL.Thang); // Trả về tháng đó có bao nhiêu ngày
             for (var i = 1; i <= DayInMonth; i++)
             {
@@ -66,16 +64,12 @@ namespace GUI
 
         private void frmBangChamCong_Load(object sender, EventArgs e)
         {
-
             dgvBangChamCong.AutoGenerateColumns = false;
             clsNhanVien_BUS BUSNV = new clsNhanVien_BUS();
             dgvBangChamCong.DataSource = BUSNV.LayDanhSachNhanVien(lsPhongBan);
             lblBangChamCong.Text = string.Format("Bảng chấm công tháng {0} năm {1}", ucTL.Thang, ucTL.Nam);
             ChamCongTuDong();
-
         }
-
-
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -164,8 +158,6 @@ namespace GUI
                     ChamCong.Thang = ucTL.Thang;
                     ChamCong.Nam = ucTL.Nam;
                     lsChamCong.Add(ChamCong);
-
-
                 }
                 clsChamCong_BUS BUS = new clsChamCong_BUS();
                 if (BUS.ThemBangChamCong(DateTime.DaysInMonth(ucTL.Nam, ucTL.Thang), lsChamCong))
@@ -313,6 +305,7 @@ namespace GUI
                             lsKH.RemoveAt(i); //Xóa ký hiệu CN ở những ngày thường
                             break;
                         }
+
                     }
                 }
                 foreach (clsKyHieuChamCong_DTO KH in lsKH)
@@ -375,21 +368,12 @@ namespace GUI
         private void mnuChamCongNhanh_Click(object sender, EventArgs e)
         {
             DataGridViewRow r = dgvBangChamCong.CurrentRow;
-<<<<<<< HEAD
-=======
             int DayInMonth = DateTime.DaysInMonth(ucTL.Nam, ucTL.Thang) ; // Trả về tháng đó có bao nhiêu ngày
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
             for (int i = 1; i <= DayInMonth; i++)
             {
                 DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, i);
                     if (dt.DayOfWeek != 0) // Không phải ngày chủ nhật
                         r.Cells["col"+i].Value = "8";    
-            }
-<<<<<<< HEAD
-
-=======
-            
->>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
         }
 
 

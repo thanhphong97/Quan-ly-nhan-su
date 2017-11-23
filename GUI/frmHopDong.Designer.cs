@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,6 +45,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
 =======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -487,7 +493,11 @@
             this.colLoaiHD.Name = "colLoaiHD";
             this.colLoaiHD.ReadOnly = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.colLoaiHD.Width = 127;
+=======
+            this.colLoaiHD.Width = 93;
+>>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
 =======
             this.colLoaiHD.Width = 93;
 >>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
@@ -497,9 +507,14 @@
             this.colNgayBatDau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colNgayBatDau.DataPropertyName = "NGAYBATDAU";
 <<<<<<< HEAD
+<<<<<<< HEAD
             dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle20.Format = "dd/MM/yyyy";
             this.colNgayBatDau.DefaultCellStyle = dataGridViewCellStyle20;
+=======
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.colNgayBatDau.DefaultCellStyle = dataGridViewCellStyle1;
+>>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
 =======
             dataGridViewCellStyle1.Format = "dd/MM/yyyy";
             this.colNgayBatDau.DefaultCellStyle = dataGridViewCellStyle1;
@@ -514,9 +529,14 @@
             this.colNgayKetThuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colNgayKetThuc.DataPropertyName = "NGAYKETTHUC";
 <<<<<<< HEAD
+<<<<<<< HEAD
             dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle21.Format = "dd/MM/yyyy";
             this.colNgayKetThuc.DefaultCellStyle = dataGridViewCellStyle21;
+=======
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.colNgayKetThuc.DefaultCellStyle = dataGridViewCellStyle2;
+>>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
 =======
             dataGridViewCellStyle2.Format = "dd/MM/yyyy";
             this.colNgayKetThuc.DefaultCellStyle = dataGridViewCellStyle2;
@@ -536,7 +556,11 @@
             this.colDiaDiem.Name = "colDiaDiem";
             this.colDiaDiem.ReadOnly = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.colDiaDiem.Width = 119;
+=======
+            this.colDiaDiem.Width = 86;
+>>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
 =======
             this.colDiaDiem.Width = 86;
 >>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
@@ -551,7 +575,11 @@
             this.colChucVu.Name = "colChucVu";
             this.colChucVu.ReadOnly = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.colChucVu.Width = 87;
+=======
+            this.colChucVu.Width = 67;
+>>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
 =======
             this.colChucVu.Width = 67;
 >>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
@@ -566,7 +594,11 @@
             this.colCongViec.Name = "colCongViec";
             this.colCongViec.ReadOnly = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.colCongViec.Width = 99;
+=======
+            this.colCongViec.Width = 74;
+>>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
 =======
             this.colCongViec.Width = 74;
 >>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
@@ -623,6 +655,7 @@
             this.colNgayKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colNgayKy.DataPropertyName = "NGAYKY";
 <<<<<<< HEAD
+<<<<<<< HEAD
             dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle29.Format = "dd/MM/yyyy";
@@ -631,10 +664,25 @@
             dataGridViewCellStyle3.Format = "dd/MM/yyyy";
             this.colNgayKy.DefaultCellStyle = dataGridViewCellStyle3;
 >>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
+=======
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.colNgayKy.DefaultCellStyle = dataGridViewCellStyle3;
+>>>>>>> ac47737444855e794e60ff6fdfecf94cafe7a8ed
             this.colNgayKy.HeaderText = "Ngày ký hợp đồng";
             this.colNgayKy.Name = "colNgayKy";
             this.colNgayKy.ReadOnly = true;
             this.colNgayKy.Width = 109;
+            // 
+            // btnDong
+            // 
+            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDong.Location = new System.Drawing.Point(633, 440);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(130, 43);
+            this.btnDong.TabIndex = 104;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnDong
             // 
