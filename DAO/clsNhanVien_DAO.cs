@@ -96,17 +96,16 @@ namespace DAO
             {
                 if (dk == 1)
                 {
-                    sql += string.Format(" WHERE TRANGTHAI = 1 AND MANV LIKE '%{0}%'",MaNV);
+                    sql += string.Format(" WHERE TRANGTHAI = 1 AND MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%'", MaNV);
                 }
                 if (dk == -1)
                 {
-                    sql += string.Format(" WHERE TRANGTHAI = 0 AND MANV LIKE '%{0}%'", MaNV);
+                    sql += string.Format(" WHERE TRANGTHAI = 0 AND MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%'", MaNV);
                 }
                 if(dk == 0)
-                    sql += string.Format(" WHERE MANV LIKE '%{0}%'", MaNV);
+                    sql += string.Format(" WHERE MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%'", MaNV);
             }
-            
-            
+            sql += "  ORDER BY TEN";
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             List<clsNhanVien_DTO> lsNhanVien = new List<clsNhanVien_DTO>();

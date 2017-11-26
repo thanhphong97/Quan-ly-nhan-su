@@ -17,7 +17,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        private static List<clsMoiQuanHe_DTO> lsMQH;
         private void ucThemNhanVien_Load(object sender, EventArgs e)
         {
             LoadCbo();
@@ -26,12 +26,13 @@ namespace GUI
             this.radNam.Checked = true;
             cboChucVu.SelectedValue = 0;
             clsMoiQuanHe_BUS BUSMQH = new clsMoiQuanHe_BUS();
-            cboMoiQH.DataSource = BUSMQH.LayDanhSachMoiQuanHe();
+            lsMQH = BUSMQH.LayDanhSachMoiQuanHe();
+            cboMoiQH.DataSource = lsMQH;
             cboMoiQH.DisplayMember = "TENMQH";
             cboMoiQH.ValueMember = "MAMQH";
             dtpNgaySinhTN.Format = DateTimePickerFormat.Custom;
             dtpNgaySinhTN.CustomFormat = "dd/MM/yyyy";
-            if(Program.NhanVien_Login.Quyen == "L3")
+            if (Program.NhanVien_Login.Quyen == "L3")
             {
                 //tpNhanVien
                 grbThôngTinNV.Enabled = false;
@@ -44,7 +45,7 @@ namespace GUI
                 btnCapNhatTN.Enabled = false;
                 btnLamLaiTN.Enabled = false;
                 //frm Hợp đồng
-                
+
             }
         }
 
@@ -136,7 +137,6 @@ namespace GUI
             dtpNgayVaoLam.Value = DateTime.Now.Date;
             cboChucVu.SelectedValue = "";
             txtHeSo.Text = "";
-
             cboPhongBan.SelectedValue = "";
         }
 
@@ -198,7 +198,7 @@ namespace GUI
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 clsNhanVien_DTO nv = new clsNhanVien_DTO();
@@ -278,25 +278,22 @@ namespace GUI
             { }
         }
 
-        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           // DocThongTinTuDGV();
-        }
         private void DocThongTinTuDGV()
         {
+            btnCapNhat.Enabled = true;
             btnThemNV.Enabled = false;
             XoaMangHinh();
             try
             {
 
                 txtHo.Text = dgvNhanVien.SelectedRows[0].Cells["colHo"].Value.ToString();
-                txtTen.Text = dgvNhanVien.SelectedRows[0].Cells[2].Value.ToString();
-                dtpNgaySinh.Value = (DateTime)dgvNhanVien.SelectedRows[0].Cells[3].Value;
+                txtTen.Text = dgvNhanVien.SelectedRows[0].Cells["colTen"].Value.ToString();
+                dtpNgaySinh.Value = (DateTime)dgvNhanVien.SelectedRows[0].Cells["colNgaySinh"].Value;
                 txtCMND.Text = dgvNhanVien.SelectedRows[0].Cells["colCMND"].Value.ToString();
-                string gioitinh = dgvNhanVien.SelectedRows[0].Cells["colGioiTinh"].Value.ToString();
-                if (gioitinh == "true")
+                bool gioitinh = (bool)dgvNhanVien.SelectedRows[0].Cells["colGioiTinh"].Value;
+                if (gioitinh == true)
                     radNam.Checked = true;
-                if (gioitinh == "false")
+                if (gioitinh == false)
                     radNu.Checked = true;
                 cboTrinhDo.SelectedValue = int.Parse(dgvNhanVien.SelectedRows[0].Cells["colBangCap"].Value.ToString());
                 cboTonGiao.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colTonGiao"].Value.ToString();
@@ -308,7 +305,7 @@ namespace GUI
                 cboTinh.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colTinhThanh"].Value.ToString();
                 cboQuanHuyen.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colQuanHuyen"].Value.ToString();
                 rtbSoNhaTenDuong.Text = dgvNhanVien.SelectedRows[0].Cells["colDiaChi"].Value.ToString();
-                dtpNgayVaoLam.Value = (DateTime)dgvNhanVien.SelectedRows[0].Cells[13].Value;
+                dtpNgayVaoLam.Value = (DateTime)dgvNhanVien.SelectedRows[0].Cells["colNgayBatDau"].Value;
                 cboChucVu.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colMaCV"].Value.ToString();
                 cboBacLuong.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colMaBac"].Value.ToString();
                 LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
@@ -330,7 +327,6 @@ namespace GUI
                 {
                     clsThanNhan_BUS BUSTN = new clsThanNhan_BUS();
                     dgvThanNhan.DataSource = BUSTN.LayDanhSachThanNhan(dgvNhanVien.CurrentRow.Cells["colMANV"].Value.ToString());
-
                 }
             }
         }
@@ -338,7 +334,7 @@ namespace GUI
         private void LoadDGV_NhanVien()
         {
             clsNhanVien_BUS bus = new clsNhanVien_BUS();
-            List<clsNhanVien_DTO> lsDanhSachNV = bus.LayDSNhanVien(0,"");
+            List<clsNhanVien_DTO> lsDanhSachNV = bus.LayDSNhanVien(0, "");
             dgvNhanVien.DataSource = lsDanhSachNV;
         }
 
@@ -350,17 +346,17 @@ namespace GUI
         private void TimKiemNhanVien()
         {
             int DieuKien = 0;
-            string MaNV = txtMaNV_TK.Text;
-            if(radTatCa.Checked)
+            string TenHoacMaNV = txtMaNV_TK.Text;
+            if (radTatCa.Checked)
                 DieuKien = 0;//Tất cả nhân viên
-            if(radConLamViec.Checked)
+            if (radConLamViec.Checked)
                 DieuKien = 1;//Còn đang làm việc
             if (radDaNghiViec.Checked)
                 DieuKien = -1;//Đã thôi việc
             clsNhanVien_BUS bus = new clsNhanVien_BUS();
-            List<clsNhanVien_DTO> lsDanhSachNV = bus.LayDSNhanVien(DieuKien,MaNV);
+            List<clsNhanVien_DTO> lsDanhSachNV = bus.LayDSNhanVien(DieuKien, TenHoacMaNV);
             dgvNhanVien.DataSource = lsDanhSachNV;
-            
+
         }
 
         private void radTatCa_CheckedChanged(object sender, EventArgs e)
@@ -380,13 +376,23 @@ namespace GUI
 
         private void dgvNhanVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if(dgvNhanVien.Columns[e.ColumnIndex].Name == "colTrangThai")
+            try
+            {
+            if (dgvNhanVien.Columns[e.ColumnIndex].Name == "colTrangThai")
             {
                 if (!(bool)e.Value)//false
                     e.Value = "Đã nghỉ";
                 else if ((bool)e.Value)//true
                     e.Value = "Còn làm việc";
             }
+           
+                foreach (DataGridViewRow r in dgvNhanVien.Rows)
+                {
+                    r.Cells["colHoTenNV"].Value = r.Cells["colHo"].Value.ToString()+ " " + r.Cells["colTen"].Value.ToString();
+                }
+            }
+            catch { }
+
         }
 
         private void btnHopDongNV_Click(object sender, EventArgs e)
@@ -470,26 +476,16 @@ namespace GUI
             clsThanNhan_DTO ThanNhan = new clsThanNhan_DTO();
             ThanNhan.MaQHGD = Convert.ToInt32(dgvThanNhan.CurrentRow.Cells["colMaQHGD"].Value.ToString());
             ThanNhan.MaNV = dgvNhanVien.CurrentRow.Cells["colMANV"].Value.ToString();
-            if (txtHoTenTN.Text.Trim() == "")
+            if (txtHoTenTN.Text.Trim() == "" || txtNgheNghiepTN.Text.Trim() == "")
             {
-                MessageBox.Show("Chưa nhập họ tên thân nhân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 ThanNhan.HoTenTN = txtHoTenTN.Text.Trim();
-                KiemTra = true;
-            }
-            if (txtNgheNghiepTN.Text.Trim() == "")
-            {
-                MessageBox.Show("Chưa nhập họ tên thân nhân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            else
-            {
                 ThanNhan.NgheNghiepTN = txtNgheNghiepTN.Text.Trim();
                 KiemTra = true;
             }
-
             ThanNhan.NgaySinhTN = dtpNgaySinhTN.Value;
             ThanNhan.MoiQH = Convert.ToInt32(cboMoiQH.SelectedValue);
             clsThanNhan_BUS BUSTN = new clsThanNhan_BUS();
@@ -500,7 +496,7 @@ namespace GUI
                     MessageBox.Show("Cập nhật thân nhân thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvThanNhan.DataSource = BUSTN.LayDanhSachThanNhan(ThanNhan.MaNV);
                     clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Cập nhật thân nhân {0} cho nhân viên {1} có mã {2}", ThanNhan.HoTenTN, txtHoTenNV.Text,ThanNhan.MaNV));
+                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Cập nhật thân nhân {0} cho nhân viên {1} có mã {2}", ThanNhan.HoTenTN, txtHoTenNV.Text, ThanNhan.MaNV));
                 }
                 else
                 {
@@ -553,7 +549,7 @@ namespace GUI
                 cboMoiQH.SelectedValue = dgvThanNhan.CurrentRow.Cells["colMoiQH"].Value;
                 dtpNgaySinhTN.Value = Convert.ToDateTime(dgvThanNhan.CurrentRow.Cells["colNgaySinhThanNhan"].Value);
             }
-            catch (Exception err) { }
+            catch { }
         }
 
         private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
@@ -571,6 +567,44 @@ namespace GUI
             cboPhongBan.ValueMember = "MAPB";
         }
 
+        private void dgvThanNhan_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvThanNhan.Columns[e.ColumnIndex].Name == "colMoiQH")
+            {
+                foreach (clsMoiQuanHe_DTO mqh in lsMQH)
+                {
+                    if (mqh.MAMQH == int.Parse(dgvThanNhan.Rows[e.RowIndex].Cells["colMoiQH"].Value.ToString()))
+                    {
+                        e.Value = mqh.TENMQH;
+                    }
+                }
+            }
+        }
 
+        private void dgvThanNhan_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtHoTenTN.Text = dgvThanNhan.CurrentRow.Cells["colHoTen"].Value.ToString();
+                txtNgheNghiepTN.Text = dgvThanNhan.CurrentRow.Cells["colNgheNghiep"].Value.ToString();
+                cboMoiQH.SelectedValue = dgvThanNhan.CurrentRow.Cells["colMoiQH"].Value;
+                dtpNgaySinhTN.Value = Convert.ToDateTime(dgvThanNhan.CurrentRow.Cells["colNgaySinhThanNhan"].Value);
+            }
+            catch { }
+        }
+
+        private void cboQuocTich_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //nếu quốc tịch là nước ngoài => dân tộc = khác
+            string QuocTich = cboQuocTich.SelectedValue.ToString();
+            if (QuocTich != "QT1")
+                cboDanToc.SelectedValue = "DT0";
+        }
+
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvNhanVien.RowCount != 0)
+                DocThongTinTuDGV();
+        }
     }
 }

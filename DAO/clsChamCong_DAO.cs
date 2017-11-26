@@ -97,7 +97,6 @@ namespace DAO
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
             string sql = string.Format("SELECT * FROM CHAMCONG JOIN NHANVIEN ON NHANVIEN.MANV = CHAMCONG.MANV JOIN PHONGBAN ON PHONGBAN.MAPB = PHONG WHERE MACC = '{0}'",strTK);
             return ThaoTacDuLieu.LayBang(sql);
-            
         }
     }
 }

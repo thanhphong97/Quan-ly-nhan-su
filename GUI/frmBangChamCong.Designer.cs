@@ -112,15 +112,9 @@
             this.col29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.lblBangChamCong = new System.Windows.Forms.Label();
-            this.mnuChamCong = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuChamCongNhanh = new System.Windows.Forms.ToolStripMenuItem();
+            //this.lblBangChamCong = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangChamCong)).BeginInit();
             this.panel1.SuspendLayout();
-            this.mnuChamCong.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvBangChamCong

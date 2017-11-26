@@ -15,6 +15,7 @@ namespace DAO
             string sql = string.Format("SELECT HESO FROM BACLUONG WHERE BAC = '{0}' AND MACV = '{1}'",MaBAC,MaCV);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             float kq = float.Parse(cmd.ExecuteScalar().ToString());
+            ThaoTacDuLieu.DongKetNoi(con);
             return kq;
         }
         public List<clsBacLuong_DTO> LayDSBacLuong()

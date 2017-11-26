@@ -160,18 +160,6 @@ namespace GUI
 
         private void LoadDuLieuNguoiDung()
         {
-           // XoaTextBox();
-            //quản trị
-            //radAdministrator.Checked = true;
-            //btnCapNhat.Enabled = false;
-            //cboNhanVien.Text = "Người quản trị hệ thống";
-            //grbPhanQuyen.Enabled = false;
-            //txtTenDN.Text = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
-            //txtMatKhau.Clear();
-            //txtXacNhanMK.Clear();
-            //return;
-            //grbPhanQuyen.Enabled = true;
-            //btnCapNhat.Enabled = true;
             try
             {
                 string Quyen = dgvNhanVien.SelectedRows[0].Cells[2].Value.ToString();
@@ -203,8 +191,9 @@ namespace GUI
                 bool TrangThai = (bool)dgvNhanVien.SelectedRows[0].Cells[3].Value;
                 if (!TrangThai)
                     chkTrangThai.Checked = true;
+                else
+                    chkTrangThai.Checked = false;
                 txtMatKhau.Text = txtXacNhanMK.Text = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();
-
             }
             catch
             {
@@ -220,7 +209,7 @@ namespace GUI
                 if (!(bool)e.Value)//false
                     e.Value = "Bị cấm";
                 else if ((bool)e.Value)//true
-                    e.Value = "Bình thường";
+                    e.Value = "";
             }
             if (dgvNhanVien.Columns[e.ColumnIndex].Name == "colQuyen")
             {

@@ -14,21 +14,22 @@ namespace GUI
     public partial class frmHopDong : Form
     {
         private clsNhanVien_DTO NhanVien = null;
+        private List<clsHopDong_DTO> lsHopDong;
         public frmHopDong()
         {
             InitializeComponent();
         }
         public frmHopDong(clsNhanVien_DTO NhanVien)
         {
-            InitializeComponent();  
+            InitializeComponent();
             this.NhanVien = NhanVien;
         }
 
         private void frmHopDong_Load(object sender, EventArgs e)
         {
-            
+
             clsChucVu_BUS BUSCV = new clsChucVu_BUS();
-            cboChucVu. DataSource = BUSCV.LayDanhSachChucVu();
+            cboChucVu.DataSource = BUSCV.LayDanhSachChucVu();
             cboChucVu.DisplayMember = "TENCV";
             cboChucVu.ValueMember = "MACV";
 
@@ -37,17 +38,19 @@ namespace GUI
             txtHo.Text = NhanVien.Ho;
             txtTen.Text = NhanVien.Ten;
             cboChucVu.SelectedValue = NhanVien.MaCV;
-            
+
             clsHopDong_BUS BUSHD = new clsHopDong_BUS();
-            dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV);
-            if(Program.NhanVien_Login.Quyen == "L3")
+            lsHopDong = BUSHD.LayDanhSachHopDong(NhanVien.MaNV);
+            //lsHopDong.Sort()
+            dgvHopDongNV.DataSource = lsHopDong;
+            if (Program.NhanVien_Login.Quyen == "L3")
             {
                 grbThongTin.Enabled = false;
                 btnThemHopDong.Enabled = false;
                 btnCapNhatHopDong.Enabled = false;
 
             }
-       }
+        }
 
 
         private void btnThemHopDong_Click(object sender, EventArgs e)
@@ -74,13 +77,13 @@ namespace GUI
                     KiemTra = true;
                 }
             }
-            if (cboLoaiHD.SelectedIndex == 1) 
+            if (cboLoaiHD.SelectedIndex == 1)
             {
                 HopDong.LoaiHD = "Không xác định thời hạn";
                 KiemTra = true;
             }
             if (cboLoaiHD.SelectedIndex == 2)  // Là hợp đồng thời vụ
-            {   
+            {
                 HopDong.NgayKetThuc = dtpNgayKetThuc.Value;
                 if (HopDong.NgayKetThuc.Date <= HopDong.NgayBatDau.Date)
                 {
@@ -99,11 +102,11 @@ namespace GUI
 
             HopDong.DiaDiemLam = txtDiaDiem.Text;
             //HopDong.ChucVu = cboChucVu.SelectedValue.ToString(); // Chọn sẵn khi chọn Mã nhân viên của datagridview ngoài tabcontrol
-            
+
             clsChucVu_BUS BUSCV = new clsChucVu_BUS();
-            foreach(clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
+            foreach (clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
             {
-                if(cboChucVu.SelectedValue.ToString() == CV.MACV)
+                if (cboChucVu.SelectedValue.ToString() == CV.MACV)
                 {
                     HopDong.ChucVu = CV.TENCV;
                     break;
@@ -115,33 +118,33 @@ namespace GUI
             HopDong.TrangBi = txtTrangBiLD.Text;
             HopDong.PhuCap = 0;// Thêm phụ cấp cho nhân viên
             HopDong.NgayKy = dtpNgayKy.Value; // Lấy ngày kí hợp đồng là ngày hệ thống
-            
+
             if (KiemTra)
             {
                 clsHopDong_BUS BUSHD = new clsHopDong_BUS();
                 if (BUSHD.ThemHopDong(HopDong))
                 {
-                    MessageBox.Show("Thêm hợp đồng thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm hợp đồng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV);
                     clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan,DateTime.Now,string.Format("Thêm hợp đồng {0} {1} cho nhân viên {2} {3} ",HopDong.LoaiHD,HopDong.MaHDLD,NhanVien.Ho,NhanVien.Ten));
-                    
+                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Thêm hợp đồng {0} {1} cho nhân viên {2} {3} ", HopDong.LoaiHD, HopDong.MaHDLD, NhanVien.Ho, NhanVien.Ten));
+
                 }
                 else
-                    MessageBox.Show("Thêm hợp đồng thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Thêm hợp đồng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void cboLoaiHD_SelectedIndexChanged(object sender, EventArgs e)
         {
-             if (cboLoaiHD.SelectedIndex == 1) // Là hợp đồng Không xác định thời hạn
-             {
-                 dtpNgayKetThuc.Enabled = false;
-             }
-             else
-             {
-                 dtpNgayKetThuc.Enabled = true;
-             }
+            if (cboLoaiHD.SelectedIndex == 1) // Là hợp đồng Không xác định thời hạn
+            {
+                dtpNgayKetThuc.Enabled = false;
+            }
+            else
+            {
+                dtpNgayKetThuc.Enabled = true;
+            }
         }
 
         private void btnCapNhatHopDong_Click(object sender, EventArgs e)
@@ -193,11 +196,11 @@ namespace GUI
             }
 
             HopDong.DiaDiemLam = txtDiaDiem.Text;
-           
+
             clsChucVu_BUS BUSCV = new clsChucVu_BUS();
             foreach (clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
             {
-                
+
                 if (cboChucVu.SelectedValue.ToString() == CV.MACV)
                 {
                     HopDong.ChucVu = CV.TENCV;
@@ -219,7 +222,7 @@ namespace GUI
                     MessageBox.Show(string.Format("Cập nhật hợp mã hợp đồng {0} thành công", HopDong.MaHDLD), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV); // Lấy mã nhân viên ở dgvNhanVien
                     clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan,DateTime.Now,string.Format("Cập nhật hợp đồng {0} của nhân viên {1} {2}",HopDong.MaHDLD,NhanVien.Ho,NhanVien.Ten));
+                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Cập nhật hợp đồng {0} của nhân viên {1} {2}", HopDong.MaHDLD, NhanVien.Ho, NhanVien.Ten));
                 }
                 else
                     MessageBox.Show("Thêm hợp đồng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -227,6 +230,20 @@ namespace GUI
         }
 
         private void dgvHopDongNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LoadThongTinHopDong();
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvHopDongNV_SelectionChanged(object sender, EventArgs e)
+        {
+            LoadThongTinHopDong();
+        }
+        private void LoadThongTinHopDong()
         {
             try
             {
@@ -238,7 +255,7 @@ namespace GUI
                     dtpNgayKetThuc.Enabled = true;
                     dtpNgayKetThuc.Value = Convert.ToDateTime(dgvHopDongNV.CurrentRow.Cells["colNgayKetThuc"].Value);
                 }
-                catch (Exception err)
+                catch
                 {
                     dtpNgayKetThuc.Enabled = false;
                 }
@@ -262,10 +279,30 @@ namespace GUI
             }
             catch { }
         }
-
-        private void btnDong_Click(object sender, EventArgs e)
+        private void btnLamLai_Click(object sender, EventArgs e)
         {
-            this.Close();
+            cboLoaiHD.SelectedIndex = 0;
+            txtDiaDiem.Text = "";
+            cboChucVu.SelectedIndex = 0;
+            nudHeSo.Value = 0;
+            txtCongViec.Text = "";
+            nudThoiGian.Value = 0;
+            txtTrangBiLD.Text = "";
+            nudPhuCap.Value = 0;
+        }
+        DateTime kxd = new DateTime();
+        private void dgvHopDongNV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+                if (dgvHopDongNV.Columns[e.ColumnIndex].Name == "colNgayKetThuc")
+                    if ((DateTime)dgvHopDongNV.Rows[e.RowIndex].Cells["colNgayKetThuc"].Value == kxd)
+                    {
+                        e.Value = "Không xác định";
+                    }
+            }
+            catch { }
+           
         }
     }
 }

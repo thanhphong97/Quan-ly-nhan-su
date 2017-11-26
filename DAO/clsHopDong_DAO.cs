@@ -24,13 +24,14 @@ namespace DAO
             }
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
+            ThaoTacDuLieu.DongKetNoi(conn);
             return kq > 0;
         }
 
         public List<clsHopDong_DTO> LayDanhSachHopDong(string MaNV)
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("SELECT * FROM HOPDONGLAODONG WHERE MANV = '{0}'",MaNV);
+            string sql = string.Format("SELECT * FROM HOPDONGLAODONG WHERE MANV = '{0}' ORDER BY TUNGAY", MaNV);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             List<clsHopDong_DTO> lsHD = new List<clsHopDong_DTO>();
@@ -63,6 +64,7 @@ namespace DAO
                     HD.PhuCap = dr.GetDouble(11);
                 if (!dr.IsDBNull(12))
                     HD.NgayKy = dr.GetDateTime(12);
+                //hợp đồng không xác dịnh thời hạn
                 lsHD.Add(HD);
             }
             ThaoTacDuLieu.DongKetNoi(conn);
@@ -85,6 +87,7 @@ namespace DAO
             }
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
+            ThaoTacDuLieu.DongKetNoi(conn);
             return kq > 0;
         }
     }
