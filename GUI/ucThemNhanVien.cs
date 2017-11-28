@@ -298,9 +298,7 @@ namespace GUI
                 cboTrinhDo.SelectedValue = int.Parse(dgvNhanVien.SelectedRows[0].Cells["colBangCap"].Value.ToString());
                 cboTonGiao.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colTonGiao"].Value.ToString();
                 cboDanToc.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colDanToc"].Value.ToString();
-
                 rtbNguyenQuan.Text = dgvNhanVien.SelectedRows[0].Cells["colNguyenQuan"].Value.ToString();
-
                 cboQuocTich.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colQuocTich"].Value.ToString();
                 cboTinh.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colTinhThanh"].Value.ToString();
                 cboQuanHuyen.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colQuanHuyen"].Value.ToString();

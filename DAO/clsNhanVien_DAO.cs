@@ -151,7 +151,6 @@ namespace DAO
                     NhanVien.BangCap = dr.GetInt32(17);
                 if (!dr.IsDBNull(18))
                     NhanVien.TrangThai = dr.GetBoolean(18);
-                
                 lsNhanVien.Add(NhanVien);
             }
             ThaoTacDuLieu.DongKetNoi(conn);

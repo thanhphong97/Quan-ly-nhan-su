@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using Microsoft.Win32;
+using System.IO;
+using System.Data.SqlClient;
 namespace GUI
 {
     public partial class ucThemNguoiDung : UserControl
@@ -327,5 +330,67 @@ namespace GUI
                 XoaThongBao();
             }
         }
+        //Backup db
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            bool bBackUpStatus = true;
+            if (Directory.Exists(@"c:\SQLBackup"))//kiểm tra 1 thư mục có tồn tại trong ỗ dĩa không
+            {
+                if (File.Exists(@"c:\SQLBackup\BackupQLXN.bak"))//nếu tồn tại 1 file backup cũ thì có thể xóa đi
+                {
+                    if (MessageBox.Show("BẠN CÓ MUỐN XÓA BẢN SAO LƯU CŨ KHÔNG?", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        File.Delete(@"c:\SQLBackup\BackupQLXN.bak");
+                    }
+                    else
+                        bBackUpStatus = false;
+                }
+            }
+            else//chưa có thì tạo thư mục
+                Directory.CreateDirectory(@"c:\SQLBackup");
+            if (bBackUpStatus)
+            {
+                string con = "Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
+                SqlConnection connect = new SqlConnection(con);
+                connect.Open();
+                SqlCommand command = new SqlCommand(@"BACKUP DATABASE [QLNV_XiNghiep] TO DISK ='c:\SQLBackup\BackupQLXN.bak' with init,stats=10", connect);
+                //intit : Nếu INIT được chỉ định, mọi thiết lập sao lưu hiện có trên thiết bị đó sẽ bị ghi đè, nếu điều kiện cho phép.
+                command.ExecuteNonQuery();
+                connect.Close();
+                MessageBox.Show("Hoàn thành sao lưu Database", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (File.Exists(@"c:\SQLBackup\BackupQLXN.bak"))//kiểm tra file trong đường dẫn chỉ định
+                {
+                    if (MessageBox.Show("Khôi phục dữ liệu đã sao lưu trong Database?", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        string con = "Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
+                        SqlConnection connect = new SqlConnection(con);
+                        connect.Open();
+                        SqlCommand command = new SqlCommand(@"Use master Restore Database [QLNV_XiNghiep] FROM DISK = 'c:\SQLBackup\BackupQLXN.bak'", connect);
+                        command.ExecuteNonQuery();
+                        connect.Close();
+                        MessageBox.Show("Hoàn tất việc quá trình khôi phục", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                    MessageBox.Show(@"Không tồn tại bất kỳ bản sao lưu nào trước đây (Hoặc đường dẫn file bị sai)", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+
+        }
+       
+
+
+
     }
 }
