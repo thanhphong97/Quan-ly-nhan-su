@@ -17,7 +17,7 @@ namespace GUI
     public partial class ucThemNguoiDung : UserControl
     {
         private static List<clsPhongBan_DTO> lsPhongBan;
-
+        private static string ChuoiKetNoi = "Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
         public ucThemNguoiDung()
         {
             InitializeComponent();
@@ -333,53 +333,54 @@ namespace GUI
         //Backup db
         private void btnBackup_Click(object sender, EventArgs e)
         {
-            bool bBackUpStatus = true;
-            if (Directory.Exists(@"c:\SQLBackup"))//kiểm tra 1 thư mục có tồn tại trong ỗ dĩa không
+            try
             {
-                if (File.Exists(@"c:\SQLBackup\BackupQLXN.bak"))//nếu tồn tại 1 file backup cũ thì có thể xóa đi
+                string NoiLuuBackup = "";
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Backup File| *.bak";
+                if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    if (MessageBox.Show("BẠN CÓ MUỐN XÓA BẢN SAO LƯU CŨ KHÔNG?", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        File.Delete(@"c:\SQLBackup\BackupQLXN.bak");
-                    }
-                    else
-                        bBackUpStatus = false;
+                    NoiLuuBackup = sfd.FileName;
                 }
-            }
-            else//chưa có thì tạo thư mục
-                Directory.CreateDirectory(@"c:\SQLBackup");
-            if (bBackUpStatus)
-            {
-                string con = "Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
-                SqlConnection connect = new SqlConnection(con);
+
+                SqlConnection connect = new SqlConnection(ChuoiKetNoi);
                 connect.Open();
-                SqlCommand command = new SqlCommand(@"BACKUP DATABASE [QLNV_XiNghiep] TO DISK ='c:\SQLBackup\BackupQLXN.bak' with init,stats=10", connect);
-                //intit : Nếu INIT được chỉ định, mọi thiết lập sao lưu hiện có trên thiết bị đó sẽ bị ghi đè, nếu điều kiện cho phép.
+                string sql = string.Format(@"BACKUP DATABASE [QLNV_XiNghiep] TO DISK ='{0}' with init", NoiLuuBackup);
+                //with init:  ghi đè
+                SqlCommand command = new SqlCommand(sql, connect);
                 command.ExecuteNonQuery();
                 connect.Close();
-                MessageBox.Show("Hoàn thành sao lưu Database", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Hoàn thành sao lưu Cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
             try
             {
-                if (File.Exists(@"c:\SQLBackup\BackupQLXN.bak"))//kiểm tra file trong đường dẫn chỉ định
+                if (File.Exists(string.Format(@"{0}", NoiMoBackup)))//kiểm tra file trong đường dẫn chỉ định
                 {
                     if (MessageBox.Show("Khôi phục dữ liệu đã sao lưu trong Database?", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        string con = "Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
-                        SqlConnection connect = new SqlConnection(con);
+                        SqlConnection connect = new SqlConnection(ChuoiKetNoi);
                         connect.Open();
-                        SqlCommand command = new SqlCommand(@"Use master Restore Database [QLNV_XiNghiep] FROM DISK = 'c:\SQLBackup\BackupQLXN.bak'", connect);
+                        SqlCommand command;
+                        command = new SqlCommand("use master", connect);
+                        command.ExecuteNonQuery();
+                        string sql = string.Format(@"RESTORE DATABASE [QLNV_XiNghiep] FROM DISK = '{0}'", NoiMoBackup);
+                        command = new SqlCommand(sql, connect);
                         command.ExecuteNonQuery();
                         connect.Close();
                         MessageBox.Show("Hoàn tất việc quá trình khôi phục", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
-                    MessageBox.Show(@"Không tồn tại bất kỳ bản sao lưu nào trước đây (Hoặc đường dẫn file bị sai)", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không tồn tại bất kỳ bản sao lưu nào trước đây (Hoặc đường dẫn file bị sai)", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception exp)
@@ -387,6 +388,17 @@ namespace GUI
                 MessageBox.Show(exp.Message);
             }
 
+        }
+        string NoiMoBackup;
+        private void btnOpenFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Backup File | *.bak";
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                NoiMoBackup = ofd.FileName;
+                txtDuongDanBAK.Text = NoiMoBackup;
+            }
         }
        
 

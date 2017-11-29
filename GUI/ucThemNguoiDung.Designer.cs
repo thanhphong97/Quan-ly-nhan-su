@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbQuanTri = new System.Windows.Forms.TabControl();
             this.tpThemNguoiDung = new System.Windows.Forms.TabPage();
             this.lblThongBao_TK = new System.Windows.Forms.Label();
@@ -71,10 +71,16 @@
             this.colSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.bk = new System.Windows.Forms.TabPage();
-            this.btnBackup = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.txtDuongDanBAK = new System.Windows.Forms.TextBox();
+            this.btnOpenFile = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tbQuanTri.SuspendLayout();
             this.tpThemNguoiDung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -84,6 +90,8 @@
             this.grbSuKienNK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuKienNK)).BeginInit();
             this.bk.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbQuanTri
@@ -157,14 +165,14 @@
             this.dgvNhanVien.AllowUserToResizeColumns = false;
             this.dgvNhanVien.AllowUserToResizeRows = false;
             this.dgvNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle53;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMANV,
@@ -187,8 +195,8 @@
             // 
             this.colMANV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colMANV.DataPropertyName = "MANV";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colMANV.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colMANV.DefaultCellStyle = dataGridViewCellStyle54;
             this.colMANV.HeaderText = "Mã NV";
             this.colMANV.Name = "colMANV";
             this.colMANV.ReadOnly = true;
@@ -232,7 +240,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(553, 1);
+            this.label5.Location = new System.Drawing.Point(556, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(259, 31);
             this.label5.TabIndex = 21;
@@ -448,6 +456,7 @@
             // 
             // tpNhatKyTruyCap
             // 
+            this.tpNhatKyTruyCap.BackColor = System.Drawing.SystemColors.Control;
             this.tpNhatKyTruyCap.Controls.Add(this.grbSuKienNK);
             this.tpNhatKyTruyCap.Controls.Add(this.label7);
             this.tpNhatKyTruyCap.Location = new System.Drawing.Point(4, 27);
@@ -456,7 +465,6 @@
             this.tpNhatKyTruyCap.Size = new System.Drawing.Size(1295, 649);
             this.tpNhatKyTruyCap.TabIndex = 3;
             this.tpNhatKyTruyCap.Text = "Nhật ký truy cập";
-            this.tpNhatKyTruyCap.UseVisualStyleBackColor = true;
             // 
             // grbSuKienNK
             // 
@@ -474,14 +482,14 @@
             this.dgvSuKienNK.AllowUserToResizeRows = false;
             this.dgvSuKienNK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSuKienNK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSuKienNK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
             this.dgvSuKienNK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuKienNK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaNK,
@@ -519,9 +527,9 @@
             // 
             this.colThoiGian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colThoiGian.DataPropertyName = "ThoiGian";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "dd/MM/yyyy HH:mm:ss";
-            this.colThoiGian.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle56.Format = "dd/MM/yyyy HH:mm:ss";
+            this.colThoiGian.DefaultCellStyle = dataGridViewCellStyle56;
             this.colThoiGian.HeaderText = "Thời gian";
             this.colThoiGian.Name = "colThoiGian";
             this.colThoiGian.ReadOnly = true;
@@ -551,54 +559,121 @@
             // bk
             // 
             this.bk.BackColor = System.Drawing.SystemColors.Control;
-            this.bk.Controls.Add(this.label9);
-            this.bk.Controls.Add(this.label8);
-            this.bk.Controls.Add(this.btnRestore);
-            this.bk.Controls.Add(this.btnBackup);
+            this.bk.Controls.Add(this.label11);
+            this.bk.Controls.Add(this.groupBox2);
+            this.bk.Controls.Add(this.groupBox1);
             this.bk.Location = new System.Drawing.Point(4, 27);
             this.bk.Name = "bk";
             this.bk.Padding = new System.Windows.Forms.Padding(3);
             this.bk.Size = new System.Drawing.Size(1295, 649);
             this.bk.TabIndex = 4;
-            this.bk.Text = "Backup & Restore";
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.Location = new System.Drawing.Point(354, 154);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(121, 39);
-            this.btnBackup.TabIndex = 0;
-            this.btnBackup.Text = "Backup";
-            this.btnBackup.UseVisualStyleBackColor = true;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            this.bk.Text = "Sao lưu & Khôi phục CSDL";
             // 
             // btnRestore
             // 
-            this.btnRestore.Location = new System.Drawing.Point(498, 154);
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRestore.ForeColor = System.Drawing.Color.Red;
+            this.btnRestore.Location = new System.Drawing.Point(427, 133);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(121, 39);
             this.btnRestore.TabIndex = 1;
-            this.btnRestore.Text = "Restore";
+            this.btnRestore.Text = "Khôi phục";
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBackup.ForeColor = System.Drawing.Color.Green;
+            this.btnBackup.Location = new System.Drawing.Point(58, 133);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(121, 39);
+            this.btnBackup.TabIndex = 0;
+            this.btnBackup.Text = "Sao lưu";
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
+            // txtDuongDanBAK
+            // 
+            this.txtDuongDanBAK.Location = new System.Drawing.Point(265, 33);
+            this.txtDuongDanBAK.Name = "txtDuongDanBAK";
+            this.txtDuongDanBAK.Size = new System.Drawing.Size(243, 24);
+            this.txtDuongDanBAK.TabIndex = 3;
+            // 
+            // btnOpenFile
+            // 
+            this.btnOpenFile.Location = new System.Drawing.Point(514, 33);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(34, 24);
+            this.btnOpenFile.TabIndex = 5;
+            this.btnOpenFile.Text = "...";
+            this.btnOpenFile.UseVisualStyleBackColor = true;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(312, 111);
+            this.label8.Location = new System.Drawing.Point(16, 36);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(348, 18);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "ĐANG SỬ DỤNG DB KHÁC ĐỂ DEMO VÀ TÌM LỖI";
+            this.label8.Size = new System.Drawing.Size(227, 18);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Chọn đường dẫn chứa file sao lưu";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtDuongDanBAK);
+            this.groupBox1.Controls.Add(this.btnOpenFile);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.btnRestore);
+            this.groupBox1.Location = new System.Drawing.Point(479, 150);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(576, 181);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(654, 164);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(16, 83);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(230, 18);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "TÍNH NĂNG CHỨA HOÀN THIỆN";
+            this.label9.Size = new System.Drawing.Size(519, 18);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "*Lưu ý: Bạn có thể bị mất một số dữ liệu nếu chúng không có trong file sao lưu";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.btnBackup);
+            this.groupBox2.Location = new System.Drawing.Point(219, 150);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(230, 181);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 39);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(219, 36);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Sao lưu dữ liệu thường xuyên để \r\nchúng được an toàn";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label11.Location = new System.Drawing.Point(422, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(440, 31);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "SAO LƯU VÀ KHÔI PHỤC CSDL";
             // 
             // ucThemNguoiDung
             // 
@@ -622,6 +697,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuKienNK)).EndInit();
             this.bk.ResumeLayout(false);
             this.bk.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -669,8 +748,14 @@
         private System.Windows.Forms.TabPage bk;
         private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnOpenFile;
+        private System.Windows.Forms.TextBox txtDuongDanBAK;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
 
     }
 }
