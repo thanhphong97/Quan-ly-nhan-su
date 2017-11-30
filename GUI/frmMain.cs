@@ -198,6 +198,30 @@ namespace GUI
             }
         }
 
+        private void btnTienLuong_Click(object sender, EventArgs e)
+        {
+            ucTinhLuong ucTL;
+            ucTinhLuong c = pnlMain.Controls.Find("ucTinhLuong", false).FirstOrDefault() as ucTinhLuong;
+
+            if (c == null)
+            {
+                ucTL = new ucTinhLuong();
+                pnlMain.Controls.Add(ucTL);
+            }
+            else
+            {
+                c.Show();
+            }
+            foreach (Control ctrl in pnlMain.Controls)
+            {
+                if (ctrl.Name != "ucTinhLuong")
+                {
+                    ctrl.Hide();
+                }
+            }
+        }
+        
+
 
         ////////////////////////////
     }

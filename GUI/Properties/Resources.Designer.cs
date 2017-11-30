@@ -343,6 +343,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap luong {
+            get {
+                object obj = ResourceManager.GetObject("luong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap man_user_male_human_people_32 {
             get {
                 object obj = ResourceManager.GetObject("man_user_male_human_people-32", resourceCulture);

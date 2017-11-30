@@ -8,6 +8,13 @@ namespace DTO
 {
     public class clsBacLuong_DTO
     {
+        string _TenBac;
+
+        public string TenBac
+        {
+            get { return _TenBac; }
+            set { _TenBac = value; }
+        }
         string _MaCV;
 
         public string MaCV

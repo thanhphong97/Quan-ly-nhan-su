@@ -42,6 +42,7 @@
     <Compile Include="clsBacLuong_BUS.cs" />
     <Compile Include="clsBangCap_BUS.cs" />
     <Compile Include="clsChamCong_BUS.cs" />
+    <Compile Include="clsChiTietChamCong_BUS.cs" />
     <Compile Include="clsChucVu_BUS.cs" />
     <Compile Include="clsDanToc_BUS.cs" />
     <Compile Include="clsHopDong_BUS.cs" />

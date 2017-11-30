@@ -31,18 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.mnuMain = new System.Windows.Forms.ToolStrip();
-            this.tbtnQuanTri = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tbtnNhanVien = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tbtLuong = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tbtnQuyDInhLuong = new System.Windows.Forms.ToolStripButton();
-            this.tbtnDangXuat = new System.Windows.Forms.ToolStripButton();
             this.a = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.lblNguoiDung = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tbtnQuanTri = new System.Windows.Forms.ToolStripButton();
+            this.tbtnNhanVien = new System.Windows.Forms.ToolStripButton();
+            this.tbtLuong = new System.Windows.Forms.ToolStripButton();
+            this.tbtnQuyDInhLuong = new System.Windows.Forms.ToolStripButton();
+            this.tbtnDangXuat = new System.Windows.Forms.ToolStripButton();
+            this.btnTienLuong = new System.Windows.Forms.ToolStripButton();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,75 +73,28 @@
             this.a,
             this.toolStripSeparator4,
             this.lblNguoiDung,
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.btnTienLuong});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Size = new System.Drawing.Size(1264, 57);
             this.mnuMain.TabIndex = 3;
             this.mnuMain.Text = "toolStrip1";
             // 
-            // tbtnQuanTri
-            // 
-            this.tbtnQuanTri.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.tbtnQuanTri.Image = global::GUI.Properties.Resources.manager;
-            this.tbtnQuanTri.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnQuanTri.Name = "tbtnQuanTri";
-            this.tbtnQuanTri.Size = new System.Drawing.Size(116, 54);
-            this.tbtnQuanTri.Text = "Quản trị";
-            this.tbtnQuanTri.Click += new System.EventHandler(this.tbtnQuanTri_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 57);
-            // 
-            // tbtnNhanVien
-            // 
-            this.tbtnNhanVien.Image = global::GUI.Properties.Resources.employee;
-            this.tbtnNhanVien.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnNhanVien.Name = "tbtnNhanVien";
-            this.tbtnNhanVien.Size = new System.Drawing.Size(129, 54);
-            this.tbtnNhanVien.Text = "Nhân viên";
-            this.tbtnNhanVien.Click += new System.EventHandler(this.tbtnNhanVien_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 57);
             // 
-            // tbtLuong
-            // 
-            this.tbtLuong.Image = global::GUI.Properties.Resources.salary;
-            this.tbtLuong.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtLuong.Name = "tbtLuong";
-            this.tbtLuong.Size = new System.Drawing.Size(138, 54);
-            this.tbtLuong.Text = "Chấm công";
-            this.tbtLuong.Click += new System.EventHandler(this.tbtLuong_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 57);
-            // 
-            // tbtnQuyDInhLuong
-            // 
-            this.tbtnQuyDInhLuong.Image = global::GUI.Properties.Resources.school_material;
-            this.tbtnQuyDInhLuong.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnQuyDInhLuong.Name = "tbtnQuyDInhLuong";
-            this.tbtnQuyDInhLuong.Size = new System.Drawing.Size(165, 54);
-            this.tbtnQuyDInhLuong.Text = "Quy định lương";
-            this.tbtnQuyDInhLuong.Click += new System.EventHandler(this.tbtnQuyDInhLuong_Click);
-            // 
-            // tbtnDangXuat
-            // 
-            this.tbtnDangXuat.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tbtnDangXuat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtnDangXuat.Image = global::GUI.Properties.Resources.DangXuat;
-            this.tbtnDangXuat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnDangXuat.Name = "tbtnDangXuat";
-            this.tbtnDangXuat.Size = new System.Drawing.Size(54, 54);
-            this.tbtnDangXuat.Text = "Đăng xuất";
-            this.tbtnDangXuat.Click += new System.EventHandler(this.tbtnDangXuat_Click);
             // 
             // a
             // 
@@ -167,6 +121,63 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(69, 54);
             this.toolStripLabel1.Text = "Xin chào:";
             this.toolStripLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbtnQuanTri
+            // 
+            this.tbtnQuanTri.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.tbtnQuanTri.Image = global::GUI.Properties.Resources.manager;
+            this.tbtnQuanTri.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnQuanTri.Name = "tbtnQuanTri";
+            this.tbtnQuanTri.Size = new System.Drawing.Size(116, 54);
+            this.tbtnQuanTri.Text = "Quản trị";
+            this.tbtnQuanTri.Click += new System.EventHandler(this.tbtnQuanTri_Click);
+            // 
+            // tbtnNhanVien
+            // 
+            this.tbtnNhanVien.Image = global::GUI.Properties.Resources.employee;
+            this.tbtnNhanVien.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnNhanVien.Name = "tbtnNhanVien";
+            this.tbtnNhanVien.Size = new System.Drawing.Size(129, 54);
+            this.tbtnNhanVien.Text = "Nhân viên";
+            this.tbtnNhanVien.Click += new System.EventHandler(this.tbtnNhanVien_Click);
+            // 
+            // tbtLuong
+            // 
+            this.tbtLuong.Image = global::GUI.Properties.Resources.salary;
+            this.tbtLuong.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtLuong.Name = "tbtLuong";
+            this.tbtLuong.Size = new System.Drawing.Size(138, 54);
+            this.tbtLuong.Text = "Chấm công";
+            this.tbtLuong.Click += new System.EventHandler(this.tbtLuong_Click);
+            // 
+            // tbtnQuyDInhLuong
+            // 
+            this.tbtnQuyDInhLuong.Image = global::GUI.Properties.Resources.school_material;
+            this.tbtnQuyDInhLuong.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnQuyDInhLuong.Name = "tbtnQuyDInhLuong";
+            this.tbtnQuyDInhLuong.Size = new System.Drawing.Size(165, 54);
+            this.tbtnQuyDInhLuong.Text = "Quy định lương";
+            this.tbtnQuyDInhLuong.Click += new System.EventHandler(this.tbtnQuyDInhLuong_Click);
+            // 
+            // tbtnDangXuat
+            // 
+            this.tbtnDangXuat.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tbtnDangXuat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtnDangXuat.Image = global::GUI.Properties.Resources.DangXuat;
+            this.tbtnDangXuat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnDangXuat.Name = "tbtnDangXuat";
+            this.tbtnDangXuat.Size = new System.Drawing.Size(54, 54);
+            this.tbtnDangXuat.Text = "Đăng xuất";
+            this.tbtnDangXuat.Click += new System.EventHandler(this.tbtnDangXuat_Click);
+            // 
+            // btnTienLuong
+            // 
+            this.btnTienLuong.Image = global::GUI.Properties.Resources.invention1;
+            this.btnTienLuong.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTienLuong.Name = "btnTienLuong";
+            this.btnTienLuong.Size = new System.Drawing.Size(137, 54);
+            this.btnTienLuong.Text = "Tiền Lương";
+            this.btnTienLuong.Click += new System.EventHandler(this.btnTienLuong_Click);
             // 
             // frmMain
             // 
@@ -205,6 +216,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripLabel lblNguoiDung;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton btnTienLuong;
     }
 }
 

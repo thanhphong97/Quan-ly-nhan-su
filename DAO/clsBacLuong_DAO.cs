@@ -9,7 +9,7 @@ namespace DAO
 {
     public class clsBacLuong_DAO
     {
-        public float LayBacLuong(string MaCV, string MaBAC)
+        public float LayHeSo(string MaCV, string MaBAC)
         {
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
             string sql = string.Format("SELECT HESO FROM BACLUONG WHERE BAC = '{0}' AND MACV = '{1}'",MaBAC,MaCV);
@@ -21,7 +21,7 @@ namespace DAO
         public List<clsBacLuong_DTO> LayDSBacLuong()
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = "SELECT DISTINCT BAC FROM BACLUONG";
+            string sql = "SELECT DISTINCT TENBAC, BAC FROM BACLUONG";
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             List<clsBacLuong_DTO> lsBacLuong = new List<clsBacLuong_DTO>();
@@ -29,7 +29,9 @@ namespace DAO
             {
                 clsBacLuong_DTO luong = new clsBacLuong_DTO();
                 if (!dr.IsDBNull(0))
-                    luong.BAC = dr.GetString(0);
+                    luong.TenBac = dr.GetString(0);
+                if (!dr.IsDBNull(1))
+                    luong.BAC = dr.GetString(1);
                 lsBacLuong.Add(luong);
             }
             ThaoTacDuLieu.DongKetNoi(conn);

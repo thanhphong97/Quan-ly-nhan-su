@@ -168,14 +168,13 @@ namespace DAO
                 else
                     sql += string.Format(" OR PHONG = '{0}'", lsPhongBan[i].MAPB);
             }
-            sql += ") GROUP BY MANV,HO,TEN,PHONG ORDER BY PHONG";
+            sql += ") GROUP BY MANV,HO,TEN,PHONG ORDER BY PHONG,TEN";
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             List<clsNhanVien_DTO> lsNhanVien = new List<clsNhanVien_DTO>();
             while (dr.Read())
             {
                 clsNhanVien_DTO NhanVien = new clsNhanVien_DTO();
-
                 if (!dr.IsDBNull(0))
                     NhanVien.MaNV = dr.GetString(0);
                 if (!dr.IsDBNull(1))

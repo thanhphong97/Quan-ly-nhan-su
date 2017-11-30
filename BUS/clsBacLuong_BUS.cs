@@ -12,7 +12,7 @@ namespace BUS
         public float LayHeSoLuong(string MaCV, string MaBAC)
         {
             clsBacLuong_DAO dao = new clsBacLuong_DAO();
-            return dao.LayBacLuong(MaCV, MaBAC);
+            return dao.LayHeSo(MaCV, MaBAC);
         }
         public List<clsBacLuong_DTO> LayDSBacLuong()
         {

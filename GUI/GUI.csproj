@@ -125,6 +125,12 @@
     <Compile Include="ucTienLuong.Designer.cs">
       <DependentUpon>ucTienLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucTinhLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTinhLuong.Designer.cs">
+      <DependentUpon>ucTinhLuong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmBangChamCong.resx">
       <DependentUpon>frmBangChamCong.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucTienLuong.resx">
       <DependentUpon>ucTienLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTinhLuong.resx">
+      <DependentUpon>ucTinhLuong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dsChamCong.xsc">
       <DependentUpon>dsChamCong.xsd</DependentUpon>
@@ -324,6 +333,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luong.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

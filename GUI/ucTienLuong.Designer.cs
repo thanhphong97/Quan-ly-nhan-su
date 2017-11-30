@@ -218,6 +218,8 @@
             this.dgvChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChamCong.Size = new System.Drawing.Size(1286, 443);
             this.dgvChamCong.TabIndex = 0;
+            this.dgvChamCong.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChamCong_CellDoubleClick);
+            this.dgvChamCong.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvChamCong_CellFormatting);
             // 
             // colMaChamCong
             // 

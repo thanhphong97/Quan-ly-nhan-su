@@ -73,10 +73,6 @@
             this.txtHo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvHopDongNV = new System.Windows.Forms.DataGridView();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnLamLai = new System.Windows.Forms.Button();
-            this.btnCapNhatHopDong = new System.Windows.Forms.Button();
-            this.btnThemHopDong = new System.Windows.Forms.Button();
             this.colMaHDLD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLoaiHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,6 +86,10 @@
             this.colHeSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhuCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDong = new System.Windows.Forms.Button();
+            this.btnLamLai = new System.Windows.Forms.Button();
+            this.btnCapNhatHopDong = new System.Windows.Forms.Button();
+            this.btnThemHopDong = new System.Windows.Forms.Button();
             this.grbThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhuCap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeSo)).BeginInit();
@@ -292,7 +292,8 @@
             // 
             // dtpNgayKetThuc
             // 
-            this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayKetThuc.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayKetThuc.Location = new System.Drawing.Point(149, 223);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
             this.dtpNgayKetThuc.Size = new System.Drawing.Size(187, 24);
@@ -309,7 +310,8 @@
             // 
             // dtpNgayBatDau
             // 
-            this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBatDau.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayBatDau.Location = new System.Drawing.Point(149, 177);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Size = new System.Drawing.Size(187, 24);
@@ -427,50 +429,6 @@
             this.dgvHopDongNV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHopDongNV_CellFormatting);
             this.dgvHopDongNV.SelectionChanged += new System.EventHandler(this.dgvHopDongNV_SelectionChanged);
             // 
-            // btnDong
-            // 
-            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDong.Location = new System.Drawing.Point(633, 440);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(130, 43);
-            this.btnDong.TabIndex = 104;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
-            // btnLamLai
-            // 
-            this.btnLamLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLamLai.Location = new System.Drawing.Point(497, 440);
-            this.btnLamLai.Name = "btnLamLai";
-            this.btnLamLai.Size = new System.Drawing.Size(130, 43);
-            this.btnLamLai.TabIndex = 105;
-            this.btnLamLai.Text = "Làm lại";
-            this.btnLamLai.UseVisualStyleBackColor = true;
-            this.btnLamLai.Click += new System.EventHandler(this.btnLamLai_Click);
-            // 
-            // btnCapNhatHopDong
-            // 
-            this.btnCapNhatHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCapNhatHopDong.Location = new System.Drawing.Point(360, 440);
-            this.btnCapNhatHopDong.Name = "btnCapNhatHopDong";
-            this.btnCapNhatHopDong.Size = new System.Drawing.Size(130, 43);
-            this.btnCapNhatHopDong.TabIndex = 107;
-            this.btnCapNhatHopDong.Text = "Cập nhật";
-            this.btnCapNhatHopDong.UseVisualStyleBackColor = true;
-            this.btnCapNhatHopDong.Click += new System.EventHandler(this.btnCapNhatHopDong_Click);
-            // 
-            // btnThemHopDong
-            // 
-            this.btnThemHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThemHopDong.Location = new System.Drawing.Point(224, 440);
-            this.btnThemHopDong.Name = "btnThemHopDong";
-            this.btnThemHopDong.Size = new System.Drawing.Size(130, 43);
-            this.btnThemHopDong.TabIndex = 106;
-            this.btnThemHopDong.Text = "Thêm hợp đồng";
-            this.btnThemHopDong.UseVisualStyleBackColor = true;
-            this.btnThemHopDong.Click += new System.EventHandler(this.btnThemHopDong_Click);
-            // 
             // colMaHDLD
             // 
             this.colMaHDLD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -480,7 +438,7 @@
             this.colMaHDLD.HeaderText = "Mã HĐLĐ";
             this.colMaHDLD.Name = "colMaHDLD";
             this.colMaHDLD.ReadOnly = true;
-            this.colMaHDLD.Width = 99;
+            this.colMaHDLD.Width = 91;
             // 
             // colMaNV
             // 
@@ -492,7 +450,7 @@
             this.colMaNV.HeaderText = "Mã NV";
             this.colMaNV.Name = "colMaNV";
             this.colMaNV.ReadOnly = true;
-            this.colMaNV.Width = 78;
+            this.colMaNV.Width = 54;
             // 
             // colLoaiHD
             // 
@@ -504,7 +462,7 @@
             this.colLoaiHD.HeaderText = "Loại hợp đồng";
             this.colLoaiHD.Name = "colLoaiHD";
             this.colLoaiHD.ReadOnly = true;
-            this.colLoaiHD.Width = 127;
+            this.colLoaiHD.Width = 116;
             // 
             // colNgayBatDau
             // 
@@ -517,7 +475,7 @@
             this.colNgayBatDau.Name = "colNgayBatDau";
             this.colNgayBatDau.ReadOnly = true;
             this.colNgayBatDau.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.colNgayBatDau.Width = 119;
+            this.colNgayBatDau.Width = 87;
             // 
             // colNgayKetThuc
             // 
@@ -530,7 +488,7 @@
             this.colNgayKetThuc.HeaderText = "Ngày kết thúc";
             this.colNgayKetThuc.Name = "colNgayKetThuc";
             this.colNgayKetThuc.ReadOnly = true;
-            this.colNgayKetThuc.Width = 123;
+            this.colNgayKetThuc.Width = 110;
             // 
             // colDiaDiem
             // 
@@ -541,7 +499,7 @@
             this.colDiaDiem.HeaderText = "Địa điểm làm";
             this.colDiaDiem.Name = "colDiaDiem";
             this.colDiaDiem.ReadOnly = true;
-            this.colDiaDiem.Width = 119;
+            this.colDiaDiem.Width = 109;
             // 
             // colChucVu
             // 
@@ -552,7 +510,7 @@
             this.colChucVu.HeaderText = "Chức vụ";
             this.colChucVu.Name = "colChucVu";
             this.colChucVu.ReadOnly = true;
-            this.colChucVu.Width = 87;
+            this.colChucVu.Width = 80;
             // 
             // colCongViec
             // 
@@ -563,7 +521,7 @@
             this.colCongViec.HeaderText = "Công việc";
             this.colCongViec.Name = "colCongViec";
             this.colCongViec.ReadOnly = true;
-            this.colCongViec.Width = 99;
+            this.colCongViec.Width = 91;
             // 
             // colThoiGian
             // 
@@ -575,7 +533,7 @@
             this.colThoiGian.HeaderText = "Thời gian làm";
             this.colThoiGian.Name = "colThoiGian";
             this.colThoiGian.ReadOnly = true;
-            this.colThoiGian.Width = 121;
+            this.colThoiGian.Width = 89;
             // 
             // colTrangBi
             // 
@@ -624,6 +582,50 @@
             this.colNgayKy.Name = "colNgayKy";
             this.colNgayKy.ReadOnly = true;
             this.colNgayKy.Width = 109;
+            // 
+            // btnDong
+            // 
+            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDong.Location = new System.Drawing.Point(633, 440);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(130, 43);
+            this.btnDong.TabIndex = 104;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
+            // btnLamLai
+            // 
+            this.btnLamLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLamLai.Location = new System.Drawing.Point(497, 440);
+            this.btnLamLai.Name = "btnLamLai";
+            this.btnLamLai.Size = new System.Drawing.Size(130, 43);
+            this.btnLamLai.TabIndex = 105;
+            this.btnLamLai.Text = "Làm lại";
+            this.btnLamLai.UseVisualStyleBackColor = true;
+            this.btnLamLai.Click += new System.EventHandler(this.btnLamLai_Click);
+            // 
+            // btnCapNhatHopDong
+            // 
+            this.btnCapNhatHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCapNhatHopDong.Location = new System.Drawing.Point(360, 440);
+            this.btnCapNhatHopDong.Name = "btnCapNhatHopDong";
+            this.btnCapNhatHopDong.Size = new System.Drawing.Size(130, 43);
+            this.btnCapNhatHopDong.TabIndex = 107;
+            this.btnCapNhatHopDong.Text = "Cập nhật";
+            this.btnCapNhatHopDong.UseVisualStyleBackColor = true;
+            this.btnCapNhatHopDong.Click += new System.EventHandler(this.btnCapNhatHopDong_Click);
+            // 
+            // btnThemHopDong
+            // 
+            this.btnThemHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThemHopDong.Location = new System.Drawing.Point(224, 440);
+            this.btnThemHopDong.Name = "btnThemHopDong";
+            this.btnThemHopDong.Size = new System.Drawing.Size(130, 43);
+            this.btnThemHopDong.TabIndex = 106;
+            this.btnThemHopDong.Text = "Thêm hợp đồng";
+            this.btnThemHopDong.UseVisualStyleBackColor = true;
+            this.btnThemHopDong.Click += new System.EventHandler(this.btnThemHopDong_Click);
             // 
             // frmHopDong
             // 

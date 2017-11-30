@@ -94,6 +94,7 @@ namespace GUI
             clsBacLuong_BUS BUSBACLUONG = new clsBacLuong_BUS();
             cboBacLuong.DataSource = BUSBACLUONG.LayDSBacLuong();
             cboBacLuong.ValueMember = "BAC";
+            cboBacLuong.DisplayMember = "TENBAC";
             //dân tộc
             clsDanToc_BUS BUSDT = new clsDanToc_BUS();
             cboDanToc.DataSource = BUSDT.LayDSDanToc();

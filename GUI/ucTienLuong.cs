@@ -41,7 +41,7 @@ namespace GUI
 
         private void ucTienLuong_Load(object sender, EventArgs e)
         {
-            
+
             this.Dock = DockStyle.Fill;
             dgvChamCong.AutoGenerateColumns = false;
             cboThang.SelectedIndex = 0;
@@ -49,8 +49,9 @@ namespace GUI
             nudNam.Maximum = 9999;
             nudNam.Value = DateTime.Now.Year;
 
-            clsChamCong_BUS BUS = new clsChamCong_BUS();
-            dgvChamCong.DataSource = BUS.LayTenBangChamCong();
+            clsChamCong_BUS BUSCC = new clsChamCong_BUS();
+            dgvChamCong.DataSource = BUSCC.LayBangChamCong();
+            
            
             
         }
@@ -59,10 +60,15 @@ namespace GUI
         {
             _Thang = Convert.ToInt32(cboThang.SelectedIndex) + 1;
             _Nam = Convert.ToInt32(nudNam.Value);
-            frmPhongBan frm_PhongBan = new frmPhongBan(this);
-            frm_PhongBan.ShowDialog();
-            clsChamCong_BUS BUS = new clsChamCong_BUS();
-            dgvChamCong.DataSource = BUS.LayTenBangChamCong();
+            if (_Nam > DateTime.Now.Year || DateTime.Now.Year <= _Nam && _Thang > DateTime.Now.Month)
+                MessageBox.Show("Tháng chấm công không hợp lệ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            else
+            {
+                frmPhongBan frm_PhongBan = new frmPhongBan(this);
+                frm_PhongBan.ShowDialog();
+                clsChiTietChamCong_BUS BUS = new clsChiTietChamCong_BUS();
+            }
+           
             
         }
 
@@ -74,8 +80,27 @@ namespace GUI
             Nam = Convert.ToInt32(r.Cells[2].Value.ToString());
             frmInChamCong frm_InChamCong = new frmInChamCong(this);
             frm_InChamCong.ShowDialog();
-            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-            BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("In bảng chấm công {0}", MaCC));
+            //clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            //BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("In bảng chấm công {0}", MaCC));
+        }
+
+        private void dgvChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvChamCong.Columns[e.ColumnIndex].Name == "colTenBangChamCong")
+            {
+                dgvChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Bảng chấm công tháng " + dgvChamCong.Rows[e.RowIndex].Cells[1].Value.ToString()+ " năm " + dgvChamCong.Rows[e.RowIndex].Cells[2].Value.ToString();
+            }
+            
+        }
+
+        private void dgvChamCong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvChamCong.CurrentRow;
+            _Thang = Convert.ToInt32(r.Cells[1].Value.ToString());
+            _Nam = Convert.ToInt32(r.Cells[2].Value.ToString());
+            _MaCC = r.Cells[0].Value.ToString();
+            frmBangChamCong frm_BangChamcong = new frmBangChamCong(this);
+            frm_BangChamcong.Show();
         }
     }
 }

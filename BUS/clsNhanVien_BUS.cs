@@ -38,12 +38,11 @@ namespace BUS
             clsNhanVien_DAO dao = new clsNhanVien_DAO();
             return dao.CapNhatThongTinNhanVien(nv);
         }
-        public List<clsNhanVien_DTO> LayDanhSachNhanVien(List<clsPhongBan_DTO> lsPhongBan)
+        public List<clsNhanVien_DTO> LayDanhSachNhanVienCC(List<clsPhongBan_DTO> lsPhongBan)
         {
             clsNhanVien_DAO DAO = new clsNhanVien_DAO();
             return DAO.LayDanhSachNhanVienCC(lsPhongBan);
         }
-  
         public int LaySoLuongNhanVien()
         {
             clsNhanVien_DAO DAO = new clsNhanVien_DAO();

@@ -95,7 +95,7 @@
             // btnDongY
             // 
             this.btnDongY.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDongY.Location = new System.Drawing.Point(390, 242);
+            this.btnDongY.Location = new System.Drawing.Point(389, 242);
             this.btnDongY.Name = "btnDongY";
             this.btnDongY.Size = new System.Drawing.Size(107, 46);
             this.btnDongY.TabIndex = 13;

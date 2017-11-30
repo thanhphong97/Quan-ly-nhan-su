@@ -73,9 +73,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(471, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 18);
+            this.label1.Size = new System.Drawing.Size(104, 18);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Mức lương cơ bản";
+            this.label1.Text = "Lương tối thiểu";
             // 
             // txtLuongCoBan
             // 

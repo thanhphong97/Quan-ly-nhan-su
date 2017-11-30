@@ -53,5 +53,13 @@ namespace DAO
             ThaoTacDuLieu.DongKetNoi(con);
             return kq;
         }
+        public static int DemSoLuong(string sql)
+        {
+            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            int kq = (int)cmd.ExecuteScalar();
+            ThaoTacDuLieu.DongKetNoi(con);
+            return kq;
+        }
     }
 }
