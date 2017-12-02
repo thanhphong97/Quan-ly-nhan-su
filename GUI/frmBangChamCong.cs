@@ -227,21 +227,22 @@ namespace GUI
                         Flag = true; // Ký hiệu chấm công vừa nhập là phù hợp
                     }
                 }
-                if (Flag == false)
-                {
-                    // Cho phép số và dấu chấm (Số lẻ)
-                    Regex invalidCharsRegex = new Regex(@"(?<=^| )\d+(\.\d+)?(?=$| )|(?<=^| )\.\d+(?=$| )");
-                    if (invalidCharsRegex.IsMatch(KyHieu))
-                    {
-                        if (Convert.ToDouble(KyHieu) <= 24) //Thời gian làm phải nhỏ hơn hoặc bằng 24 tiếng
-                        {
-                            Flag = true;
-                        }
-                    }
-                }
+                //if (Flag == false)
+                //{
+                //    // Cho phép số và dấu chấm (Số lẻ)
+                //    Regex invalidCharsRegex = new Regex(@"(?<=^| )\d+(\.\d+)?(?=$| )|(?<=^| )\.\d+(?=$| )");
+                //    if (invalidCharsRegex.IsMatch(KyHieu))
+                //    {
+                //        if (Convert.ToDouble(KyHieu) <= 24) //Thời gian làm phải nhỏ hơn hoặc bằng 24 tiếng
+                //        {
+                //            Flag = true;
+                //        }
+                //    }
+                //}
                 if (Flag == false) //Ký hiệu chấm công sai 
                 {
                     r.Cells[e.ColumnIndex].Value = null;
+                    r.Cells[e.ColumnIndex].Style.BackColor = Color.Green;
                 }
             }
             catch { }
@@ -251,17 +252,17 @@ namespace GUI
         // Chấm công nhanh cho theo ngày. Xác định ngày hiện tại và chấm công cho tất cả nhân viên trong ngày đó với thời gian làm mặc định là 8 tiếng 1 ngày
         private void mnuChamCongNhanh_Click(object sender, EventArgs e)
         {
-            //int IndexCol = dgvBangChamCong.CurrentRow.Cells["col" + DateTime.Now.Day];
-            DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, DateTime.Now.Day);
-                for(int i = 0 ; i < dgvBangChamCong.Rows.Count; i++)
-                {
+            ////int IndexCol = dgvBangChamCong.CurrentRow.Cells["col" + DateTime.Now.Day];
+            //DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, DateTime.Now.Day);
+            //for (int i = 0; i < dgvBangChamCong.Rows.Count; i++)
+            //{
 
-                    if (dgvBangChamCong.Rows[i].Cells["col" + DateTime.Now.Day].Value == null && dt.DayOfWeek != 0)
-                    {
-                        dgvBangChamCong.Rows[i].Cells["col" + DateTime.Now.Day].Value = "8";
-                    }
-                }
-        
+            //    if (dgvBangChamCong.Rows[i].Cells["col" + DateTime.Now.Day].Value == null && dt.DayOfWeek != 0)
+            //    {
+            //        dgvBangChamCong.Rows[i].Cells["col" + DateTime.Now.Day].Style.BackColor = Color.Green;
+            //    }
+            //}
+
         }
 
         private void dgvBangChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -284,50 +285,59 @@ namespace GUI
                 if (dt.DayOfWeek != 0 &&  dgvBangChamCong.Columns[e.ColumnIndex].ReadOnly == false)   
                 {
                     // Nếu nghỉ có phép hoặc không phép
-                    if (Convert.ToString(e.Value) == "P" || Convert.ToString(e.Value) == "K" || Convert.ToString(e.Value) == "") 
+                    if (Convert.ToString(e.Value) == "P" || Convert.ToString(e.Value) == "K") 
                     {
-                        dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
-                        dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Black;
-                    } 
-                    Regex invalidCharsRegex = new Regex(@"(?<=^| )\d+(\.\d+)?(?=$| )|(?<=^| )\.\d+(?=$| )");
-                    if (invalidCharsRegex.IsMatch(Convert.ToString(e.Value)))
+                        dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Purple;
+                        dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Wheat;
+                    }
+                    if (Convert.ToString(e.Value) == "")
                     {
                         dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
-                        dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
-                    }
+                        dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Black;
+                    } 
+                    //Regex invalidCharsRegex = new Regex(@"(?<=^| )\d+(\.\d+)?(?=$| )|(?<=^| )\.\d+(?=$| )");
+                    //if (invalidCharsRegex.IsMatch(Convert.ToString(e.Value)))
+                    //{
+                    //    dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+                    //    dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                    //}
                 }
             }
+            //clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
+            //List<clsPhongBan_DTO> lsPB = BUSPB.LayDanhSachPhongBan();
+            //clsPhongBan_DTO dtoPB = lsPB.First(u => u.MAPB == e.Value);
+            //e.Value = dtoPB.TENPB;
         }
 
         private void dgvBangChamCong_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
-            {
-                mnuChamCong.Show(Cursor.Position); // Hiển thị mnuChamCong ngay vị trí chuột
-            }
+            //if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            //{
+            //    mnuChamCong.Show(Cursor.Position); // Hiển thị mnuChamCong ngay vị trí chuột
+            //}
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool Flag = true; // Kiểm tra đã chấm công đủ chưa
-            foreach (DataGridViewRow rw in this.dgvBangChamCong.Rows)
-            {
-                for (int i = 1; i <= DateTime.Now.Day; i++)
-                {
-                    if (rw.Cells["col" + i].Value == null || rw.Cells["col" + i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells["col" + i].Value.ToString()))
-                    {
-                        Flag = false;
-                        string Ngay = dgvBangChamCong.Columns[rw.Cells["col" + i].ColumnIndex].Name.Replace("col", "");
-                        string NV = rw.Cells["colMaNV"].Value.ToString();
-                        MessageBox.Show(string.Format("Lỗi: Chưa chấm công ngày {0} cho nhân viên {1}", Ngay, NV), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        rw.Selected = true;
-                        dgvBangChamCong.CurrentRow.Selected = false;
-                        break;
-                    }
-                }
-                if (Flag == false)
-                    break;
-            }
+            //foreach (DataGridViewRow rw in this.dgvBangChamCong.Rows)
+            //{
+            //    for (int i = 1; i <= DateTime.Now.Day; i++)
+            //    {
+            //        if (rw.Cells["col" + i].Value == null || rw.Cells["col" + i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells["col" + i].Value.ToString()))
+            //        {
+            //            Flag = false;
+            //            string Ngay = dgvBangChamCong.Columns[rw.Cells["col" + i].ColumnIndex].Name.Replace("col", "");
+            //            string NV = rw.Cells["colMaNV"].Value.ToString();
+            //            MessageBox.Show(string.Format("Lỗi: Chưa chấm công ngày {0} cho nhân viên {1}", Ngay, NV), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            rw.Selected = true;
+            //            dgvBangChamCong.CurrentRow.Selected = false;
+            //            break;
+            //        }
+            //    }
+            //    if (Flag == false)
+            //        break;
+            //}
             if (Flag == true) // Đã chấm công đủ
             {
                 //List<clsChiTietChamCong_BUS> lsChamCong = new List<clsChiTietChamCong_BUS>();
@@ -350,19 +360,38 @@ namespace GUI
                 //_btnLuu = true;
 
                 clsChiTietChamCong_BUS BUSCTCC = new clsChiTietChamCong_BUS();
-                for(int i = 0 ; i < dgvBangChamCong.Rows.Count; i++)
+                if (ucTL.Thang != DateTime.Now.Month && ucTL.Nam != DateTime.Now.Year)
                 {
-                    string sql = "UPDATE CHITIETCHAMCONG SET ";
-                    for(int j = 1 ; j <= DateTime.Now.Day; j++)
+                    for (int i = 0; i < dgvBangChamCong.Rows.Count; i++)
                     {
-                        sql += string.Format("D{0} = '{1}',",j,dgvBangChamCong.Rows[i].Cells["col"+j].Value);
+                        string sql = "UPDATE CHITIETCHAMCONG SET ";
+                        for (int j = 1; j <= DateTime.Now.Day; j++)
+                        {
+                            sql += string.Format("D{0} = '{1}',", j, dgvBangChamCong.Rows[i].Cells["col" + j].Value);
+                        }
+                        int ViTri = sql.LastIndexOf(",");
+                        sql = sql.Substring(0, ViTri);
+                        sql += string.Format(" WHERE MACC = '{0}' AND MANV = '{1}'", ucTL.MaCC, dgvBangChamCong.Rows[i].Cells["colMaNV"].Value);
+                        BUSCTCC.CapNhatChamCong(sql);
                     }
-                    int ViTri = sql.LastIndexOf(",");
-                    sql = sql.Substring(0, ViTri);
-                    sql += string.Format(" WHERE MACC = '{0}' AND MANV = '{1}'",ucTL.MaCC,dgvBangChamCong.Rows[i].Cells["colMaNV"].Value);
-                    BUSCTCC.CapNhatChamCong(sql);
+                }
+                else // Không phải là tháng và năm hiện tại
+                {
+                    for (int i = 0; i < dgvBangChamCong.Rows.Count; i++)
+                    {
+                        string sql = "UPDATE CHITIETCHAMCONG SET ";
+                        for (int j = 1; j <= DayInMonth; j++)
+                        {
+                            sql += string.Format("D{0} = '{1}',", j, dgvBangChamCong.Rows[i].Cells["col" + j].Value);
+                        }
+                        int ViTri = sql.LastIndexOf(",");
+                        sql = sql.Substring(0, ViTri);
+                        sql += string.Format(" WHERE MACC = '{0}' AND MANV = '{1}'", ucTL.MaCC, dgvBangChamCong.Rows[i].Cells["colMaNV"].Value);
+                        BUSCTCC.CapNhatChamCong(sql);
+                    }
                 }
                 _btnLuu = true;
+                btnLuu.Enabled = false;
             }
 
             //List<clsChiTietChamCong_DTO> lsChamCong = new List<clsChiTietChamCong_DTO>();
@@ -494,6 +523,11 @@ namespace GUI
                 addItems(DataCollection);
                 autoText.AutoCompleteCustomSource = DataCollection;
             }
+        }
+
+        private void dgvBangChamCong_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
         }
     }
 }

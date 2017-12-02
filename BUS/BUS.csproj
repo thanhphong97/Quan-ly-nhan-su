@@ -56,6 +56,7 @@
     <Compile Include="clsQuocTich_BUS.cs" />
     <Compile Include="clsQuyDinhLuong_BUS.cs" />
     <Compile Include="clsThanNhan_BUS.cs" />
+    <Compile Include="clsTinhLuong_BUS.cs" />
     <Compile Include="clsTonGiao_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clsTinhQuanHuyen_BUS.cs" />

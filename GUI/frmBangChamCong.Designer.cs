@@ -197,6 +197,7 @@
             this.dgvBangChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvBangChamCong.Size = new System.Drawing.Size(1129, 502);
             this.dgvBangChamCong.TabIndex = 0;
+            this.dgvBangChamCong.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvBangChamCong_CellBeginEdit);
             this.dgvBangChamCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangChamCong_CellContentClick);
             this.dgvBangChamCong.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangChamCong_CellContentDoubleClick);
             this.dgvBangChamCong.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangChamCong_CellEndEdit);
