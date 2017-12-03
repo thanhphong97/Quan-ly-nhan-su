@@ -52,6 +52,7 @@ namespace DAO
             string sql = string.Format("UPDATE THANNHAN SET HOTEN = N'{0}', MOIQH = {1}, NGAYSINH = '{2}', NGHENGHIEP = N'{3}' WHERE MAQHGD = {4}", TN.HoTenTN, TN.MoiQH, TN.NgaySinhTN, TN.NgheNghiepTN, TN.MaQHGD);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             int kq = cmd.ExecuteNonQuery();
+            ThaoTacDuLieu.DongKetNoi(conn);
             return kq > 0;
         }
         public int LaySoLuongTN()

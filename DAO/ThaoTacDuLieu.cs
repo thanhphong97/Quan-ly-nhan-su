@@ -33,6 +33,7 @@ namespace DAO
             string sql = string.Format("SELECT COUNT(*) FROM {0}",table);
             SqlCommand cmd = TaoDoiTuongTruyVan(sql,conn);
             int kq = (int)cmd.ExecuteScalar();
+            conn.Close();
             return kq;
         }
         // Để sử dụng cho ReportViewer

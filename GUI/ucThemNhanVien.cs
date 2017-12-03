@@ -341,10 +341,10 @@ namespace GUI
         {
             TimKiemNhanVien();
         }
-
+        static int DieuKien = 0;
         private void TimKiemNhanVien()
         {
-            int DieuKien = 0;
+            
             string TenHoacMaNV = txtMaNV_TK.Text;
             if (radTatCa.Checked)
                 DieuKien = 0;//Tất cả nhân viên

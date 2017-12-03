@@ -94,31 +94,10 @@ namespace DAO
 
         public DataTable LayBangChiTietChamCongNV(string strTK)
         {
-            SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
             string sql = string.Format("SELECT * FROM CHITIETCHAMCONG JOIN NHANVIEN ON NHANVIEN.MANV = CHITIETCHAMCONG.MANV JOIN PHONGBAN ON PHONGBAN.MAPB = PHONG WHERE MACC = '{0}'", strTK);
             return ThaoTacDuLieu.LayBang(sql);
 
         }
-
-        //public bool ThemBangChamCong(clsChamCong_DTO lsChamCong)
-        //{
-        //    SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-        //    string sql = string.Format("INSERT INTO CHAMCONG(MACC,MANV,THANG,NAM,SONGAY) VALUES('{0}','{1}',{2},{3},{4})", lsChamCong.MaCC, lsChamCong.MaNV, lsChamCong.Thang, lsChamCong.Nam, lsChamCong.SoNgay);
-        //    SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
-        //    int kq = cmd.ExecuteNonQuery();
-        //    ThaoTacDuLieu.DongKetNoi(conn);
-        //    return kq > 0;
-        //}
-
-        //public int LaySoLuongBangChamCong()
-        //{
-        //    SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-        //    string sql = "SELECT COUNT(*) FROM CHAMCONG";
-        //    SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
-        //    int kq = (int)cmd.ExecuteScalar();
-        //    ThaoTacDuLieu.DongKetNoi(conn);
-        //    return kq;
-        //}
 
         public bool ThemChiTietChamCong(clsChiTietChamCong_DTO ChiTiet)
         {
