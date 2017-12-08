@@ -28,16 +28,7 @@ namespace GUI
         private void frmHopDong_Load(object sender, EventArgs e)
         {
 
-            clsChucVu_BUS BUSCV = new clsChucVu_BUS();
-            cboChucVu.DataSource = BUSCV.LayDanhSachChucVu();
-            cboChucVu.DisplayMember = "TENCV";
-            cboChucVu.ValueMember = "MACV";
-
             cboLoaiHD.SelectedIndex = 0;// Là hợp đồng xác định thời hạn
-
-            txtHo.Text = NhanVien.Ho;
-            txtTen.Text = NhanVien.Ten;
-            cboChucVu.SelectedValue = NhanVien.MaCV;
 
             clsHopDong_BUS BUSHD = new clsHopDong_BUS();
             lsHopDong = BUSHD.LayDanhSachHopDong(NhanVien.MaNV);
@@ -50,6 +41,13 @@ namespace GUI
                 btnCapNhatHopDong.Enabled = false;
 
             }
+
+            txtHo.Text = NhanVien.Ho;
+            txtTen.Text = NhanVien.Ten;
+            if (dgvHopDongNV.SelectedRows.Count == 0)
+                btnCapNhatHopDong.Enabled = false;
+            else
+                btnCapNhatHopDong.Enabled = true;
         }
 
 
@@ -101,25 +99,13 @@ namespace GUI
             }
 
             HopDong.DiaDiemLam = txtDiaDiem.Text;
-            //HopDong.ChucVu = cboChucVu.SelectedValue.ToString(); // Chọn sẵn khi chọn Mã nhân viên của datagridview ngoài tabcontrol
-
-            clsChucVu_BUS BUSCV = new clsChucVu_BUS();
-            foreach (clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
-            {
-                if (cboChucVu.SelectedValue.ToString() == CV.MACV)
-                {
-                    HopDong.ChucVu = CV.TENCV;
-                    break;
-                }
-            }
-            HopDong.HeSoLuong = 2;// Chọn sẵn khi chọn Mã nhân viên của datagridview ngoài tabcontrol
+            //HopDong.ChucVu = cboChucVu.SelectedValue.ToString(); // Chọn sẵn khi chọn Mã nhân viên của datagridview ngoài tabcontrol           
             HopDong.CongViec = txtCongViec.Text;
             HopDong.ThoiGianLam = 8; // Thời gian làm bao nhiêu giờ 1 ngày
             HopDong.TrangBi = txtTrangBiLD.Text;
-            HopDong.PhuCap = 0;// Thêm phụ cấp cho nhân viên
             HopDong.NgayKy = dtpNgayKy.Value; // Lấy ngày kí hợp đồng là ngày hệ thống
 
-            if (KiemTra)
+            if (KiemTra && KiemTraDuLieu())
             {
                 clsHopDong_BUS BUSHD = new clsHopDong_BUS();
                 if (BUSHD.ThemHopDong(HopDong))
@@ -128,6 +114,7 @@ namespace GUI
                     dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV);
                     clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
                     BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Thêm hợp đồng {0} {1} cho nhân viên {2} {3} ", HopDong.LoaiHD, HopDong.MaHDLD, NhanVien.Ho, NhanVien.Ten));
+                    btnThemHopDong.Enabled = false;
 
                 }
                 else
@@ -197,26 +184,13 @@ namespace GUI
                     }
                 }
 
-                HopDong.DiaDiemLam = txtDiaDiem.Text;
-
-                clsChucVu_BUS BUSCV = new clsChucVu_BUS();
-                foreach (clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
-                {
-
-                    if (cboChucVu.SelectedValue.ToString() == CV.MACV)
-                    {
-                        HopDong.ChucVu = CV.TENCV;
-                        break;
-                    }
-                }
-                HopDong.HeSoLuong = Convert.ToDouble(int.Parse(txtHeSo.Text));// Chọn sẵn khi chọn Mã nhân viên của datagridview ngoài tabcontrol
+                HopDong.DiaDiemLam = txtDiaDiem.Text;           
                 HopDong.CongViec = txtCongViec.Text;
                 HopDong.ThoiGianLam = Convert.ToDouble(nudThoiGian.Value); // Thời gian làm bao nhiêu giờ 1 ngày
-                HopDong.TrangBi = txtTrangBiLD.Text;
-                HopDong.PhuCap = Convert.ToDouble(int.Parse(txtHeSo.Text));// Thêm phụ cấp cho nhân viên
+                HopDong.TrangBi = txtTrangBiLD.Text;   
                 HopDong.NgayKy = dtpNgayKy.Value; // Lấy ngày kí hợp đồng là ngày hệ thống
 
-                if (KiemTra)
+                if (KiemTra && KiemTraDuLieu())
                 {
                     clsHopDong_BUS BUSHD = new clsHopDong_BUS();
                     if (BUSHD.CapNhatHopDong(HopDong))
@@ -225,6 +199,7 @@ namespace GUI
                         dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV); // Lấy mã nhân viên ở dgvNhanVien
                         clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
                         BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Cập nhật hợp đồng {0} của nhân viên {1} {2}", HopDong.MaHDLD, NhanVien.Ho, NhanVien.Ten));
+                       
                     }
                     else
                         MessageBox.Show("Thêm hợp đồng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -240,6 +215,8 @@ namespace GUI
         private void dgvHopDongNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             LoadThongTinHopDong();
+            btnThemHopDong.Enabled = false;
+            
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -268,17 +245,8 @@ namespace GUI
                     dtpNgayKetThuc.Enabled = false;
                 }
                 txtDiaDiem.Text = r.Cells["colDiaDiem"].Value.ToString();
-                clsChucVu_BUS BUSCV = new clsChucVu_BUS();
-                foreach (clsChucVu_DTO CV in BUSCV.LayDanhSachChucVu())
-                {
-                    string TenCV = r.Cells["colChucVu"].Value.ToString();
-                    if (TenCV == CV.TENCV)
-                    {
-                        cboChucVu.SelectedValue = CV.MACV;
-                        break;
-                    }
-                }
-                txtHeSo.Text = 2.ToString();//Hệ số lấy từ dgvNhanVien;
+                
+                
                 txtCongViec.Text = r.Cells["colCongViec"].Value.ToString();
                 nudThoiGian.Value = Convert.ToDecimal(r.Cells["colThoiGian"].Value);
                 txtTrangBiLD.Text = r.Cells["colTrangBi"].Value.ToString();
@@ -288,10 +256,14 @@ namespace GUI
         }
         private void btnLamLai_Click(object sender, EventArgs e)
         {
+            XoaDuLieu();
+            btnThemHopDong.Enabled = true;
+        }
+
+        private void XoaDuLieu()
+        {
             cboLoaiHD.SelectedIndex = 0;
             txtDiaDiem.Text = "";
-            cboChucVu.SelectedIndex = 0;
-            txtHeSo.Text = "0";
             txtCongViec.Text = "";
             nudThoiGian.Value = 0;
             txtTrangBiLD.Text = "";
@@ -315,5 +287,27 @@ namespace GUI
         {
             e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
         }
+
+
+        private bool KiemTraDuLieu()
+        {
+            if (txtDiaDiem.Text == "")
+            {
+                MessageBox.Show("Địa điểm không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (txtCongViec.Text == "")
+            {
+                MessageBox.Show("Công việc không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (txtTrangBiLD.Text == "")
+            {
+                MessageBox.Show("Trang bị lao động không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else return true;
+        }
+
     }
 }

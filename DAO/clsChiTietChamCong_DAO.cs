@@ -149,7 +149,7 @@ namespace DAO
                 if (!dr.IsDBNull(13))
                     CT.D10 = dr.GetString(13);
                 if (!dr.IsDBNull(14))
-                    CT.D12 = dr.GetString(14);
+                    CT.D11 = dr.GetString(14);
                 if (!dr.IsDBNull(15))
                     CT.D12 = dr.GetString(15);
                 if (!dr.IsDBNull(16))
@@ -161,7 +161,7 @@ namespace DAO
                 if (!dr.IsDBNull(19))
                     CT.D16 = dr.GetString(19);
                 if (!dr.IsDBNull(20))
-                    CT.D16 = dr.GetString(20);
+                    CT.D17 = dr.GetString(20);
                 if (!dr.IsDBNull(21))
                     CT.D18 = dr.GetString(21);
                 if (!dr.IsDBNull(22))

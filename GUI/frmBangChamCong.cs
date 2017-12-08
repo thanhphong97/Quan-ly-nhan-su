@@ -83,7 +83,10 @@ namespace GUI
                 {
                     var col = "col" + i;
                     dgvBangChamCong.Columns[col].ReadOnly = true;
+                    dgvBangChamCong.Columns[col].DefaultCellStyle.BackColor = Color.Gray;
+                   
                 }
+                
             }
             else if(ucTL.Nam == DateTime.Now.Year && ucTL.Thang < DateTime.Now.Month)
             {
@@ -95,6 +98,7 @@ namespace GUI
                 }
                 
             }
+            
             lblBangChamCong.Text = string.Format("Bảng chấm công tháng {0} năm {1}", ucTL.Thang, ucTL.Nam);
             clsChiTietChamCong_BUS BUSCTCC = new clsChiTietChamCong_BUS();
             List<clsChiTietChamCong_DTO> lsChiTiet = BUSCTCC.LayChiTiet(ucTL.MaCC);
@@ -124,45 +128,44 @@ namespace GUI
 
         private void btnDong_Click(object sender, EventArgs e)
         {
-
-            if  (_btnLuu == true) 
+            if (_btnLuu)
                 this.Close();
             else
             {
                 DialogResult result = MessageBox.Show("Bạn có muốn đóng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                     this.Close();
-
             }
+            
         }
 
 
         private void ChamCongTuDong() // Tự động chấm công CN cho ngày chủ nhật
         {
-            if (ucTL.Nam == DateTime.Now.Year && ucTL.Thang == DateTime.Now.Month) 
+            //if (ucTL.Nam == DateTime.Now.Year && ucTL.Thang == DateTime.Now.Month)
+            //{
+            //    for (int indexcolumn = 1; indexcolumn <= DateTime.Now.Day; indexcolumn++)
+            //    {
+            //        DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, indexcolumn);
+            //        for (int indexrow = 0; indexrow < dgvBangChamCong.Rows.Count; indexrow++)
+            //        {
+            //            if (dt.DayOfWeek == 0) // Nếu là ngày chủ nhật
+            //                dgvBangChamCong.Rows[indexrow].Cells["col" + indexcolumn].Value = "CN";
+            //        }
+            //    }
+            //}
+            //else if (ucTL.Nam == DateTime.Now.Year && ucTL.Thang < DateTime.Now.Month)// Năm chọn bằng với năm hiện tại và tháng chọn nhỏ hơn tháng hiện tại
+            //{
+            for (int indexcolumn = 1; indexcolumn <= DayInMonth; indexcolumn++)
             {
-                for (int indexcolumn = 1; indexcolumn <= DateTime.Now.Day; indexcolumn++)
+                DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, indexcolumn);
+                for (int indexrow = 0; indexrow < dgvBangChamCong.Rows.Count; indexrow++)
                 {
-                    DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, indexcolumn);
-                    for (int indexrow = 0; indexrow < dgvBangChamCong.Rows.Count; indexrow++)
-                    {
-                        if (dt.DayOfWeek == 0) // Nếu là ngày chủ nhật
-                            dgvBangChamCong.Rows[indexrow].Cells["col" + indexcolumn].Value = "CN";
-                    }
+                    if (dt.DayOfWeek == 0) // Nếu là ngày chủ nhật
+                        dgvBangChamCong.Rows[indexrow].Cells["col" + indexcolumn].Value = "CN";
                 }
             }
-            else if(ucTL.Nam == DateTime.Now.Year && ucTL.Thang < DateTime.Now.Month)// Năm chọn bằng với năm hiện tại và tháng chọn nhỏ hơn tháng hiện tại
-            {
-                for (int indexcolumn = 1; indexcolumn <= DayInMonth; indexcolumn++)
-                {
-                    DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, indexcolumn);
-                    for (int indexrow = 0; indexrow < dgvBangChamCong.Rows.Count; indexrow++)
-                    {
-                        if (dt.DayOfWeek == 0) // Nếu là ngày chủ nhật
-                            dgvBangChamCong.Rows[indexrow].Cells["col" + indexcolumn].Value = "CN";
-                    }
-                }
-            }
+            //}
         }
 
 
@@ -245,6 +248,8 @@ namespace GUI
                     r.Cells[e.ColumnIndex].Value = null;
                     r.Cells[e.ColumnIndex].Style.BackColor = Color.Green;
                 }
+                btnLuu.Enabled = true;
+               
             }
             catch { }
         }
@@ -268,27 +273,27 @@ namespace GUI
 
         private void dgvBangChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-           if(dgvBangChamCong.Columns[e.ColumnIndex].Name == "colMaPB")
-           {
-               clsPhongBan_DTO PB = lsPB.First(u => u.MAPB == e.Value.ToString());
-               e.Value = PB.TENPB;
-           }
+            if (dgvBangChamCong.Columns[e.ColumnIndex].Name == "colMaPB")
+            {
+                clsPhongBan_DTO PB = lsPB.First(u => u.MAPB == e.Value.ToString());
+                e.Value = PB.TENPB;
+            }
 
             if (dgvBangChamCong.Columns[e.ColumnIndex].Name != "colMaNV" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "ColHo" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "colTen" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "colMaPB" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "colMaCC")
             {
                 int Ngay = Convert.ToInt32(dgvBangChamCong.Columns[e.ColumnIndex].Name.ToString().Replace("col", ""));
                 DateTime dt = new DateTime(ucTL.Nam, ucTL.Thang, Ngay);
-                if (dgvBangChamCong.Columns[e.ColumnIndex].ReadOnly == true)
-                {
-                    dgvBangChamCong.Columns[e.ColumnIndex].DefaultCellStyle.BackColor = Color.Gray;
-                }
-                if (dt.DayOfWeek == 0 && dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                //if (dgvBangChamCong.Columns[e.ColumnIndex].ReadOnly == true)
+                //{
+                //    dgvBangChamCong.Columns[e.ColumnIndex].DefaultCellStyle.BackColor = Color.Gray;
+                //}
+                if (dt.DayOfWeek == 0)
                 {
                     dgvBangChamCong.Columns[e.ColumnIndex].DefaultCellStyle.ForeColor = Color.Red;
                     dgvBangChamCong.Columns[e.ColumnIndex].DefaultCellStyle.BackColor = Color.Honeydew;
                     dgvBangChamCong.Columns[e.ColumnIndex].ReadOnly = true;
                 }
-
+                //if (dt.DayOfWeek != 0)   
                 if (dt.DayOfWeek != 0 &&  dgvBangChamCong.Columns[e.ColumnIndex].ReadOnly == false)   
                 {
                     // Nếu nghỉ có phép hoặc không phép
@@ -309,6 +314,8 @@ namespace GUI
                     //    dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
                     //}
                 }
+                //else
+                //    dgvBangChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].ReadOnly = true;
             }
             //clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
             //List<clsPhongBan_DTO> lsPB = BUSPB.LayDanhSachPhongBan();

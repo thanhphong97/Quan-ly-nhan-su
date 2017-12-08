@@ -50,13 +50,7 @@ namespace DTO
             get { return _DiaDiemLam; }
             set { _DiaDiemLam = value; }
         }
-        private string _ChucVu;
-
-        public string ChucVu
-        {
-            get { return _ChucVu; }
-            set { _ChucVu = value; }
-        }
+       
         private string _CongViec;
 
         public string CongViec
@@ -78,20 +72,7 @@ namespace DTO
             get { return _TrangBi; }
             set { _TrangBi = value; }
         }
-        private double _HeSoLuong;
-
-        public double HeSoLuong
-        {
-            get { return _HeSoLuong; }
-            set { _HeSoLuong = value; }
-        }
-        private double _PhuCap;
-
-        public double PhuCap
-        {
-            get { return _PhuCap; }
-            set { _PhuCap = value; }
-        }
+        
         private DateTime _NgayKy;
 
         public DateTime NgayKy

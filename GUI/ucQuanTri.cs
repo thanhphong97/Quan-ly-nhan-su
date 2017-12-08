@@ -83,11 +83,13 @@ namespace GUI
         #endregion
         string LayQuyenTruyCap()
         {
-            string Quyen = "L3";
+            string Quyen="";
             if (radQuanLy.Checked)
                 Quyen = "L1";
-            else if (radNhanVienKeToan.Checked)
+            if (radNhanVienKeToan.Checked)
                 Quyen = "L2";
+            if (radTraCuu.Checked)
+                Quyen = "L3";
             return Quyen;
         }
 
@@ -159,7 +161,7 @@ namespace GUI
         {
             try
             {
-                string Quyen = dgvNhanVien.SelectedRows[0].Cells[2].Value.ToString();
+                string Quyen = dgvNhanVien.SelectedRows[0].Cells["colQuyen"].Value.ToString();
                 if (Quyen == "Quản Lý" || Quyen == "L1")
                 {  
                     radQuanLy.Checked = true;
@@ -179,13 +181,13 @@ namespace GUI
                     radTraCuu.Checked = true;
                 //loadThongTin
                 //load phòng theo mã nhân viên
-                LoadThongTin: 
-                string MaNV = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString().ToUpper();
+                LoadThongTin:
+                string MaNV = dgvNhanVien.SelectedRows[0].Cells["colMANV"].Value.ToString().ToUpper();
                 clsPhongBan_BUS bus = new clsPhongBan_BUS();
                 cboPhongBan.SelectedValue = bus.LayMaPhong(MaNV);
-                cboNhanVien.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colMaNV"].Value.ToString();
-                txtTenDN.Text = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
-                bool TrangThai = (bool)dgvNhanVien.SelectedRows[0].Cells[3].Value;
+                cboNhanVien.SelectedValue = MaNV;
+                txtTenDN.Text = dgvNhanVien.SelectedRows[0].Cells["colTenDN"].Value.ToString();
+                bool TrangThai = (bool)dgvNhanVien.SelectedRows[0].Cells["colTrangThai"].Value;
                 if (!TrangThai)
                     chkTrangThai.Checked = true;
                 else
@@ -401,6 +403,15 @@ namespace GUI
             XoaThongBao();
             LoadDGV_NguoiDung();
             LoadCBO_PhongBan();
+        }
+
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvNhanVien.Rows.Count != 0)
+            {
+                LoadDuLieuNguoiDung();
+                XoaThongBao();
+            }
         }
        
 

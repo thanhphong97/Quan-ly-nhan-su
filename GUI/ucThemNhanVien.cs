@@ -313,19 +313,19 @@ namespace GUI
                 LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
                 cboPhongBan.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colPhong"].Value.ToString();
                 bool TrangThai = (bool)dgvNhanVien.SelectedRows[0].Cells["colTrangThai"].Value;
-                if(dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value != null)
+                if (!TrangThai)
+                    chkBoViec.Checked = true;
+                else
+                    chkBoViec.Checked = false;
+                if (dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value != null)
                 {
                     picHinh.Image = Image.FromFile(dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value.ToString());
-                    
                 }
                 else
                 {
                     picHinh.Image = Image.FromFile(@"HinhAnh\nv.jpg");
                 }
-                if (!TrangThai)
-                    chkBoViec.Checked = true;
-                else
-                    chkBoViec.Checked = false;
+                
             }
             catch 
             {
@@ -393,7 +393,7 @@ namespace GUI
                 if (!(bool)e.Value)//false
                     e.Value = "Đã nghỉ";
                 else if ((bool)e.Value)//true
-                    e.Value = "Còn làm việc";
+                    e.Value = "";
             }
            
                 foreach (DataGridViewRow r in dgvNhanVien.Rows)
@@ -564,7 +564,6 @@ namespace GUI
 
         private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvNhanVien.RowCount != 0)
                 DocThongTinTuDGV();
         }
 
@@ -613,7 +612,6 @@ namespace GUI
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvNhanVien.RowCount != 0)
                 DocThongTinTuDGV();
         }
         
