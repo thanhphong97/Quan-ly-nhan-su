@@ -30,7 +30,6 @@ namespace BUS
             clsNhanVien_DAO dao = new clsNhanVien_DAO();
             string MaNV = "NV" + (dao.LaySoLuongNhanVien() + 1);
             nv.MaNV = MaNV;
-            
             return dao.ThemNhanVien(nv);
         }
         public bool CapNhatThongTinNhanVien(clsNhanVien_DTO nv)

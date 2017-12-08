@@ -43,12 +43,55 @@ namespace DTO
             get { return _SoNgayDiLam; }
             set { _SoNgayDiLam = value; }
         }
-        float _TienLuong;
+        double _BHXH;
 
-        public float TienLuong
+        public double BHXH
+        {
+            get { return _BHXH; }
+            set { _BHXH = value; }
+        }
+        double _BHYT;
+
+        public double BHYT
+        {
+            get { return _BHYT; }
+            set { _BHYT = value; }
+        }
+        double _BHTN;
+
+        public double BHTN
+        {
+            get { return _BHTN; }
+            set { _BHTN = value; }
+        }
+
+        double _TienLuong;
+
+        public double TienLuong
         {
             get { return _TienLuong; }
             set { _TienLuong = value; }
+        }
+        double _TongThuNhap;
+
+        public double TongThuNhap
+        {
+            get { return _TongThuNhap; }
+            set { _TongThuNhap = value; }
+        }
+        int _Thang;
+
+        public int Thang
+        {
+            get { return _Thang; }
+            set { _Thang = value; }
+        }
+        int _Nam;
+
+        public int Nam
+        {
+            get { return _Nam; }
+            set { _Nam = value; }
         }
     }
 }

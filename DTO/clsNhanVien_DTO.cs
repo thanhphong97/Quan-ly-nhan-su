@@ -143,6 +143,12 @@ namespace DTO
             get { return _BangCap; }
             set { _BangCap = value; }
         }
-        
+        string _HINHDAIDIEN;
+
+        public string HINHDAIDIEN
+        {
+            get { return _HINHDAIDIEN; }
+            set { _HINHDAIDIEN = value; }
+        }
     }
 }

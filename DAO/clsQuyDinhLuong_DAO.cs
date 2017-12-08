@@ -12,7 +12,7 @@ namespace DAO
         public bool CapNhatQuyDinhLuong(clsQuyDinhLuong_DTO QuyDinh)
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("UPDATE QUYDINHLUONG SET LUONGTOITHIEU = {0},GIOCONG = {1}, BHXH = {2},BHYT = {3}, BHTN = {4} WHERE MAQD = 'QD1'", QuyDinh.LuongToiThieu, QuyDinh.GioCong, QuyDinh.BHXH, QuyDinh.BHYT, QuyDinh.BHTN);
+            string sql = string.Format("UPDATE QUYDINHLUONG SET LUONGTOITHIEU = {0}, BHXH = {1},BHYT = {2}, BHTN = {3} WHERE MAQD = 'QD1'", QuyDinh.LuongToiThieu, QuyDinh.BHXH, QuyDinh.BHYT, QuyDinh.BHTN);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             ThaoTacDuLieu.DongKetNoi(conn);
@@ -32,13 +32,11 @@ namespace DAO
                 if (!dr.IsDBNull(1))
                     QuyDinh.LuongToiThieu = dr.GetDecimal(1);
                 if (!dr.IsDBNull(2))
-                    QuyDinh.GioCong = dr.GetDouble(2);
+                    QuyDinh.BHXH = dr.GetDouble(2);
                 if (!dr.IsDBNull(3))
-                    QuyDinh.BHXH = dr.GetDouble(3);
+                    QuyDinh.BHYT = dr.GetDouble(3);
                 if (!dr.IsDBNull(4))
-                    QuyDinh.BHYT = dr.GetDouble(4);
-                if (!dr.IsDBNull(5))
-                    QuyDinh.BHTN = dr.GetDouble(5);
+                    QuyDinh.BHTN = dr.GetDouble(4);
             }
             ThaoTacDuLieu.DongKetNoi(conn);
             return QuyDinh;

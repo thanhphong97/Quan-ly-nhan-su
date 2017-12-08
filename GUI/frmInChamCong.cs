@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class frmInChamCong : Form
     {
-        private ucTienLuong ucTL;
+        private ucChamCong ucTL;
         public frmInChamCong()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace GUI
         public frmInChamCong(Control sender)
         {
             InitializeComponent();
-            ucTL = sender as ucTienLuong;
+            ucTL = sender as ucChamCong;
         }
 
         private void frmInChamCong_Load(object sender, EventArgs e)

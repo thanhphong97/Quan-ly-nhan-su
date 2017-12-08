@@ -47,7 +47,7 @@ namespace DAO
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
             string ngaysinh = string.Format("{0:yyyy}/{0:MM}/{0:dd}", nv.NgaySinh);
             string Ngaybatdaulamviec = string.Format("{0:yyyy}/{0:MM}/{0:dd}", nv.NgayBatDauLamViec);
-            string sql = string.Format("UPDATE NHANVIEN SET HO = N'{1}', TEN = N'{2}', NGAYSINH = '{3}', DIACHI = N'{4}', CMND = '{5}', GIOITINH = '{6}', NGUYENQUAN = N'{7}', TINHTHANH = '{8}', QUANHUYEN = '{9}', QUOCTICH = '{10}', DANTOC = '{11}', TONGIAO = '{12}', NGAYBATDAU = '{13}', PHONG = '{14}', MABAC = '{15}', MACV = '{16}', BANGCAP = '{17}', TRANGTHAI = '{18}' WHERE MANV = '{0}'",nv.MaNV, nv.Ho, nv.Ten, ngaysinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, Ngaybatdaulamviec, nv.PhongBan, nv.MaBAC, nv.MaCV, nv.BangCap, nv.TrangThai);
+            string sql = string.Format("UPDATE NHANVIEN SET HO = N'{1}', TEN = N'{2}', NGAYSINH = '{3}', DIACHI = N'{4}', CMND = '{5}', GIOITINH = '{6}', NGUYENQUAN = N'{7}', TINHTHANH = '{8}', QUANHUYEN = '{9}', QUOCTICH = '{10}', DANTOC = '{11}', TONGIAO = '{12}', NGAYBATDAU = '{13}', PHONG = '{14}', MABAC = '{15}', MACV = '{16}', BANGCAP = '{17}', TRANGTHAI = '{18}', HINHDAIDIEN = '{19}' WHERE MANV = '{0}'",nv.MaNV, nv.Ho, nv.Ten, ngaysinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, Ngaybatdaulamviec, nv.PhongBan, nv.MaBAC, nv.MaCV, nv.BangCap, nv.TrangThai, nv.HINHDAIDIEN);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             int rowAffected = cmd.ExecuteNonQuery();
             ThaoTacDuLieu.DongKetNoi(con);
@@ -67,7 +67,7 @@ namespace DAO
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
             string ngaysinh = string.Format("{0:yyyy}/{0:MM}/{0:dd}", nv.NgaySinh);
             string Ngaybatdaulamviec = string.Format("{0:yyyy}/{0:MM}/{0:dd}", nv.NgayBatDauLamViec);
-            string sql = string.Format("INSERT INTO NHANVIEN (MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTICH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, TRANGTHAI) VALUES ('{0}', N'{1}' ,N'{2}' ,'{3}' ,N'{4}' ,'{5}', '{6}', N'{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', {17}, '{18}')", nv.MaNV, nv.Ho, nv.Ten, nv.NgaySinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, nv.NgayBatDauLamViec, nv.PhongBan, nv.MaBAC, nv.MaCV, nv.BangCap, nv.TrangThai);
+            string sql = string.Format("INSERT INTO NHANVIEN (MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTICH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, TRANGTHAI, HINHDAIDIEN) VALUES ('{0}', N'{1}' ,N'{2}' ,'{3}' ,N'{4}' ,'{5}', '{6}', N'{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', {17}, '{18}')", nv.MaNV, nv.Ho, nv.Ten, nv.NgaySinh, nv.DiaChiThuongTru, nv.CMND, nv.GioiTinh, nv.NguyenQuan, nv.TinhThanh, nv.QuanHuyen, nv.QuocTich, nv.DanToc, nv.TonGiao, nv.NgayBatDauLamViec, nv.PhongBan, nv.MaBAC, nv.MaCV, nv.BangCap, nv.TrangThai, nv.HINHDAIDIEN);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
             int rowAffected = cmd.ExecuteNonQuery();
             ThaoTacDuLieu.DongKetNoi(con);
@@ -80,7 +80,7 @@ namespace DAO
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
             
-            string  sql = string.Format("SELECT MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTICH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, TRANGTHAI FROM NHANVIEN");
+            string  sql = string.Format("SELECT MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTICH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, TRANGTHAI, HINHDAIDIEN FROM NHANVIEN");
             if(MaNV == "")
             {
                 if (dk == 1)
@@ -151,6 +151,8 @@ namespace DAO
                     NhanVien.BangCap = dr.GetInt32(17);
                 if (!dr.IsDBNull(18))
                     NhanVien.TrangThai = dr.GetBoolean(18);
+                if (!dr.IsDBNull(19))
+                    NhanVien.HINHDAIDIEN = dr.GetString(19);
                 lsNhanVien.Add(NhanVien);
             }
             ThaoTacDuLieu.DongKetNoi(conn);

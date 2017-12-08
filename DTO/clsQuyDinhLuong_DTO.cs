@@ -22,13 +22,7 @@ namespace DTO
             get { return _LuongToiThieu; }
             set { _LuongToiThieu = value; }
         }
-        private double _GioCong;
-
-        public double GioCong
-        {
-            get { return _GioCong; }
-            set { _GioCong = value; }
-        }
+       
         private double _BHXH;
 
         public double BHXH

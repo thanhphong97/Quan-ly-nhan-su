@@ -29,6 +29,13 @@ namespace DTO
             get { return _Nam; }
             set { _Nam = value; }
         }
+        string _Phong;
+
+        public string Phong
+        {
+            get { return _Phong; }
+            set { _Phong = value; }
+        }
        
     }
 }

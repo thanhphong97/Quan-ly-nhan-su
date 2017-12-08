@@ -27,7 +27,6 @@ namespace GUI
 
         private void MoFormDangNhap()
         {
-            //ucDangNhap ucDN = ucDangNhap.Instances;
             ucDangNhap ucDN = new ucDangNhap();
             ucDN.SK_DN_ThanhCong += XuLyKhiDangNhapThanhCong;
             pnlMain.Controls.Add(ucDN);
@@ -94,14 +93,14 @@ namespace GUI
 
         private void tbtnQuanTri_Click(object sender, EventArgs e)
         {
-            ucThemNguoiDung ucTND;
+            ucQuanTri ucTND;
             //Tìm ucThemNguoiDung trong Pnl hay không nếu có thì gán cho c nếu không thì giá trị trả về là null c
-            ucThemNguoiDung c = pnlMain.Controls.Find("ucThemNguoiDung", false).FirstOrDefault() as ucThemNguoiDung;
+            ucQuanTri c = pnlMain.Controls.Find("ucQuanTri", false).FirstOrDefault() as ucQuanTri;
 
             if (c == null)
             {
                 // Tạo mới ucThemNguoiDung
-                ucTND = new ucThemNguoiDung();
+                ucTND = new ucQuanTri();
                 pnlMain.Controls.Add(ucTND);
             }
             else
@@ -112,7 +111,7 @@ namespace GUI
             // Ẩn các ucControl khác ucThemNguoiDung
             foreach (Control ctrl in pnlMain.Controls)
             {
-                if (ctrl.Name != "ucThemNguoiDung")
+                if (ctrl.Name != "ucQuanTri")
                 {
                     ctrl.Hide();
                 }
@@ -144,13 +143,13 @@ namespace GUI
 
         private void tbtLuong_Click(object sender, EventArgs e)
         {
-            ucTienLuong ucTL;
-            ucTienLuong c = pnlMain.Controls.Find("ucTienLuong", false).FirstOrDefault() as ucTienLuong;
+            ucChamCong ucCC;
+            ucChamCong c = pnlMain.Controls.Find("ucChamCong", false).FirstOrDefault() as ucChamCong;
 
             if (c == null)
             {
-                ucTL = new ucTienLuong();
-                pnlMain.Controls.Add(ucTL);
+                ucCC= new ucChamCong();
+                pnlMain.Controls.Add(ucCC);
             }
             else
             {
@@ -158,7 +157,7 @@ namespace GUI
             }
             foreach (Control ctrl in pnlMain.Controls)
             {
-                if (ctrl.Name != "ucTienLuong")
+                if (ctrl.Name != "ucChamCong")
                 {
                     ctrl.Hide();
                 }

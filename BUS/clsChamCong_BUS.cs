@@ -23,5 +23,11 @@ namespace BUS
             clsChamCong_DAO DAO = new clsChamCong_DAO();
             return DAO.LayBangChamCong();
         }
+
+        public bool KiemTraPhongChamCong(int Thang, int Nam, string MaPB)
+        {
+            clsChamCong_DAO DAO = new clsChamCong_DAO();
+            return DAO.KiemTraPhongChamCong(Thang, Nam, MaPB);
+        }
     }
 }

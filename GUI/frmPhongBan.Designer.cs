@@ -30,11 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPhongBan = new System.Windows.Forms.DataGridView();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colMaPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDongY = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
+            this.colMaPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhongBan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +54,6 @@
             this.dgvPhongBan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhongBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colChk,
             this.colMaPB,
             this.colTenPB});
             this.dgvPhongBan.EnableHeadersVisualStyles = false;
@@ -68,29 +66,6 @@
             this.dgvPhongBan.Size = new System.Drawing.Size(596, 235);
             this.dgvPhongBan.TabIndex = 0;
             this.dgvPhongBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongBan_CellContentClick);
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "Chọn";
-            this.colChk.Name = "colChk";
-            this.colChk.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colChk.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colMaPB
-            // 
-            this.colMaPB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMaPB.DataPropertyName = "MAPB";
-            this.colMaPB.HeaderText = "Mã phòng ban";
-            this.colMaPB.Name = "colMaPB";
-            this.colMaPB.ReadOnly = true;
-            // 
-            // colTenPB
-            // 
-            this.colTenPB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenPB.DataPropertyName = "TENPB";
-            this.colTenPB.HeaderText = "Tên phòng ban";
-            this.colTenPB.Name = "colTenPB";
-            this.colTenPB.ReadOnly = true;
             // 
             // btnDongY
             // 
@@ -113,6 +88,22 @@
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
+            // colMaPB
+            // 
+            this.colMaPB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMaPB.DataPropertyName = "MAPB";
+            this.colMaPB.HeaderText = "Mã phòng ban";
+            this.colMaPB.Name = "colMaPB";
+            this.colMaPB.ReadOnly = true;
+            // 
+            // colTenPB
+            // 
+            this.colTenPB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenPB.DataPropertyName = "TENPB";
+            this.colTenPB.HeaderText = "Tên phòng ban";
+            this.colTenPB.Name = "colTenPB";
+            this.colTenPB.ReadOnly = true;
             // 
             // frmPhongBan
             // 
@@ -138,7 +129,6 @@
         private System.Windows.Forms.DataGridView dgvPhongBan;
         private System.Windows.Forms.Button btnDongY;
         private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPB;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenPB;
     }

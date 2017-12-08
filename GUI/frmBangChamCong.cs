@@ -15,9 +15,9 @@ namespace GUI
 {
     public partial class frmBangChamCong : Form
     {
-
+        private List<clsPhongBan_DTO> lsPB;
         // Thiết lập Tên cột và chỉ số cho dgvBangChamCong
-        private ucTienLuong ucTL;
+        private ucChamCong ucTL;
         private bool _btnLuu = false;
         //fix bug ngay thang
         private static int DayInMonth;
@@ -39,7 +39,7 @@ namespace GUI
             InitializeComponent();
         }
 
-        public frmBangChamCong(Control sender, List<clsPhongBan_DTO> lsPhongBan, ucTienLuong ucTL)
+        public frmBangChamCong(Control sender, List<clsPhongBan_DTO> lsPhongBan, ucChamCong ucTL)
         {
             //InitializeComponent();
             //clsKyHieuChamCong_BUS BUSKH = new clsKyHieuChamCong_BUS();
@@ -63,7 +63,7 @@ namespace GUI
             //}
         }
 
-        public frmBangChamCong(ucTienLuong ucTL)
+        public frmBangChamCong(ucChamCong ucTL)
         {
             InitializeComponent();
             this.ucTL = ucTL;
@@ -117,7 +117,8 @@ namespace GUI
             //dgvBangChamCong.DataSource = BUSNV.LayDanhSachNhanVien(lsPhongBan);
             //lblBangChamCong.Text = string.Format("Bảng chấm công tháng {0} năm {1}", ucTL.Thang, ucTL.Nam);
             //ChamCongTuDong();
-           
+            clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
+            lsPB = BUSPB.LayDanhSachPhongBan();
         }
 
 
@@ -267,7 +268,12 @@ namespace GUI
 
         private void dgvBangChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-           
+           if(dgvBangChamCong.Columns[e.ColumnIndex].Name == "colMaPB")
+           {
+               clsPhongBan_DTO PB = lsPB.First(u => u.MAPB == e.Value.ToString());
+               e.Value = PB.TENPB;
+           }
+
             if (dgvBangChamCong.Columns[e.ColumnIndex].Name != "colMaNV" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "ColHo" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "colTen" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "colMaPB" && dgvBangChamCong.Columns[e.ColumnIndex].Name != "colMaCC")
             {
                 int Ngay = Convert.ToInt32(dgvBangChamCong.Columns[e.ColumnIndex].Name.ToString().Replace("col", ""));
@@ -280,6 +286,7 @@ namespace GUI
                 {
                     dgvBangChamCong.Columns[e.ColumnIndex].DefaultCellStyle.ForeColor = Color.Red;
                     dgvBangChamCong.Columns[e.ColumnIndex].DefaultCellStyle.BackColor = Color.Honeydew;
+                    dgvBangChamCong.Columns[e.ColumnIndex].ReadOnly = true;
                 }
 
                 if (dt.DayOfWeek != 0 &&  dgvBangChamCong.Columns[e.ColumnIndex].ReadOnly == false)   

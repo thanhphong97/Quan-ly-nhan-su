@@ -14,22 +14,16 @@ using System.IO;
 using System.Data.SqlClient;
 namespace GUI
 {
-    public partial class ucThemNguoiDung : UserControl
+    public partial class ucQuanTri : UserControl
     {
         private static List<clsPhongBan_DTO> lsPhongBan;
         private static string ChuoiKetNoi = "Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
-        public ucThemNguoiDung()
+        public ucQuanTri()
         {
             InitializeComponent();
         }
 
-        private void ucThemNguoiDung_Load(object sender, EventArgs e)
-        {
-            dgvNhanVien.AutoGenerateColumns = false;
-            XoaThongBao();
-            LoadDGV_NguoiDung();
-            LoadCBO_PhongBan();
-        }
+       
         private void LoadDGV_NguoiDung()
         {
             clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
@@ -399,6 +393,14 @@ namespace GUI
                 NoiMoBackup = ofd.FileName;
                 txtDuongDanBAK.Text = NoiMoBackup;
             }
+        }
+
+        private void ucQuanTri_Load(object sender, EventArgs e)
+        {
+            dgvNhanVien.AutoGenerateColumns = false;
+            XoaThongBao();
+            LoadDGV_NguoiDung();
+            LoadCBO_PhongBan();
         }
        
 

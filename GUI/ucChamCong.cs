@@ -11,7 +11,7 @@ using DTO;
 using BUS;
 namespace GUI
 {
-    public partial class ucTienLuong : UserControl
+    public partial class ucChamCong : UserControl
     {
         private int _Thang;
 
@@ -34,27 +34,12 @@ namespace GUI
             get { return _MaCC; }
             set { _MaCC = value; }
         }
-        public ucTienLuong()
+        public ucChamCong()
         {
             InitializeComponent();
         }
 
-        private void ucTienLuong_Load(object sender, EventArgs e)
-        {
-
-            this.Dock = DockStyle.Fill;
-            dgvChamCong.AutoGenerateColumns = false;
-            cboThang.SelectedIndex = 0;
-            nudNam.Minimum = 1;
-            nudNam.Maximum = 9999;
-            nudNam.Value = DateTime.Now.Year;
-
-            clsChamCong_BUS BUSCC = new clsChamCong_BUS();
-            dgvChamCong.DataSource = BUSCC.LayBangChamCong();
-            
-           
-            
-        }
+       
 
         private void btnTaoBangChamCong_Click(object sender, EventArgs e)
         {
@@ -66,7 +51,7 @@ namespace GUI
             {
                 frmPhongBan frm_PhongBan = new frmPhongBan(this);
                 frm_PhongBan.ShowDialog();
-                clsChiTietChamCong_BUS BUS = new clsChiTietChamCong_BUS();
+               // clsChiTietChamCong_BUS BUS = new clsChiTietChamCong_BUS();
             }
            
             
@@ -101,6 +86,19 @@ namespace GUI
             _MaCC = r.Cells[0].Value.ToString();
             frmBangChamCong frm_BangChamcong = new frmBangChamCong(this);
             frm_BangChamcong.Show();
+        }
+
+        private void ucChamCong_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+            dgvChamCong.AutoGenerateColumns = false;
+            cboThang.SelectedIndex = 0;
+            nudNam.Minimum = 1;
+            nudNam.Maximum = 9999;
+            nudNam.Value = DateTime.Now.Year;
+
+            clsChamCong_BUS BUSCC = new clsChamCong_BUS();
+            dgvChamCong.DataSource = BUSCC.LayBangChamCong();
         }
     }
 }

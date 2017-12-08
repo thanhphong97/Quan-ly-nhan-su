@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using DTO;
 using BUS;
 namespace GUI
@@ -17,9 +18,11 @@ namespace GUI
         {
             InitializeComponent();
         }
-        private static List<clsMoiQuanHe_DTO> lsMQH;
+        private List<clsMoiQuanHe_DTO> lsMQH;
+        private string anhDaiDien;
         private void ucThemNhanVien_Load(object sender, EventArgs e)
         {
+            picHinh.Image = Image.FromFile(@"HinhAnh\nv.jpg");
             LoadCbo();
             //TimKiemNhanVien();
             LoadDGV_NhanVien();
@@ -169,6 +172,7 @@ namespace GUI
                 nv.MaCV = cboChucVu.SelectedValue.ToString();
                 nv.MaBAC = cboBacLuong.SelectedValue.ToString();
                 nv.PhongBan = cboPhongBan.SelectedValue.ToString();
+                nv.HINHDAIDIEN = anhDaiDien;
                 if (!chkBoViec.Checked)
                     nv.TrangThai = true;
                 else
@@ -217,12 +221,11 @@ namespace GUI
                 nv.TonGiao = cboTonGiao.SelectedValue.ToString();
                 nv.NguyenQuan = rtbNguyenQuan.Text;
                 nv.DanToc = cboDanToc.SelectedValue.ToString();
-
                 nv.QuocTich = cboQuocTich.SelectedValue.ToString();
                 nv.TinhThanh = cboTinh.SelectedValue.ToString();
                 nv.QuanHuyen = cboQuanHuyen.SelectedValue.ToString();
                 nv.DiaChiThuongTru = rtbSoNhaTenDuong.Text;
-
+                nv.HINHDAIDIEN = anhDaiDien;
                 nv.NgayBatDauLamViec = dtpNgayVaoLam.Value;
                 nv.MaCV = cboChucVu.SelectedValue.ToString();
                 nv.MaBAC = cboBacLuong.SelectedValue.ToString();
@@ -310,14 +313,22 @@ namespace GUI
                 LayHeSoLuong(cboChucVu.SelectedValue.ToString(), cboBacLuong.SelectedValue.ToString());
                 cboPhongBan.SelectedValue = dgvNhanVien.SelectedRows[0].Cells["colPhong"].Value.ToString();
                 bool TrangThai = (bool)dgvNhanVien.SelectedRows[0].Cells["colTrangThai"].Value;
+                if(dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value != null)
+                {
+                    picHinh.Image = Image.FromFile(dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value.ToString());
+                    
+                }
+                else
+                {
+                    picHinh.Image = Image.FromFile(@"HinhAnh\nv.jpg");
+                }
                 if (!TrangThai)
                     chkBoViec.Checked = true;
                 else
                     chkBoViec.Checked = false;
             }
-            catch
+            catch 
             {
-
             }
             if (tabNhanVien.CanSelect)
             {
@@ -604,6 +615,24 @@ namespace GUI
         {
             if (dgvNhanVien.RowCount != 0)
                 DocThongTinTuDGV();
+        }
+        
+        private void picHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Title = "Chọn ảnh đại diện nhân viên";
+            fd.Filter = "Image Only (*.jpg; *.jpeg; *.gif; *.png; *.bmp) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+
+                if (fd.CheckFileExists)
+                {
+                    picHinh.Image = Image.FromFile(fd.FileName);
+                    picHinh.SizeMode = PictureBoxSizeMode.Zoom;
+                    File.Copy(fd.FileName, @"HinhAnh\" + DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetFileName(fd.FileName));
+                    anhDaiDien = @"HinhAnh\" + DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetFileName(fd.FileName);
+                }
+            }
         }
     }
 }

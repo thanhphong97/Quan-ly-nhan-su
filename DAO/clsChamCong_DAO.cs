@@ -12,7 +12,7 @@ namespace DAO
        public bool ThemBangChamCong(clsChamCong_DTO ChamCong)
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("INSERT INTO CHAMCONG(MACC,THANG,NAM) VALUES('{0}',{1},{2})", ChamCong.MaCC, ChamCong.Thang, ChamCong.Nam);
+            string sql = string.Format("INSERT INTO CHAMCONG(MACC,THANG,NAM,PHONG) VALUES('{0}',{1},{2},'{3}')", ChamCong.MaCC, ChamCong.Thang, ChamCong.Nam,ChamCong.Phong);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             int kq = cmd.ExecuteNonQuery();
             ThaoTacDuLieu.DongKetNoi(conn);
@@ -39,6 +39,16 @@ namespace DAO
            }
            ThaoTacDuLieu.DongKetNoi(conn);
            return lsCC;
+       }
+
+       public bool KiemTraPhongChamCong(int Thang, int Nam, string MaPB)
+       {
+           SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
+           string sql = string.Format("SELECT COUNT(*) FROM CHAMCONG WHERE THANG = {0} AND NAM = {1} AND PHONG = '{2}'", Thang, Nam, MaPB);
+           SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
+           int kq = (int)cmd.ExecuteScalar();
+           ThaoTacDuLieu.DongKetNoi(conn);
+           return kq > 0;
        }
     }
 }

@@ -48,6 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsBangLuong.cs">
+      <DependentUpon>dsBangLuong.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsBangLuong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBangLuong.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsChamCong.cs">
       <DependentUpon>dsChamCong.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -62,6 +71,12 @@
     </Compile>
     <Compile Include="frmBangChamCong.Designer.cs">
       <DependentUpon>frmBangChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoBangLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoBangLuong.Designer.cs">
+      <DependentUpon>frmBaoCaoBangLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHopDong.cs">
       <SubType>Form</SubType>
@@ -107,11 +122,11 @@
     <Compile Include="ucQuyDinhLuong.Designer.cs">
       <DependentUpon>ucQuyDinhLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucThemNguoiDung.cs">
+    <Compile Include="ucQuanTri.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThemNguoiDung.Designer.cs">
-      <DependentUpon>ucThemNguoiDung.cs</DependentUpon>
+    <Compile Include="ucQuanTri.Designer.cs">
+      <DependentUpon>ucQuanTri.cs</DependentUpon>
     </Compile>
     <Compile Include="ucThemNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -119,11 +134,11 @@
     <Compile Include="ucThemNhanVien.Designer.cs">
       <DependentUpon>ucThemNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucTienLuong.cs">
+    <Compile Include="ucChamCong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTienLuong.Designer.cs">
-      <DependentUpon>ucTienLuong.cs</DependentUpon>
+    <Compile Include="ucChamCong.Designer.cs">
+      <DependentUpon>ucChamCong.cs</DependentUpon>
     </Compile>
     <Compile Include="ucTinhLuong.cs">
       <SubType>UserControl</SubType>
@@ -133,6 +148,9 @@
     </Compile>
     <EmbeddedResource Include="frmBangChamCong.resx">
       <DependentUpon>frmBangChamCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoBangLuong.resx">
+      <DependentUpon>frmBaoCaoBangLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHopDong.resx">
       <DependentUpon>frmHopDong.cs</DependentUpon>
@@ -151,6 +169,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptBangLuong.rdlc" />
     <EmbeddedResource Include="rptInChamCong.rdlc" />
     <EmbeddedResource Include="ucDangNhap.resx">
       <DependentUpon>ucDangNhap.cs</DependentUpon>
@@ -158,18 +177,29 @@
     <EmbeddedResource Include="ucQuyDinhLuong.resx">
       <DependentUpon>ucQuyDinhLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucThemNguoiDung.resx">
-      <DependentUpon>ucThemNguoiDung.cs</DependentUpon>
+    <EmbeddedResource Include="ucQuanTri.resx">
+      <DependentUpon>ucQuanTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucThemNhanVien.resx">
       <DependentUpon>ucThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucTienLuong.resx">
-      <DependentUpon>ucTienLuong.cs</DependentUpon>
+    <EmbeddedResource Include="ucChamCong.resx">
+      <DependentUpon>ucChamCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucTinhLuong.resx">
       <DependentUpon>ucTinhLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dsBangLuong.xsc">
+      <DependentUpon>dsBangLuong.xsd</DependentUpon>
+    </None>
+    <None Include="dsBangLuong.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBangLuong.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsBangLuong.xss">
+      <DependentUpon>dsBangLuong.xsd</DependentUpon>
+    </None>
     <None Include="dsChamCong.xsc">
       <DependentUpon>dsChamCong.xsd</DependentUpon>
     </None>
