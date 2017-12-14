@@ -96,6 +96,17 @@ namespace DAO
                         sql += string.Format(" WHERE PHONG = '{0}' AND TRANGTHAI = 0",MaPB);
                     }
                 }
+                else
+                {
+                    if (dk == 1)
+                    {
+                        sql += string.Format(" WHERE TRANGTHAI = 1");
+                    }
+                    if (dk == -1)
+                    {
+                        sql += string.Format(" WHERE TRANGTHAI = 0");
+                    }
+                }
                 if(dk == 0 && MaPB != "0")
                 {
                     sql += string.Format(" WHERE PHONG = '{0}'", MaPB);
