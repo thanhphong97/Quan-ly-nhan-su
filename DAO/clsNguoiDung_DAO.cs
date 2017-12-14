@@ -81,6 +81,17 @@ namespace DAO
             else
                 return false;
         }
+        public bool CapNhatNguoiDung(bool TrangThai, string MANV)
+        {
+            SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
+            string sql = string.Format("UPDATE NGUOIDUNG SET TRANGTHAI = '{0}' WHERE MANV = '{1}'", TrangThai,MANV);
+            SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
+            int rowaff = cmd.ExecuteNonQuery();
+            ThaoTacDuLieu.DongKetNoi(con);
+            if (rowaff == 0)
+                return false;
+            return true;
+        }
 
         public bool KiemTraTonTai(string str, int loaiKT)
         {

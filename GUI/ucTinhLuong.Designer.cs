@@ -250,6 +250,7 @@
             // 
             // cboPhongBan
             // 
+            this.cboPhongBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPhongBan.FormattingEnabled = true;
             this.cboPhongBan.Location = new System.Drawing.Point(557, 103);
             this.cboPhongBan.Name = "cboPhongBan";
@@ -288,7 +289,7 @@
             // 
             // btnInBangLuong
             // 
-            this.btnInBangLuong.Location = new System.Drawing.Point(1095, 594);
+            this.btnInBangLuong.Location = new System.Drawing.Point(1083, 595);
             this.btnInBangLuong.Name = "btnInBangLuong";
             this.btnInBangLuong.Size = new System.Drawing.Size(150, 45);
             this.btnInBangLuong.TabIndex = 32;

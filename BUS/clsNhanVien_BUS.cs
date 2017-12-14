@@ -98,10 +98,10 @@ namespace BUS
             return dao.LayNhanVienTheoPhong(MaPB);
         }
 
-        public List<clsNhanVien_DTO> LayDSNhanVien(int dk,string MaNV)
+        public List<clsNhanVien_DTO> LayDSNhanVien(int dk,string MaNV, string MaPB)
         {
             clsNhanVien_DAO dao = new clsNhanVien_DAO();
-            return dao.LayDanhSachNhanVien(dk,MaNV);
+            return dao.LayDanhSachNhanVien(dk,MaNV,MaPB);
         }
     }
 }

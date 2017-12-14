@@ -22,6 +22,13 @@ namespace DAO
            SqlCommand cmd = new SqlCommand(sql, con);
            return cmd;
        }
+        public static DataTable ThucThiTruyVan(string sql, SqlConnection con)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(dt);
+            return dt;
+        }
         public static void DongKetNoi(SqlConnection con)
         {
             con.Close();

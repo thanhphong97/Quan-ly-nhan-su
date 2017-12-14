@@ -26,6 +26,11 @@ namespace BUS
             clsNguoiDung_DAO dao = new clsNguoiDung_DAO();
             return dao.CapNhatNguoiDung(nd);
         }
+        public bool CapNhatTaiKhoan(bool TrangThai, string MaNV)
+        {
+            clsNguoiDung_DAO dao = new clsNguoiDung_DAO();
+            return dao.CapNhatNguoiDung(TrangThai, MaNV);
+        }
 
         public bool KiemTraTonTai(string str, int loaiKT)
         {

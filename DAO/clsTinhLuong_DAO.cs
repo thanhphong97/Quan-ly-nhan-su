@@ -37,14 +37,5 @@ namespace DAO
             ThaoTacDuLieu.DongKetNoi(con);
             return HSBC;
         }
-        //public float LayLuongToiThieu()
-        //{
-        //    SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-        //    string sql = string.Format("SELECT LUONGTOITHIEU from QUYDINHLUONG");
-        //    SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
-        //    float LuongToiThieu = float.Parse(cmd.ExecuteScalar().ToString());
-        //    ThaoTacDuLieu.DongKetNoi(con);
-        //    return LuongToiThieu;
-        //}
     }
 }

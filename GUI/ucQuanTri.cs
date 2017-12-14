@@ -17,7 +17,6 @@ namespace GUI
     public partial class ucQuanTri : UserControl
     {
         private static List<clsPhongBan_DTO> lsPhongBan;
-        private static string ChuoiKetNoi = "Data Source=.;Initial Catalog=QLNV_XiNghiep;Integrated Security=True";
         public ucQuanTri()
         {
             InitializeComponent();
@@ -275,7 +274,7 @@ namespace GUI
         {
             XoaTextBox();
             XoaThongBao();
-            
+            LoadDGV_NguoiDung();
         }
         private void XoaTextBox()
         {
@@ -338,15 +337,17 @@ namespace GUI
                 {
                     NoiLuuBackup = sfd.FileName;
                 }
-
-                SqlConnection connect = new SqlConnection(ChuoiKetNoi);
-                connect.Open();
-                string sql = string.Format(@"BACKUP DATABASE [QLNV_XiNghiep] TO DISK ='{0}' with init", NoiLuuBackup);
-                //with init:  ghi đè
-                SqlCommand command = new SqlCommand(sql, connect);
-                command.ExecuteNonQuery();
-                connect.Close();
-                MessageBox.Show("Hoàn thành sao lưu Cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clsBakup_BUS bus = new clsBakup_BUS();
+                bool kq = bus.SaoLuuCSDL(NoiLuuBackup);
+                if (kq == true)
+                {
+                    MessageBox.Show("Hoàn thành sao lưu Cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } 
+                else
+                {
+                    MessageBox.Show("Sao lưu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+               
             }
             catch (Exception ex)
             {
@@ -359,20 +360,21 @@ namespace GUI
         {
             try
             {
-                if (File.Exists(string.Format(@"{0}", NoiMoBackup)))//kiểm tra file trong đường dẫn chỉ định
+                if (File.Exists(string.Format(@"{0}", txtDuongDanBAK.Text)))//kiểm tra file trong đường dẫn chỉ định
                 {
                     if (MessageBox.Show("Khôi phục dữ liệu đã sao lưu trong Database?", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        SqlConnection connect = new SqlConnection(ChuoiKetNoi);
-                        connect.Open();
-                        SqlCommand command;
-                        command = new SqlCommand("use master", connect);
-                        command.ExecuteNonQuery();
-                        string sql = string.Format(@"RESTORE DATABASE [QLNV_XiNghiep] FROM DISK = '{0}'", NoiMoBackup);
-                        command = new SqlCommand(sql, connect);
-                        command.ExecuteNonQuery();
-                        connect.Close();
-                        MessageBox.Show("Hoàn tất việc quá trình khôi phục", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clsRestore_BUS bus = new clsRestore_BUS();
+                        bool kq = bus.KhoiPhucCSDL(txtDuongDanBAK.Text);
+                        if(kq == true)
+                        {
+                            MessageBox.Show("Hoàn tất việc quá trình khôi phục", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Khôi phục thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        
                     }
                 }
                 else
@@ -385,15 +387,13 @@ namespace GUI
             }
 
         }
-        string NoiMoBackup;
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Backup File | *.bak";
             if(ofd.ShowDialog() == DialogResult.OK)
             {
-                NoiMoBackup = ofd.FileName;
-                txtDuongDanBAK.Text = NoiMoBackup;
+                txtDuongDanBAK.Text = ofd.FileName;
             }
         }
 

@@ -383,6 +383,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap paper_printer {
+            get {
+                object obj = ResourceManager.GetObject("paper-printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap phongban1 {
             get {
                 object obj = ResourceManager.GetObject("phongban1", resourceCulture);
@@ -406,6 +416,26 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap quy_dinh_luong1 {
             get {
                 object obj = ResourceManager.GetObject("quy-dinh-luong1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reports_icon {
+            get {
+                object obj = ResourceManager.GetObject("reports-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reports_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("reports-icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

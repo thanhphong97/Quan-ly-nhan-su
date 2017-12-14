@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTheNV" targetNamespace="http://tempuri.org/dsTheNV.xsd" xmlns:mstns="http://tempuri.org/dsTheNV.xsd" xmlns="http://tempuri.org/dsTheNV.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTheNV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsTheNV" msprop:Generator_UserDSName="dsTheNV">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="The_x0020_NV" msprop:Generator_TableClassName="The_NVDataTable" msprop:Generator_TableVarName="tableThe_NV" msprop:Generator_RowChangedName="The_NVRowChanged" msprop:Generator_TablePropName="The_NV" msprop:Generator_RowDeletingName="The_NVRowDeleting" msprop:Generator_RowChangingName="The_NVRowChanging" msprop:Generator_RowEvHandlerName="The_NVRowChangeEventHandler" msprop:Generator_RowDeletedName="The_NVRowDeleted" msprop:Generator_RowClassName="The_NVRow" msprop:Generator_UserTableName="The NV" msprop:Generator_RowEvArgName="The_NVRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MANV" msprop:Generator_ColumnVarNameInTable="columnMANV" msprop:Generator_ColumnPropNameInRow="MANV" msprop:Generator_ColumnPropNameInTable="MANVColumn" msprop:Generator_UserColumnName="MANV" type="xs:string" minOccurs="0" />
+              <xs:element name="HO" msprop:Generator_ColumnVarNameInTable="columnHO" msprop:Generator_ColumnPropNameInRow="HO" msprop:Generator_ColumnPropNameInTable="HOColumn" msprop:Generator_UserColumnName="HO" type="xs:string" minOccurs="0" />
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN" type="xs:string" minOccurs="0" />
+              <xs:element name="NGAYSINH" msprop:Generator_ColumnVarNameInTable="columnNGAYSINH" msprop:Generator_ColumnPropNameInRow="NGAYSINH" msprop:Generator_ColumnPropNameInTable="NGAYSINHColumn" msprop:Generator_UserColumnName="NGAYSINH" type="xs:string" minOccurs="0" />
+              <xs:element name="TENCV" msprop:Generator_ColumnVarNameInTable="columnTENCV" msprop:Generator_ColumnPropNameInRow="TENCV" msprop:Generator_ColumnPropNameInTable="TENCVColumn" msprop:Generator_UserColumnName="TENCV" type="xs:string" minOccurs="0" />
+              <xs:element name="HINHDAIDIEN" msprop:Generator_ColumnVarNameInTable="columnHINHDAIDIEN" msprop:Generator_ColumnPropNameInRow="HINHDAIDIEN" msprop:Generator_ColumnPropNameInTable="HINHDAIDIENColumn" msprop:Generator_UserColumnName="HINHDAIDIEN" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

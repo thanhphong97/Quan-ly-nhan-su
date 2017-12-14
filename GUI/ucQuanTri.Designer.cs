@@ -608,7 +608,7 @@
             this.btnBackup.ForeColor = System.Drawing.Color.Green;
             this.btnBackup.Image = global::GUI.Properties.Resources.backup_data_database_32;
             this.btnBackup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBackup.Location = new System.Drawing.Point(53, 133);
+            this.btnBackup.Location = new System.Drawing.Point(55, 133);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(126, 39);
             this.btnBackup.TabIndex = 0;

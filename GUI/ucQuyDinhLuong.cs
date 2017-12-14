@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 using BUS;
 using DTO;
 namespace GUI
@@ -72,6 +73,17 @@ namespace GUI
         {
             if (!Char.IsControl(e.KeyChar) && !Char.IsNumber(e.KeyChar))//chỉ nhập số
                 e.Handled = true;
+        }
+
+        private void txtLuongCoBan_TextChanged(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtLuongCoBan.Text))
+            {
+               CultureInfo cu = new CultureInfo("en-US");
+                string LuongC = txtLuongCoBan.Text.Replace(",", "");
+               int LuongCB = int.Parse(LuongC, NumberStyles.AllowThousands);
+               txtLuongCoBan.Text = string.Format(cu, "{0:N0}",LuongCB);
+            }
         }
     }
 }

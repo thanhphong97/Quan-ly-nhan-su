@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsBacLuong_BUS.cs" />
+    <Compile Include="clsBakup_BUS.cs" />
     <Compile Include="clsBangCap_BUS.cs" />
     <Compile Include="clsBangLuong_BUS.cs" />
     <Compile Include="clsChamCong_BUS.cs" />
@@ -56,7 +57,9 @@
     <Compile Include="clsPhongBan_BUS.cs" />
     <Compile Include="clsQuocTich_BUS.cs" />
     <Compile Include="clsQuyDinhLuong_BUS.cs" />
+    <Compile Include="clsRestore_BUS.cs" />
     <Compile Include="clsThanNhan_BUS.cs" />
+    <Compile Include="clsTheNV_BUS.cs" />
     <Compile Include="clsTinhLuong_BUS.cs" />
     <Compile Include="clsTonGiao_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

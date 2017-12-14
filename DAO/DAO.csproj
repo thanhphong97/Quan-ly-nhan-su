@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsBackup_DAO.cs" />
     <Compile Include="clsBacLuong_DAO.cs" />
     <Compile Include="clsBangCap_DAO.cs" />
     <Compile Include="clsBangLuong_DAO.cs" />
@@ -56,7 +57,9 @@
     <Compile Include="clsPhongBan_DAO.cs" />
     <Compile Include="clsQuocTich_DAO.cs" />
     <Compile Include="clsQuyDinhLuong_DAO.cs" />
+    <Compile Include="clsRestore_DAO.cs" />
     <Compile Include="clsThanNhan_DAO.cs" />
+    <Compile Include="clsTheNV_DAO.cs" />
     <Compile Include="clsTinhLuong_DAO.cs" />
     <Compile Include="clsTonGiao_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

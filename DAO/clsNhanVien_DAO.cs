@@ -60,6 +60,7 @@ namespace DAO
         {
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
             int slnv = ThaoTacDuLieu.LaySoLuong("NHANVIEN", con);
+            ThaoTacDuLieu.DongKetNoi(con);
             return slnv;
         }
         public bool ThemNhanVien(clsNhanVien_DTO nv)
@@ -76,34 +77,60 @@ namespace DAO
             return true;//thêm thành công
         }
 
-        public List<clsNhanVien_DTO> LayDanhSachNhanVien(int dk, string MaNV)
+        public List<clsNhanVien_DTO> LayDanhSachNhanVien(int dk, string MaNV, string MaPB)
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
             
             string  sql = string.Format("SELECT MANV, HO, TEN, NGAYSINH, DIACHI, CMND, GIOITINH, NGUYENQUAN, TINHTHANH, QUANHUYEN, QUOCTICH, DANTOC, TONGIAO, NGAYBATDAU, PHONG, MABAC, MACV, BANGCAP, TRANGTHAI, HINHDAIDIEN FROM NHANVIEN");
+            
             if(MaNV == "")
             {
-                if (dk == 1)
+                if(MaPB != "0")
                 {
-                    sql += string.Format(" WHERE TRANGTHAI = 1");
+                    if (dk == 1)
+                    {
+                        sql += string.Format(" WHERE PHONG = '{0}' AND TRANGTHAI = 1",MaPB);
+                    }
+                    if (dk == -1)
+                    {
+                        sql += string.Format(" WHERE PHONG = '{0}' AND TRANGTHAI = 0",MaPB);
+                    }
                 }
-                if (dk == -1)
+                if(dk == 0 && MaPB != "0")
                 {
-                    sql += string.Format(" WHERE TRANGTHAI = 0");
+                    sql += string.Format(" WHERE PHONG = '{0}'", MaPB);
                 }
             }
             else
             {
-                if (dk == 1)
+                if(MaPB != "0")
                 {
-                    sql += string.Format(" WHERE TRANGTHAI = 1 AND (MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%')", MaNV);
+                    if (dk == 1)
+                    {
+                        sql += string.Format(" WHERE TRANGTHAI = 1 AND PHONG = '{1}' AND  (MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%' )", MaNV, MaPB);
+                    }
+                    if (dk == -1)
+                    {
+                        sql += string.Format(" WHERE TRANGTHAI = 0  AND PHONG = '{1}' AND (MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%')", MaNV, MaPB);
+                    }
+                    if (dk == 0)
+                    {
+                        sql += string.Format(" WHERE PHONG = '{1}' AND (MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%')", MaNV, MaPB);
+                    }
                 }
-                if (dk == -1)
+                else
                 {
-                    sql += string.Format(" WHERE TRANGTHAI = 0 AND (MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%')", MaNV);
+                    if (dk == 1)
+                    {
+                        sql += string.Format(" WHERE TRANGTHAI = 1 AND (MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%')", MaNV);
+                    }
+                    if (dk == -1)
+                    {
+                        sql += string.Format(" WHERE TRANGTHAI = 0 AND (MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%')", MaNV);
+                    }
+                    if (dk == 0)
+                        sql += string.Format(" WHERE MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%'", MaNV);
                 }
-                if(dk == 0)
-                    sql += string.Format(" WHERE MANV LIKE '%{0}%' OR TEN LIKE N'%{0}%'", MaNV);
             }
             sql += "  ORDER BY TEN";
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);

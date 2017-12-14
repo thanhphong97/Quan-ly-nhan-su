@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class ucChamCong : UserControl
     {
+        private List<clsPhongBan_DTO> lsPB;
         private int _Thang;
 
         public int Thang
@@ -43,8 +44,9 @@ namespace GUI
 
         private void btnTaoBangChamCong_Click(object sender, EventArgs e)
         {
-            _Thang = Convert.ToInt32(cboThang.SelectedIndex) + 1;
-            _Nam = Convert.ToInt32(nudNam.Value);
+
+            _Thang = dtpThangNam.Value.Month;
+            _Nam = dtpThangNam.Value.Year;
             if (_Nam > DateTime.Now.Year || DateTime.Now.Year <= _Nam && _Thang > DateTime.Now.Month)
                 MessageBox.Show("Tháng chấm công không hợp lệ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             else
@@ -65,8 +67,8 @@ namespace GUI
             Nam = Convert.ToInt32(r.Cells[2].Value.ToString());
             frmInChamCong frm_InChamCong = new frmInChamCong(this);
             frm_InChamCong.ShowDialog();
-            //clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-            //BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("In bảng chấm công {0}", MaCC));
+            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("In bảng chấm công {0}", MaCC));
         }
 
         private void dgvChamCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -74,6 +76,11 @@ namespace GUI
             if (dgvChamCong.Columns[e.ColumnIndex].Name == "colTenBangChamCong")
             {
                 dgvChamCong.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Bảng chấm công tháng " + dgvChamCong.Rows[e.RowIndex].Cells[1].Value.ToString()+ " năm " + dgvChamCong.Rows[e.RowIndex].Cells[2].Value.ToString();
+            }
+            if(dgvChamCong.Columns[e.ColumnIndex].Name == "colPhong")
+            {
+                clsPhongBan_DTO PB = lsPB.First(u => u.MAPB == e.Value.ToString());
+                e.Value = PB.TENPB;
             }
             
         }
@@ -92,13 +99,11 @@ namespace GUI
         {
             this.Dock = DockStyle.Fill;
             dgvChamCong.AutoGenerateColumns = false;
-            cboThang.SelectedIndex = 0;
-            nudNam.Minimum = 1;
-            nudNam.Maximum = 9999;
-            nudNam.Value = DateTime.Now.Year;
-
             clsChamCong_BUS BUSCC = new clsChamCong_BUS();
             dgvChamCong.DataSource = BUSCC.LayBangChamCong();
+
+            clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
+            lsPB = BUSPB.LayDanhSachPhongBan();
         }
     }
 }
