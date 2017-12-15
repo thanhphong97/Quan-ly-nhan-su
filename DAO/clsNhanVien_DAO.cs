@@ -89,11 +89,11 @@ namespace DAO
                 {
                     if (dk == 1)
                     {
-                        sql += string.Format(" WHERE PHONG = '{0}' AND TRANGTHAI = 1",MaPB);
+                        sql += string.Format(" WHERE PHONG = '{0}' AND TRANGTHAI = 1", MaPB);
                     }
                     if (dk == -1)
                     {
-                        sql += string.Format(" WHERE PHONG = '{0}' AND TRANGTHAI = 0",MaPB);
+                        sql += string.Format(" WHERE PHONG = '{0}' AND TRANGTHAI = 0", MaPB);
                     }
                 }
                 else
