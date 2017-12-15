@@ -66,6 +66,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsChamCong.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsDSNV.cs">
+      <DependentUpon>dsDSNV.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsDSNV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDSNV.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsTheNV.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,6 +103,12 @@
     </Compile>
     <Compile Include="frmInChamCong.Designer.cs">
       <DependentUpon>frmInChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInDanhSachNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDanhSachNV.Designer.cs">
+      <DependentUpon>frmInDanhSachNV.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhongBan.cs">
       <SubType>Form</SubType>
@@ -169,6 +184,9 @@
     <EmbeddedResource Include="frmInChamCong.resx">
       <DependentUpon>frmInChamCong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInDanhSachNV.resx">
+      <DependentUpon>frmInDanhSachNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhongBan.resx">
       <DependentUpon>frmPhongBan.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +202,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptBangLuong.rdlc" />
+    <EmbeddedResource Include="rptDSNV.rdlc" />
     <EmbeddedResource Include="rptInChamCong.rdlc" />
     <EmbeddedResource Include="rptTheNV.rdlc" />
     <EmbeddedResource Include="ucDangNhap.resx">
@@ -225,6 +244,17 @@
     </None>
     <None Include="dsChamCong.xss">
       <DependentUpon>dsChamCong.xsd</DependentUpon>
+    </None>
+    <None Include="dsDSNV.xsc">
+      <DependentUpon>dsDSNV.xsd</DependentUpon>
+    </None>
+    <None Include="dsDSNV.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDSNV.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDSNV.xss">
+      <DependentUpon>dsDSNV.xsd</DependentUpon>
     </None>
     <None Include="dsTheNV.xsc">
       <DependentUpon>dsTheNV.xsd</DependentUpon>

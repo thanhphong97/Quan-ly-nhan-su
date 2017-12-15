@@ -686,5 +686,62 @@ namespace GUI
         {
             TimKiemNhanVien();
         }
+
+        private void btnInDSNV_Click_1(object sender, EventArgs e)
+        {
+            DataTable dataTable = ToDataTable(dgvNhanVien);
+            string Phong = cboPhongBan_TK.SelectedValue.ToString();
+            clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
+            List<clsPhongBan_DTO> lsPB = BUSPB.LayDanhSachPhongBan();
+            foreach(clsPhongBan_DTO pb in lsPB)
+            {
+                if(Phong == "0")
+                {
+                    Phong = "Tất cả "; break;
+                }
+                else if(Phong == pb.MAPB)
+                {
+                    Phong = pb.TENPB; break;
+                }
+                
+
+            }
+            string DieuKien = "";
+            if (radTatCa.Checked)
+                DieuKien = "Còn làm việc và đã nghỉ";
+            else if (radConLamViec.Checked)
+                DieuKien = "Còn làm việc";
+            else // Đã nghỉ
+                DieuKien = "Đã nghỉ";
+
+            frmInDanhSachNV frmInDS = new frmInDanhSachNV(dataTable,DieuKien,Phong);
+            frmInDS.Show();
+
+        }
+
+
+        // Hàm Convert từ dgv sang datable đê dùng cho chức năng in danh sách nhân viên
+        private DataTable ToDataTable(DataGridView dataGridView)
+        {
+            var dt = new DataTable();
+            foreach (DataGridViewColumn dataGridViewColumn in dataGridView.Columns)
+            {
+               
+                    dt.Columns.Add();
+             
+            }
+            var cell = new object[dataGridView.Columns.Count];
+            foreach (DataGridViewRow dataGridViewRow in dataGridView.Rows)
+            {
+                for (int i = 0; i < dataGridViewRow.Cells.Count; i++)
+                {
+                    cell[i] = dataGridViewRow.Cells[i].Value;
+                }
+                dt.Rows.Add(cell);
+            }
+            return dt;
+        }
+
+
     }
 }
