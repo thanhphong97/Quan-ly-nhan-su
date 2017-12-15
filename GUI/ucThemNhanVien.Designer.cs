@@ -170,7 +170,6 @@
             this.btnThemNV = new System.Windows.Forms.Button();
             this.tabNhanVien = new System.Windows.Forms.TabControl();
             this.label19 = new System.Windows.Forms.Label();
-            this.btnInDSNV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -229,7 +228,7 @@
             this.dgvNhanVien.ReadOnly = true;
             this.dgvNhanVien.RowHeadersVisible = false;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(422, 450);
+            this.dgvNhanVien.Size = new System.Drawing.Size(422, 499);
             this.dgvNhanVien.TabIndex = 22;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             this.dgvNhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNhanVien_CellFormatting);
@@ -1161,7 +1160,6 @@
             // 
             // cboDanToc
             // 
-            this.cboDanToc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDanToc.FormattingEnabled = true;
             this.cboDanToc.Location = new System.Drawing.Point(138, 454);
             this.cboDanToc.Name = "cboDanToc";
@@ -1639,29 +1637,12 @@
             this.label19.TabIndex = 49;
             this.label19.Text = "Tìm kiếm nhân viên";
             // 
-            // btnInDSNV
-            // 
-            this.btnInDSNV.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnInDSNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnInDSNV.Image = global::GUI.Properties.Resources.paper_printer;
-            this.btnInDSNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInDSNV.Location = new System.Drawing.Point(10, 634);
-            this.btnInDSNV.Name = "btnInDSNV";
-            this.btnInDSNV.Size = new System.Drawing.Size(422, 43);
-            this.btnInDSNV.TabIndex = 50;
-            this.btnInDSNV.Text = "In danh sách nhân viên";
-            this.btnInDSNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInDSNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInDSNV.UseVisualStyleBackColor = true;
-            this.btnInDSNV.Click += new System.EventHandler(this.btnInDSNV_Click_1);
-            // 
             // ucThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.btnInDSNV);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtMaNV_TK);
             this.Controls.Add(this.label16);
@@ -1833,7 +1814,6 @@
         private System.Windows.Forms.Button btnInTheNV;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cboPhongBan_TK;
-        private System.Windows.Forms.Button btnInDSNV;
 
 
 

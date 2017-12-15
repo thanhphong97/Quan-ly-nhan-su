@@ -46,11 +46,14 @@ namespace GUI
                         dc.ColumnName = "GIOITINH";
                     if (dc.ColumnName == "Column19")
                         dc.ColumnName = "TRANGTHAI";
+                    if (dc.ColumnName == "Column19")
+                        dc.ColumnName = "PHONG";
 
                 }
             }
             this.rptDanhSachNV.LocalReport.ReportEmbeddedResource = "GUI.rptDSNV.rdlc";
             this.rptDanhSachNV.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("dsNV", dt));
+            this.rptDanhSachNV.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paraNguoilap", Program.NhanVien_Login.Ho + " " + Program.NhanVien_Login.Ten, false));
             this.rptDanhSachNV.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paraPhong", Phong, false));
             this.rptDanhSachNV.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("paraTrangThai", DieuKien, false));
             this.rptDanhSachNV.RefreshReport();

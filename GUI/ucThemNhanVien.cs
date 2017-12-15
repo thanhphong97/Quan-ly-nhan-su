@@ -23,6 +23,7 @@ namespace GUI
         private void ucThemNhanVien_Load(object sender, EventArgs e)
         {
             picHinh.Image = Image.FromFile(@"HinhAnh\nv.jpg");
+            //anhDaiDien = @"HinhAnh\nv.jpg";
             LoadCbo();
             //TimKiemNhanVien();
             LoadDGV_NhanVien();
@@ -76,6 +77,8 @@ namespace GUI
             cboTonGiao.DataSource = BUSTG.LayDanhSachTonGiao();
             cboTonGiao.DisplayMember = "TENTG";
             cboTonGiao.ValueMember = "MATG";
+            cboTonGiao.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cboTonGiao.AutoCompleteSource = AutoCompleteSource.ListItems;
             //Mối quan hệ
             clsMoiQuanHe_BUS BUSMQH = new clsMoiQuanHe_BUS();
             //Phòng Ban
@@ -112,6 +115,8 @@ namespace GUI
             cboDanToc.DataSource = BUSDT.LayDSDanToc();
             cboDanToc.ValueMember = "MaDT";
             cboDanToc.DisplayMember = "TenDT";
+            cboDanToc.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cboDanToc.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void LayHeSoLuong(string MaCV, string MaBAC)
@@ -181,7 +186,14 @@ namespace GUI
                 nv.MaCV = cboChucVu.SelectedValue.ToString();
                 nv.MaBAC = cboBacLuong.SelectedValue.ToString();
                 nv.PhongBan = cboPhongBan.SelectedValue.ToString();
-                nv.HINHDAIDIEN = anhDaiDien;
+                if(anhDaiDien != "")
+                {
+                    nv.HINHDAIDIEN = anhDaiDien;
+                }
+                else
+                {
+                    nv.HINHDAIDIEN = @"HinhAnh\nv.jpg";
+                }
                 if (!chkBoViec.Checked)
                     nv.TrangThai = true;
                 else
@@ -203,9 +215,9 @@ namespace GUI
                     MessageBox.Show("Thất bại, Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng điền đầy đủ tất cả các trường", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

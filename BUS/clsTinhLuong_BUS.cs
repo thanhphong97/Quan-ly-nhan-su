@@ -96,7 +96,7 @@ namespace BUS
                         }
 
                         if (CP > 3)
-                            DL = DL - (CP % 3);
+                            DL = DL - (CP % 3);// nghỉ 3 bữa có phép sẽ trừ 1 ngày đi làm
                         int ngayCongChuan = soNgayTrongThang - CN;
                         float LuongCoBan = ((float)QDL.LuongToiThieu * HSBC * HSCV);//Bc: bằng cấp, CV: bậc công việc
                         float TongThuNhap = (LuongCoBan) / ngayCongChuan * DL;//DL là số ngày đi làm

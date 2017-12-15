@@ -39,6 +39,7 @@ namespace GUI
                 grbThongTin.Enabled = false;
                 btnThemHopDong.Enabled = false;
                 btnCapNhatHopDong.Enabled = false;
+                btnLamLai.Enabled = false;
 
             }
 
@@ -48,6 +49,12 @@ namespace GUI
                 btnCapNhatHopDong.Enabled = false;
             else
                 btnCapNhatHopDong.Enabled = true;
+            btnThemHopDong.Enabled = false;
+
+            if(cboLoaiHD.SelectedIndex == 1)
+            {
+                dtpNgayKetThuc.Enabled = false;
+            }
         }
 
 
@@ -104,7 +111,7 @@ namespace GUI
             HopDong.ThoiGianLam = 8; // Thời gian làm bao nhiêu giờ 1 ngày
             HopDong.TrangBi = txtTrangBiLD.Text;
             HopDong.NgayKy = dtpNgayKy.Value; // Lấy ngày kí hợp đồng là ngày hệ thống
-
+            
             if (KiemTra && KiemTraDuLieu())
             {
                 clsHopDong_BUS BUSHD = new clsHopDong_BUS();
@@ -127,10 +134,12 @@ namespace GUI
             if (cboLoaiHD.SelectedIndex == 1) // Là hợp đồng Không xác định thời hạn
             {
                 dtpNgayKetThuc.Enabled = false;
+                
             }
             else
             {
                 dtpNgayKetThuc.Enabled = true;
+                dtpNgayKetThuc.Value = DateTime.Now;
             }
         }
 
@@ -160,6 +169,7 @@ namespace GUI
                         HopDong.LoaiHD = "Xác định thời hạn";
                         KiemTra = true;
                     }
+                    
                 }
                 if (cboLoaiHD.SelectedIndex == 1)
                 {
@@ -182,6 +192,7 @@ namespace GUI
                         HopDong.LoaiHD = "Thời vụ";
                         KiemTra = true;
                     }
+                    
                 }
 
                 HopDong.DiaDiemLam = txtDiaDiem.Text;           
@@ -189,7 +200,12 @@ namespace GUI
                 HopDong.ThoiGianLam = Convert.ToDouble(nudThoiGian.Value); // Thời gian làm bao nhiêu giờ 1 ngày
                 HopDong.TrangBi = txtTrangBiLD.Text;   
                 HopDong.NgayKy = dtpNgayKy.Value; // Lấy ngày kí hợp đồng là ngày hệ thống
-
+                
+                if(cboLoaiHD.SelectedIndex == 1)
+                {
+                    DateTime dt = new DateTime(1900, 1, 1);
+                    HopDong.NgayKetThuc = dt;
+                }
                 if (KiemTra && KiemTraDuLieu())
                 {
                     clsHopDong_BUS BUSHD = new clsHopDong_BUS();
@@ -215,7 +231,6 @@ namespace GUI
         private void dgvHopDongNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             LoadThongTinHopDong();
-            btnThemHopDong.Enabled = false;
             
         }
 
@@ -235,29 +250,33 @@ namespace GUI
                 DataGridViewRow r = dgvHopDongNV.CurrentRow;
                 cboLoaiHD.SelectedItem = r.Cells["colLoaiHD"].Value;
                 dtpNgayBatDau.Value = Convert.ToDateTime(r.Cells["colNgayBatDau"].Value);
-                try
-                {
-                    dtpNgayKetThuc.Enabled = true;
-                    dtpNgayKetThuc.Value = Convert.ToDateTime(dgvHopDongNV.CurrentRow.Cells["colNgayKetThuc"].Value);
-                }
-                catch
-                {
-                    dtpNgayKetThuc.Enabled = false;
-                }
                 txtDiaDiem.Text = r.Cells["colDiaDiem"].Value.ToString();
-                
-                
                 txtCongViec.Text = r.Cells["colCongViec"].Value.ToString();
                 nudThoiGian.Value = Convert.ToDecimal(r.Cells["colThoiGian"].Value);
                 txtTrangBiLD.Text = r.Cells["colTrangBi"].Value.ToString();
                 dtpNgayKy.Value = Convert.ToDateTime(r.Cells["colNgayKy"].Value);
+                btnThemHopDong.Enabled = false;
+                btnCapNhatHopDong.Enabled = true;
+                string loaihd = r.Cells["colLoaiHD"].Value.ToString();
+                if (loaihd.Equals("Không xác định thời hạn"))
+                {
+                    dtpNgayKetThuc.Enabled = false;
+                }
+                else
+                    dtpNgayKetThuc.Enabled = true;
+                dtpNgayKetThuc.Value = Convert.ToDateTime(r.Cells["colNgayKetThuc"].Value); 
+
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void btnLamLai_Click(object sender, EventArgs e)
         {
             XoaDuLieu();
             btnThemHopDong.Enabled = true;
+            btnCapNhatHopDong.Enabled = false;
         }
 
         private void XoaDuLieu()
@@ -274,7 +293,7 @@ namespace GUI
             try
             {
                 if (dgvHopDongNV.Columns[e.ColumnIndex].Name == "colNgayKetThuc")
-                    if ((DateTime)dgvHopDongNV.Rows[e.RowIndex].Cells["colNgayKetThuc"].Value == kxd)
+                    if ((DateTime)dgvHopDongNV.Rows[e.RowIndex].Cells["colNgayKetThuc"].Value == kxd || (DateTime)dgvHopDongNV.Rows[e.RowIndex].Cells["colNgayKetThuc"].Value == Convert.ToDateTime("1900-01-01 00:00:00.000"))
                     {
                         e.Value = "Không xác định";
                     }

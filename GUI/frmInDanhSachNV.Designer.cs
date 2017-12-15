@@ -36,17 +36,17 @@
             this.rptDanhSachNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rptDanhSachNV.Location = new System.Drawing.Point(0, 0);
             this.rptDanhSachNV.Name = "rptDanhSachNV";
-            this.rptDanhSachNV.Size = new System.Drawing.Size(645, 380);
+            this.rptDanhSachNV.Size = new System.Drawing.Size(931, 550);
             this.rptDanhSachNV.TabIndex = 0;
             // 
             // frmInDanhSachNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 380);
+            this.ClientSize = new System.Drawing.Size(931, 550);
             this.Controls.Add(this.rptDanhSachNV);
             this.Name = "frmInDanhSachNV";
-            this.Text = "In danh sách nhân viên";
+            this.Text = "Danh sách nhân viên";
             this.Load += new System.EventHandler(this.frmInDanhSachNV_Load);
             this.ResumeLayout(false);
 

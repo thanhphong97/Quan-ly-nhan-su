@@ -293,6 +293,8 @@ namespace GUI {
             
             private global::System.Data.DataColumn columnHINHDAIDIEN;
             
+            private global::System.Data.DataColumn columnPHONG;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DanhSachNhanVienDataTable() {
@@ -384,6 +386,14 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PHONGColumn {
+                get {
+                    return this.columnPHONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -419,7 +429,7 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanhSachNhanVienRow AddDanhSachNhanVienRow(string MANV, string HO, string TEN, System.DateTimeOffset NGAYSINH, bool GIOITINH, bool TRANGTHAI, string HINHDAIDIEN) {
+            public DanhSachNhanVienRow AddDanhSachNhanVienRow(string MANV, string HO, string TEN, System.DateTimeOffset NGAYSINH, bool GIOITINH, bool TRANGTHAI, string HINHDAIDIEN, string PHONG) {
                 DanhSachNhanVienRow rowDanhSachNhanVienRow = ((DanhSachNhanVienRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MANV,
@@ -428,7 +438,8 @@ namespace GUI {
                         NGAYSINH,
                         GIOITINH,
                         TRANGTHAI,
-                        HINHDAIDIEN};
+                        HINHDAIDIEN,
+                        PHONG};
                 rowDanhSachNhanVienRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDanhSachNhanVienRow);
                 return rowDanhSachNhanVienRow;
@@ -458,6 +469,7 @@ namespace GUI {
                 this.columnGIOITINH = base.Columns["GIOITINH"];
                 this.columnTRANGTHAI = base.Columns["TRANGTHAI"];
                 this.columnHINHDAIDIEN = base.Columns["HINHDAIDIEN"];
+                this.columnPHONG = base.Columns["PHONG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,6 +489,8 @@ namespace GUI {
                 base.Columns.Add(this.columnTRANGTHAI);
                 this.columnHINHDAIDIEN = new global::System.Data.DataColumn("HINHDAIDIEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHINHDAIDIEN);
+                this.columnPHONG = new global::System.Data.DataColumn("PHONG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPHONG);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -731,6 +745,22 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PHONG {
+                get {
+                    try {
+                        return ((string)(this[this.tableDanhSachNhanVien.PHONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PHONG\' in table \'DanhSachNhanVien\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanhSachNhanVien.PHONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMANVNull() {
                 return this.IsNull(this.tableDanhSachNhanVien.MANVColumn);
             }
@@ -811,6 +841,18 @@ namespace GUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetHINHDAIDIENNull() {
                 this[this.tableDanhSachNhanVien.HINHDAIDIENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPHONGNull() {
+                return this.IsNull(this.tableDanhSachNhanVien.PHONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPHONGNull() {
+                this[this.tableDanhSachNhanVien.PHONGColumn] = global::System.Convert.DBNull;
             }
         }
         

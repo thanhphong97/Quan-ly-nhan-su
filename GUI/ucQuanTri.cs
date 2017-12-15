@@ -31,9 +31,17 @@ namespace GUI
             
         }
         #region Kiểm tr các thứ
-        private bool KiemTraDayDu()
+        private bool KiemTraDayDu_Them()
         {
             if (cboNhanVien.Text == "" || txtTenDN.Text == "" || txtMatKhau.Text == "")
+            {
+                return false;
+            }
+            return true;
+        }
+        private bool KiemTraDayDu_CapNhat()
+        {
+            if (cboNhanVien.Text == "")
             {
                 return false;
             }
@@ -100,7 +108,7 @@ namespace GUI
             {
                 if (KiemTraMaNV())
                 {
-                    if (KiemTraDayDu())
+                    if (KiemTraDayDu_Them())
                     {
                         if (KiemTraTrungKhopMatKhau())
                         {
@@ -191,7 +199,7 @@ namespace GUI
                     chkTrangThai.Checked = true;
                 else
                     chkTrangThai.Checked = false;
-                txtMatKhau.Text = txtXacNhanMK.Text = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();
+                //txtMatKhau.Text = txtXacNhanMK.Text = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();
             }
             catch
             {
@@ -223,7 +231,7 @@ namespace GUI
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (KiemTraDayDu())
+            if (KiemTraDayDu_CapNhat())
             {
                 if (KiemTraTrungKhopMatKhau())
                 {
@@ -288,6 +296,8 @@ namespace GUI
             cboPhongBan.DataSource = lsPhongBan;
             cboPhongBan.DisplayMember = "TENPB";
             cboPhongBan.ValueMember = "MAPB";
+            cboPhongBan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cboPhongBan.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
         
         private void LoadCBO_NhanVien(string MaPB)

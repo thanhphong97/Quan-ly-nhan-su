@@ -13,15 +13,16 @@ namespace DAO
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
             string sql = "";
-            //DateTime dt = new DateTime(0001, 1, 1);
-            //if (HD.NgayKetThuc == dt.Date)
-            //{
-            //    sql = string.Format("INSERT INTO HOPDONGLAODONG(MAHDLD,MANV,LOAIHD,TUNGAY,DIADIEMLAM,CONGVIEC,THOIGIANLAM,TRANGBILAODONG,NGAYKY) VALUES  ('{0}','{1}',N'{2}','{3}',N'{4}',N'{5}',N'{6}','{7}',N'{8}',{9},{10},'{11}')", "HDLD" + (ThaoTacDuLieu.LaySoLuong("HOPDONGLAODONG", conn) + 1).ToString(), HD.MaNV, HD.LoaiHD, HD.NgayBatDau, HD.DiaDiemLam, HD.CongViec, HD.ThoiGianLam, HD.TrangBi, HD.NgayKy);
-            //}
-            //else
-            //{
-                sql = string.Format("INSERT INTO HOPDONGLAODONG(MAHDLD,MANV,LOAIHD,TUNGAY,DENNGAY,DIADIEMLAM,CONGVIEC,THOIGIANLAM,TRANGBILAODONG,NGAYKY) VALUES  ('{0}','{1}',N'{2}','{3}','{4}',N'{5}',N'{6}',{7},N'{8}','{9}')", "HDLD" + (ThaoTacDuLieu.DemSoLuong("SELECT COUNT(*) FROM HOPDONGLAODONG") + 1).ToString(), HD.MaNV, HD.LoaiHD, HD.NgayBatDau, HD.NgayKetThuc, HD.DiaDiemLam, HD.CongViec, HD.ThoiGianLam, HD.TrangBi, HD.NgayKy);
-            //}
+            DateTime dt = new DateTime(1900, 1, 1);
+            if (HD.NgayKetThuc == dt.Date)
+            {
+                sql = string.Format("INSERT INTO HOPDONGLAODONG(MAHDLD,MANV,LOAIHD,TUNGAY,DIADIEMLAM,CONGVIEC,THOIGIANLAM,TRANGBILAODONG,NGAYKY,DENNGAY) VALUES  ('{0}','{1}',N'{2}','{3}',N'{4}',N'{5}',N'{6}','{7}',N'{8}',{9},{10},'{11}')", "HDLD" + (ThaoTacDuLieu.LaySoLuong("HOPDONGLAODONG", conn) + 1).ToString(), HD.MaNV, HD.LoaiHD, HD.NgayBatDau, HD.DiaDiemLam, HD.CongViec, HD.ThoiGianLam, HD.TrangBi, HD.NgayKy,HD.NgayKetThuc);
+            }
+            else
+            {
+                string empty = "";
+                sql = string.Format("INSERT INTO HOPDONGLAODONG(MAHDLD,MANV,LOAIHD,TUNGAY,DENNGAY,DIADIEMLAM,CONGVIEC,THOIGIANLAM,TRANGBILAODONG,NGAYKY) VALUES  ('{0}','{1}',N'{2}','{3}','{4}',N'{5}',N'{6}',{7},N'{8}','{9}')", "HDLD" + (ThaoTacDuLieu.DemSoLuong("SELECT COUNT(*) FROM HOPDONGLAODONG") + 1).ToString(), HD.MaNV, HD.LoaiHD, HD.NgayBatDau, empty, HD.DiaDiemLam, HD.CongViec, HD.ThoiGianLam, HD.TrangBi, HD.NgayKy);
+            }
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             int kq = cmd.ExecuteNonQuery();
             ThaoTacDuLieu.DongKetNoi(conn);
@@ -69,10 +70,10 @@ namespace DAO
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
             string sql = "";
-            DateTime dt = new DateTime(0001, 1, 1);
+            DateTime dt = new DateTime(1900, 1, 1);
             if (HD.NgayKetThuc == dt.Date)
             {
-                sql = string.Format("UPDATE HOPDONGLAODONG SET LOAIHD = N'{0}', TUNGAY = '{1}', DIADIEMLAM = N'{2}', CONGVIEC = N'{3}', THOIGIANLAM = {4}, TRANGBILAODONG = N'{5}', NGAYKY = '{6}' WHERE MAHDLD = '{7}'", HD.LoaiHD, HD.NgayBatDau, HD.DiaDiemLam, HD.CongViec, HD.ThoiGianLam, HD.NgayKy, HD.MaHDLD);
+                sql = string.Format("UPDATE HOPDONGLAODONG SET LOAIHD = N'{0}', TUNGAY = '{1}', DIADIEMLAM = N'{2}', CONGVIEC = N'{3}', THOIGIANLAM = {4}, TRANGBILAODONG = N'{5}', NGAYKY = '{6}', DENNGAY = '' WHERE MAHDLD = '{7}'", HD.LoaiHD, HD.NgayBatDau, HD.DiaDiemLam, HD.CongViec, HD.ThoiGianLam, HD.TrangBi, HD.NgayKy,HD.MaHDLD);
             }
             else
             {

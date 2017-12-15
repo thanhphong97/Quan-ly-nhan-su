@@ -87,7 +87,7 @@ namespace GUI
             if(quyen == "L3")
             {
                 //chỉ tra cứu ds nhân viên
-                tbtnQuanTri.Enabled = tbtLuong.Enabled = tbtnQuyDInhLuong.Enabled = false;
+                tbtnQuanTri.Enabled = tbtLuong.Enabled = tbtnQuyDInhLuong.Enabled = btnTienLuong.Enabled = false;
             }
         }
 

@@ -70,7 +70,16 @@ namespace DAO
             if(KiemTraMaNVHopLe(nd.MANV))
             {
                 SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-                string sql = string.Format("UPDATE NGUOIDUNG SET TAIKHOAN = '{0}', MATKHAU = '{1}', LOAIND = '{2}',TRANGTHAI = '{4}' WHERE MANV = '{3}'", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
+                string sql = "";
+                if(nd.MATKHAU != "")
+                {
+                    sql = string.Format("UPDATE NGUOIDUNG SET TAIKHOAN = '{0}', MATKHAU = '{1}', LOAIND = '{2}',TRANGTHAI = '{4}' WHERE MANV = '{3}'", nd.TAIKHOAN, nd.MATKHAU, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
+                }
+                else
+                {
+                    sql = string.Format("UPDATE NGUOIDUNG SET TAIKHOAN = '{0}', LOAIND = '{1}',TRANGTHAI = '{3}' WHERE MANV = '{2}'", nd.TAIKHOAN, nd.LOAIND, nd.MANV, nd.TRANGTHAI);
+                }
+               
                 SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, con);
                 int rowaff = cmd.ExecuteNonQuery();
                 ThaoTacDuLieu.DongKetNoi(con);
