@@ -1653,6 +1653,7 @@
             this.btnInDSNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInDSNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInDSNV.UseVisualStyleBackColor = true;
+            this.btnInDSNV.Click += new System.EventHandler(this.btnInDSNV_Click_1);
             // 
             // ucThemNhanVien
             // 

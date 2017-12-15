@@ -33,6 +33,7 @@ namespace GUI
         {
             MessageBoxManager.Yes = "Có";
             MessageBoxManager.No = "Không";
+            MessageBoxManager.Cancel = "Hủy bỏ";
             MessageBoxManager.Register();
         }
     }

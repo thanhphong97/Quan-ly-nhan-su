@@ -88,7 +88,7 @@ namespace GUI
                 }
                 
             }
-            else if(ucTL.Nam == DateTime.Now.Year && ucTL.Thang < DateTime.Now.Month)
+            else 
             {
                 for (var i = 1; i <= DayInMonth; i++)
                 {
