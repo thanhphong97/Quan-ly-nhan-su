@@ -17,6 +17,7 @@ namespace GUI
     public partial class ucQuanTri : UserControl
     {
         private static List<clsPhongBan_DTO> lsPhongBan;
+        private int ThoiGianHienThongBao = 0;
         public ucQuanTri()
         {
             InitializeComponent();
@@ -55,20 +56,29 @@ namespace GUI
         }
         private bool KiemTraMaNV()
         {
-            string MaNV = cboNhanVien.SelectedValue.ToString();
-            clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
-            bool kq = bus.KiemTraTonTai(MaNV, 1);
-            if (kq)//MaNV này chưa được cấp tài khoản
+            string MaNV = "";
+            try
             {
-                btnThem.Enabled = true;
-                lblThongBao_MaNV.Visible = false;
+                MaNV = cboNhanVien.SelectedValue.ToString();
             }
-            else//MaNV này đã được cấp tài khoản
+            catch (Exception ex)
             {
-                btnThem.Enabled = false;
-                lblThongBao_MaNV.Visible = true;
+                MessageBox.Show(ex.Message, "Thông báo");
             }
-            return kq;
+               
+                clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
+                bool kq = bus.KiemTraTonTai(MaNV, 1);
+                if (kq)//MaNV này chưa được cấp tài khoản
+                {
+                    btnThem.Enabled = true;
+                    lblThongBao_MaNV.Visible = false;
+                }
+                else//MaNV này đã được cấp tài khoản
+                {
+                    btnThem.Enabled = false;
+                    lblThongBao_MaNV.Visible = true;
+                }
+                return kq;
         }
         private bool KiemTraTenDN()
         {
@@ -128,6 +138,7 @@ namespace GUI
                                 //MessageBox.Show("Tao nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
                                 BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Tạo người dùng {0} có mã nhân viên {1}", nd.TAIKHOAN, nd.MANV));
+                                timer1.Start();
                                 LoadDGV_NguoiDung();
                                 return;
                             }
@@ -199,11 +210,9 @@ namespace GUI
                     chkTrangThai.Checked = true;
                 else
                     chkTrangThai.Checked = false;
-                //txtMatKhau.Text = txtXacNhanMK.Text = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();
             }
-            catch
+            catch 
             {
-
             }
 
         }
@@ -280,9 +289,11 @@ namespace GUI
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            LoadDGV_NguoiDung();
             XoaTextBox();
             XoaThongBao();
-            LoadDGV_NguoiDung();
+            grbPhanQuyen.Enabled = true;
+            btnCapNhat.Enabled = false;
         }
         private void XoaTextBox()
         {
@@ -296,8 +307,6 @@ namespace GUI
             cboPhongBan.DataSource = lsPhongBan;
             cboPhongBan.DisplayMember = "TENPB";
             cboPhongBan.ValueMember = "MAPB";
-            cboPhongBan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cboPhongBan.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
         
         private void LoadCBO_NhanVien(string MaPB)
@@ -307,6 +316,8 @@ namespace GUI
             cboNhanVien.DataSource = lsNhanVien;
             cboNhanVien.DisplayMember = "Ho";
             cboNhanVien.ValueMember = "MaNV";
+            cboNhanVien.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cboNhanVien.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void cboPhongBan_SelectedValueChanged(object sender, EventArgs e)
@@ -329,11 +340,7 @@ namespace GUI
 
         private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvNhanVien.Rows.Count != 0)
-            {
-                LoadDuLieuNguoiDung();
-                XoaThongBao();
-            }
+           
         }
         //Backup db
         private void btnBackup_Click(object sender, EventArgs e)
@@ -420,7 +427,20 @@ namespace GUI
             if (dgvNhanVien.Rows.Count != 0)
             {
                 LoadDuLieuNguoiDung();
+                btnCapNhat.Enabled = true;
                 XoaThongBao();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ThoiGianHienThongBao++;
+            lblThanhCong.Visible = true;
+            if(ThoiGianHienThongBao == 18)
+            {
+                ThoiGianHienThongBao = 0;
+                timer1.Stop();
+                lblThanhCong.Visible = false;
             }
         }
        

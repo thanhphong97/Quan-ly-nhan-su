@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -81,6 +82,8 @@
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnRestore = new System.Windows.Forms.Button();
+            this.lblThanhCong = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbQuanTri.SuspendLayout();
             this.tpThemNguoiDung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -111,6 +114,7 @@
             // tpThemNguoiDung
             // 
             this.tpThemNguoiDung.BackColor = System.Drawing.SystemColors.Control;
+            this.tpThemNguoiDung.Controls.Add(this.lblThanhCong);
             this.tpThemNguoiDung.Controls.Add(this.lblThongBao_TK);
             this.tpThemNguoiDung.Controls.Add(this.lblThongBao_MaNV);
             this.tpThemNguoiDung.Controls.Add(this.chkTrangThai);
@@ -190,7 +194,6 @@
             this.dgvNhanVien.TabIndex = 22;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             this.dgvNhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNhanVien_CellFormatting);
-            this.dgvNhanVien.SelectionChanged += new System.EventHandler(this.dgvNhanVien_SelectionChanged);
             // 
             // colMANV
             // 
@@ -281,7 +284,6 @@
             // 
             // cboNhanVien
             // 
-            this.cboNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNhanVien.FormattingEnabled = true;
             this.cboNhanVien.Location = new System.Drawing.Point(180, 86);
             this.cboNhanVien.Name = "cboNhanVien";
@@ -684,6 +686,22 @@
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
+            // lblThanhCong
+            // 
+            this.lblThanhCong.AutoSize = true;
+            this.lblThanhCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblThanhCong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblThanhCong.Location = new System.Drawing.Point(586, 465);
+            this.lblThanhCong.Name = "lblThanhCong";
+            this.lblThanhCong.Size = new System.Drawing.Size(165, 25);
+            this.lblThanhCong.TabIndex = 26;
+            this.lblThanhCong.Text = "Thêm thành công";
+            this.lblThanhCong.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ucQuanTri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -765,6 +783,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblThanhCong;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }

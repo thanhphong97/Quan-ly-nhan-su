@@ -146,7 +146,7 @@ namespace GUI
             cboTrinhDo.SelectedValue = "";
             cboTonGiao.SelectedValue = "";
             cboDanToc.SelectedValue = "";
-
+            picHinh.ImageLocation = @"HinhAnh\nv.jpg";
             rtbNguyenQuan.Text = "";
             cboBacLuong.SelectedValue = "";
             cboQuocTich.SelectedValue = "";
@@ -347,7 +347,7 @@ namespace GUI
                     chkBoViec.Checked = false;
                 if (dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value != null)
                 {
-                    picHinh.Image = Image.FromFile(dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value.ToString());
+                    picHinh.ImageLocation = dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value.ToString();
                 }
                 else
                 {
