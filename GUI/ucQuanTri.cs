@@ -135,7 +135,6 @@ namespace GUI
                             bool kq = bus.TaoTaiKhoan(nd);
                             if (kq)
                             {//thành công
-                                //MessageBox.Show("Tao nguời dùng " + nd.TAIKHOAN + " Thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
                                 BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Tạo người dùng {0} có mã nhân viên {1}", nd.TAIKHOAN, nd.MANV));
                                 timer1.Start();
@@ -183,16 +182,18 @@ namespace GUI
                 if (Quyen == "Quản Lý" || Quyen == "L1")
                 {  
                     radQuanLy.Checked = true;
-                    chkTrangThai.Enabled = false; // không cho phép 
-                    radNhanVienKeToan.Enabled = false;
-                    radQuanLy.Enabled = false;
-                    radTraCuu.Enabled = false;
+                    //chkTrangThai.Enabled = false; // không cho phép 
+                    //radNhanVienKeToan.Enabled = false;
+                    //radQuanLy.Enabled = false;
+                    //radTraCuu.Enabled = false;
+                    btnCapNhat.Enabled = false;
                     goto LoadThongTin;
                 }
-                chkTrangThai.Enabled = true;
-                radNhanVienKeToan.Enabled = true;
-                radQuanLy.Enabled = true;
-                radTraCuu.Enabled = true;
+                btnCapNhat.Enabled = true;
+                //chkTrangThai.Enabled = true;
+                //radNhanVienKeToan.Enabled = true;
+                //radQuanLy.Enabled = true;
+                //radTraCuu.Enabled = true;
                 if (Quyen == "Kế Toán" || Quyen == "L2")
                     radNhanVienKeToan.Checked = true;
                 else if (Quyen == "Tra Cứu" || Quyen == "L3")
@@ -292,7 +293,6 @@ namespace GUI
             LoadDGV_NguoiDung();
             XoaTextBox();
             XoaThongBao();
-            grbPhanQuyen.Enabled = true;
             btnCapNhat.Enabled = false;
         }
         private void XoaTextBox()
@@ -427,7 +427,6 @@ namespace GUI
             if (dgvNhanVien.Rows.Count != 0)
             {
                 LoadDuLieuNguoiDung();
-                btnCapNhat.Enabled = true;
                 XoaThongBao();
             }
         }

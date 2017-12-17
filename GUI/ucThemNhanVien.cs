@@ -23,9 +23,7 @@ namespace GUI
         private void ucThemNhanVien_Load(object sender, EventArgs e)
         {
             picHinh.Image = Image.FromFile(@"HinhAnh\nv.jpg");
-            //anhDaiDien = @"HinhAnh\nv.jpg";
             LoadCbo();
-            //TimKiemNhanVien();
             LoadDGV_NhanVien();
             this.radNam.Checked = true;
             cboChucVu.SelectedValue = 0;
@@ -72,7 +70,6 @@ namespace GUI
             cboQuocTich.DisplayMember = "TENQT";
             cboQuocTich.ValueMember = "MAQT";
             //tôn giáo
-
             clsTonGiao_BUS BUSTG = new clsTonGiao_BUS();
             cboTonGiao.DataSource = BUSTG.LayDanhSachTonGiao();
             cboTonGiao.DisplayMember = "TENTG";
@@ -146,7 +143,8 @@ namespace GUI
             cboTrinhDo.SelectedValue = "";
             cboTonGiao.SelectedValue = "";
             cboDanToc.SelectedValue = "";
-            picHinh.ImageLocation = @"HinhAnh\nv.jpg";
+            anhDaiDien = @"HinhAnh\nv.jpg";
+            picHinh.Image = Image.FromFile(anhDaiDien);
             rtbNguyenQuan.Text = "";
             cboBacLuong.SelectedValue = "";
             cboQuocTich.SelectedValue = "";
@@ -176,12 +174,10 @@ namespace GUI
                 nv.TonGiao = cboTonGiao.SelectedValue.ToString();
                 nv.NguyenQuan = rtbNguyenQuan.Text;
                 nv.DanToc = cboDanToc.SelectedValue.ToString();
-
                 nv.QuocTich = cboQuocTich.SelectedValue.ToString();
                 nv.TinhThanh = cboTinh.SelectedValue.ToString();
                 nv.QuanHuyen = cboQuanHuyen.SelectedValue.ToString();
                 nv.DiaChiThuongTru = rtbSoNhaTenDuong.Text;
-
                 nv.NgayBatDauLamViec = dtpNgayVaoLam.Value;
                 nv.MaCV = cboChucVu.SelectedValue.ToString();
                 nv.MaBAC = cboBacLuong.SelectedValue.ToString();
@@ -217,14 +213,12 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show( "Vui lòng điền đủ các trường. \n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-
             try
             {
                 clsNhanVien_DTO nv = new clsNhanVien_DTO();
@@ -259,9 +253,8 @@ namespace GUI
                 {
                     nv.TrangThai = false;//nghi viec
                     clsNguoiDung_BUS BUSND = new clsNguoiDung_BUS();
-                    BUSND.CapNhatTaiKhoan(nv.TrangThai, nv.MaNV);
+                    BUSND.CapNhatTaiKhoan(nv.TrangThai, nv.MaNV);//Chặn tài khoản của người này đăng nhập
                 }
-                    
                 clsNhanVien_BUS bus = new clsNhanVien_BUS();
                 bool kq = bus.CapNhatThongTinNhanVien(nv);
                 if (kq)
@@ -276,9 +269,9 @@ namespace GUI
                     MessageBox.Show("Thất bại, Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng điền đầy đủ tất cả các trường", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng điền đầy đủ tất cả các trường\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             //
         }
@@ -347,13 +340,14 @@ namespace GUI
                     chkBoViec.Checked = false;
                 if (dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value != null)
                 {
-                    picHinh.ImageLocation = dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value.ToString();
+                    anhDaiDien = dgvNhanVien.SelectedRows[0].Cells["colHinhAnh"].Value.ToString();
+                    picHinh.Image = Image.FromFile(anhDaiDien);
+                    
                 }
                 else
                 {
                     picHinh.Image = Image.FromFile(@"HinhAnh\nv.jpg");
                 }
-                
             }
             catch 
             {
@@ -568,7 +562,6 @@ namespace GUI
             }
         }
 
-
         private void btnThemNV_EnabledChanged(object sender, EventArgs e)
         {
             if (btnThemNV.Enabled)
@@ -605,11 +598,6 @@ namespace GUI
             catch { }
         }
 
-        private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
-        {
-                DocThongTinTuDGV();
-        }
-
         private void cboChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
             //load cbo Phòng ban theo chức vụ
@@ -618,7 +606,6 @@ namespace GUI
             cboPhongBan.DisplayMember = "TENPB";
             cboPhongBan.ValueMember = "MAPB";
         }
-
         private void dgvThanNhan_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             try
@@ -639,9 +626,6 @@ namespace GUI
 
             }
         }
-
-       
-
         private void cboQuocTich_SelectionChangeCommitted(object sender, EventArgs e)
         {
             //nếu quốc tịch là nước ngoài => dân tộc = khác
@@ -649,12 +633,10 @@ namespace GUI
             if (QuocTich != "QT1")
                 cboDanToc.SelectedValue = "DT0";
         }
-
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
                 DocThongTinTuDGV();
         }
-        
         private void picHinh_Click(object sender, EventArgs e)
         {
             OpenFileDialog fd = new OpenFileDialog();
@@ -672,7 +654,7 @@ namespace GUI
                 }
             }
         }
-
+        
         private void btnInTheNV_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dgvNhanVien.CurrentRow;
@@ -686,20 +668,12 @@ namespace GUI
                 frmTheNV frm = new frmTheNV(manv);
                 frm.Show();
             }
-            
         }
-
-        private void btnInDSNV_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cboPhongBan_TK_SelectionChangeCommitted(object sender, EventArgs e)
         {
             TimKiemNhanVien();
         }
-
-        private void btnInDSNV_Click_1(object sender, EventArgs e)
+        private void btnInDSNV_Click(object sender, EventArgs e)
         {
             DataTable dataTable = ToDataTable(dgvNhanVien);
             string Phong = cboPhongBan_TK.SelectedValue.ToString();
@@ -715,8 +689,6 @@ namespace GUI
                 {
                     Phong = pb.TENPB; break;
                 }
-                
-
             }
             string DieuKien = "";
             if (radTatCa.Checked)
@@ -730,17 +702,13 @@ namespace GUI
             frmInDS.Show();
 
         }
-
-
         // Hàm Convert từ dgv sang datable đê dùng cho chức năng in danh sách nhân viên
         private DataTable ToDataTable(DataGridView dataGridView)
         {
             var dt = new DataTable();
             foreach (DataGridViewColumn dataGridViewColumn in dataGridView.Columns)
             {
-               
                     dt.Columns.Add();
-             
             }
             var cell = new object[dataGridView.Columns.Count];
             foreach (DataGridViewRow dataGridViewRow in dataGridView.Rows)
@@ -754,6 +722,11 @@ namespace GUI
             return dt;
         }
 
+        private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
+        {
+            DocThongTinTuDGV();
+        }
 
+        //////////////////////////
     }
 }

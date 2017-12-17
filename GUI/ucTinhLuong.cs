@@ -30,13 +30,10 @@ namespace GUI
             cboPhongBan.DisplayMember = "TENPB";
             cboPhongBan.ValueMember = "MAPB";
         }
-        private List<clsTinhLuong_DTO> lsBangLuong;
         private void loadDSTIenLuong()
         {
-
             clsTinhLuong_BUS bus = new clsTinhLuong_BUS();
-
-            lsBangLuong = bus.lsBangLuong(dtpThangNam.Value.Year, dtpThangNam.Value.Month, cboPhongBan.SelectedValue.ToString());
+            List<clsTinhLuong_DTO> lsBangLuong = bus.lsBangLuong(dtpThangNam.Value.Year, dtpThangNam.Value.Month, cboPhongBan.SelectedValue.ToString());
             if (lsBangLuong.Count > 0)
             {
                 dgvTienLuong.DataSource = lsBangLuong;
@@ -51,7 +48,15 @@ namespace GUI
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
-            loadDSTIenLuong();
+            try
+            {
+                loadDSTIenLuong();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
+            
         }
 
         private void txtNam_KeyPress(object sender, KeyPressEventArgs e)

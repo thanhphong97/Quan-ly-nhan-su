@@ -28,7 +28,7 @@ namespace DAO
             ThaoTacDuLieu.DongKetNoi(con);
             return HSCV;
         }
-        public float LayHeSoLuongTheoBang(string MaNV)
+        public float LayHeSoLuongTheoBangCap(string MaNV)
         {
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
             string sql_HeSoBangCap = string.Format("select HESO from NHANVIEN, BANGCAP where NHANVIEN.BANGCAP = BANGCAP.MABC and NHANVIEN.MANV = '{0}'", MaNV);

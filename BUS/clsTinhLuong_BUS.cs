@@ -27,7 +27,7 @@ namespace BUS
                     //nếu null khoong cho gán
                     clsTinhLuong_DTO Luong = new clsTinhLuong_DTO();
                     DataRow r = BangLuong.Rows[i];
-                    Luong.MaNV = r["MANV"].ToString(); ;
+                    Luong.MaNV = r["MANV"].ToString();
                     Luong.HoTen = r["HO"].ToString() + " " + r["TEN"].ToString();
                     Luong.SoNgayDiLam = (int)r["SONGAYDILAM"];
                     Luong.SoNgayNghiCoPhep = (int)r["SONGAYNGHICOPHEP"];
@@ -43,7 +43,7 @@ namespace BUS
             return lsBangLuongTheoBangCong;
         }
         public DataTable LayBangLuongBaoCao(int Nam, int Thang, string MaPhong)
-        {
+        {//dùng cho in report
             clsBangLuong_DAO daoBangLuong = new clsBangLuong_DAO();
             return daoBangLuong.layBangLuong(Nam, Thang, MaPhong);
         }
@@ -58,18 +58,17 @@ namespace BUS
                     clsQuyDinhLuong_BUS busQDL = new clsQuyDinhLuong_BUS();
                     clsQuyDinhLuong_DTO QDL = busQDL.LayQuyDinhLuong();
                     int soNgayTrongThang = DateTime.DaysInMonth(Nam, Thang);
-                   
                     for (int i = 0; i < BangChamCong.Rows.Count; i++)
                     {
                         clsTinhLuong_DTO Luong = new clsTinhLuong_DTO();
                         DataRow r = BangChamCong.Rows[i];
                         string MaNV = r["MANV"].ToString();
                         float HSCV = daoTinhLuong.LayHeSoLuongTheoCongViec(MaNV);
-                        float HSBC = daoTinhLuong.LayHeSoLuongTheoBang(MaNV);
-                        int DL = 0;//số ngày đi làm
-                        int KP = 0;//số ngày nghỉ không phép
-                        int CP = 0;//số ngày nghủ có phép
-                        int CN = 0;//số ngày cn
+                        float HSBC = daoTinhLuong.LayHeSoLuongTheoBangCap(MaNV);
+                        int SoNgayDiLam = 0;//số ngày đi làm
+                        int SoNgayNghiKhongPhep = 0;//số ngày nghỉ không phép
+                        int SoNgayNghiCoPhep = 0;//số ngày nghủ có phép
+                        int SoNgayChuNhat = 0;//số ngày cn
                         for (int j = 2; j < soNgayTrongThang + 2; j++)
                         {
                             if (r[j].ToString() != "CN")
@@ -77,36 +76,36 @@ namespace BUS
 
                                 if (r[j].ToString() == "K")
                                 {
-                                    KP++;
+                                    SoNgayNghiKhongPhep++;
                                 }
                                 else if (r[j].ToString() == "P")
                                 {
-                                    CP++;
+                                    SoNgayNghiCoPhep++;
                                 }
                                 else
                                 {
                                     string gc = r[j].ToString();
-                                    DL++;//số ngày đi làm
+                                    SoNgayDiLam++;//số ngày đi làm
                                 }
                             }
                             else
                             {
-                                CN++;
+                                SoNgayChuNhat++;
                             }
                         }
 
-                        if (CP > 3)
-                            DL = DL - (CP % 3);// nghỉ 3 bữa có phép sẽ trừ 1 ngày đi làm
-                        int ngayCongChuan = soNgayTrongThang - CN;
+                        if (SoNgayNghiCoPhep > 3)
+                            SoNgayDiLam = SoNgayDiLam - (SoNgayNghiCoPhep % 3);// nghỉ 3 bữa có phép sẽ trừ 1 ngày đi làm
+                        int ngayCongChuan = soNgayTrongThang - SoNgayChuNhat;
                         float LuongCoBan = ((float)QDL.LuongToiThieu * HSBC * HSCV);//Bc: bằng cấp, CV: bậc công việc
-                        float TongThuNhap = (LuongCoBan) / ngayCongChuan * DL;//DL là số ngày đi làm
+                        float TongThuNhap = (LuongCoBan) / ngayCongChuan * SoNgayDiLam;//DL là số ngày đi làm
                         double LuongDongBaoHiem = TongThuNhap * (QDL.BHYT + QDL.BHXH + QDL.BHTN);
                         double LuongThucTe = TongThuNhap - LuongDongBaoHiem;
                         Luong.MaNV = MaNV;
                         Luong.HoTen = r["HO"].ToString() + " " + r["TEN"].ToString();
-                        Luong.SoNgayDiLam = DL;
-                        Luong.SoNgayNghiCoPhep = CP;
-                        Luong.SoNgayNghiKhongPhep = KP;
+                        Luong.SoNgayDiLam = SoNgayDiLam;
+                        Luong.SoNgayNghiCoPhep = SoNgayNghiCoPhep;
+                        Luong.SoNgayNghiKhongPhep = SoNgayNghiKhongPhep;
                         Luong.TongThuNhap = TongThuNhap;
                         Luong.BHXH = TongThuNhap * QDL.BHXH;
                         Luong.BHYT = TongThuNhap * QDL.BHYT;
