@@ -7,6 +7,7 @@ using DAO;
 using DTO;
 using System.IO;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace BUS
 {
@@ -102,6 +103,12 @@ namespace BUS
         {
             clsNhanVien_DAO dao = new clsNhanVien_DAO();
             return dao.LayDanhSachNhanVien(dk,MaNV,MaPB);
+        }
+
+        public DataTable LayDanhSachNhanVienInreport(int dk, string MaNVHoacTen, string MaPB)
+        {
+            clsNhanVien_DAO dao = new clsNhanVien_DAO();
+            return dao.LayDanhSachNhanVienInreport(dk, MaNVHoacTen, MaPB);
         }
     }
 }

@@ -675,7 +675,6 @@ namespace GUI
         }
         private void btnInDSNV_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = ToDataTable(dgvNhanVien);
             string Phong = cboPhongBan_TK.SelectedValue.ToString();
             clsPhongBan_BUS BUSPB = new clsPhongBan_BUS();
             List<clsPhongBan_DTO> lsPB = BUSPB.LayDanhSachPhongBan();
@@ -690,15 +689,24 @@ namespace GUI
                     Phong = pb.TENPB; break;
                 }
             }
-            string DieuKien = "";
+            string strDieuKien = "";
             if (radTatCa.Checked)
-                DieuKien = "Còn làm việc và đã nghỉ";
+                strDieuKien = "Còn làm việc và đã nghỉ";
             else if (radConLamViec.Checked)
-                DieuKien = "Còn làm việc";
+                strDieuKien = "Còn làm việc";
             else // Đã nghỉ
-                DieuKien = "Đã nghỉ";
-
-            frmInDanhSachNV frmInDS = new frmInDanhSachNV(dataTable,DieuKien,Phong);
+                strDieuKien = "Đã nghỉ";
+            clsNhanVien_BUS busDSNV = new clsNhanVien_BUS();
+            string TenHoacMaNV = txtMaNV_TK.Text;
+            if (radTatCa.Checked)
+                DieuKien = 0;//Tất cả nhân viên
+            if (radConLamViec.Checked)
+                DieuKien = 1;//Còn đang làm việc
+            if (radDaNghiViec.Checked)
+                DieuKien = -1;//Đã thôi việc
+            string MaPB = cboPhongBan_TK.SelectedValue.ToString();
+            DataTable dsNhanVienTheoDieuKien = busDSNV.LayDanhSachNhanVienInreport(DieuKien, TenHoacMaNV, MaPB);
+            frmInDanhSachNV frmInDS = new frmInDanhSachNV(dsNhanVienTheoDieuKien,strDieuKien, Phong);
             frmInDS.Show();
 
         }

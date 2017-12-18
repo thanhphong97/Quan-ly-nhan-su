@@ -42,7 +42,7 @@ namespace GUI
             else
             {
                 dgvTienLuong.DataSource = lsBangLuong;
-                MessageBox.Show("Chưa chấm công cho tháng này nên không thể xem bảng lương", "THÔNG BÁO");
+                MessageBox.Show("Chưa có bảng chấm công cho tháng này nên không thể xem bảng lương", "THÔNG BÁO");
             }
         }
 

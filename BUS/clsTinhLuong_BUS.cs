@@ -21,7 +21,6 @@ namespace BUS
             }
             else
             {
-                
                 for(int i = 0; i < BangLuong.Rows.Count; i++)
                 {
                     //nếu null khoong cho gán
