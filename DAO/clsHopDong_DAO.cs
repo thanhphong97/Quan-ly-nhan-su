@@ -21,7 +21,7 @@ namespace DAO
             else
             {
                 string empty = "";
-                sql = string.Format("INSERT INTO HOPDONGLAODONG(MAHDLD,MANV,LOAIHD,TUNGAY,DENNGAY,DIADIEMLAM,CONGVIEC,THOIGIANLAM,TRANGBILAODONG,NGAYKY) VALUES  ('{0}','{1}',N'{2}','{3}','{4}',N'{5}',N'{6}',{7},N'{8}','{9}')", "HDLD" + (ThaoTacDuLieu.DemSoLuong("SELECT COUNT(*) FROM HOPDONGLAODONG") + 1).ToString(), HD.MaNV, HD.LoaiHD, HD.NgayBatDau, empty, HD.DiaDiemLam, HD.CongViec, HD.ThoiGianLam, HD.TrangBi, HD.NgayKy);
+                sql = string.Format("INSERT INTO HOPDONGLAODONG(MAHDLD,MANV,LOAIHD,TUNGAY,DENNGAY,DIADIEMLAM,CONGVIEC,THOIGIANLAM,TRANGBILAODONG,NGAYKY) VALUES  ('{0}','{1}',N'{2}','{3}','{4}',N'{5}',N'{6}',{7},N'{8}','{9}')", "HDLD" + (ThaoTacDuLieu.DemSoLuong("SELECT COUNT(*) FROM HOPDONGLAODONG") + 1).ToString(), HD.MaNV, HD.LoaiHD, HD.NgayBatDau, HD.NgayKetThuc, HD.DiaDiemLam, HD.CongViec, HD.ThoiGianLam, HD.TrangBi, HD.NgayKy);
             }
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             int kq = cmd.ExecuteNonQuery();

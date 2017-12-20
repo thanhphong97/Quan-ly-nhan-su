@@ -55,6 +55,8 @@ namespace GUI
             {
                 dtpNgayKetThuc.Enabled = false;
             }
+            if (dgvHopDongNV.Rows.Count == 0)
+                btnThemHopDong.Enabled = true;
         }
 
 

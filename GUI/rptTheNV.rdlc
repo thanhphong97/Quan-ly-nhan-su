@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.35938in</Width>
+              <Width>1.56708in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.35938in</Width>
+              <Width>1.56708in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -74,6 +74,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
+                          <ListLevel>1</ListLevel>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
@@ -113,6 +114,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
+                          <ListLevel>1</ListLevel>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
@@ -152,6 +154,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
+                          <ListLevel>1</ListLevel>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
@@ -195,9 +198,8 @@
         </TablixRowHierarchy>
         <DataSetName>dsTheNVV</DataSetName>
         <Top>2.72917in</Top>
-        <Left>0.28in</Left>
         <Height>1.34724in</Height>
-        <Width>2.71876in</Width>
+        <Width>3.13417in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -209,9 +211,9 @@
         <Value>=First(Fields!HINHDAIDIEN.Value, "dsTheNVV")</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.65403in</Top>
-        <Left>0.655in</Left>
+        <Left>0.80083in</Left>
         <Height>1.905in</Height>
-        <Width>1.89583in</Width>
+        <Width>1.75in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

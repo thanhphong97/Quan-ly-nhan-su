@@ -14,7 +14,7 @@ namespace DAO
         {
             DataTable dt = new DataTable();
             SqlConnection con = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = string.Format("select * from BANGLUONG, NHANVIEN, PHONGBAN where NHANVIEN.MANV = BANGLUONG.MANV AND THANG = {0} AND NAM = {1} AND NHANVIEN.PHONG = PHONGBAN.MAPB", Thang, Nam, MaPB);
+            string sql = string.Format("select * from BANGLUONG, NHANVIEN, PHONGBAN where NHANVIEN.MANV = BANGLUONG.MANV AND THANG = {0} AND NAM = {1} AND NHANVIEN.PHONG = PHONGBAN.MAPB AND TRANGTHAI = 1", Thang, Nam, MaPB);
 
             if(MaPB == "0")
             {

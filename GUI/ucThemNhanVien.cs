@@ -47,7 +47,6 @@ namespace GUI
                 btnCapNhatTN.Enabled = false;
                 btnLamLaiTN.Enabled = false;
                 //frm Hợp đồng
-
             }
         }
 
@@ -368,11 +367,6 @@ namespace GUI
             clsNhanVien_BUS bus = new clsNhanVien_BUS();
             List<clsNhanVien_DTO> lsDanhSachNV = bus.LayDSNhanVien(0, "","0");
             dgvNhanVien.DataSource = lsDanhSachNV;
-        }
-
-        private void txtMaNV_TK_TextChanged(object sender, EventArgs e)
-        {
-            TimKiemNhanVien();
         }
         static int DieuKien = 0;
         private void TimKiemNhanVien()
@@ -733,6 +727,11 @@ namespace GUI
         private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
         {
             DocThongTinTuDGV();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiemNhanVien();
         }
 
         //////////////////////////
