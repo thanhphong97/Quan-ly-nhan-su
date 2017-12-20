@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbQuanTri = new System.Windows.Forms.TabControl();
             this.tpThemNguoiDung = new System.Windows.Forms.TabPage();
+            this.lblThanhCong = new System.Windows.Forms.Label();
             this.lblThongBao_TK = new System.Windows.Forms.Label();
             this.lblThongBao_MaNV = new System.Windows.Forms.Label();
             this.chkTrangThai = new System.Windows.Forms.CheckBox();
@@ -64,6 +65,11 @@
             this.radNhanVienKeToan = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.tpNhatKyTruyCap = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnXemNhatKy = new System.Windows.Forms.Button();
+            this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.grbSuKienNK = new System.Windows.Forms.GroupBox();
             this.dgvSuKienNK = new System.Windows.Forms.DataGridView();
             this.colMaNK = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +88,6 @@
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.lblThanhCong = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbQuanTri.SuspendLayout();
             this.tpThemNguoiDung.SuspendLayout();
@@ -131,6 +136,18 @@
             this.tpThemNguoiDung.Size = new System.Drawing.Size(1295, 649);
             this.tpThemNguoiDung.TabIndex = 0;
             this.tpThemNguoiDung.Text = "Thêm người dùng";
+            // 
+            // lblThanhCong
+            // 
+            this.lblThanhCong.AutoSize = true;
+            this.lblThanhCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblThanhCong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblThanhCong.Location = new System.Drawing.Point(586, 465);
+            this.lblThanhCong.Name = "lblThanhCong";
+            this.lblThanhCong.Size = new System.Drawing.Size(165, 25);
+            this.lblThanhCong.TabIndex = 26;
+            this.lblThanhCong.Text = "Thêm thành công";
+            this.lblThanhCong.Visible = false;
             // 
             // lblThongBao_TK
             // 
@@ -290,6 +307,7 @@
             this.cboNhanVien.Size = new System.Drawing.Size(215, 28);
             this.cboNhanVien.TabIndex = 1;
             this.cboNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboNhanVien_SelectedIndexChanged);
+            this.cboNhanVien.Leave += new System.EventHandler(this.cboNhanVien_Leave);
             // 
             // cboPhongBan
             // 
@@ -460,6 +478,11 @@
             // tpNhatKyTruyCap
             // 
             this.tpNhatKyTruyCap.BackColor = System.Drawing.SystemColors.Control;
+            this.tpNhatKyTruyCap.Controls.Add(this.label13);
+            this.tpNhatKyTruyCap.Controls.Add(this.label12);
+            this.tpNhatKyTruyCap.Controls.Add(this.btnXemNhatKy);
+            this.tpNhatKyTruyCap.Controls.Add(this.dtpNgayKetThuc);
+            this.tpNhatKyTruyCap.Controls.Add(this.dtpNgayBatDau);
             this.tpNhatKyTruyCap.Controls.Add(this.grbSuKienNK);
             this.tpNhatKyTruyCap.Controls.Add(this.label7);
             this.tpNhatKyTruyCap.Location = new System.Drawing.Point(4, 27);
@@ -468,6 +491,54 @@
             this.tpNhatKyTruyCap.Size = new System.Drawing.Size(1295, 649);
             this.tpNhatKyTruyCap.TabIndex = 3;
             this.tpNhatKyTruyCap.Text = "Nhật ký truy cập";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(591, 110);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(98, 18);
+            this.label13.TabIndex = 88;
+            this.label13.Text = "Ngày kết thúc";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(284, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(94, 18);
+            this.label12.TabIndex = 87;
+            this.label12.Text = "Ngày bắt đầu";
+            // 
+            // btnXemNhatKy
+            // 
+            this.btnXemNhatKy.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnXemNhatKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXemNhatKy.Location = new System.Drawing.Point(908, 98);
+            this.btnXemNhatKy.Name = "btnXemNhatKy";
+            this.btnXemNhatKy.Size = new System.Drawing.Size(130, 43);
+            this.btnXemNhatKy.TabIndex = 86;
+            this.btnXemNhatKy.Text = "Xem nhật ký";
+            this.btnXemNhatKy.UseVisualStyleBackColor = true;
+            this.btnXemNhatKy.Click += new System.EventHandler(this.btnXemNhatKy_Click);
+            // 
+            // dtpNgayKetThuc
+            // 
+            this.dtpNgayKetThuc.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(695, 108);
+            this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(187, 24);
+            this.dtpNgayKetThuc.TabIndex = 85;
+            // 
+            // dtpNgayBatDau
+            // 
+            this.dtpNgayBatDau.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(384, 108);
+            this.dtpNgayBatDau.Name = "dtpNgayBatDau";
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(187, 24);
+            this.dtpNgayBatDau.TabIndex = 84;
             // 
             // grbSuKienNK
             // 
@@ -686,18 +757,6 @@
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
-            // lblThanhCong
-            // 
-            this.lblThanhCong.AutoSize = true;
-            this.lblThanhCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblThanhCong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblThanhCong.Location = new System.Drawing.Point(586, 465);
-            this.lblThanhCong.Name = "lblThanhCong";
-            this.lblThanhCong.Size = new System.Drawing.Size(165, 25);
-            this.lblThanhCong.TabIndex = 26;
-            this.lblThanhCong.Text = "Thêm thành công";
-            this.lblThanhCong.Visible = false;
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -785,6 +844,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblThanhCong;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DateTimePicker dtpNgayKetThuc;
+        private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnXemNhatKy;
 
     }
 }

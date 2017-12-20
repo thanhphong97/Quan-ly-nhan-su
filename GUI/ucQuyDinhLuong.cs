@@ -59,8 +59,11 @@ namespace GUI
                 QuyDinh.BHYT = Convert.ToDouble(nudBHYT_NV.Value / 100);
                 QuyDinh.BHTN = Convert.ToDouble(nudBHTT_NV.Value / 100);
                 if (BUS.CapNhatQuyDinhLuong(QuyDinh))
+                {
                     MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("{0} đã cập nhật quy định lương", Program.NhanVien_Login.TaiKhoan));
+                }
                 loadDuLieuLuong();
             }
             catch

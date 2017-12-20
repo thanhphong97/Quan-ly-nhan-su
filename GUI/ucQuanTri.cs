@@ -334,8 +334,7 @@ namespace GUI
         private void tbQuanTri_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvSuKienNK.AutoGenerateColumns = false;
-            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-            dgvSuKienNK.DataSource = BUSNK.LayDanhSachNhatKy();
+            
         }
 
         private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
@@ -442,9 +441,25 @@ namespace GUI
                 lblThanhCong.Visible = false;
             }
         }
-       
 
+        private void btnXemNhatKy_Click(object sender, EventArgs e)
+        {
+            DateTime dtBatDau = new DateTime(dtpNgayBatDau.Value.Year, dtpNgayBatDau.Value.Month, dtpNgayBatDau.Value.Day);
+            DateTime dtKetThuc = new DateTime(dtpNgayKetThuc.Value.Year, dtpNgayKetThuc.Value.Month, dtpNgayKetThuc.Value.Day);
+            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            dgvSuKienNK.DataSource = BUSNK.LayDanhSachNhatKy(dtBatDau, dtKetThuc);
+        }
 
-
+        private void cboNhanVien_Leave(object sender, EventArgs e)
+        {
+            string NhanVien = cboNhanVien.Text;
+            int index = cboNhanVien.FindString(cboNhanVien.Text);
+            
+            if (index == -1)
+            {
+                MessageBox.Show("Không có nhân này trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboNhanVien.Focus();
+            }
+        }
     }
 }

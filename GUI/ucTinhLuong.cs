@@ -38,6 +38,8 @@ namespace GUI
             {
                 dgvTienLuong.DataSource = lsBangLuong;
                 dgvTienLuong.AutoGenerateColumns = false;
+                clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Đã tính lương tháng {0} năm {1} cho phòng {2}", dtpThangNam.Value.Month, dtpThangNam.Value.Year, cboPhongBan.Text));
             }
             else
             {
@@ -71,6 +73,8 @@ namespace GUI
             string MaPB = cboPhongBan.SelectedValue.ToString();
             frmBaoCaoBangLuong frm = new frmBaoCaoBangLuong(Nam, Thang, MaPB);
             frm.Show();
+            clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+            BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Đã in bảng lương tháng {0} năm {1} cho phòng {2}", dtpThangNam.Value.Month, dtpThangNam.Value.Year, cboPhongBan.Text));
         }
     }
 }

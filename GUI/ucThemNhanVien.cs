@@ -734,6 +734,28 @@ namespace GUI
             TimKiemNhanVien();
         }
 
+        private void cboTonGiao_Leave(object sender, EventArgs e)
+        {
+            string TG = cboTonGiao.Text;
+            int index = cboTonGiao.FindString(cboTonGiao.Text);
+            if(index == -1)
+            {
+                MessageBox.Show("Không có tôn giáo này trong hệ thống","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboTonGiao.Focus();
+            }
+        }
+
+        private void cboDanToc_Leave(object sender, EventArgs e)
+        {
+            string DT = cboDanToc.Text;
+            int index = cboDanToc.FindString(cboDanToc.Text);
+            if (index == -1)
+            {
+                MessageBox.Show("Không có dân tộc này trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboTonGiao.Focus();
+            }
+        }
+
         //////////////////////////
     }
 }

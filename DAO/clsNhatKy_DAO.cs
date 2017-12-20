@@ -18,10 +18,14 @@ namespace DAO
             ThaoTacDuLieu.DongKetNoi(conn);
         }
 
-        public List<clsNhatKy_DTO> LayDanhSachNhatKy()
+        public List<clsNhatKy_DTO> LayDanhSachNhatKy(DateTime dtBatDau, DateTime dtKetThuc)
         {
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
-            string sql = "SELECT * FROM NHATKY ORDER BY MANK DESC";
+            string sql = "";
+            if(dtBatDau == dtKetThuc)
+                sql = string.Format("SELECT * FROM NHATKY WHERE THOIGIAN >= '{0:yyyy}-{0:MM}-{0:dd}'", dtKetThuc);
+            else
+                sql = string.Format("SELECT * FROM NHATKY WHERE THOIGIAN >= '{0:yyyy}-{0:MM}-{0:dd}' AND THOIGIAN <= '{1:yyyy}-{1:MM}-{1:dd}'", dtBatDau, dtKetThuc);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             List<clsNhatKy_DTO> lsNK = new List<clsNhatKy_DTO>();

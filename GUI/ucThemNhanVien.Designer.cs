@@ -1169,6 +1169,7 @@
             this.cboDanToc.Name = "cboDanToc";
             this.cboDanToc.Size = new System.Drawing.Size(248, 26);
             this.cboDanToc.TabIndex = 67;
+            this.cboDanToc.Leave += new System.EventHandler(this.cboDanToc_Leave);
             // 
             // label14
             // 
@@ -1411,6 +1412,7 @@
             this.cboTonGiao.Name = "cboTonGiao";
             this.cboTonGiao.Size = new System.Drawing.Size(248, 26);
             this.cboTonGiao.TabIndex = 58;
+            this.cboTonGiao.Leave += new System.EventHandler(this.cboTonGiao_Leave);
             // 
             // radNu
             // 

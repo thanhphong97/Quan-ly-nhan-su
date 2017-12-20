@@ -86,6 +86,8 @@ namespace GUI
                     BUSCTCC.ThemChiTietChamCong(ChiTietCC);
                     this.Close();
                 }
+                clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("{0} đã tạo bảng chấm công {1}", Program.NhanVien_Login.TaiKhoan, ChamCong.MaCC));
             }
             else
                 MessageBox.Show(string.Format("Đã chấm công cho phòng {0} tháng {1} năm {2}", r.Cells[1].Value.ToString(), ChamCong.Thang, ChamCong.Nam));
