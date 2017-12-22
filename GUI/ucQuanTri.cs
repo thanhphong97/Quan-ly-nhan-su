@@ -17,7 +17,8 @@ namespace GUI
     public partial class ucQuanTri : UserControl
     {
         private static List<clsPhongBan_DTO> lsPhongBan;
-        private int ThoiGianHienThongBao = 0;
+        private int ThoiGianHienThongBaoThanhCong = 0;
+        private int ThoiGianHienThongBaoMatKhau = 0;
         public ucQuanTri()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace GUI
         }
         private bool KiemTraDayDu_CapNhat()
         {
-            if (cboNhanVien.Text == "")
+            if (cboNhanVien.Text == "" || txtTenDN.Text == "")//có thể bỏ trống mật khẩu
             {
                 return false;
             }
@@ -75,7 +76,6 @@ namespace GUI
                 }
                 else//MaNV này đã được cấp tài khoản
                 {
-                    btnThem.Enabled = false;
                     lblThongBao_MaNV.Visible = true;
                 }
                 return kq;
@@ -85,14 +85,13 @@ namespace GUI
             string TenDN = txtTenDN.Text;
             clsNguoiDung_BUS bus = new clsNguoiDung_BUS();
             bool kq = bus.KiemTraTonTai(TenDN, 2);
-            if (kq)//MaNV này chưa được cấp tài khoản
+            if (kq)//TenDN này chưa được cấp tài khoản
             {
                 btnThem.Enabled = true;
                 lblThongBao_TK.Visible = false;
             }
             else//MaNV này đã được cấp tài khoản
             {
-                btnThem.Enabled = false;
                 lblThongBao_TK.Visible = true;
             }
             return kq;
@@ -105,8 +104,6 @@ namespace GUI
                 Quyen = "L1";
             if (radNhanVienKeToan.Checked)
                 Quyen = "L2";
-            if (radTraCuu.Checked)
-                Quyen = "L3";
             return Quyen;
         }
 
@@ -137,7 +134,7 @@ namespace GUI
                             {//thành công
                                 clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
                                 BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Tạo người dùng {0} có mã nhân viên {1}", nd.TAIKHOAN, nd.MANV));
-                                timer1.Start();
+                                timer_ThanhCong.Start();
                                 LoadDGV_NguoiDung();
                                 return;
                             }
@@ -148,23 +145,14 @@ namespace GUI
                         }
                         else
                         {
-                            MessageBox.Show("Mật khẩu không trùng khớp");
+                            MessageBox.Show("Mật khẩu không trùng khớp","Thông báo");
                         }
-
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng điền đầy đủ các trường");
+                        MessageBox.Show("Vui lòng điền đầy đủ các trường","Thông báo");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Mã nhân viên đã được cấp tài khoản", "Thông báo");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Tên đăng nhập này đã được sử dụng", "Thông báo");
             }
         }
 
@@ -182,24 +170,14 @@ namespace GUI
                 if (Quyen == "Quản Lý" || Quyen == "L1")
                 {  
                     radQuanLy.Checked = true;
-                    //chkTrangThai.Enabled = false; // không cho phép 
-                    //radNhanVienKeToan.Enabled = false;
-                    //radQuanLy.Enabled = false;
-                    //radTraCuu.Enabled = false;
                     btnCapNhat.Enabled = false;
                     goto LoadThongTin;
                 }
                 btnCapNhat.Enabled = true;
-                //chkTrangThai.Enabled = true;
-                //radNhanVienKeToan.Enabled = true;
-                //radQuanLy.Enabled = true;
-                //radTraCuu.Enabled = true;
                 if (Quyen == "Kế Toán" || Quyen == "L2")
                     radNhanVienKeToan.Checked = true;
-                else if (Quyen == "Tra Cứu" || Quyen == "L3")
-                    radTraCuu.Checked = true;
-                //loadThongTin
-                //load phòng theo mã nhân viên
+                //else if (Quyen == "Tra Cứu" || Quyen == "L3")
+                //    radTraCuu.Checked = true;
                 LoadThongTin:
                 string MaNV = dgvNhanVien.SelectedRows[0].Cells["colMANV"].Value.ToString().ToUpper();
                 clsPhongBan_BUS bus = new clsPhongBan_BUS();
@@ -428,18 +406,8 @@ namespace GUI
                 LoadDuLieuNguoiDung();
                 XoaThongBao();
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            ThoiGianHienThongBao++;
-            lblThanhCong.Visible = true;
-            if(ThoiGianHienThongBao == 18)
-            {
-                ThoiGianHienThongBao = 0;
-                timer1.Stop();
-                lblThanhCong.Visible = false;
-            }
+            btnThem.Enabled = false;
+            btnCapNhat.Enabled = true;
         }
 
         private void btnXemNhatKy_Click(object sender, EventArgs e)
@@ -457,8 +425,32 @@ namespace GUI
             
             if (index == -1)
             {
-                MessageBox.Show("Không có nhân này trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không có nhân này", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboNhanVien.Focus();
+            }
+        }
+
+        private void timer_ThanhCong_Tick(object sender, EventArgs e)
+        {
+            ThoiGianHienThongBaoThanhCong++;
+            lblThanhCong.Visible = true;
+            if (ThoiGianHienThongBaoThanhCong == 18)
+            {
+                ThoiGianHienThongBaoThanhCong = 0;
+                timer_ThanhCong.Stop();
+                lblThanhCong.Visible = false;
+            }
+        }
+
+        private void time_MatKhau_Tick(object sender, EventArgs e)
+        {
+            ThoiGianHienThongBaoMatKhau++;
+            lblThongBao_MatKhau.Visible = true;
+            if (ThoiGianHienThongBaoMatKhau == 18)
+            {
+                ThoiGianHienThongBaoMatKhau = 0;
+                timer_ThanhCong.Stop();
+                lblThongBao_MatKhau.Visible = false;
             }
         }
     }

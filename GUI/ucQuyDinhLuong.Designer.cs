@@ -139,26 +139,46 @@
             // 
             this.nudBHTT_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.nudBHTT_NV.Location = new System.Drawing.Point(182, 78);
+            this.nudBHTT_NV.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudBHTT_NV.Name = "nudBHTT_NV";
             this.nudBHTT_NV.Size = new System.Drawing.Size(138, 24);
             this.nudBHTT_NV.TabIndex = 19;
             this.nudBHTT_NV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudBHTT_NV.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // nudBHYT_NV
             // 
             this.nudBHYT_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.nudBHYT_NV.Location = new System.Drawing.Point(182, 40);
+            this.nudBHYT_NV.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudBHYT_NV.Name = "nudBHYT_NV";
             this.nudBHYT_NV.Size = new System.Drawing.Size(138, 24);
             this.nudBHYT_NV.TabIndex = 18;
             this.nudBHYT_NV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudBHYT_NV.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // nudBHXH_NV
             // 
             this.nudBHXH_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.nudBHXH_NV.Location = new System.Drawing.Point(182, 3);
-            this.nudBHXH_NV.Maximum = new decimal(new int[] {
-            24,
+            this.nudBHXH_NV.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -166,6 +186,11 @@
             this.nudBHXH_NV.Size = new System.Drawing.Size(138, 24);
             this.nudBHXH_NV.TabIndex = 17;
             this.nudBHXH_NV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudBHXH_NV.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label8
             // 

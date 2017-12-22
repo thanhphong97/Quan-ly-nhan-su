@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="luong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\luong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1396446350_Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1396446350_Map1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,6 +148,9 @@
   <data name="1396444119_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1396444119_Login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="quy-dinh-luong1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quy-dinh-luong1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sua1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +159,9 @@
   </data>
   <data name="help_book_support-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help_book_support-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_box_shipment_product-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_box_shipment_product-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backup_data_database-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backup_data_database-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +172,11 @@
   <data name="invention" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invention.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phongban1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phongban11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="invention1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\invention1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sound_speaker_music_volume-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sound_speaker_music_volume-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="school-material" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\school-material.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,23 +190,23 @@
   <data name="information_support-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information_support-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="quy-dinh-luong1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quy-dinh-luong1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DangXuat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DangXuat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1396447029_companies" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1396447029_companies1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1396447935_system-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1396447935_system-search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="salary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DangXuat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DangXuat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="reports-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reports-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paper-printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paper-printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1396445070_user-group-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1396445070_user-group-new1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,23 +220,20 @@
   <data name="1396446628_Map-Marker-Chequered-Flag-Left-Azure" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1396446628_Map-Marker-Chequered-Flag-Left-Azure1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paper-printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper-printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="quy-dinh-luong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quy-dinh-luong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="xóa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xóa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sound_speaker_music_volume-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_speaker_music_volume-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="restore_data_database-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restore_data_database-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inventory_box_shipment_product-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inventory_box_shipment_product-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1396447935_system-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1396447935_system-search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1396445912_edit_group" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1396445912_edit_group1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,25 +241,25 @@
   <data name="DangNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DangNhap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phongban1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phongban11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xóa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xóa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="luong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\luong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="invention1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invention1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reports-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reports-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="restore_data_database-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restore_data_database-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thoát" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thoát1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="salary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\salary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="reports-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reports-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1396445934_users_business" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1396445934_users_business1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

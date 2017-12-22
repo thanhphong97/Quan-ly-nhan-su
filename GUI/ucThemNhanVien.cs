@@ -41,12 +41,18 @@ namespace GUI
                 btnThemNV.Enabled = false;
                 btnClear.Enabled = false;
                 btnCapNhat.Enabled = false;
+                btnHopDongNV.Enabled = false;
                 //tpThanNhan
                 grbThanNhan.Enabled = false;
                 btnThemTN.Enabled = false;
                 btnCapNhatTN.Enabled = false;
                 btnLamLaiTN.Enabled = false;
                 //frm Hợp đồng
+            }
+            if(Program.NhanVien_Login.Quyen == "L2")
+            {
+                btnInTheNV.Enabled = false;
+                btnHopDongNV.Enabled = false;
             }
         }
 
@@ -126,13 +132,13 @@ namespace GUI
             XoaMangHinh();
             btnThemNV.Enabled = true;
             btnCapNhat.Enabled = false;
+            chkBoViec.Checked = false;
         }
 
         private void XoaMangHinh()
         {
             txtHo.Text = "";
             txtTen.Text = "";
-            dtpNgaySinh.Value = DateTime.Now.Date;
             txtCMND.Text = "";
             string gioitinh = "";
             if (gioitinh == "true")
@@ -210,9 +216,14 @@ namespace GUI
                     MessageBox.Show("Thất bại, Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            catch (NullReferenceException nex)
+            {
+                MessageBox.Show("Vui lòng điền đủ các trường. \n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
             catch (Exception ex)
             {
-                MessageBox.Show( "Vui lòng điền đủ các trường. \n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -453,6 +464,7 @@ namespace GUI
 
         private void btnThemTN_Click(object sender, EventArgs e)
         {
+            btnCapNhat.Enabled = false;
             bool KiemTra = false; // Chưa đủ dữ liệu
             clsThanNhan_DTO ThanNhan = new clsThanNhan_DTO();
             ThanNhan.MaNV = dgvNhanVien.CurrentRow.Cells["colMANV"].Value.ToString();
@@ -499,37 +511,44 @@ namespace GUI
 
         private void btnCapNhatTN_Click(object sender, EventArgs e)
         {
-            bool KiemTra = false; // Dữ liệu chưa nhập đủ
-            clsThanNhan_DTO ThanNhan = new clsThanNhan_DTO();
-            ThanNhan.MaQHGD = Convert.ToInt32(dgvThanNhan.CurrentRow.Cells["colMaQHGD"].Value.ToString());
-            ThanNhan.MaNV = dgvNhanVien.CurrentRow.Cells["colMANV"].Value.ToString();
-            if (txtHoTenTN.Text.Trim() == "" || txtNgheNghiepTN.Text.Trim() == "")
-            {
-                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                ThanNhan.HoTenTN = txtHoTenTN.Text.Trim();
-                ThanNhan.NgheNghiepTN = txtNgheNghiepTN.Text.Trim();
-                KiemTra = true;
-            }
-            ThanNhan.NgaySinhTN = dtpNgaySinhTN.Value;
-            ThanNhan.MoiQH = Convert.ToInt32(cboMoiQH.SelectedValue);
-            clsThanNhan_BUS BUSTN = new clsThanNhan_BUS();
-            if (KiemTra) // Đã đủ dữ liệu
-            {
-                if (BUSTN.CapNhatThanNhan(ThanNhan))
-                {
-                    MessageBox.Show("Cập nhật thân nhân thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvThanNhan.DataSource = BUSTN.LayDanhSachThanNhan(ThanNhan.MaNV);
-                    clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
-                    BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Cập nhật thân nhân {0} cho nhân viên {1} có mã {2}", ThanNhan.HoTenTN, txtHoTenNV.Text, ThanNhan.MaNV));
-                }
-                else
-                {
-                    MessageBox.Show("cập nhật thân nhân thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
+           try
+           {
+               bool KiemTra = false; // Dữ liệu chưa nhập đủ
+               clsThanNhan_DTO ThanNhan = new clsThanNhan_DTO();
+               ThanNhan.MaQHGD = Convert.ToInt32(dgvThanNhan.CurrentRow.Cells["colMaQHGD"].Value.ToString());
+               ThanNhan.MaNV = dgvNhanVien.CurrentRow.Cells["colMANV"].Value.ToString();
+               if (txtHoTenTN.Text.Trim() == "" || txtNgheNghiepTN.Text.Trim() == "")
+               {
+                   MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               }
+               else
+               {
+                   ThanNhan.HoTenTN = txtHoTenTN.Text.Trim();
+                   ThanNhan.NgheNghiepTN = txtNgheNghiepTN.Text.Trim();
+                   KiemTra = true;
+               }
+               ThanNhan.NgaySinhTN = dtpNgaySinhTN.Value;
+               ThanNhan.MoiQH = Convert.ToInt32(cboMoiQH.SelectedValue);
+               clsThanNhan_BUS BUSTN = new clsThanNhan_BUS();
+               if (KiemTra) // Đã đủ dữ liệu
+               {
+                   if (BUSTN.CapNhatThanNhan(ThanNhan))
+                   {
+                       MessageBox.Show("Cập nhật thân nhân thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       dgvThanNhan.DataSource = BUSTN.LayDanhSachThanNhan(ThanNhan.MaNV);
+                       clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                       BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Cập nhật thân nhân {0} cho nhân viên {1} có mã {2}", ThanNhan.HoTenTN, txtHoTenNV.Text, ThanNhan.MaNV));
+                   }
+                   else
+                   {
+                       MessageBox.Show("cập nhật thân nhân thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   }
+               }
+           }
+            catch(NullReferenceException ex)
+           {
+               MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
         }
 
         private void btnLamLaiTN_Click(object sender, EventArgs e)
@@ -539,10 +558,13 @@ namespace GUI
             cboMoiQH.SelectedIndex = 0; // Mối quan hệ Vợ - Chồng
             dtpNgaySinhTN.Value = DateTime.Now;
             btnThemTN.Enabled = true;
+            btnCapNhatTN.Enabled = false;
         }
 
         private void dgvThanNhan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnCapNhatTN.Enabled = true;
+            btnThemTN.Enabled = false;
             try
             {
                 txtHoTenTN.Text = dgvThanNhan.CurrentRow.Cells["colHoTen"].Value.ToString();
@@ -582,6 +604,7 @@ namespace GUI
 
         private void dgvThanNhan_SelectionChanged(object sender, EventArgs e)
         {
+            btnCapNhat.Enabled = false;
             try
             {
                 txtHoTenTN.Text = dgvThanNhan.CurrentRow.Cells["colHoTen"].Value.ToString();
@@ -727,6 +750,8 @@ namespace GUI
         private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
         {
             DocThongTinTuDGV();
+            btnCapNhatTN.Enabled = false;
+            btnThemTN.Enabled = false;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -740,7 +765,7 @@ namespace GUI
             int index = cboTonGiao.FindString(cboTonGiao.Text);
             if(index == -1)
             {
-                MessageBox.Show("Không có tôn giáo này trong hệ thống","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không có tôn giáo này","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboTonGiao.Focus();
             }
         }
@@ -751,7 +776,7 @@ namespace GUI
             int index = cboDanToc.FindString(cboDanToc.Text);
             if (index == -1)
             {
-                MessageBox.Show("Không có dân tộc này trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không có dân tộc này", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboTonGiao.Focus();
             }
         }

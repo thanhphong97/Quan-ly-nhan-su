@@ -64,7 +64,6 @@
             this.txtHo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvHopDongNV = new System.Windows.Forms.DataGridView();
-            this.btnDong = new System.Windows.Forms.Button();
             this.btnLamLai = new System.Windows.Forms.Button();
             this.btnCapNhatHopDong = new System.Windows.Forms.Button();
             this.btnThemHopDong = new System.Windows.Forms.Button();
@@ -193,6 +192,11 @@
             this.nudThoiGian.Name = "nudThoiGian";
             this.nudThoiGian.Size = new System.Drawing.Size(110, 24);
             this.nudThoiGian.TabIndex = 91;
+            this.nudThoiGian.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // label11
             // 
@@ -355,21 +359,10 @@
             this.dgvHopDongNV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHopDongNV_CellFormatting);
             this.dgvHopDongNV.SelectionChanged += new System.EventHandler(this.dgvHopDongNV_SelectionChanged);
             // 
-            // btnDong
-            // 
-            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDong.Location = new System.Drawing.Point(633, 440);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(130, 43);
-            this.btnDong.TabIndex = 104;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
             // btnLamLai
             // 
             this.btnLamLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLamLai.Location = new System.Drawing.Point(497, 440);
+            this.btnLamLai.Location = new System.Drawing.Point(633, 440);
             this.btnLamLai.Name = "btnLamLai";
             this.btnLamLai.Size = new System.Drawing.Size(130, 43);
             this.btnLamLai.TabIndex = 105;
@@ -380,7 +373,7 @@
             // btnCapNhatHopDong
             // 
             this.btnCapNhatHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCapNhatHopDong.Location = new System.Drawing.Point(360, 440);
+            this.btnCapNhatHopDong.Location = new System.Drawing.Point(496, 440);
             this.btnCapNhatHopDong.Name = "btnCapNhatHopDong";
             this.btnCapNhatHopDong.Size = new System.Drawing.Size(130, 43);
             this.btnCapNhatHopDong.TabIndex = 107;
@@ -391,7 +384,7 @@
             // btnThemHopDong
             // 
             this.btnThemHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThemHopDong.Location = new System.Drawing.Point(224, 440);
+            this.btnThemHopDong.Location = new System.Drawing.Point(360, 440);
             this.btnThemHopDong.Name = "btnThemHopDong";
             this.btnThemHopDong.Size = new System.Drawing.Size(130, 43);
             this.btnThemHopDong.TabIndex = 106;
@@ -453,7 +446,6 @@
             this.colNgayKetThuc.DataPropertyName = "NGAYKETTHUC";
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle6.NullValue = "Không xác định";
             this.colNgayKetThuc.DefaultCellStyle = dataGridViewCellStyle6;
             this.colNgayKetThuc.HeaderText = "Ngày kết thúc";
             this.colNgayKetThuc.Name = "colNgayKetThuc";
@@ -526,7 +518,6 @@
             this.Controls.Add(this.btnCapNhatHopDong);
             this.Controls.Add(this.btnThemHopDong);
             this.Controls.Add(this.btnLamLai);
-            this.Controls.Add(this.btnDong);
             this.Controls.Add(this.dgvHopDongNV);
             this.Controls.Add(this.grbThongTin);
             this.Controls.Add(this.label14);
@@ -570,7 +561,6 @@
         private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvHopDongNV;
-        private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnLamLai;
         private System.Windows.Forms.Button btnCapNhatHopDong;
         private System.Windows.Forms.Button btnThemHopDong;

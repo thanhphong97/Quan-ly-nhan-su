@@ -66,9 +66,13 @@ namespace GUI
                 }
                 loadDuLieuLuong();
             }
-            catch
+            catch (FormatException fe)
             {
-
+                MessageBox.Show("Vui lòng điền Lương tối thiểu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+             }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ các trường", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

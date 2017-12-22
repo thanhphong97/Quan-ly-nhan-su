@@ -94,7 +94,7 @@ namespace DAO
 
         public DataTable LayBangChiTietChamCongNV(string strTK)
         {
-            string sql = string.Format("SELECT * FROM CHITIETCHAMCONG JOIN NHANVIEN ON NHANVIEN.MANV = CHITIETCHAMCONG.MANV JOIN PHONGBAN ON PHONGBAN.MAPB = PHONG WHERE MACC = '{0}'", strTK);
+            string sql = string.Format("SELECT * FROM CHITIETCHAMCONG JOIN NHANVIEN ON NHANVIEN.MANV = CHITIETCHAMCONG.MANV JOIN PHONGBAN ON PHONGBAN.MAPB = PHONG WHERE  MACC = '{0}' AND TRANGTHAI = 1 ", strTK);
             return ThaoTacDuLieu.LayBang(sql);
 
         }

@@ -122,6 +122,7 @@ namespace GUI
                     MessageBox.Show("Thêm hợp đồng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvHopDongNV.DataSource = BUSHD.LayDanhSachHopDong(NhanVien.MaNV);
                     clsNhatKy_BUS BUSNK = new clsNhatKy_BUS();
+                    XoaDuLieu();
                     BUSNK.ThemNhatKy(Program.NhanVien_Login.TaiKhoan, DateTime.Now, string.Format("Thêm hợp đồng {0} {1} cho nhân viên {2} {3} ", HopDong.LoaiHD, HopDong.MaHDLD, NhanVien.Ho, NhanVien.Ten));
                     btnThemHopDong.Enabled = false;
 
@@ -234,11 +235,6 @@ namespace GUI
         {
             LoadThongTinHopDong();
             
-        }
-
-        private void btnDong_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void dgvHopDongNV_SelectionChanged(object sender, EventArgs e)

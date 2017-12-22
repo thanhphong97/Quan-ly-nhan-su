@@ -98,7 +98,6 @@
             this.txtMaNV_TK = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabThanNhan = new System.Windows.Forms.TabPage();
-            this.label42 = new System.Windows.Forms.Label();
             this.btnLamLaiTN = new System.Windows.Forms.Button();
             this.btnCapNhatTN = new System.Windows.Forms.Button();
             this.btnThemTN = new System.Windows.Forms.Button();
@@ -114,12 +113,6 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.dgvThanNhan = new System.Windows.Forms.DataGridView();
-            this.colMaQHGD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaNVTN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgaySinhThanNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgheNghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoiQH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label41 = new System.Windows.Forms.Label();
             this.tpNhanVien = new System.Windows.Forms.TabPage();
             this.btnInTheNV = new System.Windows.Forms.Button();
@@ -172,6 +165,12 @@
             this.label19 = new System.Windows.Forms.Label();
             this.btnInDSNV = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
+            this.colMaNVTN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaQHGD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgaySinhThanNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgheNghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoiQH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -234,7 +233,6 @@
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNhanVien.Size = new System.Drawing.Size(422, 453);
             this.dgvNhanVien.TabIndex = 22;
-            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             this.dgvNhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvNhanVien_CellFormatting);
             this.dgvNhanVien.SelectionChanged += new System.EventHandler(this.dgvNhanVien_SelectionChanged);
             // 
@@ -799,7 +797,6 @@
             // tabThanNhan
             // 
             this.tabThanNhan.BackColor = System.Drawing.SystemColors.Control;
-            this.tabThanNhan.Controls.Add(this.label42);
             this.tabThanNhan.Controls.Add(this.btnLamLaiTN);
             this.tabThanNhan.Controls.Add(this.btnCapNhatTN);
             this.tabThanNhan.Controls.Add(this.btnThemTN);
@@ -813,21 +810,11 @@
             this.tabThanNhan.TabIndex = 1;
             this.tabThanNhan.Text = "Danh sách thân nhân";
             // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label42.Location = new System.Drawing.Point(65, 618);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(349, 18);
-            this.label42.TabIndex = 60;
-            this.label42.Text = "(*) Nhấn làm lại trước khi thêm thân nhân mới";
-            // 
             // btnLamLaiTN
             // 
             this.btnLamLaiTN.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnLamLaiTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLamLaiTN.Location = new System.Drawing.Point(721, 284);
+            this.btnLamLaiTN.Location = new System.Drawing.Point(721, 292);
             this.btnLamLaiTN.Name = "btnLamLaiTN";
             this.btnLamLaiTN.Size = new System.Drawing.Size(130, 43);
             this.btnLamLaiTN.TabIndex = 59;
@@ -839,7 +826,7 @@
             // 
             this.btnCapNhatTN.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnCapNhatTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCapNhatTN.Location = new System.Drawing.Point(585, 284);
+            this.btnCapNhatTN.Location = new System.Drawing.Point(585, 292);
             this.btnCapNhatTN.Name = "btnCapNhatTN";
             this.btnCapNhatTN.Size = new System.Drawing.Size(130, 43);
             this.btnCapNhatTN.TabIndex = 58;
@@ -851,7 +838,7 @@
             // 
             this.btnThemTN.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnThemTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThemTN.Location = new System.Drawing.Point(449, 284);
+            this.btnThemTN.Location = new System.Drawing.Point(449, 292);
             this.btnThemTN.Name = "btnThemTN";
             this.btnThemTN.Size = new System.Drawing.Size(130, 43);
             this.btnThemTN.TabIndex = 57;
@@ -881,7 +868,8 @@
             // 
             // dtpNgaySinhTN
             // 
-            this.dtpNgaySinhTN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinhTN.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinhTN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinhTN.Location = new System.Drawing.Point(539, 83);
             this.dtpNgaySinhTN.Name = "dtpNgaySinhTN";
             this.dtpNgaySinhTN.Size = new System.Drawing.Size(220, 24);
@@ -987,8 +975,8 @@
             this.dgvThanNhan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvThanNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThanNhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaQHGD,
             this.colMaNVTN,
+            this.colMaQHGD,
             this.colHoTen,
             this.colNgaySinhThanNhan,
             this.colNgheNghiep,
@@ -1000,66 +988,11 @@
             this.dgvThanNhan.ReadOnly = true;
             this.dgvThanNhan.RowHeadersVisible = false;
             this.dgvThanNhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThanNhan.Size = new System.Drawing.Size(803, 262);
+            this.dgvThanNhan.Size = new System.Drawing.Size(803, 288);
             this.dgvThanNhan.TabIndex = 55;
             this.dgvThanNhan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThanNhan_CellClick);
             this.dgvThanNhan.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvThanNhan_CellFormatting);
             this.dgvThanNhan.SelectionChanged += new System.EventHandler(this.dgvThanNhan_SelectionChanged);
-            // 
-            // colMaQHGD
-            // 
-            this.colMaQHGD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colMaQHGD.DataPropertyName = "MaQHGD";
-            this.colMaQHGD.HeaderText = "Mã QHGĐ";
-            this.colMaQHGD.Name = "colMaQHGD";
-            this.colMaQHGD.ReadOnly = true;
-            this.colMaQHGD.Width = 104;
-            // 
-            // colMaNVTN
-            // 
-            this.colMaNVTN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colMaNVTN.DataPropertyName = "MaNV";
-            this.colMaNVTN.HeaderText = "Mã nhân viên";
-            this.colMaNVTN.Name = "colMaNVTN";
-            this.colMaNVTN.ReadOnly = true;
-            this.colMaNVTN.Width = 120;
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colHoTen.DataPropertyName = "HoTenTN";
-            this.colHoTen.HeaderText = "Họ Tên";
-            this.colHoTen.Name = "colHoTen";
-            this.colHoTen.ReadOnly = true;
-            // 
-            // colNgaySinhThanNhan
-            // 
-            this.colNgaySinhThanNhan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colNgaySinhThanNhan.DataPropertyName = "NgaySinhTN";
-            dataGridViewCellStyle14.Format = "dd/MM/yyyy";
-            this.colNgaySinhThanNhan.DefaultCellStyle = dataGridViewCellStyle14;
-            this.colNgaySinhThanNhan.HeaderText = "Ngày sinh";
-            this.colNgaySinhThanNhan.Name = "colNgaySinhThanNhan";
-            this.colNgaySinhThanNhan.ReadOnly = true;
-            this.colNgaySinhThanNhan.Width = 98;
-            // 
-            // colNgheNghiep
-            // 
-            this.colNgheNghiep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colNgheNghiep.DataPropertyName = "NgheNghiepTN";
-            this.colNgheNghiep.HeaderText = "Nghề Nghiệp";
-            this.colNgheNghiep.Name = "colNgheNghiep";
-            this.colNgheNghiep.ReadOnly = true;
-            this.colNgheNghiep.Width = 118;
-            // 
-            // colMoiQH
-            // 
-            this.colMoiQH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colMoiQH.DataPropertyName = "MoiQH";
-            this.colMoiQH.HeaderText = "Mối quan hệ";
-            this.colMoiQH.Name = "colMoiQH";
-            this.colMoiQH.ReadOnly = true;
-            this.colMoiQH.Width = 114;
             // 
             // label41
             // 
@@ -1517,11 +1450,11 @@
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(138, 302);
-            this.dtpNgaySinh.MaxDate = new System.DateTime(3010, 12, 31, 0, 0, 0, 0);
+            this.dtpNgaySinh.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(248, 24);
             this.dtpNgaySinh.TabIndex = 50;
-            this.dtpNgaySinh.Value = new System.DateTime(2007, 12, 31, 0, 0, 0, 0);
+            this.dtpNgaySinh.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -1667,6 +1600,60 @@
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
+            // colMaNVTN
+            // 
+            this.colMaNVTN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colMaNVTN.DataPropertyName = "MaNV";
+            this.colMaNVTN.HeaderText = "Mã nhân viên";
+            this.colMaNVTN.Name = "colMaNVTN";
+            this.colMaNVTN.ReadOnly = true;
+            this.colMaNVTN.Width = 120;
+            // 
+            // colMaQHGD
+            // 
+            this.colMaQHGD.DataPropertyName = "MaQHGD";
+            this.colMaQHGD.HeaderText = "Mã QHGD";
+            this.colMaQHGD.Name = "colMaQHGD";
+            this.colMaQHGD.ReadOnly = true;
+            this.colMaQHGD.Visible = false;
+            // 
+            // colHoTen
+            // 
+            this.colHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colHoTen.DataPropertyName = "HoTenTN";
+            this.colHoTen.HeaderText = "Họ Tên";
+            this.colHoTen.Name = "colHoTen";
+            this.colHoTen.ReadOnly = true;
+            // 
+            // colNgaySinhThanNhan
+            // 
+            this.colNgaySinhThanNhan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colNgaySinhThanNhan.DataPropertyName = "NgaySinhTN";
+            dataGridViewCellStyle14.Format = "dd/MM/yyyy";
+            this.colNgaySinhThanNhan.DefaultCellStyle = dataGridViewCellStyle14;
+            this.colNgaySinhThanNhan.HeaderText = "Ngày sinh";
+            this.colNgaySinhThanNhan.Name = "colNgaySinhThanNhan";
+            this.colNgaySinhThanNhan.ReadOnly = true;
+            this.colNgaySinhThanNhan.Width = 98;
+            // 
+            // colNgheNghiep
+            // 
+            this.colNgheNghiep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colNgheNghiep.DataPropertyName = "NgheNghiepTN";
+            this.colNgheNghiep.HeaderText = "Nghề Nghiệp";
+            this.colNgheNghiep.Name = "colNgheNghiep";
+            this.colNgheNghiep.ReadOnly = true;
+            this.colNgheNghiep.Width = 118;
+            // 
+            // colMoiQH
+            // 
+            this.colMoiQH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colMoiQH.DataPropertyName = "MoiQH";
+            this.colMoiQH.HeaderText = "Mối quan hệ";
+            this.colMoiQH.Name = "colMoiQH";
+            this.colMoiQH.ReadOnly = true;
+            this.colMoiQH.Width = 114;
+            // 
             // ucThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1765,12 +1752,6 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.DataGridView dgvThanNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaQHGD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNVTN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgaySinhThanNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgheNghiep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMoiQH;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TabPage tpNhanVien;
         private System.Windows.Forms.Button btnHopDongNV;
@@ -1780,7 +1761,6 @@
         private System.Windows.Forms.Button btnThemNV;
         private System.Windows.Forms.TabControl tabNhanVien;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label42;
         private System.Windows.Forms.CheckBox chkBoViec;
         private System.Windows.Forms.ComboBox cboDanToc;
         private System.Windows.Forms.Label label14;
@@ -1848,6 +1828,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colHinhAnh;
         private System.Windows.Forms.Button btnInDSNV;
         private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNVTN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaQHGD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgaySinhThanNhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgheNghiep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMoiQH;
 
 
 

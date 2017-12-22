@@ -1021,7 +1021,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.375in</Height>
+    <Height>1.97917in</Height>
     <Style />
   </Body>
   <Width>13.49875in</Width>
@@ -1156,7 +1156,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=string.Format("TPHCM, {0:dd}/{0:MM}/{0:yyyy} {0:HH}:{0:mm}:{0:ss}", Now())</Value>
+                  <Value>=string.Format("TPHCM, {0:dd}/{0:MM}/{0:yyyy}", Now())</Value>
                   <Style>
                     <FontSize>11pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -1183,7 +1183,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox116</rd:DefaultName>
-          <Top>0.14806in</Top>
+          <Top>0.06944in</Top>
           <Left>9.88417in</Left>
           <Height>0.44792in</Height>
           <Width>2.52083in</Width>
@@ -1215,7 +1215,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox117</rd:DefaultName>
-          <Top>0.65153in</Top>
+          <Top>0.98834in</Top>
           <Left>10.47792in</Left>
           <Height>0.25in</Height>
           <Width>2.36458in</Width>

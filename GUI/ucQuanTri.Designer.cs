@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbQuanTri = new System.Windows.Forms.TabControl();
             this.tpThemNguoiDung = new System.Windows.Forms.TabPage();
+            this.lblThongBao_MatKhau = new System.Windows.Forms.Label();
             this.lblThanhCong = new System.Windows.Forms.Label();
             this.lblThongBao_TK = new System.Windows.Forms.Label();
             this.lblThongBao_MaNV = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.grbPhanQuyen = new System.Windows.Forms.GroupBox();
             this.radQuanLy = new System.Windows.Forms.RadioButton();
-            this.radTraCuu = new System.Windows.Forms.RadioButton();
             this.radNhanVienKeToan = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.tpNhatKyTruyCap = new System.Windows.Forms.TabPage();
@@ -81,14 +81,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnBackup = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDuongDanBAK = new System.Windows.Forms.TextBox();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.timer_ThanhCong = new System.Windows.Forms.Timer(this.components);
+            this.btnBackup = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbQuanTri.SuspendLayout();
             this.tpThemNguoiDung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -119,6 +119,7 @@
             // tpThemNguoiDung
             // 
             this.tpThemNguoiDung.BackColor = System.Drawing.SystemColors.Control;
+            this.tpThemNguoiDung.Controls.Add(this.lblThongBao_MatKhau);
             this.tpThemNguoiDung.Controls.Add(this.lblThanhCong);
             this.tpThemNguoiDung.Controls.Add(this.lblThongBao_TK);
             this.tpThemNguoiDung.Controls.Add(this.lblThongBao_MaNV);
@@ -136,6 +137,17 @@
             this.tpThemNguoiDung.Size = new System.Drawing.Size(1295, 649);
             this.tpThemNguoiDung.TabIndex = 0;
             this.tpThemNguoiDung.Text = "Thêm người dùng";
+            // 
+            // lblThongBao_MatKhau
+            // 
+            this.lblThongBao_MatKhau.AutoSize = true;
+            this.lblThongBao_MatKhau.ForeColor = System.Drawing.Color.Red;
+            this.lblThongBao_MatKhau.Location = new System.Drawing.Point(818, 491);
+            this.lblThongBao_MatKhau.Name = "lblThongBao_MatKhau";
+            this.lblThongBao_MatKhau.Size = new System.Drawing.Size(188, 18);
+            this.lblThongBao_MatKhau.TabIndex = 27;
+            this.lblThongBao_MatKhau.Text = "Mật khẩu không trùng khớp";
+            this.lblThongBao_MatKhau.Visible = false;
             // 
             // lblThanhCong
             // 
@@ -415,16 +427,15 @@
             // grbPhanQuyen
             // 
             this.grbPhanQuyen.Controls.Add(this.radQuanLy);
-            this.grbPhanQuyen.Controls.Add(this.radTraCuu);
             this.grbPhanQuyen.Controls.Add(this.radNhanVienKeToan);
             this.grbPhanQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grbPhanQuyen.ForeColor = System.Drawing.Color.Purple;
             this.grbPhanQuyen.Location = new System.Drawing.Point(579, 159);
             this.grbPhanQuyen.Name = "grbPhanQuyen";
-            this.grbPhanQuyen.Size = new System.Drawing.Size(219, 153);
+            this.grbPhanQuyen.Size = new System.Drawing.Size(219, 123);
             this.grbPhanQuyen.TabIndex = 17;
             this.grbPhanQuyen.TabStop = false;
-            this.grbPhanQuyen.Text = "Phân Quyền";
+            this.grbPhanQuyen.Text = "Cấp quyền";
             // 
             // radQuanLy
             // 
@@ -438,29 +449,17 @@
             this.radQuanLy.Text = "Quản lý";
             this.radQuanLy.UseVisualStyleBackColor = true;
             // 
-            // radTraCuu
-            // 
-            this.radTraCuu.AutoSize = true;
-            this.radTraCuu.Checked = true;
-            this.radTraCuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radTraCuu.ForeColor = System.Drawing.Color.Black;
-            this.radTraCuu.Location = new System.Drawing.Point(12, 124);
-            this.radTraCuu.Name = "radTraCuu";
-            this.radTraCuu.Size = new System.Drawing.Size(76, 22);
-            this.radTraCuu.TabIndex = 7;
-            this.radTraCuu.TabStop = true;
-            this.radTraCuu.Text = "Tra cứu";
-            this.radTraCuu.UseVisualStyleBackColor = true;
-            // 
             // radNhanVienKeToan
             // 
             this.radNhanVienKeToan.AutoSize = true;
+            this.radNhanVienKeToan.Checked = true;
             this.radNhanVienKeToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.radNhanVienKeToan.ForeColor = System.Drawing.Color.Black;
             this.radNhanVienKeToan.Location = new System.Drawing.Point(12, 79);
             this.radNhanVienKeToan.Name = "radNhanVienKeToan";
             this.radNhanVienKeToan.Size = new System.Drawing.Size(144, 22);
             this.radNhanVienKeToan.TabIndex = 6;
+            this.radNhanVienKeToan.TabStop = true;
             this.radNhanVienKeToan.Text = "Nhân viên kế toán";
             this.radNhanVienKeToan.UseVisualStyleBackColor = true;
             // 
@@ -587,6 +586,7 @@
             this.colMaNK.Name = "colMaNK";
             this.colMaNK.ReadOnly = true;
             this.colMaNK.Visible = false;
+            this.colMaNK.Width = 60;
             // 
             // colTaiKhoan
             // 
@@ -675,22 +675,6 @@
             this.label10.TabIndex = 8;
             this.label10.Text = "Sao lưu dữ liệu thường xuyên để \r\nchúng được an toàn";
             // 
-            // btnBackup
-            // 
-            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBackup.ForeColor = System.Drawing.Color.Green;
-            this.btnBackup.Image = global::GUI.Properties.Resources.backup_data_database_32;
-            this.btnBackup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBackup.Location = new System.Drawing.Point(55, 133);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(126, 39);
-            this.btnBackup.TabIndex = 0;
-            this.btnBackup.Text = "Sao lưu";
-            this.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBackup.UseVisualStyleBackColor = true;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label9);
@@ -741,6 +725,26 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Chọn đường dẫn chứa file sao lưu";
             // 
+            // timer_ThanhCong
+            // 
+            this.timer_ThanhCong.Tick += new System.EventHandler(this.timer_ThanhCong_Tick);
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBackup.ForeColor = System.Drawing.Color.Green;
+            this.btnBackup.Image = global::GUI.Properties.Resources.backup_data_database_32;
+            this.btnBackup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBackup.Location = new System.Drawing.Point(55, 133);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(126, 39);
+            this.btnBackup.TabIndex = 0;
+            this.btnBackup.Text = "Sao lưu";
+            this.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
             // btnRestore
             // 
             this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -756,10 +760,6 @@
             this.btnRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ucQuanTri
             // 
@@ -815,7 +815,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grbPhanQuyen;
         private System.Windows.Forms.RadioButton radQuanLy;
-        private System.Windows.Forms.RadioButton radTraCuu;
         private System.Windows.Forms.RadioButton radNhanVienKeToan;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TabPage tpNhatKyTruyCap;
@@ -843,12 +842,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblThanhCong;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer_ThanhCong;
         private System.Windows.Forms.DateTimePicker dtpNgayKetThuc;
         private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnXemNhatKy;
+        private System.Windows.Forms.Label lblThongBao_MatKhau;
 
     }
 }

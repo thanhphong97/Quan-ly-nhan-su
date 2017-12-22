@@ -23,7 +23,7 @@ namespace DAO
             SqlConnection conn = ThaoTacDuLieu.TaoVaMoKetNoi();
             string sql = "";
             if(dtBatDau == dtKetThuc)
-                sql = string.Format("SELECT * FROM NHATKY WHERE THOIGIAN >= '{0:yyyy}-{0:MM}-{0:dd}'", dtKetThuc);
+                sql = string.Format("SELECT * FROM NHATKY WHERE THOIGIAN >= '{0:yyyy}-{0:MM}-{0:dd} 00:00:00' AND THOIGIAN <= '{0:yyyy}-{0:MM}-{0:dd} 23:59:59'", dtKetThuc, dtKetThuc);
             else
                 sql = string.Format("SELECT * FROM NHATKY WHERE THOIGIAN >= '{0:yyyy}-{0:MM}-{0:dd}' AND THOIGIAN <= '{1:yyyy}-{1:MM}-{1:dd}'", dtBatDau, dtKetThuc);
             SqlCommand cmd = ThaoTacDuLieu.TaoDoiTuongTruyVan(sql, conn);
