@@ -48,7 +48,6 @@ namespace BUS
         }
         public void TinhLuongTheoBangCong(int Nam, int Thang, string MaPhong)
         {
-            // #region Tinh luong theo bang cong
                 clsTinhLuong_DAO daoTinhLuong = new clsTinhLuong_DAO();
                 DataTable BangChamCong = daoTinhLuong.LayBangChamCong(Nam, Thang, MaPhong);
                 //nếu bảng chấm công có tồn tại
@@ -93,8 +92,8 @@ namespace BUS
                             }
                         }
 
-                        if (SoNgayNghiCoPhep > 3)
-                            SoNgayDiLam = SoNgayDiLam - (SoNgayNghiCoPhep % 3);// nghỉ 3 bữa có phép sẽ trừ 1 ngày đi làm
+                        //if (SoNgayNghiCoPhep > 3)
+                        //    SoNgayDiLam = SoNgayDiLam - (SoNgayNghiCoPhep - 3);// nghỉ 3 bữa có phép sẽ trừ 1 ngày đi làm
                         int ngayCongChuan = soNgayTrongThang - SoNgayChuNhat;
                         float LuongCoBan = ((float)QDL.LuongToiThieu * HSBC * HSCV);//Bc: bằng cấp, CV: bậc công việc
                         float TongThuNhap = (LuongCoBan) / ngayCongChuan * SoNgayDiLam;//DL là số ngày đi làm

@@ -629,7 +629,7 @@ namespace GUI
         }
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                DocThongTinTuDGV();
+                //DocThongTinTuDGV();
         }
         private void picHinh_Click(object sender, EventArgs e)
         {
