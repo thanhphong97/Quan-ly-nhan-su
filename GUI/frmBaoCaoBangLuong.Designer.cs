@@ -46,7 +46,7 @@
             this.ClientSize = new System.Drawing.Size(1095, 524);
             this.Controls.Add(this.rptBangLuong);
             this.Name = "frmBaoCaoBangLuong";
-            this.Text = "frmBaoCaoBangLuong";
+            this.Text = "Bảng Lương";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBaoCaoBangLuong_Load);
             this.ResumeLayout(false);

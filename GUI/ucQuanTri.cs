@@ -176,8 +176,6 @@ namespace GUI
                 btnCapNhat.Enabled = true;
                 if (Quyen == "Kế Toán" || Quyen == "L2")
                     radNhanVienKeToan.Checked = true;
-                //else if (Quyen == "Tra Cứu" || Quyen == "L3")
-                //    radTraCuu.Checked = true;
                 LoadThongTin:
                 string MaNV = dgvNhanVien.SelectedRows[0].Cells["colMANV"].Value.ToString().ToUpper();
                 clsPhongBan_BUS bus = new clsPhongBan_BUS();
@@ -347,7 +345,6 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
@@ -368,7 +365,6 @@ namespace GUI
                         {
                             MessageBox.Show("Khôi phục thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        
                     }
                 }
                 else
@@ -377,7 +373,7 @@ namespace GUI
             }
             catch (Exception exp)
             {
-                MessageBox.Show(exp.Message);
+                MessageBox.Show(exp.Message,"THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
 
         }
